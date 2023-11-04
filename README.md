@@ -6,6 +6,5 @@ Built with Astro, CloudCannon, and Tailwind CSS.
 
 - [Astro](https://astro.build/) - web framework
 - [CloudCannon](https://cloudcannon.com/) - content management system
-- [Netlify](https://netlify.com) - hosting platform
 - [Tailwind CSS](https://tailwindcss.com/) - CSS framework
 - [shadcn](https://ui.shadcn.com/) - React components
