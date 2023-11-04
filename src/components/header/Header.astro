@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+
+import { Navigation } from "./Navigation";
+import { MobileSheet } from "./MobileSheet";
+
+const pathname = new URL(Astro.request.url).pathname;
+---
+
+<header
+  class="sticky top-0 z-10 w-full bg-slate-50 shadow-sm transition"
+  transition:animate="none"
+>
+  <div class="container my-5 flex items-center justify-between gap-10 px-5">
+    <a href="/" aria-label="home page" rel="prefetch"
+      ><Image
+        src={import("@/assets/img/logo.png")}
+        width="413"
+        height="75"
+        alt="Vulnerable Support Charitable Trust logo"
+        class="h-[36px] w-[200px] sm:h-[50px] sm:w-[275px]"
+        fetchpriority="high"
+        loading="eager"
+      /></a
+    >
+
+    <div class="hidden lg:block">
+      <Navigation pathname={pathname} client:mouseover />
+    </div>
+
+    <div class="lg:hidden">
+      <MobileSheet client:visible />
+    </div>
+  </div>
+</header>
+
+<style is:global>
+  a.active-link {
+    @apply bg-gray-900 text-white hover:text-white focus:text-white;
+  }
+</style>

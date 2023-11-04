@@ -1,0 +1,88 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+import Layout from "@/components/layouts/Layout.astro";
+import Banner from "@/components/Banner.astro";
+import Gallery from "@/components/programmes/Gallery.astro";
+import { Slider } from "@/components/slider/Slider";
+
+const images = await getCollection("take10arvosImages");
+const sponsors = await getCollection("take10arvosSponsors");
+
+const page = await getEntry("pages", "take10-arvos");
+const { Content } = await page.render();
+---
+
+<Layout title={page.data.title}>
+  <Banner title={page.data.title} programme="take10-arvos" />
+
+  <section class="section-container space-y-6">
+    <div class="grid gap-6 sm:grid-cols-2">
+      <Image
+        src={import("@/assets/img/logo/take10-arvos.png")}
+        width="256"
+        height="256"
+        alt="Take 10 Arvo's logo"
+        fetchpriority="high"
+        loading="eager"
+        class="place-self-center"
+        transition:name="programme-image-take10-arvos"
+      />
+      <div>
+        <Content />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-container text-center">
+    <h2>Want to help?</h2>
+
+    <p>{page.data.wantToHelpDescription}</p>
+
+    <a href="/volunteer/" class="shadow-button bg-orange-400" rel="prefetch"
+      >Volunteer</a
+    >
+  </section>
+
+  <section class="section-container">
+    <h2>Sponsors</h2>
+
+    <Slider client:visible>
+      <div class="blaze-track flex items-center justify-center">
+        {
+          sponsors.map(({ data }) =>
+            data.website ? (
+              <a
+                href={data.website}
+                target="_blank"
+                rel="noopener nofollow noreferrer"
+              >
+                <Image
+                  src={data.image as ImageMetadata}
+                  height="64"
+                  alt={data.name!}
+                  loading="eager"
+                  class="mx-auto"
+                />
+              </a>
+            ) : (
+              <div>
+                <Image
+                  src={data.image as ImageMetadata}
+                  height="64"
+                  alt={data.name!}
+                  loading="eager"
+                  class="mx-auto"
+                />
+              </div>
+            ),
+          )
+        }
+      </div>
+    </Slider>
+  </section>
+
+  <Gallery images={images} />
+</Layout>

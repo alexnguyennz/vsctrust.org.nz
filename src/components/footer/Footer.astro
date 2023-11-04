@@ -1,0 +1,231 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon";
+
+import { Rainbow } from "./Rainbow";
+
+import { aboutUsLinks, ourWorkLinks, getInvolvedLinks } from "@/lib/links";
+---
+
+<footer
+  class="mt-auto bg-gray-900 text-center text-sm text-white md:text-left"
+  transition:animate="none"
+>
+  <div class="section-container space-y-6">
+    <nav class="grid justify-center gap-6 md:grid-cols-4 lg:grid-cols-6">
+      <section
+        class="order-last space-y-6 justify-self-center md:order-first md:col-span-4 lg:col-span-2"
+      >
+        <div class="flex items-center gap-6">
+          <Image
+            src={import("../../assets/img/icon.png")}
+            width="96"
+            height="96"
+            alt="Vulnerable Support Charitable Trust logo"
+            class="mx-auto"
+          />
+
+          <ul class="space-y-1">
+            <li class="flex items-center gap-1">
+              <Icon pack="tabler" name="at" class="h-5 w-5" />
+              <a href="mailto:hello@vsctrust.org.nz">hello@vsctrust.org.nz</a>
+            </li>
+            <li class="flex items-center gap-1 place-self-center">
+              <Icon pack="tabler" name="phone" class="h-5 w-5" />
+              <a href="tel:+64274448672">027 444 8672</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>About Us</h2>
+        <ul>
+          {
+            aboutUsLinks.map((link) => (
+              <li>
+                <a href={link.href} rel="prefetch">
+                  {link.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section>
+        <h2>Our Work</h2>
+        <ul>
+          {
+            ourWorkLinks.map((link) => (
+              <li>
+                <a href={link.href} rel="prefetch">
+                  {link.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section>
+        <h2>Get Involved</h2>
+        <ul>
+          {
+            getInvolvedLinks.map((link) => (
+              <li>
+                <a href={link.href} rel="prefetch">
+                  {link.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section>
+        <h2>Follow Us</h2>
+
+        <div class="mb-4">
+          <h3>Facebook</h3>
+          <div class="flex items-center justify-center gap-3 md:justify-start">
+            <a
+              href="https://www.facebook.com/dosomegoodnewzealand/"
+              target="_blank"
+              rel="noreferrer noopener nofollow"
+              aria-label="Do Some Good Facebook page"
+            >
+              <Image
+                src={import("../../assets/img/logo/dosomegood.png")}
+                width="40"
+                height="40"
+                alt="Do Some Good logo"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/take10wgtn/"
+              target="_blank"
+              rel="noreferrer noopener nofollow"
+              aria-label="Take 10 Facebook page"
+            >
+              <Image
+                src={import("../../assets/img/logo/take10.png")}
+                width="40"
+                height="40"
+                alt="Take 10 logo"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/take10arvos/"
+              target="_blank"
+              rel="noreferrer noopener nofollow"
+              aria-label="Take 10 Arvo's Facebook page"
+            >
+              <Image
+                src={import("../../assets/img/logo/take10-arvos.png")}
+                width="40"
+                height="40"
+                alt="Take 10 Arvo's logo"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/people/GenLink/100081309057125/"
+              target="_blank"
+              rel="noreferrer noopener nofollow"
+              aria-label="Gen Link Facebook page"
+            >
+              <Image
+                src={import("../../assets/img/logo/gen-link.png")}
+                width="40"
+                height="40"
+                alt="Gen Link logo"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Instagram</h3>
+
+          <div class="flex items-center justify-center gap-3 md:justify-start">
+            <a
+              href="https://www.instagram.com/dosomegoodnz/"
+              target="_blank"
+              rel="noreferrer noopener nofollow"
+              aria-label="Do Some Good Instagram page"
+            >
+              <Image
+                src={import("../../assets/img/logo/dosomegood.png")}
+                width="40"
+                height="40"
+                alt="Do Some Good logo"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/take10wgtn/"
+              target="_blank"
+              rel="noreferrer noopener nofollow"
+              aria-label="Take 10 Instagram page"
+            >
+              <Image
+                src={import("../../assets/img/logo/take10.png")}
+                width="40"
+                height="40"
+                alt="Take 10 logo"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/take10arvos/"
+              target="_blank"
+              rel="noreferrer noopener nofollow"
+              aria-label="Take 10 Arvo's Instagram page"
+            >
+              <Image
+                src={import("../../assets/img/logo/take10-arvos.png")}
+                width="40"
+                height="40"
+                alt="Take 10 Arvo's logo"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+    </nav>
+
+    <div class="flex flex-col items-center">
+      <p class="mb-2 flex items-center gap-1">
+        <Icon pack="tabler" name="copyright" class="h-4 w-4" />
+        {new Date().getFullYear()} Vulnerable Support Charitable Trust
+      </p>
+
+      <p class="text-slate-400">
+        VSCT is a registered New Zealand charity
+        <a
+          href="https://register.charities.govt.nz/Charity/CC55753"
+          target="_blank"
+        >
+          CC55753</a
+        >
+      </p>
+
+      <Rainbow client:mouseover>
+        <Icon name="rainbow" class="h-8 w-12" />
+      </Rainbow>
+    </div>
+  </div>
+</footer>
+
+<style>
+  h2 {
+    @apply text-center text-base font-extrabold text-slate-400 md:text-left;
+  }
+
+  h2,
+  h3 {
+    @apply mb-2;
+  }
+
+  ul {
+    @apply space-y-2.5;
+  }
+</style>

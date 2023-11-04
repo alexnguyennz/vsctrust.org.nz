@@ -1,0 +1,66 @@
+---
+import { Icon } from "astro-icon";
+
+import Layout from "@/components/layouts/Layout.astro";
+import TextBanner from "@/components/TextBanner.astro";
+import Form from "@/components/Form.astro";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+
+const title = "Contact Us";
+---
+
+<Layout title={title}>
+  <TextBanner title={title} />
+  <section class="section-container">
+    <p class="text-center">We’d love to hear from you. Please get in touch!</p>
+
+    <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+      <div>
+        <Icon pack="tabler" name="at" class="mx-auto h-5 w-5" />
+        <a href="mailto:hello@vsctrust.org.nz">hello@vsctrust.org.nz</a>
+      </div>
+
+      <div>
+        <Icon pack="tabler" name="phone" class="mx-auto h-5 w-5" />
+        <a href="tel:+64274448672">027 444 8672</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-container">
+    <Form name="contact">
+      <div>
+        <Label htmlFor="name" className="required">Name</Label>
+        <Input
+          className="shadow-border"
+          type="text"
+          id="name"
+          name="name"
+          required
+        />
+      </div>
+      <div>
+        <Label htmlFor="email" className="required">Email</Label>
+        <Input
+          className="shadow-border"
+          type="email"
+          id="email"
+          name="email"
+          required
+        />
+      </div>
+      <div class="sm:col-span-2">
+        <Label htmlFor="message" className="required">Message</Label>
+        <Textarea
+          className="shadow-border"
+          id="message"
+          name="message"
+          rows={4}
+          required
+        />
+      </div>
+    </Form>
+  </section>
+</Layout>

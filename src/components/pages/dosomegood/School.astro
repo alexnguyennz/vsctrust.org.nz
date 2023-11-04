@@ -1,0 +1,65 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon";
+import { Image } from "astro:assets";
+
+interface Props {
+  school: CollectionEntry<"dosomegoodSchools">;
+}
+
+const { school } = Astro.props;
+---
+
+<div
+  class="shadow-border flex flex-col gap-4 rounded-md bg-amber-50 p-4 transition hover:translate-y-1"
+>
+  <h3 class="text-center font-bold">
+    <a
+      href={school.data.website}
+      target="_blank"
+      rel="noopener nofollow noreferrer">{school.data.name}</a
+    >
+  </h3>
+
+  <div class="text-sm">
+    <h4>
+      <Icon pack="tabler" name="users" class="h-4 w-4" />
+      {school.data.tamariki} tamariki
+    </h4>
+    <h4>
+      <Icon pack="tabler" name="location" class="h-4 w-4" />
+      {school.data.location}
+    </h4>
+    <h4>
+      <Icon pack="tabler" name="calendar" class="h-4 w-4" />
+       Partnered {school.data.partnerDate}
+    </h4>
+  </div>
+
+  {
+    school.data.sponsorImage && school.data.sponsorUrl && (
+      <div class="mt-auto text-center">
+        <a
+          href={school.data.sponsorUrl}
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          class="inline-block"
+        >
+          <Image
+            src={school.data.sponsorImage}
+            width="128"
+            height="128"
+            alt="sponsor logo"
+            class="object-contain"
+          />
+        </a>
+      </div>
+    )
+  }
+</div>
+
+<style>
+  h4 {
+    @apply flex items-center gap-2;
+  }
+</style>

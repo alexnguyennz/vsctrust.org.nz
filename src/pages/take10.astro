@@ -1,0 +1,153 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon";
+
+import Layout from "@/components/layouts/Layout.astro";
+import Banner from "@/components/Banner.astro";
+import Gallery from "@/components/programmes/Gallery.astro";
+import { Slider } from "@/components/slider/Slider";
+import poster from "@/assets/img/take10/poster.png";
+
+const images = await getCollection("take10Images");
+const sponsors = await getCollection("take10Sponsors");
+
+const page = await getEntry("pages", "take10");
+
+const { Content } = await page.render();
+---
+
+<Layout title={page.data.title}>
+  <Banner title={page.data.title} programme="take10" />
+
+  <section class="section-container space-y-6">
+    <div class="grid gap-6 sm:grid-cols-2">
+      <div class="place-self-center">
+        <Image
+          src={import("@/assets/img/logo/take10.png")}
+          width="256"
+          height="256"
+          alt="Take 10 logo"
+          fetchpriority="high"
+          loading="eager"
+          class="mx-auto mb-6"
+          transition:name="programme-image-take10"
+        />
+
+        <ul class="awards space-y-2">
+          {
+            page.data.awards.map((award: string) => (
+              <li>
+                <Icon pack="lucide" name="award" class="h-6 w-6" />
+                {award}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <Content />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-container">
+    <video
+      poster={poster.src}
+      preload="none"
+      controls
+      muted
+      class="shadow-border mx-auto w-full max-w-2xl rounded-md bg-black"
+    >
+      <source src="/take10/video.webm" type="video/webm" />
+      <source src="/take10/video.mp4" type="video/mp4" />
+       Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section class="section-container">
+    <h2>How it works</h2>
+
+    <div class="grid gap-10 sm:grid-cols-2">
+      <div>
+        <p>We aim to:</p>
+        <ul>
+          <li>prevent harm</li>
+          <li>offer a safe & trusted space</li>
+          <li>provide friendly & welcoming support</li>
+        </ul>
+      </div>
+
+      <div>
+        <p>We keep our "safe zone" welcoming and non-judgmental by:</p>
+        <ul>
+          <li>always using positive language</li>
+          <li>greeting visitors with a smile, water, and lollies</li>
+          <li>providing a private space for those who need more attention</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-container text-center">
+    <h2>Want to help?</h2>
+
+    {
+      page.data.wantToHelpDescription.map((description: string) => (
+        <p>{description}</p>
+      ))
+    }
+
+    <a href="/volunteer/" class="shadow-button bg-orange-400" rel="prefetch"
+      >Volunteer</a
+    >
+  </section>
+
+  <section class="section-container">
+    <h2>Sponsors</h2>
+
+    <Slider client:visible>
+      <div class="blaze-track flex items-center justify-center">
+        {
+          sponsors.map(({ data: sponsor }) =>
+            sponsor.website ? (
+              <a
+                href={sponsor.website}
+                target="_blank"
+                rel="noopener nofollow noreferrer"
+              >
+                <Image
+                  src={sponsor.image as ImageMetadata}
+                  height="64"
+                  alt={sponsor.name!}
+                  loading="eager"
+                  class="mx-auto"
+                />
+              </a>
+            ) : (
+              <div>
+                <Image
+                  src={sponsor.image as ImageMetadata}
+                  height="64"
+                  alt={sponsor.name!}
+                  loading="eager"
+                  class="mx-auto"
+                />
+              </div>
+            ),
+          )
+        }
+      </div>
+    </Slider>
+  </section>
+
+  <Gallery images={images} />
+</Layout>
+
+<style>
+  .awards li {
+    @apply flex items-center gap-2;
+  }
+</style>

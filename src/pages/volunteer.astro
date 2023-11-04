@@ -1,0 +1,115 @@
+---
+import { Image } from "astro:assets";
+
+import Layout from "@/components/layouts/Layout.astro";
+import TextBanner from "@/components/TextBanner.astro";
+import ProgrammeGrid from "@/components/programmes/ProgrammeGrid.astro";
+import ProgrammeCard from "@/components/programmes/ProgrammeCard.astro";
+import Form from "@/components/Form.astro";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { RoleSelect } from "@/components/pages/volunteer/RoleSelect";
+import { Textarea } from "@/components/ui/textarea";
+
+const title = "Volunteer";
+---
+
+<Layout title={title}>
+  <TextBanner title={title} />
+
+  <Image
+    src={import("@/assets/img/home/volunteer.png")}
+    width="77"
+    height="77"
+    alt="volunteer image"
+    fetchpriority="high"
+    loading="eager"
+    class="mx-auto"
+    transition:name="volunteer"
+  />
+
+  <section class="section-container">
+    <ProgrammeGrid>
+      <ProgrammeCard programme="dosomegood">
+        <p>
+          Help us influence positive change for tamariki living in hardship by
+          helping schools and kindergartens here in Wellington.
+        </p>
+        <p class="mb-0">
+          We are looking for volunteers to come out with us to schools, and have
+          a great day with tamariki in need.
+        </p>
+      </ProgrammeCard>
+      <ProgrammeCard programme="take10">
+        <p>
+          Help reduce alcohol-related harm and alleviate demands on emergency
+          services by providing a safe zone on Courtenay Place.
+        </p>
+        <p>
+          We’re looking for volunteers on Friday or Saturday nights from 10pm to
+          3am.
+        </p>
+        <div class="mb-1 text-center">
+          <a href="/take10/volunteer.pdf" class="shadow-button bg-gray-600"
+            >Role description</a
+          >
+        </div>
+      </ProgrammeCard>
+      <ProgrammeCard programme="take10-arvos">
+        <p class="mb-0">
+          Our focus is to increase the reach Take 10 has in the community by
+          extending the services we offer to rangatahi in the form of a
+          youth-zone.
+        </p>
+      </ProgrammeCard>
+      <ProgrammeCard programme="gen-link">
+        <p class="mb-0">
+          Gen Link aims to lessen the generation gap by connecting tamariki with
+          older folk within their local communities.
+        </p>
+      </ProgrammeCard>
+    </ProgrammeGrid>
+  </section>
+
+  <section class="section-container">
+    <Form name="volunteer">
+      <div>
+        <Label htmlFor="name" className="required">Name</Label>
+        <Input
+          className="shadow-border"
+          type="text"
+          id="name"
+          name="name"
+          required
+        />
+      </div>
+
+      <div>
+        <Label htmlFor="email" className="required">Email</Label>
+        <Input
+          className="shadow-border"
+          type="email"
+          id="email"
+          name="email"
+          required
+        />
+      </div>
+
+      <div class="sm:col-span-2">
+        <Label htmlFor="role" className="required">Role</Label>
+        <RoleSelect client:load />
+      </div>
+
+      <div class="sm:col-span-2">
+        <Label htmlFor="message" className="required">Message</Label>
+        <Textarea
+          className="shadow-border"
+          id="message"
+          name="message"
+          rows={4}
+          required
+        />
+      </div>
+    </Form>
+  </section>
+</Layout>

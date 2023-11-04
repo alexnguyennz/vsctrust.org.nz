@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  title: string;
+  programme: string;
+}
+
+const { title, programme } = Astro.props;
+---
+
+<section class="relative">
+  <Image
+    src={import(`../assets/img/banner/${programme}.jpg`)}
+    width="1500"
+    height="170"
+    alt=""
+    fetchpriority="high"
+    loading="eager"
+    class="h-[170px] w-full bg-gray-100 object-cover"
+  />
+
+  <h1
+    class="shadow-text absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center"
+  >
+    {title}
+  </h1>
+</section>

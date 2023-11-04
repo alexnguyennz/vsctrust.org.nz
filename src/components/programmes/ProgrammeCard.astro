@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+
+import { cn } from "@/lib/utils";
+
+const name = {
+  dosomegood: "Do Some Good",
+  take10: "Take 10",
+  "take10-arvos": "Take 10 Arvo's",
+  "gen-link": "Gen Link",
+};
+
+interface Props {
+  programme: "dosomegood" | "take10" | "take10-arvos" | "gen-link";
+}
+
+const { programme } = Astro.props;
+---
+
+<section class={cn("group shadow-border", `programme-${programme}`)}>
+  <a href={`/${programme}/`} class="self-center" rel="prefetch">
+    <Image
+      src={import(`../../assets/img/logo/${programme}.png`)}
+      width="256"
+      height="256"
+      alt={`${name[programme]} logo`}
+      class="h-[128px] w-[128px]"
+      transition:name={`programme-image-${programme}`}
+    /></a
+  >
+  <div
+    class="mt-3 rounded-md bg-black bg-opacity-75 p-3 text-white transition group-hover:bg-opacity-100"
+  >
+    <slot />
+  </div>
+</section>
+
+<style>
+  section {
+    @apply flex flex-1 flex-col rounded-md bg-opacity-20 bg-cover bg-center p-4 font-extrabold transition duration-300 hover:scale-105;
+  }
+
+  .programme-dosomegood {
+    background:
+      linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+      url("/img/programmes/dosomegood.jpg") center/cover;
+  }
+
+  .programme-take10 {
+    background:
+      linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+      url("/img/programmes/take10.jpg") center/cover;
+  }
+
+  .programme-take10-arvos {
+    background:
+      linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+      url("/img/programmes/take10-arvos.jpg") center/cover;
+  }
+
+  .programme-gen-link {
+    background:
+      linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+      url("/img/programmes/gen-link.webp") center/cover;
+  }
+</style>

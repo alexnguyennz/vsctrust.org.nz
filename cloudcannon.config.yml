@@ -1,0 +1,878 @@
+paths:
+  uploads: /public/img/news
+  static:
+  collections: /src/content
+  data: ''
+  layouts:
+collections_config:
+  pages:
+    path: /src/content/pages
+    output: true
+    url: /[slug]/
+    filter:
+    parse_branch_index:
+    name: Pages
+    description: ''
+    icon: text_snippet
+    documentation:
+    preview:
+    sort:
+    sort_options:
+    singular_name:
+    singular_key:
+    _editables: {}
+    _enabled_editors:
+      - visual
+      - content
+    _inputs:
+      dosomegood:
+        type: text
+        label: Do Some Good
+        cascade: true
+      take10:
+        type: text
+        label: Take 10
+        cascade: true
+      take10Arvos:
+        type: text
+        label: Take 10 Arvo's
+        cascade: true
+      genLink:
+        type: text
+        label: Generation Link
+        cascade: true
+      take10Visitors:
+        type: number
+        label: Take 10 Visitors
+        cascade: true
+      sponsorASchoolDescription:
+        type: text
+        label: Sponsor A School Description
+        cascade: true
+    _select_data: {}
+    _structures: {}
+    add_options:
+    create:
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+    new_preview_url:
+    schemas: {}
+    schema_key:
+  posts:
+    path: /src/content/posts
+    output: true
+    url: /news/[slug]/
+    filter:
+      base:
+      include:
+      exclude:
+    parse_branch_index:
+    name: Posts
+    description: ''
+    icon: event_available
+    documentation:
+    preview:
+      text:
+      subtext:
+      icon:
+      icon_color:
+      image:
+      metadata:
+      gallery:
+    sort:
+    sort_options:
+      - key: date
+        order: descending
+        label:
+    singular_name:
+    singular_key:
+    _editables: {}
+    _enabled_editors:
+      - content
+    _inputs:
+      date:
+        type: date
+        options:
+          timezone: Pacific/Auckland
+          empty_type:
+        cascade: true
+      image:
+        type: image
+        options:
+          paths:
+            uploads: /src/content/posts
+            dam_uploads:
+            dam_static:
+          mime_type:
+          correct_orientation: true
+          empty_type:
+          resize_style: contain
+          width:
+          height:
+          expandable:
+        cascade: true
+      author:
+        type: select
+        options:
+          allow_create:
+          allow_empty: true
+          values:
+          value_key:
+        hidden: true
+        cascade: true
+      published:
+        type: checkbox
+        comment: Untick and save to make this post a draft
+        cascade: true
+    _select_data: {}
+    _structures: {}
+    add_options:
+    create:
+      path:
+      extra_data: {}
+      publish_to:
+      _inputs: {}
+      _select_data: {}
+      _structures: {}
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    new_preview_url:
+    schemas:
+      posts:
+        path: /src/schemas/posts.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: Post
+        icon: event_available
+        preview:
+        _editables: {}
+        _inputs: {}
+        _select_data: {}
+        _structures: {}
+        create:
+        new_preview_url:
+    schema_key:
+  dosomegoodImages:
+    path: /src/content/dosomegoodImages
+    output: false
+    url:
+    filter:
+    parse_branch_index:
+    name: 'Images '
+    description: ''
+    icon: image
+    documentation:
+    preview:
+    sort:
+    sort_options:
+    singular_name:
+    singular_key:
+    _editables: {}
+    _enabled_editors:
+      - data
+    _inputs:
+      image:
+        type: image
+        options:
+          paths:
+            uploads: /src/content/dosomegoodImages
+            dam_uploads:
+            dam_static:
+          mime_type:
+          correct_orientation: true
+          empty_type:
+          resize_style: contain
+          width:
+          height:
+          expandable:
+        cascade: true
+    _select_data: {}
+    _structures: {}
+    add_options:
+    create:
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    new_preview_url:
+    schemas:
+      dosomegoodImages:
+        path: /src/schemas/programmes/dosomegood/images.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: Gallery Image
+        icon: image
+        preview:
+        _editables: {}
+        _inputs: {}
+        _select_data: {}
+        _structures: {}
+        create:
+        new_preview_url:
+    schema_key:
+  dosomegoodSchools:
+    path: /src/content/dosomegoodSchools
+    output: false
+    url:
+    filter:
+    parse_branch_index:
+    name: 'Schools '
+    description: ''
+    icon: backpack
+    documentation:
+    preview:
+    sort:
+    sort_options:
+    singular_name:
+    singular_key:
+    _editables: {}
+    _enabled_editors:
+      - data
+    _inputs:
+      tamariki:
+        type: number
+        cascade: true
+      partnerDate:
+        type: text
+        label: Partner Date
+        comment: E.g. 2023 or August 2023
+        cascade: true
+      website:
+        type: url
+        cascade: true
+      sponsorImage:
+        type: image
+        options:
+          paths:
+            uploads: /src/content/dosomegoodSchools
+            dam_uploads:
+            dam_static:
+          mime_type:
+          correct_orientation: true
+          empty_type:
+          resize_style: contain
+          width:
+          height:
+          expandable:
+        cascade: true
+      order:
+        type: number
+        cascade: true
+    _select_data: {}
+    _structures: {}
+    add_options:
+    create:
+      path: '{name|slugify}.md'
+      extra_data: {}
+      publish_to:
+      _inputs: {}
+      _select_data: {}
+      _structures: {}
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    new_preview_url:
+    schemas:
+      dosomegoodSchools:
+        path: /src/schemas/programmes/dosomegood/schools.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: School
+        icon: backpack
+        preview:
+        _editables: {}
+        _inputs: {}
+        _select_data: {}
+        _structures: {}
+        create:
+          path:
+          extra_data: {}
+          publish_to:
+          _inputs: {}
+          _select_data: {}
+          _structures: {}
+        new_preview_url:
+    schema_key:
+  dosomegoodSponsors:
+    path: /src/content/dosomegoodSponsors
+    output: false
+    url:
+    filter:
+    parse_branch_index:
+    name: 'Sponsors '
+    description: ''
+    icon: handshake
+    documentation:
+    preview:
+    sort:
+    sort_options:
+    singular_name:
+    singular_key:
+    _editables: {}
+    _enabled_editors:
+      - data
+    _inputs:
+      image:
+        type: image
+        options:
+          paths:
+            uploads: /src/content/dosomegoodSponsors
+            dam_uploads:
+            dam_static:
+          mime_type:
+          correct_orientation: true
+          empty_type:
+          resize_style: contain
+          width:
+          height:
+          expandable:
+        cascade: true
+    _select_data: {}
+    _structures: {}
+    add_options:
+    create:
+      path: '{name|slugify}.md'
+      extra_data: {}
+      publish_to:
+      _inputs: {}
+      _select_data: {}
+      _structures: {}
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    new_preview_url:
+    schemas:
+      dosomegoodSponsors:
+        path: /src/schemas/programmes/dosomegood/sponsors.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: Sponsor
+        icon: handshake
+        preview:
+        _editables: {}
+        _inputs: {}
+        _select_data: {}
+        _structures: {}
+        create:
+        new_preview_url:
+    schema_key:
+  dosomegoodSupporters:
+    path: /src/content/dosomegoodSupporters
+    output: false
+    url:
+    filter:
+    parse_branch_index:
+    name: 'Supporters '
+    description: ''
+    icon: handshake
+    documentation:
+    preview:
+    sort:
+    sort_options:
+    singular_name:
+    singular_key:
+    _editables: {}
+    _enabled_editors:
+      - data
+    _inputs:
+      image:
+        type: image
+        options:
+          paths:
+            uploads: /src/content/dosomegoodSupporters
+            dam_uploads:
+            dam_static:
+          mime_type:
+          correct_orientation: true
+          empty_type:
+          resize_style: contain
+          width:
+          height:
+          expandable:
+        cascade: true
+    _select_data: {}
+    _structures: {}
+    add_options:
+    create:
+      path: '{name|slugify}.md'
+      extra_data: {}
+      publish_to:
+      _inputs: {}
+      _select_data: {}
+      _structures: {}
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    new_preview_url:
+    schemas:
+      dosomegoodSupporters:
+        path: /src/schemas/programmes/dosomegood/supporters.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: Supporter
+        icon: handshake
+        preview:
+        _editables: {}
+        _inputs: {}
+        _select_data: {}
+        _structures: {}
+        create:
+        new_preview_url:
+    schema_key:
+  take10Images:
+    path: /src/content/take10Images
+    output: false
+    url:
+    filter:
+    parse_branch_index:
+    name: 'Images '
+    description: ''
+    icon: image
+    documentation:
+    preview:
+    sort:
+    sort_options:
+    singular_name:
+    singular_key:
+    _editables: {}
+    _enabled_editors:
+      - data
+    _inputs:
+      /src/content/take10Images:
+        type: image
+        options:
+          paths:
+            uploads: /src/content/take10Images
+            dam_uploads:
+            dam_static:
+          mime_type:
+          correct_orientation: true
+          empty_type:
+          resize_style: contain
+          width:
+          height:
+          expandable:
+        cascade: true
+    _select_data: {}
+    _structures: {}
+    add_options:
+    create:
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    new_preview_url:
+    schemas:
+      take10Images:
+        path: /src/schemas/programmes/take10/images.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: Gallery Image
+        icon: image
+        preview:
+        _editables: {}
+        _inputs: {}
+        _select_data: {}
+        _structures: {}
+        create:
+        new_preview_url:
+    schema_key:
+  take10Sponsors:
+    path: /src/content/take10Sponsors
+    output: false
+    url:
+    filter:
+    parse_branch_index:
+    name: 'Sponsors '
+    description: ''
+    icon: handshake
+    documentation:
+    preview:
+    sort:
+    sort_options:
+    singular_name:
+    singular_key:
+    _editables: {}
+    _enabled_editors:
+      - data
+    _inputs:
+      image:
+        type: image
+        options:
+          paths:
+            uploads: /src/content/take10Sponsors
+            dam_uploads:
+            dam_static:
+          mime_type:
+          correct_orientation: true
+          empty_type:
+          resize_style: contain
+          width:
+          height:
+          expandable:
+        cascade: true
+    _select_data: {}
+    _structures: {}
+    add_options:
+    create:
+      path: '{name|slugify}.md'
+      extra_data: {}
+      publish_to:
+      _inputs: {}
+      _select_data: {}
+      _structures: {}
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    new_preview_url:
+    schemas:
+      take10Sponsors:
+        path: /src/schemas/programmes/take10/sponsors.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: Sponsor
+        icon: handshake
+        preview:
+        _editables: {}
+        _inputs: {}
+        _select_data: {}
+        _structures: {}
+        create:
+        new_preview_url:
+    schema_key:
+  take10arvosImages:
+    path: /src/content/take10arvosImages
+    output: false
+    url:
+    filter:
+    parse_branch_index:
+    name: 'Images '
+    description: ''
+    icon: image
+    documentation:
+    preview:
+    sort:
+    sort_options:
+    singular_name:
+    singular_key:
+    _editables: {}
+    _enabled_editors:
+      - data
+    _inputs:
+      image:
+        type: image
+        options:
+          paths:
+            uploads: /src/content/take10arvosImages
+            dam_uploads:
+            dam_static:
+          mime_type:
+          correct_orientation: true
+          empty_type:
+          resize_style: contain
+          width:
+          height:
+          expandable:
+        cascade: true
+    _select_data: {}
+    _structures: {}
+    add_options:
+    create:
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    new_preview_url:
+    schemas:
+      take10arvosImages:
+        path: /src/schemas/programmes/take10-arvos/images.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: Gallery Image
+        icon: image
+        preview:
+        _editables: {}
+        _inputs: {}
+        _select_data: {}
+        _structures: {}
+        create:
+        new_preview_url:
+    schema_key:
+  take10arvosSponsors:
+    path: /src/content/take10arvosSponsors
+    output: false
+    url:
+    filter:
+    parse_branch_index:
+    name: 'Sponsors '
+    description: ''
+    icon: handshake
+    documentation:
+    preview:
+    sort:
+    sort_options:
+    singular_name:
+    singular_key:
+    _editables: {}
+    _enabled_editors:
+      - data
+    _inputs:
+      image:
+        type: image
+        options:
+          paths:
+            uploads: /src/content/take10arvosSponsors
+            dam_uploads:
+            dam_static:
+          mime_type:
+          correct_orientation: true
+          empty_type:
+          resize_style: contain
+          width:
+          height:
+          expandable:
+        cascade: true
+    _select_data: {}
+    _structures: {}
+    add_options:
+    create:
+      path: '{name|slugify}.md'
+      extra_data: {}
+      publish_to:
+      _inputs: {}
+      _select_data: {}
+      _structures: {}
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    new_preview_url:
+    schemas:
+      take10arvosSponsors:
+        path: /src/schemas/programmes/take10-arvos/sponsors.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: Sponsor
+        icon: handshake
+        preview:
+        _editables: {}
+        _inputs: {}
+        _select_data: {}
+        _structures: {}
+        create:
+        new_preview_url:
+    schema_key:
+  genlinkImages:
+    path: /src/content/genlinkImages
+    output: false
+    url:
+    filter:
+    parse_branch_index:
+    name: 'Images '
+    description: ''
+    icon: image
+    documentation:
+    preview:
+    sort:
+    sort_options:
+    singular_name:
+    singular_key:
+    _editables: {}
+    _enabled_editors:
+      - data
+    _inputs:
+      image:
+        type: image
+        options:
+          paths:
+            uploads: /src/content/genlinkImages
+            dam_uploads:
+            dam_static:
+          mime_type:
+          correct_orientation: true
+          empty_type:
+          resize_style: contain
+          width:
+          height:
+          expandable:
+        cascade: true
+    _select_data: {}
+    _structures: {}
+    add_options:
+    create:
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    new_preview_url:
+    schemas:
+      genlinkImages:
+        path: /src/schemas/programmes/gen-link/images.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: Gallery Image
+        icon: image
+        preview:
+        _editables: {}
+        _inputs: {}
+        _select_data: {}
+        _structures: {}
+        create:
+        new_preview_url:
+    schema_key:
+  trust:
+    path: /src/content/trust
+    output: true
+    url:
+    filter:
+      base:
+      include: []
+      exclude:
+    parse_branch_index:
+    name: Trust Members
+    description: ''
+    icon: people
+    documentation:
+    preview:
+      text:
+      subtext:
+      icon:
+      icon_color:
+      image: ''
+      metadata:
+        - text:
+          icon:
+          icon_color:
+          image:
+      gallery:
+        image:
+        icon:
+        icon_color:
+        fit:
+    sort:
+      key: order
+      order: ascending
+    sort_options:
+      - key: order
+        order: ascending
+        label: Order
+    singular_name:
+    singular_key:
+    _editables: {}
+    _enabled_editors:
+      - content
+    _inputs:
+      image:
+        type: image
+        options:
+          paths:
+            uploads: /src/content/trust/
+            dam_uploads:
+            dam_static:
+          mime_type:
+          correct_orientation: true
+          empty_type:
+          resize_style: contain
+          width:
+          height:
+          expandable:
+        cascade: true
+      position:
+        type: text
+        comment: E.g. Trustee
+        cascade: true
+      excerpt:
+        type: text
+        comment: Short initial description
+        cascade: true
+      order:
+        type: number
+        comment: Order of members on the Trust page
+        cascade: true
+    _select_data: {}
+    _structures: {}
+    add_options:
+    create:
+      path: '{name|slugify}.md'
+      extra_data: {}
+      publish_to:
+      _inputs: {}
+      _select_data: {}
+      _structures: {}
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    new_preview_url:
+    schemas:
+      trust:
+        path: /src/schemas/trust.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: Trust Member
+        icon: people
+        preview:
+        _editables: {}
+        _inputs: {}
+        _select_data: {}
+        _structures: {}
+        create:
+        new_preview_url:
+    schema_key:
+collection_groups:
+  - heading: Pages
+    collections:
+      - pages
+  - heading: News
+    collections:
+      - posts
+  - heading: Do Some Good
+    collections:
+      - dosomegoodImages
+      - dosomegoodSchools
+      - dosomegoodSponsors
+      - dosomegoodSupporters
+  - heading: Take 10
+    collections:
+      - take10Images
+      - take10Sponsors
+  - heading: Take 10 Arvo's
+    collections:
+      - take10arvosImages
+      - take10arvosSponsors
+  - heading: Generation Link
+    collections:
+      - genlinkImages
+  - heading: Team
+    collections:
+      - trust
+_inputs: {}
+_select_data: {}
+_structures: {}
+_editables: {}
+data_config: {}
+editor:
+  default_path:
+source_editor:
+  tab_size: 2
+  theme: monokai
+  show_gutter: true
+timezone: Pacific/Auckland

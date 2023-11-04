@@ -1,0 +1,100 @@
+---
+import Layout from "@/components/layouts/Layout.astro";
+import TextBanner from "@/components/TextBanner.astro";
+import Link from "@/components/pages/media/Link.astro";
+
+const title = "Media";
+---
+
+<Layout title={title}>
+  <TextBanner title={title} />
+
+  <section class="section-container space-y-10 text-center">
+    <p>
+      Something missing here? <a href="/contact/" rel="prefetch"
+        >Please get in touch!</a
+      >
+    </p>
+
+    <div>
+      <h2>2023</h2>
+
+      <Link
+        link="https://www.stuff.co.nz/national/131295499/a-night-out-with-the-volunteers-keeping-wellingtons-party-animals-safe"
+        author="Stuff, 17 March 2023"
+      >
+        A night out with the volunteers keeping Wellington's party animals safe
+      </Link>
+    </div>
+
+    <div>
+      <h2>2022</h2>
+
+      <Link
+        link="https://wellington.govt.nz/news-and-events/news-and-information/our-wellington/2022/02/take-10-a-city-safe-haven-for-rangatahi"
+        author="Wellington City Council, 10 February 2022"
+      >
+        Take 10: A city safe haven for rangatahi
+      </Link>
+    </div>
+
+    <div>
+      <h2>2021</h2>
+
+      <Link
+        link="https://wellington.scoop.co.nz/?p=136975"
+        author="Scoop, 15 June 2021"
+      >
+        Take 10 seeking more volunteers for weekends in CBD
+      </Link>
+    </div>
+
+    <div>
+      <h2>2020</h2>
+
+      <Link
+        link="https://www.stuff.co.nz/dominion-post/news/hutt-valley/123476077/christmas-appeal-doing-some-good-with-some-good-sandwiches"
+        author="Stuff, 2 December 2020"
+      >
+        Christmas appeal - Doing some good with some good sandwiches
+      </Link>
+
+      <Link
+        link="https://wellington.govt.nz/news-and-events/news-and-information/our-wellington/2020/10/fostering-young-minds-with-free-kai"
+        author="Wellington City Council, 15 October 2020"
+      >
+        Fostering young minds with free kai
+      </Link>
+
+      <Link
+        link="https://www.rnz.co.nz/news/national/425041/late-night-safe-zone-take-10-service-to-extend-operation-after-rising-violence"
+        author="Radio NZ, 2 August 2020"
+      >
+        Late-night safe zone Take 10 service to extend operation after rising
+        violence
+      </Link>
+    </div>
+
+    <div>
+      <h2>2019</h2>
+
+      <Link
+        link="https://wellington.govt.nz/news-and-events/news-and-information/our-wellington/2019/11/take-10"
+        author="Wellington City Council, 22 November 2019"
+      >
+        Take 10 brings mobile safe zone to the city
+      </Link>
+    </div>
+
+    <div>
+      <h2>2017</h2>
+
+      <Link
+        link="https://www.stuff.co.nz/national/97778917/alcoholfree-safe-zone-planned-for-wellingtons-courtenay-place"
+        author="Stuff, October 18 2017"
+      >
+        Alcohol-free ‘safe zone’ planned for Wellington’s Courtenay Place
+      </Link>
+    </div>
+  </section>
+</Layout>

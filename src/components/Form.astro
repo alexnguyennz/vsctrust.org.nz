@@ -1,0 +1,44 @@
+---
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<form
+  name={name}
+  method="POST"
+  action="/success/"
+  class="mx-auto grid max-w-xl gap-6 sm:grid-cols-2"
+>
+  <slot />
+
+  <input type="hidden" name="_subject" value={`Website Enquiry - ${name}`} />
+  <input type="hidden" name="_to" value="hello@vsctrust.org.nz" />
+  <input type="text" name="_gotcha" class="hidden" />
+
+  <button type="submit" class="shadow-button place-self-start bg-gray-600"
+    >Send</button
+  >
+</form>
+
+<style is:global>
+  input,
+  textarea {
+    @apply mt-1 appearance-none; /* reset Safari styles to fix inputs with box shadow */
+  }
+
+  form button[role="combobox"] {
+    @apply mt-1;
+  }
+
+  label span {
+    @apply text-red-500;
+  }
+
+  label.required:after {
+    @apply font-bold text-red-500;
+    content: " *";
+  }
+</style>

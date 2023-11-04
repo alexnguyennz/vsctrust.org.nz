@@ -1,0 +1,17 @@
+---
+interface Props {
+  link: string;
+  author: string;
+}
+
+const { link, author } = Astro.props;
+---
+
+<div>
+  <h3>
+    <a href={link} target="_blank" rel="noopener nofollow noreferrer"
+      ><slot /> 🔗</a
+    >
+  </h3>
+  <p class="text-sm italic">{author}</p>
+</div>

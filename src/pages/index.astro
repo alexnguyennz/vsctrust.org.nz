@@ -1,0 +1,56 @@
+---
+import { getCollection, getEntry } from "astro:content";
+
+import Layout from "@/components/layouts/Layout.astro";
+import Programmes from "@/components/pages/home/Programmes.astro";
+import { NewsSlider } from "@/components/slider/NewsSlider";
+import NewsCard from "@/components/pages/news/NewsCard.astro";
+import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
+import OurNumbers from "@/components/pages/home/OurNumbers.astro";
+
+const posts = (await getCollection("posts", ({ data }) => data.published)).sort(
+  (a, b) => Number(b.data.date) - Number(a.data.date),
+);
+
+const page = await getEntry("pages", "index");
+const { Content } = await page.render();
+---
+
+<Layout title={page.data.title}>
+  <Fragment slot="head">
+    <link rel="preload" href="/img/programmes/dosomegood.jpg" as="image" />
+    <link rel="preload" href="/img/programmes/take10.jpg" as="image" />
+    <link rel="preload" href="/img/programmes/take10-arvos.jpg" as="image" />
+    <link rel="preload" href="/img/programmes/gen-link.webp" as="image" />
+  </Fragment>
+
+  <Programmes page={page.data} />
+
+  <HowYouCanHelp />
+
+  <section>
+    <div class="section-container text-center">
+      <h2>Helping rangatahi and tamariki in Wellington</h2>
+
+      <Content />
+
+      <a href="/who-we-are/" class="shadow-button bg-gray-600" rel="prefetch"
+        >Who We Are</a
+      >
+    </div>
+  </section>
+
+  <section class="feature-section py-10">
+    <h2>News</h2>
+
+    <NewsSlider client:visible>
+      <div class="container px-5">
+        <div class="blaze-track">
+          {posts.map((post) => <NewsCard post={post} />)}
+        </div>
+      </div>
+    </NewsSlider>
+  </section>
+
+  <OurNumbers page={page.data} />
+</Layout>

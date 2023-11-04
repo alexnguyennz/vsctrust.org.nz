@@ -1,0 +1,8 @@
+.blaze-slider.dragging .blaze-track {
+  cursor: grabbing;
+}
+
+.blaze-track > * {
+  display: flex;
+  justify-content: center;
+}

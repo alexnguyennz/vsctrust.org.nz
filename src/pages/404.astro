@@ -1,0 +1,16 @@
+---
+import Layout from "@/components/layouts/Layout.astro";
+import TextBanner from "@/components/TextBanner.astro";
+
+const title = "404 - Page Not Found";
+---
+
+<Layout title={title}>
+  <TextBanner title={title} />
+  <section class="section-container flex flex-col justify-center">
+    <h2>Sorry, this page doesn't exist.</h2>
+    <a href="/" class="shadow-button self-center bg-gray-600" rel="prefetch"
+      >Home</a
+    >
+  </section>
+</Layout>

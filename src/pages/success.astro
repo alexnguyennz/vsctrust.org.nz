@@ -1,0 +1,18 @@
+---
+import Layout from "@/components/layouts/Layout.astro";
+import TextBanner from "@/components/TextBanner.astro";
+
+const title = "Message Sent";
+---
+
+<Layout title={title}>
+  <TextBanner title={title} />
+  <section class="section-container flex flex-col justify-center">
+    <h2 class="text-lg">
+      Thanks for your message - we'll get back to you as soon as possible.
+    </h2>
+    <a href="/" class="shadow-button self-center bg-gray-600" rel="prefetch"
+      >Home</a
+    >
+  </section>
+</Layout>

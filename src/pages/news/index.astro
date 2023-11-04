@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "@/components/layouts/Layout.astro";
+import TextBanner from "@/components/TextBanner.astro";
+import NewsGrid from "@/components/pages/news/NewsGrid.astro";
+import NewsCard from "@/components/pages/news/NewsCard.astro";
+import Pagination from "@/components/pages/news/Pagination.astro";
+
+const posts = (await getCollection("posts", ({ data }) => data.published)).sort(
+  (a, b) => Number(b.data.date) - Number(a.data.date),
+);
+
+const title = "News";
+---
+
+<Layout title={title}>
+  <TextBanner title={title} />
+
+  <section class="section-container space-y-6">
+    <NewsGrid>
+      {posts.slice(0, 8).map((post) => <NewsCard post={post} />)}
+    </NewsGrid>
+
+    <Pagination nextUrl="/news/2" />
+  </section>
+</Layout>

@@ -1,0 +1,80 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+import Layout from "@/components/layouts/Layout.astro";
+import Banner from "@/components/Banner.astro";
+import Gallery from "@/components/programmes/Gallery.astro";
+
+const images = await getCollection("genlinkImages");
+
+const page = await getEntry("pages", "gen-link");
+const { Content } = await page.render();
+---
+
+<Layout title={page.data.title}>
+  <Banner title={page.data.title} programme="gen-link" />
+
+  <section class="section-container space-y-6">
+    <div class="grid gap-6 sm:grid-cols-2">
+      <Image
+        src={import("@/assets/img/logo/gen-link.png")}
+        width="256"
+        height="256"
+        alt="Gen Link logo"
+        fetchpriority="high"
+        loading="eager"
+        class="place-self-center"
+        transition:name="programme-image-gen-link"
+      />
+      <div>
+        <Content />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-container">
+    <h2>How it works</h2>
+    <p>
+      A van will pick up seniors and transport them to the Do Some Good school
+      in their area. This will happen weekly across the schools. The Generation
+      Link initiative will act as the facilitator between young people and
+      seniors.
+    </p>
+    <p>What are the benefits of Generation Link?</p>
+    <ul>
+      <li>
+        Strengthening communities to become more age-friendly by breaking down
+        barriers between ages and stereotypes by one age group toward another
+      </li>
+      <li>
+        Promoting understanding, respect, and sharing of ideas, knowledge, and
+        experience
+      </li>
+      <li>
+        Teaching the young about aging while teaching the elderly about youth
+      </li>
+      <li>
+        Establishing relationships that help diminish the impact of declining
+        physical and mental health in older people
+      </li>
+      <li>Improving health outcomes and quality-of-life for the elderly</li>
+      <li>
+        Building self-esteem and satisfaction for both age groups through the
+        learning of new skills
+      </li>
+    </ul>
+  </section>
+
+  <section class="section-container text-center">
+    <h2>Want to help?</h2>
+
+    <p>{page.data.wantToHelpDescription}</p>
+
+    <a href="/volunteer/" class="shadow-button bg-blue-500" rel="prefetch"
+      >Volunteer</a
+    >
+  </section>
+
+  <Gallery images={images} />
+</Layout>

@@ -1,0 +1,51 @@
+---
+import ProgrammeGrid from "@/components/programmes/ProgrammeGrid.astro";
+import ProgrammeCard from "@/components/programmes/ProgrammeCard.astro";
+
+interface Props {
+  page: {
+    dosomegood: string;
+    take10: string;
+    take10arvos: string;
+    genlink: string;
+  };
+}
+
+const {
+  page: { dosomegood, take10, take10arvos, genlink },
+} = Astro.props;
+---
+
+<section class="section-container">
+  <ProgrammeGrid>
+    <ProgrammeCard programme="dosomegood">
+      <p>
+        {dosomegood}
+      </p>
+    </ProgrammeCard>
+
+    <ProgrammeCard programme="take10">
+      <p>
+        {take10}
+      </p>
+    </ProgrammeCard>
+
+    <ProgrammeCard programme="take10-arvos">
+      <p>
+        {take10arvos}
+      </p>
+    </ProgrammeCard>
+
+    <ProgrammeCard programme="gen-link">
+      <p>
+        {genlink}
+      </p>
+    </ProgrammeCard>
+  </ProgrammeGrid>
+</section>
+
+<style>
+  p {
+    @apply mb-0;
+  }
+</style>

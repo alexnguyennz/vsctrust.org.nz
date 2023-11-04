@@ -1,0 +1,102 @@
+---
+import "blaze-slider/dist/blaze.css";
+
+import { Icon } from "astro-icon";
+---
+
+<div class="blaze-slider">
+  <div class="blaze-container">
+    <div class="blaze-track-container">
+      <div class="blaze-track"><slot /></div>
+    </div>
+  </div>
+
+  <div class="mt-4 flex justify-center gap-5">
+    <button class="blaze-prev"
+      ><Icon pack="tabler" name="chevron-left" class="h-6 w-6" /></button
+    >
+    <button class="blaze-next"
+      ><Icon pack="tabler" name="chevron-right" class="h-6 w-6" /></button
+    >
+  </div>
+</div>
+
+<script>
+  import BlazeSlider from "blaze-slider";
+
+  document.querySelectorAll(".blaze-slider").forEach((el) => {
+    new BlazeSlider(el as HTMLElement, {
+      all: {
+        slidesToScroll: 1,
+        slidesToShow: 5,
+        slideGap: "2.5rem",
+        loop: true,
+        draggable: false,
+        enableAutoplay: false,
+        stopAutoplayOnInteraction: false,
+        autoplayInterval: 3000,
+        enablePagination: true,
+        transitionDuration: 500,
+        transitionTimingFunction: "ease",
+      },
+      "(max-width: 1280px)": {
+        slidesToShow: 4,
+      },
+      "(max-width: 1024px)": {
+        slidesToShow: 3,
+      },
+      "(max-width: 768px)": {
+        slidesToShow: 2,
+      },
+      "(max-width: 640px)": {
+        slidesToShow: 1,
+      },
+    });
+  });
+</script>
+
+<style is:global>
+  .blaze-slider.dragging .blaze-track {
+    cursor: grabbing;
+  }
+
+  .blaze-track > * {
+    display: flex;
+    justify-content: center;
+  }
+
+  .blaze-slider {
+    --slides-to-show: 5;
+  }
+
+  @media (max-width: 1280px) {
+    .blaze-slider {
+      --slides-to-show: 4;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .blaze-slider {
+      --slides-to-show: 3;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .blaze-slider {
+      --slides-to-show: 2;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .blaze-slider {
+      --slides-to-show: 1;
+    }
+  }
+
+  /*.blaze-slider {
+    -webkit-mask-image: linear-gradient(270deg, #0000, #000 25%);
+    mask-image: linear-gradient(270deg, #0000, #000 25%);
+    overflow: hidden;
+    position: relative;
+  } */
+</style>

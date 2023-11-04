@@ -1,0 +1,23 @@
+.blaze-slider {
+  --slide-gap: 2.5rem;
+  --slides-to-show: 4;
+}
+
+@media (max-width: 1024px) {
+  .blaze-slider {
+    --slide-gap: 1.5rem;
+    --slides-to-show: 4;
+  }
+}
+
+@media (max-width: 768px) {
+  .blaze-slider {
+    --slides-to-show: 3;
+  }
+}
+
+@media (max-width: 640px) {
+  .blaze-slider {
+    --slides-to-show: 2;
+  }
+}

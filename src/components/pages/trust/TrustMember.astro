@@ -1,0 +1,52 @@
+---
+import { getEntry, type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+import { Collapsible } from "@/components/Collapsible";
+
+interface Props {
+  trust: CollectionEntry<"trust">;
+}
+
+const { trust } = Astro.props;
+
+const entry = await getEntry("trust", trust.slug);
+const { Content } = await entry!.render();
+---
+
+<div>
+  <div
+    class="shadow-border flex flex-col gap-4 rounded-md bg-amber-50 p-4 transition hover:translate-y-1 sm:min-h-[550px] md:min-h-[525px] lg:min-h-[550px] 2xl:min-h-[525px]"
+  >
+    <Image
+      src={trust.data.image}
+      width="192"
+      height="192"
+      alt=`${trust.data.name} profile image`
+      class="mx-auto rounded-full"
+    />
+    <div>
+      <h2 class="mb-0 text-center text-lg font-bold">{trust.data.name}</h2>
+      <h3 class="text-center">{trust.data.position}</h3>
+    </div>
+
+    {
+      trust.slug === "leigh-keown" && (
+        <a
+          href="mailto:hello@vsctrust.org.nz"
+          class="shadow-button mx-auto bg-gray-600"
+        >
+          Contact
+        </a>
+      )
+    }
+
+    <p class="mb-0">{trust.data.excerpt}</p>
+
+    <div class="mt-auto">
+      <Collapsible client:visible>
+        <Content />
+      </Collapsible>
+    </div>
+  </div>
+</div>

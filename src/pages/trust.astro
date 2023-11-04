@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "@/components/layouts/Layout.astro";
+import TextBanner from "@/components/TextBanner.astro";
+import TrustMember from "@/components/pages/trust/TrustMember.astro";
+
+const trustMembers = (await getCollection("trust")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const title = "The Trust";
+---
+
+<Layout title={title}>
+  <TextBanner title={title} />
+
+  <section class="section-container">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {trustMembers.map((trust) => <TrustMember trust={trust} />)}
+    </div>
+  </section>
+</Layout>

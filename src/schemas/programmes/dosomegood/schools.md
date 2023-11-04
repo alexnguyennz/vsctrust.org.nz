@@ -1,0 +1,10 @@
+---
+name:
+location:
+tamariki: 
+partnerDate:
+website:
+sponsorImage:
+sponsorUrl:
+order:
+---
