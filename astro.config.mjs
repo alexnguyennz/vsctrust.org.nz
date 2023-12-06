@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import prefetch from "@astrojs/prefetch";
 import sitemap from "@astrojs/sitemap";
-import mouseoverDirective from "/src/lib/client-directives/register.ts";
+import mouseoverDirective from "/src/lib/client-directives/register";
 
 // https://astro.build/config
 export default defineConfig({

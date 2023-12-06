@@ -1,7 +1,8 @@
-type DirectiveLoad = () => Promise<() => Promise<void>>;
-
-export default (load: DirectiveLoad) => {
-  window.addEventListener(
+/**
+ * @type {import('astro').ClientDirective}
+ */
+export default (load, opts, element) => {
+  element.addEventListener(
     "mouseover",
     async () => {
       const hydrate = await load();
