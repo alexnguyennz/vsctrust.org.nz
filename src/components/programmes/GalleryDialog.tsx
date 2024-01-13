@@ -6,13 +6,11 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-import { Image } from "astro:assets";
-
 export function GalleryDialog({
   fullImage,
   children,
 }: {
-  fullImage?: typeof Image;
+  fullImage?: React.ReactNode;
   children?: React.ReactNode;
 }) {
   return (
