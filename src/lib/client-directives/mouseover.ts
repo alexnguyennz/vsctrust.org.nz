@@ -1,7 +1,6 @@
-/**
- * @type {import('astro').ClientDirective}
- */
-export default (load, opts, element) => {
+import type { ClientDirective } from "astro";
+
+export default (function (load, _opts, element) {
   element.addEventListener(
     "mouseover",
     async () => {
@@ -10,4 +9,4 @@ export default (load, opts, element) => {
     },
     { once: true },
   );
-};
+} satisfies ClientDirective);
