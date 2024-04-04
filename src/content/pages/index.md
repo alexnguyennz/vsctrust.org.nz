@@ -18,4 +18,4 @@ take10Visitors: 21843
 waterGiven: 947256
 mealsForTamariki: 194357
 ---
-We are a charity who support tamariki by providing food in schools/kindy’s/Kohanaga Reo’s, young people in the city on Friday and Saturday nights, rangatahi after school, and older people who may be feeling lonely or isolated.
+We support tamariki by providing food in schools/kindy’s/Kohanaga Reo’s, young people in the city on Friday and Saturday nights, rangatahi after school, and older people who may be feeling lonely or isolated.
