@@ -3,7 +3,7 @@ _schema: posts
 title: 'The Impact of Take 10 Arvo''s - from a volunteer lense '
 date: 2024-06-12T00:00:00+12:00
 author: leigh-keown
-image: /src/content/posts/arvo-s-team-3.jpg
+image: /src/content/posts/arvo-s-team-5.jpg
 published: true
 ---
 &nbsp;
