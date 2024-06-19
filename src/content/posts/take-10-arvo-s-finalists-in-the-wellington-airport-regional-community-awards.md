@@ -15,6 +15,6 @@ The Arvo's team makes such a big difference to so many young people by positivel
 
 A big thank you to Jess, Albion , Alice, Rose, Emma & Aaliah who give up their time each week.
 
-We're looking forward to the awards ceremony at the of July.
+We're looking forward to the awards ceremony at the end of July!
 
 &nbsp;
