@@ -3,7 +3,7 @@ _schema: posts
 title: >-
   Take 10 Arvo's - Finalists in the Wellington Airport Regional Community
   Awards 
-date:
+date: 2024-06-19T00:00:00+12:00
 author: leigh-keown
 image: >-
   /src/content/posts/wellington-airport-community-awards-2024-wellington-city-finalist-icon-f-002.jpg
