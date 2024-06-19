@@ -6,7 +6,7 @@ title: >-
 date: 2024-06-19T00:00:00+12:00
 author: leigh-keown
 image: >-
-  /src/content/posts/wellington-airport-community-awards-2024-wellington-city-finalist-icon-f-002.jpg
+  /src/content/posts/wellington-airport-community-awards-2024-wellington-city-finalist-icon-f-002.png
 published: true
 ---
 Congratulations to the fabulous Take 10 Arvo's team who are finalists in the Wellington Airport Regional Community Awards, Education,&  Child Youth Development category.
