@@ -34,7 +34,7 @@ const Card = ({ name, quote }: { name: string; quote: string }) => {
           <figcaption className="font-bold">{name}</figcaption>
         </div>
       </div>
-      <blockquote className="mt-2">{quote}</blockquote>
+      <blockquote>{quote}</blockquote>
     </figure>
   );
 };
