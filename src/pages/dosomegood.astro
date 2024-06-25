@@ -2,7 +2,7 @@
 import { getCollection, getEntry } from "astro:content";
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Banner from "@/components/Banner.astro";
@@ -44,7 +44,7 @@ const { Content } = await page.render();
           {
             page.data.awards.map((award: string) => (
               <li>
-                <Icon pack="lucide" name="award" class="h-6 w-6" />
+                <Icon name="lucide:award" class="h-6 w-6" />
                 {award}
               </li>
             ))
@@ -68,7 +68,7 @@ const { Content } = await page.render();
     >
       <source src="/dosomegood/video.webm" type="video/webm" />
       <source src="/dosomegood/video.mp4" type="video/mp4" />
-       Your browser does not support the video tag.
+      Your browser does not support the video tag.
     </video>
   </section>
 

@@ -2,7 +2,7 @@
 import { getEntry } from "astro:content";
 import { Image } from "astro:assets";
 
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
 import TextBanner from "@/components/TextBanner.astro";
@@ -29,15 +29,15 @@ const page = await getEntry("pages", "donate");
       <p class="text-center font-extrabold">Your donation will go towards:</p>
       <ul class="space-y-2">
         <li>
-          <Icon pack="tabler" name="bottle" class="h-6 w-6" />
+          <Icon name="tabler:bottle" class="h-6 w-6" />
           {page.data.items[0]}
         </li>
         <li>
-          <Icon pack="lucide" name="person-standing" class="h-6 w-6" />
+          <Icon name="lucide:person-standing" class="h-6 w-6" />
           {page.data.items[1]}
         </li>
         <li>
-          <Icon pack="lucide" name="shirt" class="h-6 w-6" />
+          <Icon name="lucide:shirt" class="h-6 w-6" />
           {page.data.items[2]}
         </li>
         <li>
@@ -45,11 +45,11 @@ const page = await getEntry("pages", "donate");
           {page.data.items[3]}
         </li>
         <li>
-          <Icon pack="tabler" name="tools-kitchen-2" class="h-6 w-6" />
+          <Icon name="tabler:tools-kitchen-2" class="h-6 w-6" />
           {page.data.items[4]}
         </li>
         <li class="flex items-center gap-2">
-          <Icon pack="tabler" name="plus" class="h-6 w-6" />
+          <Icon name="tabler:plus" class="h-6 w-6" />
           {page.data.items[5]}
         </li>
       </ul>

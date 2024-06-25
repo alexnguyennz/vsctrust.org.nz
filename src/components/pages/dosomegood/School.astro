@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 
 interface Props {
@@ -23,16 +23,16 @@ const { school } = Astro.props;
 
   <div class="text-sm">
     <h4>
-      <Icon pack="tabler" name="users" class="h-4 w-4" />
+      <Icon name="tabler:users" class="h-4 w-4" />
       {school.data.tamariki} tamariki
     </h4>
     <h4>
-      <Icon pack="tabler" name="location" class="h-4 w-4" />
+      <Icon name="tabler:location" class="h-4 w-4" />
       {school.data.location}
     </h4>
     <h4>
-      <Icon pack="tabler" name="calendar" class="h-4 w-4" />
-       Partnered {school.data.partnerDate}
+      <Icon name="tabler:calendar" class="h-4 w-4" />
+      Partnered {school.data.partnerDate}
     </h4>
   </div>
 
