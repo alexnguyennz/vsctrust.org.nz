@@ -7,9 +7,21 @@ const posts = defineCollection({
     z.object({
       title: z.string(),
       date: z.date(),
-      author: reference("trust"),
+      author: reference("team"),
       image: image(),
       published: z.boolean(),
+    }),
+});
+
+const team = defineCollection({
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      position: z.string(),
+      image: image(),
+      excerpt: z.string(),
+      order: z.number(),
     }),
 });
 
@@ -86,5 +98,6 @@ export const collections = {
   take10arvosImages,
   take10arvosSponsors,
   genlinkImages,
+  team,
   trust,
 };

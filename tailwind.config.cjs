@@ -15,6 +15,18 @@ module.exports = {
       },
       animation: {
         show: "show 0.2s 1s forwards",
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
       },
       boxShadow: {
         box: "1px 1px 0 0 black, 2px 2px 0 0 black, 3px 3px 0 0 black, 4px 4px 0 0 black, 5px 5px 0 0 black",

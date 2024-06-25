@@ -37,7 +37,7 @@ footer a:hover {
 }
 
 .section-container {
-  @apply container mx-auto px-5 py-10;
+  @apply container mx-auto px-5 py-6;
 }
 
 /* Misc */

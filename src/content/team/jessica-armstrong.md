@@ -1,7 +1,7 @@
 ---
 name: Jessica Armstrong
 position: Youth Coordinator
-image: /src/content/trust/jessica-armstrong.png
+image: /src/content/team/jessica-armstrong.png
 excerpt: Jess has a background in the events and hospitality industry with a focus on operations, planning, and community engagement.
 order: 7
 ---
