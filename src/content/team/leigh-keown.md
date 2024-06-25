@@ -1,7 +1,7 @@
 ---
 name: Leigh Keown
 position: Operations Manager
-image: /src/content/trust/leigh-keown.png
+image: /src/content/team/leigh-keown.png
 excerpt: Leigh takes charge of the day-to-day running of both Take 10 and Do Some Good. Having watched and supported the Trust’s journey with Clint since its conception, it’s exciting for Leigh to be on board.
 order: 6
 ---

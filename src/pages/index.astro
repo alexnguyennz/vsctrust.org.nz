@@ -3,6 +3,7 @@ import { getCollection, getEntry } from "astro:content";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Programmes from "@/components/pages/home/Programmes.astro";
+import { Quotes } from "@/components/pages/home/Quotes";
 import { NewsSlider } from "@/components/slider/NewsSlider";
 import NewsCard from "@/components/pages/news/NewsCard.astro";
 import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
@@ -40,16 +41,22 @@ const { Content } = await page.render();
     </div>
   </section>
 
-  <section class="feature-section py-10">
-    <h2>News</h2>
+  <section>
+    <div class="section-container"><Quotes client:visible /></div>
+  </section>
 
-    <NewsSlider client:visible>
-      <div class="container px-5">
-        <div class="blaze-track">
-          {posts.map((post) => <NewsCard post={post} />)}
+  <section>
+    <div class="section-container">
+      <h2>News</h2>
+
+      <NewsSlider client:visible>
+        <div class="container px-5">
+          <div class="blaze-track">
+            {posts.map((post) => <NewsCard post={post} />)}
+          </div>
         </div>
-      </div>
-    </NewsSlider>
+      </NewsSlider>
+    </div>
   </section>
 
   <OurNumbers page={page.data} />

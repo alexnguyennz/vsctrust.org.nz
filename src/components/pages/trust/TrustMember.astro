@@ -5,12 +5,13 @@ import { Image } from "astro:assets";
 import { Collapsible } from "@/components/Collapsible";
 
 interface Props {
-  trust: CollectionEntry<"trust">;
+  trust: CollectionEntry<"trust"> | CollectionEntry<"team">;
+  category: "trust" | "team";
 }
 
-const { trust } = Astro.props;
+const { trust, category } = Astro.props;
 
-const entry = await getEntry("trust", trust.slug);
+const entry = await getEntry(category, trust.slug);
 const { Content } = await entry!.render();
 ---
 
