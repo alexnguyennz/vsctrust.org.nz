@@ -8,5 +8,5 @@ website: >-
   https://www.wmkindergartens.org.nz/our-kindergartens/find-a-kindergarten/show/31-Johnsonville%20West%20Kindergarten
 sponsorImage:
 sponsorUrl:
-order:
+order: 19
 ---
