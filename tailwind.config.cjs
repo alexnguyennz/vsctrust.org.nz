@@ -7,18 +7,16 @@ module.exports = {
       center: true,
     },
     extend: {
-      keyframes: {
-        show: {
-          "0%": { opacity: 0 },
-          "100%": { opacity: 100 },
-        },
-      },
       animation: {
         show: "show 0.2s 1s forwards",
         marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
       keyframes: {
+        show: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 100 },
+        },
         marquee: {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(calc(-100% - var(--gap)))" },

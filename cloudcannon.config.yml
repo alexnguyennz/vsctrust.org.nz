@@ -837,6 +837,106 @@ collections_config:
         create:
         new_preview_url:
     schema_key:
+  team:
+    path: /src/content/team
+    output: true
+    url:
+    filter:
+      base:
+      include: [ ]
+      exclude:
+    parse_branch_index:
+    name: Team Members
+    description: ''
+    icon: people
+    documentation:
+    preview:
+      text:
+      subtext:
+      icon:
+      icon_color:
+      image: ''
+      metadata:
+        - text:
+          icon:
+          icon_color:
+          image:
+      gallery:
+        image:
+        icon:
+        icon_color:
+        fit:
+    sort:
+      key: order
+      order: ascending
+    sort_options:
+      - key: order
+        order: ascending
+        label: Order
+    singular_name:
+    singular_key:
+    _editables: { }
+    _enabled_editors:
+      - content
+    _inputs:
+      image:
+        type: image
+        options:
+          paths:
+            uploads: /src/content/team/
+            dam_uploads:
+            dam_static:
+          mime_type:
+          correct_orientation: true
+          empty_type:
+          resize_style: contain
+          width:
+          height:
+          expandable:
+        cascade: true
+      position:
+        type: text
+        comment: E.g. Team Member
+        cascade: true
+      excerpt:
+        type: text
+        comment: Short initial description
+        cascade: true
+      order:
+        type: number
+        comment: Order of members on the Team page
+        cascade: true
+    _select_data: { }
+    _structures: { }
+    add_options:
+    create:
+      path: '{name|slugify}.md'
+      extra_data: { }
+      publish_to:
+      _inputs: { }
+      _select_data: { }
+      _structures: { }
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    new_preview_url:
+    schemas:
+      trust:
+        path: /src/schemas/team.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: Team Member
+        icon: people
+        preview:
+        _editables: { }
+        _inputs: { }
+        _select_data: { }
+        _structures: { }
+        create:
+        new_preview_url:
+    schema_key:
 collection_groups:
   - heading: Pages
     collections:
@@ -863,6 +963,7 @@ collection_groups:
       - genlinkImages
   - heading: Team
     collections:
+      - team
       - trust
 _inputs: {}
 _select_data: {}
