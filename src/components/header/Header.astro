@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 
 import { Navigation } from "./Navigation";
-import { Navigation as NavigationV2 } from "./NavigationV2";
 import { MobileSheet } from "./MobileSheet";
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -27,8 +26,6 @@ const pathname = new URL(Astro.request.url).pathname;
 
     <div class="hidden lg:block">
       <Navigation pathname={pathname} client:mouseover />
-
-      <!--<NavigationV2 pathname={pathname} client:visible />-->
     </div>
 
     <div class="lg:hidden">
