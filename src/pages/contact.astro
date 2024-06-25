@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
 import TextBanner from "@/components/TextBanner.astro";
@@ -18,12 +18,12 @@ const title = "Contact Us";
 
     <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
       <div>
-        <Icon pack="tabler" name="at" class="mx-auto h-5 w-5" />
+        <Icon name="tabler:at" class="mx-auto h-5 w-5" />
         <a href="mailto:hello@vsctrust.org.nz">hello@vsctrust.org.nz</a>
       </div>
 
       <div>
-        <Icon pack="tabler" name="phone" class="mx-auto h-5 w-5" />
+        <Icon name="tabler:phone" class="mx-auto h-5 w-5" />
         <a href="tel:+64274448672">027 444 8672</a>
       </div>
     </div>

@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 
 import { Rainbow } from "./Rainbow";
 
@@ -27,11 +27,11 @@ import { aboutUsLinks, ourWorkLinks, getInvolvedLinks } from "@/lib/links";
 
           <ul class="space-y-1">
             <li class="flex items-center gap-1">
-              <Icon pack="tabler" name="at" class="h-5 w-5" />
+              <Icon name="tabler:at" class="h-5 w-5" />
               <a href="mailto:hello@vsctrust.org.nz">hello@vsctrust.org.nz</a>
             </li>
             <li class="flex items-center gap-1 place-self-center">
-              <Icon pack="tabler" name="phone" class="h-5 w-5" />
+              <Icon name="tabler:phone" class="h-5 w-5" />
               <a href="tel:+64274448672">027 444 8672</a>
             </li>
           </ul>
@@ -194,7 +194,7 @@ import { aboutUsLinks, ourWorkLinks, getInvolvedLinks } from "@/lib/links";
 
     <div class="flex flex-col items-center">
       <p class="mb-2 flex items-center gap-1">
-        <Icon pack="tabler" name="copyright" class="h-4 w-4" />
+        <Icon name="tabler:copyright" class="h-4 w-4" />
         {new Date().getFullYear()} Vulnerable Support Charitable Trust
       </p>
 
