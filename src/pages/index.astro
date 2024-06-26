@@ -4,7 +4,7 @@ import { getCollection, getEntry } from "astro:content";
 import Layout from "@/components/layouts/Layout.astro";
 import Programmes from "@/components/pages/home/Programmes.astro";
 import { Quotes } from "@/components/pages/home/Quotes";
-import { NewsSlider } from "@/components/slider/NewsSlider";
+
 import NewsCard from "@/components/pages/news/NewsCard.astro";
 import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
 import OurNumbers from "@/components/pages/home/OurNumbers.astro";
@@ -35,9 +35,7 @@ const { Content } = await page.render();
 
       <Content />
 
-      <a href="/who-we-are/" class="shadow-button bg-gray-600" rel="prefetch"
-        >Who We Are</a
-      >
+      <a href="/who-we-are/" class="shadow-button bg-gray-600">Who We Are</a>
     </div>
   </section>
 
@@ -47,17 +45,24 @@ const { Content } = await page.render();
 
   <section>
     <div class="section-container">
-      <h2>News</h2>
+      <h2>Latest News</h2>
 
-      <NewsSlider client:visible>
-        <div class="container px-5">
-          <div class="blaze-track">
-            {posts.map((post) => <NewsCard post={post} />)}
-          </div>
-        </div>
-      </NewsSlider>
+      <div
+        class="news-grid grid gap-6 sm:grid-cols-2 sm:gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
+      >
+        {posts.slice(0, 5).map((post) => <NewsCard post={post} />)}
+      </div>
     </div>
   </section>
 
   <OurNumbers page={page.data} />
 </Layout>
+
+<style>
+  .news-grid {
+    grid-template-rows: 1fr;
+    grid-auto-rows: 0;
+    row-gap: 0;
+    overflow: hidden;
+  }
+</style>

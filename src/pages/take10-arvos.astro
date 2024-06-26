@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 import Layout from "@/components/layouts/Layout.astro";
 import Banner from "@/components/Banner.astro";
 import Gallery from "@/components/programmes/Gallery.astro";
-import { Slider } from "@/components/slider/Slider";
+import Marquee from "../components/ui/marquee";
 
 const images = await getCollection("take10arvosImages");
 const sponsors = await getCollection("take10arvosSponsors");
@@ -49,39 +49,41 @@ const { Content } = await page.render();
   <section class="section-container">
     <h2>Sponsors</h2>
 
-    <Slider client:visible>
-      <div class="blaze-track flex items-center justify-center">
-        {
-          sponsors.map(({ data }) =>
-            data.website ? (
-              <a
-                href={data.website}
-                target="_blank"
-                rel="noopener nofollow noreferrer"
-              >
-                <Image
-                  src={data.image as ImageMetadata}
-                  height="64"
-                  alt={data.name!}
-                  loading="eager"
-                  class="mx-auto"
-                />
-              </a>
-            ) : (
-              <div>
-                <Image
-                  src={data.image as ImageMetadata}
-                  height="64"
-                  alt={data.name!}
-                  loading="eager"
-                  class="mx-auto"
-                />
-              </div>
-            ),
-          )
-        }
-      </div>
-    </Slider>
+    <Marquee
+      pauseOnHover
+      className="gap-10 [--duration:30s] [--gap:4rem]"
+      client:visible
+    >
+      {
+        sponsors.map(({ data: sponsor }) =>
+          sponsor.website ? (
+            <a
+              href={sponsor.website}
+              target="_blank"
+              rel="noopener nofollow noreferrer"
+            >
+              <Image
+                src={sponsor.image as ImageMetadata}
+                height="64"
+                alt={sponsor.name!}
+                loading="eager"
+                class="mx-auto"
+              />
+            </a>
+          ) : (
+            <div>
+              <Image
+                src={sponsor.image as ImageMetadata}
+                height="64"
+                alt={sponsor.name!}
+                loading="eager"
+                class="mx-auto"
+              />
+            </div>
+          ),
+        )
+      }
+    </Marquee>
   </section>
 
   <Gallery images={images} />

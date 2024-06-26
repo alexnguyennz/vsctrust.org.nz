@@ -22,7 +22,7 @@ export function Navigation({ pathname }: { pathname: string }) {
         <NavigationMenuItem>
           <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="w-[250px] p-3">
+            <ul className="w-[225px] space-y-1 p-3">
               {aboutUsLinks.map((link) => (
                 <ListItem
                   key={link.title}
@@ -39,7 +39,7 @@ export function Navigation({ pathname }: { pathname: string }) {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Our Work</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="w-[250px] p-3">
+            <ul className="w-[225px] space-y-1 p-3">
               {ourWorkLinks.map((link) => (
                 <ListItem
                   key={link.title}
@@ -56,7 +56,7 @@ export function Navigation({ pathname }: { pathname: string }) {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Get Involved</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="w-[250px] p-3">
+            <ul className="w-[225px] space-y-1 p-3">
               {getInvolvedLinks.map((link) => (
                 <ListItem
                   key={link.title}
