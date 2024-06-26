@@ -24,7 +24,6 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "astro": "4.11.1",
     "astro-icon": "1.1.0",
-    "blaze-slider": "1.9.3",
     "class-variance-authority": "0.7.0",
     "clsx": "2.1.1",
     "framer-motion": "^11.2.12",

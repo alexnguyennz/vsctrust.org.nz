@@ -10,8 +10,8 @@ import Banner from "@/components/Banner.astro";
 import { Collapsible } from "@/components/Collapsible";
 import School from "@/components/pages/dosomegood/School.astro";
 import Gallery from "@/components/programmes/Gallery.astro";
-import { SmallSlider } from "@/components/slider/SmallSlider";
 import poster from "@/assets/img/dosomegood/poster.png";
+import Marquee from "../components/ui/marquee";
 
 const images = await getCollection("dosomegoodImages");
 const sponsors = await getCollection("dosomegoodSponsors");
@@ -120,76 +120,82 @@ const { Content } = await page.render();
       <div>
         <h2>Sponsors</h2>
 
-        <SmallSlider client:visible>
-          <div class="blaze-track flex items-center justify-center">
-            {
-              sponsors.map(({ data }) =>
-                data.website ? (
-                  <a
-                    href={data.website}
-                    target="_blank"
-                    rel="noopener nofollow noreferrer"
-                  >
-                    <Image
-                      src={data.image}
-                      height="64"
-                      alt={data.name}
-                      loading="eager"
-                      class="mx-auto"
-                    />
-                  </a>
-                ) : (
-                  <div>
-                    <Image
-                      src={data.image}
-                      height="64"
-                      alt={data.name}
-                      loading="eager"
-                      class="mx-auto"
-                    />
-                  </div>
-                ),
-              )
-            }
-          </div>
-        </SmallSlider>
+        <Marquee
+          pauseOnHover
+          className="gap-10 [--duration:30s] [--gap:4rem]"
+          client:visible
+        >
+          {
+            sponsors.map(({ data: sponsor }) =>
+              sponsor.website ? (
+                <a
+                  href={sponsor.website}
+                  target="_blank"
+                  rel="noopener nofollow noreferrer"
+                >
+                  <Image
+                    src={sponsor.image as ImageMetadata}
+                    height="64"
+                    alt={sponsor.name!}
+                    loading="eager"
+                    class="mx-auto"
+                  />
+                </a>
+              ) : (
+                <div>
+                  <Image
+                    src={sponsor.image as ImageMetadata}
+                    height="64"
+                    alt={sponsor.name!}
+                    loading="eager"
+                    class="mx-auto"
+                  />
+                </div>
+              ),
+            )
+          }
+        </Marquee>
       </div>
+
       <div>
         <h2>Supporters</h2>
 
-        <SmallSlider client:visible>
-          <div class="blaze-track flex items-center justify-center">
-            {
-              supporters.map(({ data }) =>
-                data.website ? (
-                  <a
-                    href={data.website}
-                    target="_blank"
-                    rel="noopener nofollow noreferrer"
-                  >
-                    <Image
-                      src={data.image as ImageMetadata}
-                      height="64"
-                      alt={data.name!}
-                      loading="eager"
-                      class="mx-auto"
-                    />
-                  </a>
-                ) : (
-                  <div>
-                    <Image
-                      src={data.image as ImageMetadata}
-                      height="64"
-                      alt={data.name!}
-                      loading="eager"
-                      class="mx-auto"
-                    />
-                  </div>
-                ),
-              )
-            }
-          </div>
-        </SmallSlider>
+        <Marquee
+          reverse
+          pauseOnHover
+          className="gap-10 [--duration:20s] [--gap:4rem]"
+          client:visible
+        >
+          {
+            supporters.map(({ data }) =>
+              data.website ? (
+                <a
+                  href={data.website}
+                  target="_blank"
+                  rel="noopener nofollow noreferrer"
+                >
+                  <Image
+                    src={data.image as ImageMetadata}
+                    height="64"
+                    alt={data.name!}
+                    loading="eager"
+                    class="mx-auto"
+                  />
+                </a>
+              ) : (
+                <div>
+                  <Image
+                    src={data.image as ImageMetadata}
+                    height="64"
+                    alt={data.name!}
+                    loading="eager"
+                    class="mx-auto"
+                  />
+                </div>
+              ),
+            )
+          }
+        </Marquee>
       </div>
     </div>
   </section>
