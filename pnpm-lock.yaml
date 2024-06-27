@@ -39,7 +39,7 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-tooltip':
-        specifier: ^1.0.7
+        specifier: 1.0.7
         version: 1.0.7(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       astro:
         specifier: 4.11.1
@@ -56,9 +56,6 @@ importers:
       framer-motion:
         specifier: ^11.2.12
         version: 11.2.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      lucide-react:
-        specifier: 0.396.0
-        version: 0.396.0(react@18.3.1)
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -82,17 +79,23 @@ importers:
         version: 5.5.2
     devDependencies:
       '@iconify-json/lucide':
-        specifier: ^1.1.195
+        specifier: 1.1.195
         version: 1.1.195
       '@iconify-json/tabler':
-        specifier: ^1.1.114
+        specifier: 1.1.114
         version: 1.1.114
+      '@tabler/icons-react':
+        specifier: 3.7.0
+        version: 3.7.0(react@18.3.1)
       '@types/react':
         specifier: 18.3.3
         version: 18.3.3
       '@types/react-dom':
         specifier: 18.3.0
         version: 18.3.0
+      lucide-react:
+        specifier: 0.396.0
+        version: 0.396.0(react@18.3.1)
       prettier:
         specifier: 3.3.2
         version: 3.3.2
@@ -1063,6 +1066,14 @@ packages:
 
   '@shikijs/core@1.9.0':
     resolution: {integrity: sha512-cbSoY8P/jgGByG8UOl3jnP/CWg/Qk+1q+eAKWtcrU3pNoILF8wTsLB0jT44qUBV8Ce1SvA9uqcM9Xf+u3fJFBw==}
+
+  '@tabler/icons-react@3.7.0':
+    resolution: {integrity: sha512-8AU4oO9pgLhHLOSGAJIsRhsTy7w8D7uKBlR0DIFxaILFA1fe2rC4wrNGYUtIFei82y41OuXz9vMk0Oe+IWT3SA==}
+    peerDependencies:
+      react: '>= 16'
+
+  '@tabler/icons@3.7.0':
+    resolution: {integrity: sha512-lJGIZLSWrPO6VygRUbaVvQjWgL2EaiBMD8e6leCYUQ8ZPO4LIzKMq358C8KlhXJcyNiRz1Io3YWoc/DNTcWqSg==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -3932,7 +3943,7 @@ snapshots:
 
   '@radix-ui/react-arrow@1.0.3(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.24.7
       '@radix-ui/react-primitive': 1.0.3(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -4090,7 +4101,7 @@ snapshots:
 
   '@radix-ui/react-popper@1.1.3(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.24.7
       '@floating-ui/react-dom': 2.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-arrow': 1.0.3(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.3.3)(react@18.3.1)
@@ -4109,7 +4120,7 @@ snapshots:
 
   '@radix-ui/react-portal@1.0.4(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.24.7
       '@radix-ui/react-primitive': 1.0.3(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -4170,7 +4181,7 @@ snapshots:
 
   '@radix-ui/react-slot@1.0.2(@types/react@18.3.3)(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.24.7
       '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.3.3)(react@18.3.1)
       react: 18.3.1
     optionalDependencies:
@@ -4178,7 +4189,7 @@ snapshots:
 
   '@radix-ui/react-tooltip@1.0.7(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.24.7
       '@radix-ui/primitive': 1.0.1
       '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.3.3)(react@18.3.1)
       '@radix-ui/react-context': 1.0.1(@types/react@18.3.3)(react@18.3.1)
@@ -4236,7 +4247,7 @@ snapshots:
 
   '@radix-ui/react-use-rect@1.0.1(@types/react@18.3.3)(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.24.7
       '@radix-ui/rect': 1.0.1
       react: 18.3.1
     optionalDependencies:
@@ -4244,7 +4255,7 @@ snapshots:
 
   '@radix-ui/react-use-size@1.0.1(@types/react@18.3.3)(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.24.7
       '@radix-ui/react-use-layout-effect': 1.0.1(@types/react@18.3.3)(react@18.3.1)
       react: 18.3.1
     optionalDependencies:
@@ -4262,7 +4273,7 @@ snapshots:
 
   '@radix-ui/rect@1.0.1':
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.24.7
 
   '@rollup/rollup-android-arm-eabi@4.18.0':
     optional: true
@@ -4313,6 +4324,13 @@ snapshots:
     optional: true
 
   '@shikijs/core@1.9.0': {}
+
+  '@tabler/icons-react@3.7.0(react@18.3.1)':
+    dependencies:
+      '@tabler/icons': 3.7.0
+      react: 18.3.1
+
+  '@tabler/icons@3.7.0': {}
 
   '@trysound/sax@0.2.0': {}
 

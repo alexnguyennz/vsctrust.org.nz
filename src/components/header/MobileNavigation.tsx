@@ -1,6 +1,6 @@
 "use client";
 
-import { aboutUsLinks, ourWorkLinks, getInvolvedLinks } from "@/lib/links";
+import { aboutUsLinks, ourWorkLinks, getInvolvedLinks } from "@/lib/links.tsx";
 import { MobileSubmenu } from "@/components/header/MobileSubmenu";
 
 export function MobileNavigation() {

@@ -24,54 +24,42 @@ const page = await getEntry("pages", "donate");
     transition:name="donate"
   />
 
-  <section class="section-container flex flex-col">
+  <section class="section-container flex flex-col gap-6">
     <div class="self-center">
-      <p class="text-center font-extrabold">Your donation will go towards:</p>
-      <ul class="space-y-2">
+      <p class="bold-underline font-extrabold">
+        Your donation will go towards:
+      </p>
+      <ul class="ml-0 space-y-2">
         <li>
-          <Icon name="tabler:bottle" class="h-6 w-6" />
+          <Icon name="tabler:bottle" class="size-6" />
           {page.data.items[0]}
         </li>
         <li>
-          <Icon name="lucide:person-standing" class="h-6 w-6" />
+          <Icon name="lucide:person-standing" class="size-6" />
           {page.data.items[1]}
         </li>
         <li>
-          <Icon name="lucide:shirt" class="h-6 w-6" />
+          <Icon name="lucide:shirt" class="size-6" />
           {page.data.items[2]}
         </li>
         <li>
-          <Icon name="blender" class="h-6 w-6" />
+          <Icon name="tabler:blender" class="size-6" />
           {page.data.items[3]}
         </li>
         <li>
-          <Icon name="tabler:tools-kitchen-2" class="h-6 w-6" />
+          <Icon name="tabler:tools-kitchen-2" class="size-6" />
           {page.data.items[4]}
-        </li>
-        <li class="flex items-center gap-2">
-          <Icon name="tabler:plus" class="h-6 w-6" />
-          {page.data.items[5]}
         </li>
       </ul>
     </div>
-    <p class="text-center">
-      Together we can help improve the well-being of the most vulnerable people
-      in our community.
-    </p>
-  </section>
 
-  <section class="section-container">
-    <div
-      class="flex h-[574px] animate-show justify-center opacity-0"
-      transition:animate="none"
-    >
+    <div class="shadow-border self-center rounded-md" transition:animate="none">
       <iframe
         title="Donorbox"
         name="donorbox"
         src="https://donorbox.org/embed/vulnerable-support-charitable-trust"
         loading="lazy"
-        class="shadow-border h-auto w-[400px] rounded-md transition hover:translate-y-1"
-      ></iframe>
+        class="h-[596px] w-[400px]"></iframe>
     </div>
   </section>
 </Layout>
@@ -79,5 +67,10 @@ const page = await getEntry("pages", "donate");
 <style>
   li {
     @apply flex items-center gap-2;
+  }
+
+  .bold-underline {
+    text-decoration: underline 2px;
+    text-underline-offset: 3px;
   }
 </style>

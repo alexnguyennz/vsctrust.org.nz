@@ -43,6 +43,7 @@ export default defineConfig({
           "users",
           "location",
           "calendar",
+          "blender",
         ],
       },
       svgoOptions: {
