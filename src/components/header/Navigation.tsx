@@ -1,6 +1,10 @@
 "use client";
 
-import * as React from "react";
+import {
+  forwardRef,
+  type ElementRef,
+  type ComponentPropsWithoutRef,
+} from "react";
 
 import {
   NavigationMenu,
@@ -12,64 +16,38 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
+import { type LucideIcon } from "lucide-react";
+import { type Icon } from "@tabler/icons-react";
+
 import { cn } from "@/lib/utils";
-import { aboutUsLinks, ourWorkLinks, getInvolvedLinks } from "@/lib/links";
+import { menuLinks } from "@/lib/links.tsx";
 
 export function Navigation({ pathname }: { pathname: string }) {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="w-[225px] space-y-1 p-3">
-              {aboutUsLinks.map((link) => (
-                <ListItem
-                  key={link.title}
-                  title={link.title}
-                  href={link.href}
-                  pathname={pathname}
-                >
-                  {link.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Our Work</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="w-[225px] space-y-1 p-3">
-              {ourWorkLinks.map((link) => (
-                <ListItem
-                  key={link.title}
-                  title={link.title}
-                  href={link.href}
-                  pathname={pathname}
-                >
-                  {link.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Get Involved</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="w-[225px] space-y-1 p-3">
-              {getInvolvedLinks.map((link) => (
-                <ListItem
-                  key={link.title}
-                  title={link.title}
-                  href={link.href}
-                  pathname={pathname}
-                >
-                  {link.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+        {Object.keys(menuLinks).map((menu) => (
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>{menu}</NavigationMenuTrigger>
+
+            <NavigationMenuContent>
+              <ul className="w-[250px] space-y-1 p-3">
+                {menuLinks[menu].map((link) => (
+                  <ListItem
+                    key={link.title}
+                    title={link.title}
+                    href={link.href}
+                    pathname={pathname}
+                    Icon={link.icon}
+                  >
+                    {link.description}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        ))}
+
         <NavigationMenuItem>
           <NavigationMenuLink
             href="/contact/"
@@ -101,10 +79,13 @@ export function Navigation({ pathname }: { pathname: string }) {
   );
 }
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a"> & { pathname: string }
->(({ className, title, children, href, pathname, ...props }, ref) => {
+const ListItem = forwardRef<
+  ElementRef<"a">,
+  ComponentPropsWithoutRef<"a"> & {
+    Icon: LucideIcon | Icon | (() => JSX.Element);
+    pathname: string;
+  }
+>(({ className, title, children, href, pathname, Icon, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
@@ -112,15 +93,18 @@ const ListItem = React.forwardRef<
           ref={ref}
           href={href}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-gray-900 hover:text-white focus:bg-gray-900 focus:text-white",
+            "group flex select-none items-center gap-3 space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-gray-900 hover:fill-white hover:text-white focus:bg-gray-900 focus:text-white",
             className,
             href && pathname.startsWith(href) && "active-link",
           )}
           rel="prefetch"
           {...props}
         >
-          <div className="font-extrabold leading-none">{title}</div>
-          <p className={"text-sm"}>{children}</p>
+          <Icon className={"size-6"} />
+          <div>
+            <div className="font-extrabold leading-none">{title}</div>
+            <span className={"text-sm"}>{children}</span>
+          </div>
         </a>
       </NavigationMenuLink>
     </li>
