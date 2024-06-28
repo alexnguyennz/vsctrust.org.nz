@@ -2,12 +2,18 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { CollectionEntry } from "astro:content";
 
+type ProgrammeImage =
+  | CollectionEntry<"dosomegoodImages">
+  | CollectionEntry<"take10Images">
+  | CollectionEntry<"take10arvosImages">
+  | CollectionEntry<"genlinkImages">;
+
 function ProductImage({
   image,
   onExpand,
 }: {
-  image: any;
-  onExpand: (image: CollectionEntry<"dosomegoodImages">) => void;
+  image: ProgrammeImage;
+  onExpand: (image: ProgrammeImage) => void;
 }) {
   return (
     <motion.img
@@ -20,17 +26,11 @@ function ProductImage({
   );
 }
 
-export function Gallery({
-  imageData,
-}: {
-  imageData: CollectionEntry<"dosomegoodImages">[];
-}) {
-  const [images, setImages] = useState(imageData);
-  const [primaryImage, setPrimaryImage] = useState<
-    CollectionEntry<"dosomegoodImages">
-  >(images[0]);
+export function Gallery({ imageData }: { imageData: ProgrammeImage[] }) {
+  const [images, setImages] = useState<ProgrammeImage[]>(imageData);
+  const [primaryImage, setPrimaryImage] = useState<ProgrammeImage>(images[0]);
 
-  function setAsPrimary(selectedImage: CollectionEntry<"dosomegoodImages">) {
+  function setAsPrimary(selectedImage: ProgrammeImage) {
     // Reorder the images by placing the previously primary image at the bottom
     const newImages = [
       ...images.filter((image) => image.id !== selectedImage.id),
@@ -41,10 +41,6 @@ export function Gallery({
     setPrimaryImage(selectedImage);
     setImages(newImages);
   }
-
-  const tags = Array.from({ length: 50 }).map(
-    (_, i, a) => `v1.2.0-beta.${a.length - i}`,
-  );
 
   return (
     <div className="grid grid-cols-1 gap-6 overflow-hidden lg:grid-cols-4">
