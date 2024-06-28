@@ -27,11 +27,11 @@ export function Navigation({ pathname }: { pathname: string }) {
     <NavigationMenu>
       <NavigationMenuList>
         {Object.keys(menuLinks).map((menu) => (
-          <NavigationMenuItem>
+          <NavigationMenuItem key={menu}>
             <NavigationMenuTrigger>{menu}</NavigationMenuTrigger>
 
             <NavigationMenuContent>
-              <ul className="w-[250px] space-y-1 p-3">
+              <ul className="w-[270px] space-y-1 p-3">
                 {menuLinks[menu].map((link) => (
                   <ListItem
                     key={link.title}

@@ -40,6 +40,10 @@ footer a:hover {
   @apply container mx-auto px-5 py-8;
 }
 
+.section-full-container {
+  @apply mx-auto py-8;
+}
+
 /* Misc */
 .shadow-border {
   @apply border border-black shadow-box;
@@ -56,9 +60,3 @@ footer a:hover {
 .shadow-button {
   @apply shadow-border shadow-text relative inline-block rounded-md px-4 py-2 font-extrabold tracking-wide text-white no-underline hover:no-underline active:left-1 active:top-1 active:shadow-none;
 }
-
-.blaze-slider.end .blaze-next,
-.blaze-slider.start .blaze-prev {
-  @apply opacity-20;
-}
-

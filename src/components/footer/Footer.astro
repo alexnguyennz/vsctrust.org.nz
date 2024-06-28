@@ -4,7 +4,7 @@ import { Icon } from "astro-icon/components";
 
 import { Rainbow } from "./Rainbow";
 
-import { aboutUsLinks, ourWorkLinks, getInvolvedLinks } from "../../lib/links";
+import { menuLinks } from "@/lib/links";
 ---
 
 <footer
@@ -13,7 +13,7 @@ import { aboutUsLinks, ourWorkLinks, getInvolvedLinks } from "../../lib/links";
 >
   <div class="section-container space-y-6">
     <nav class="grid justify-center gap-6 md:grid-cols-4 lg:grid-cols-6">
-      <section
+      <div
         class="order-last space-y-6 justify-self-center md:order-first md:col-span-4 lg:col-span-2"
       >
         <div class="flex items-center gap-6">
@@ -36,54 +36,26 @@ import { aboutUsLinks, ourWorkLinks, getInvolvedLinks } from "../../lib/links";
             </li>
           </ul>
         </div>
-      </section>
+      </div>
 
-      <section>
-        <h2>About Us</h2>
-        <ul>
-          {
-            aboutUsLinks.map((link) => (
-              <li>
-                <a href={link.href} rel="prefetch">
-                  {link.title}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
+      {
+        Object.keys(menuLinks).map((menu) => (
+          <div>
+            <h2>{menu}</h2>
+            <ul>
+              {menuLinks[menu].map((link) => (
+                <li>
+                  <a href={link.href} rel="prefetch">
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
 
-      <section>
-        <h2>Our Work</h2>
-        <ul>
-          {
-            ourWorkLinks.map((link) => (
-              <li>
-                <a href={link.href} rel="prefetch">
-                  {link.title}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-
-      <section>
-        <h2>Get Involved</h2>
-        <ul>
-          {
-            getInvolvedLinks.map((link) => (
-              <li>
-                <a href={link.href} rel="prefetch">
-                  {link.title}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-
-      <section>
+      <div>
         <h2>Follow Us</h2>
 
         <div class="mb-4">
@@ -189,7 +161,7 @@ import { aboutUsLinks, ourWorkLinks, getInvolvedLinks } from "../../lib/links";
             </a>
           </div>
         </div>
-      </section>
+      </div>
     </nav>
 
     <div class="flex flex-col items-center">

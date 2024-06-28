@@ -31,16 +31,10 @@ const Card = ({ name, quote }: { name?: string; quote: string }) => {
 
 export function Quotes() {
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden">
-      <h2>What People Are Saying</h2>
-
-      <Marquee pauseOnHover className="[--duration:20s]">
-        {quotes.map((quote, idx) => (
-          <Card key={idx} {...quote} />
-        ))}
-      </Marquee>
-      <div className="dark:from-background pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-white"></div>
-      <div className="dark:from-background pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-white"></div>
-    </div>
+    <Marquee pauseOnHover className="[--duration:20s]">
+      {quotes.map((quote, idx) => (
+        <Card key={idx} {...quote} />
+      ))}
+    </Marquee>
   );
 }
