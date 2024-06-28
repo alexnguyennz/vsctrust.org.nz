@@ -6,7 +6,7 @@ import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Banner from "@/components/Banner.astro";
-import Gallery from "@/components/programmes/Gallery.astro";
+import { Gallery } from "@/components/Gallery";
 import poster from "@/assets/img/take10/poster.png";
 import Marquee from "@/components/ui/marquee";
 
@@ -105,7 +105,7 @@ const { Content } = await page.render();
     >
   </section>
 
-  <section class="section-container">
+  <section class="section-full-container">
     <h2>Sponsors</h2>
 
     <Marquee
@@ -145,7 +145,9 @@ const { Content } = await page.render();
     </Marquee>
   </section>
 
-  <Gallery images={images} />
+  <section class="section-container">
+    <Gallery imageData={images} client:visible />
+  </section>
 </Layout>
 
 <style>

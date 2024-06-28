@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Banner from "@/components/Banner.astro";
-import Gallery from "@/components/programmes/Gallery.astro";
+import { Gallery } from "@/components/Gallery";
 
 const images = await getCollection("genlinkImages");
 
@@ -76,5 +76,7 @@ const { Content } = await page.render();
     >
   </section>
 
-  <Gallery images={images} />
+  <section class="section-container">
+    <Gallery imageData={images} client:visible />
+  </section>
 </Layout>
