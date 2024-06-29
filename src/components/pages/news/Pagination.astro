@@ -13,7 +13,7 @@ const { prevUrl, nextUrl } = Astro.props;
   {
     prevUrl && (
       <a
-        href={prevUrl === "/news/1" ? "/news" : prevUrl + "/"}
+        href={prevUrl === "/news/1/" ? "/news/" : prevUrl}
         class="shadow-button inline-flex bg-gray-600"
         aria-label="previous page"
         rel="prefetch"
@@ -25,7 +25,7 @@ const { prevUrl, nextUrl } = Astro.props;
   {
     nextUrl && (
       <a
-        href={nextUrl + "/"}
+        href={nextUrl}
         class="shadow-button inline-flex bg-gray-600"
         aria-label="next page"
         rel="prefetch"

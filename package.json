@@ -1,7 +1,7 @@
 {
   "name": "vsctrust.org.nz",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -16,6 +16,7 @@
     "@astrojs/react": "3.6.0",
     "@astrojs/sitemap": "3.1.6",
     "@astrojs/tailwind": "5.1.0",
+    "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-collapsible": "1.0.3",
     "@radix-ui/react-dialog": "1.0.5",
     "@radix-ui/react-label": "2.0.2",

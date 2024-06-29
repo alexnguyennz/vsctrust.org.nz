@@ -17,7 +17,7 @@ const quotes = [
   },
 ];
 
-const Card = ({ name, quote }: { name?: string; quote: string }) => {
+const Card = ({ quote }: { name?: string; quote: string }) => {
   return (
     <figure
       className={
@@ -31,7 +31,7 @@ const Card = ({ name, quote }: { name?: string; quote: string }) => {
 
 export function Quotes() {
   return (
-    <Marquee pauseOnHover className="[--duration:20s]">
+    <Marquee pauseOnHover className="[--duration:30s]">
       {quotes.map((quote, idx) => (
         <Card key={idx} {...quote} />
       ))}
