@@ -3,7 +3,7 @@ import { MobileSubmenu } from "@/components/header/MobileSubmenu";
 
 export function MobileNavigation() {
   return (
-    <ul className={"mt-4 space-y-4 font-extrabold"}>
+    <ul className={"mt-4 space-y-4 font-bold"}>
       <li tabIndex={0}>
         <a href="/" className={"block p-1"}>
           Home

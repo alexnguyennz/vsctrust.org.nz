@@ -1,3 +1,5 @@
+import "./MobileSubmenu.styles.css";
+
 import { useState } from "react";
 
 import {
@@ -25,7 +27,7 @@ export function MobileSubmenu({
       >
         {name}
         <ChevronDown
-          strokeWidth={4}
+          strokeWidth={3}
           className={cn(
             "h-3.5 w-3.5 transition duration-200",
             open && "rotate-180",
@@ -33,7 +35,7 @@ export function MobileSubmenu({
           aria-hidden="true"
         />
       </CollapsibleTrigger>
-      <CollapsibleContent>
+      <CollapsibleContent className={"CollapsibleContent"}>
         <ul className="my-2 ml-4 mr-0.5 space-y-3">{children}</ul>
       </CollapsibleContent>
     </Collapsible>

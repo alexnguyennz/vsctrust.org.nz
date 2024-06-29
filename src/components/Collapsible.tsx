@@ -5,7 +5,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { ArrowDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function Collapsible({ children }: { children: React.ReactNode }) {
@@ -15,12 +15,13 @@ export function Collapsible({ children }: { children: React.ReactNode }) {
     <UICollapsible open={open} onOpenChange={setOpen}>
       <CollapsibleContent>{children}</CollapsibleContent>
       <CollapsibleTrigger
-        className={"shadow-button mx-auto !block bg-gray-600 !p-1.5"}
+        className={"mx-auto block p-3"}
         aria-label={"toggle content"}
       >
-        <ArrowDown
+        <ChevronDown
+          size={24}
           strokeWidth={3}
-          className={cn("h-5 w-5", open && "-rotate-180")}
+          className={cn("transition", open && "rotate-180")}
         />
       </CollapsibleTrigger>
     </UICollapsible>

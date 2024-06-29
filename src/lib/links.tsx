@@ -91,7 +91,7 @@ export const menuLinks: MenuLinks = {
     {
       title: "Donate",
       href: "/donate/",
-      description: "Support our work",
+      description: "Support what we do",
       icon: HandCoins,
     },
     {

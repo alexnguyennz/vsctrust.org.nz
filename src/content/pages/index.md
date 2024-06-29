@@ -4,7 +4,7 @@ dosomegood: >-
   Influencing positive change for tamariki in hardship. We help businesses find
   ways to help kiwi kids who need it most.
 take10: >-
-  Providing a late-night safe-zone on Courtenay Place where we offer water,
+  Providing a late-night safe zone on Courtenay Place where we offer water,
   phone charging, medical help, and refuge to reduce alcohol and drug related
   harm.
 take10arvos: >-
