@@ -8,8 +8,7 @@ const pathname = new URL(Astro.request.url).pathname;
 ---
 
 <header
-  class="sticky top-0 z-20 w-full border-b border-b-gray-200 bg-slate-50 shadow-sm transition"
-  transition:animate="none"
+  class="sticky top-0 z-20 w-full border-b border-b-gray-200 bg-slate-50 shadow-sm"
 >
   <div class="my-5 flex items-center justify-between gap-10 px-5 lg:container">
     <a href="/" aria-label="home page" rel="prefetch"
@@ -18,7 +17,7 @@ const pathname = new URL(Astro.request.url).pathname;
         width="413"
         height="75"
         alt="Vulnerable Support Charitable Trust logo"
-        class="h-[36px] w-[200px] sm:h-[50px] sm:w-[275px]"
+        class="h-auto w-full max-w-[275px]"
         fetchpriority="high"
         loading="eager"
       /></a

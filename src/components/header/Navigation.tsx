@@ -1,5 +1,3 @@
-"use client";
-
 import {
   forwardRef,
   type ElementRef,
@@ -31,7 +29,7 @@ export function Navigation({ pathname }: { pathname: string }) {
             <NavigationMenuTrigger>{menu}</NavigationMenuTrigger>
 
             <NavigationMenuContent>
-              <ul className="w-[270px] space-y-1 p-3">
+              <ul className="w-[265px] space-y-1 p-3">
                 {menuLinks[menu].map((link) => (
                   <ListItem
                     key={link.title}
@@ -54,10 +52,8 @@ export function Navigation({ pathname }: { pathname: string }) {
             className={cn(
               navigationMenuTriggerStyle(),
               "hover:bg-gray-900 hover:text-white focus:bg-gray-900 focus:text-white",
-              (pathname === "/contact" || pathname === "/contact/") &&
-                "active-link",
+              pathname === "/contact/" && "active-link",
             )}
-            rel="prefetch"
           >
             Contact
           </NavigationMenuLink>
@@ -69,7 +65,6 @@ export function Navigation({ pathname }: { pathname: string }) {
               navigationMenuTriggerStyle(),
               "shadow-button bg-blue-500 text-red-50 hover:text-red-50 focus:text-red-50",
             )}
-            rel="prefetch"
           >
             Donate
           </a>

@@ -64,8 +64,8 @@ const NavigationMenuTrigger = React.forwardRef<
   >
     {children}
     <ChevronDown
-      strokeWidth={4}
-      className="mt-[1px] h-3.5 w-3.5 transition duration-200 group-data-[state=open]:rotate-180"
+      strokeWidth={3}
+      className="h-3.5 w-3.5 transition duration-200 group-data-[state=open]:rotate-180"
       aria-hidden="true"
     />
   </NavigationMenuPrimitive.Trigger>

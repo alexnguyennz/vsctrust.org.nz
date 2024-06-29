@@ -19,7 +19,7 @@ export function Collapsible({ children }: { children: React.ReactNode }) {
         aria-label={"toggle content"}
       >
         <ChevronDown
-          size={24}
+          size={20}
           strokeWidth={3}
           className={cn("transition", open && "rotate-180")}
         />
