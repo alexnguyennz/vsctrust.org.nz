@@ -11,11 +11,8 @@ import { MobileNavigation } from "@/components/header/MobileNavigation";
 export function MobileSheet() {
   return (
     <Sheet>
-      <SheetTrigger
-        className={"shadow-button bg-gray-600 !p-1.5"}
-        aria-label={"toggle mobile menu"}
-      >
-        <Menu className="h-6 w-6" />
+      <SheetTrigger aria-label={"toggle mobile menu"}>
+        <Menu size={24} />
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>

@@ -6,9 +6,9 @@ import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 import mouseoverDirective from "/src/lib/client-directives/register";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://vsctrust.org.nz",
+  trailingSlash: "always",
   redirects: {
     "/news/1/": {
       status: 301,

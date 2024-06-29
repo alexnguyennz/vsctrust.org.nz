@@ -16,33 +16,31 @@ const {
 } = Astro.props;
 ---
 
-<section class="section-container">
-  <ProgrammeGrid>
-    <ProgrammeCard programme="dosomegood">
-      <p>
-        {dosomegood}
-      </p>
-    </ProgrammeCard>
+<ProgrammeGrid>
+  <ProgrammeCard programme="dosomegood">
+    <p>
+      {dosomegood}
+    </p>
+  </ProgrammeCard>
 
-    <ProgrammeCard programme="take10">
-      <p>
-        {take10}
-      </p>
-    </ProgrammeCard>
+  <ProgrammeCard programme="take10">
+    <p>
+      {take10}
+    </p>
+  </ProgrammeCard>
 
-    <ProgrammeCard programme="take10-arvos">
-      <p>
-        {take10arvos}
-      </p>
-    </ProgrammeCard>
+  <ProgrammeCard programme="take10-arvos">
+    <p>
+      {take10arvos}
+    </p>
+  </ProgrammeCard>
 
-    <ProgrammeCard programme="gen-link">
-      <p>
-        {genlink}
-      </p>
-    </ProgrammeCard>
-  </ProgrammeGrid>
-</section>
+  <ProgrammeCard programme="gen-link">
+    <p>
+      {genlink}
+    </p>
+  </ProgrammeCard>
+</ProgrammeGrid>
 
 <style>
   p {

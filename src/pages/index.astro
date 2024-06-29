@@ -25,7 +25,9 @@ const { Content } = await page.render();
     <link rel="preload" href="/img/programmes/gen-link.webp" as="image" />
   </Fragment>
 
-  <Programmes page={page.data} />
+  <section class="section-container">
+    <Programmes page={page.data} />
+  </section>
 
   <HowYouCanHelp />
 
@@ -42,7 +44,7 @@ const { Content } = await page.render();
   <section class="section-full-container">
     <h2>What People Are Saying</h2>
 
-    <Quotes client:visible />
+    <Quotes />
   </section>
 
   <section>

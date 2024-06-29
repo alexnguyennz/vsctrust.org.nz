@@ -5,34 +5,37 @@ import { Image } from "astro:assets";
 <section class="section-container">
   <h2>How you can help</h2>
   <div class="flex flex-wrap justify-center gap-6 lg:gap-10">
-    <a href="/donate/" rel="prefetch">
+    <a href="/donate/">
       <Image
         src={import("@/assets/img/home/donate.png")}
         width="48"
         height="48"
-        alt="donate image"
+        alt=""
+        class="self-center"
         transition:name="donate"
       />
       <h3>Make a Donation</h3>
     </a>
 
-    <a href="/volunteer/" rel="prefetch">
+    <a href="/volunteer/">
       <Image
         src={import("@/assets/img/home/volunteer.png")}
         width="48"
         height="48"
-        alt="volunteer image"
+        alt=""
+        class="self-center"
         transition:name="volunteer"
       />
       <h3>Become a Volunteer</h3>
     </a>
 
-    <a href="/sponsor-a-school/" rel="prefetch">
+    <a href="/sponsor-a-school/">
       <Image
         src={import("@/assets/img/home/sponsor.png")}
         width="48"
         height="48"
-        alt="sponsor image"
+        alt=""
+        class="self-center"
         transition:name="sponsor"
       />
       <h3>Sponsor a School</h3>
@@ -42,14 +45,10 @@ import { Image } from "astro:assets";
 
 <style>
   h3 {
-    @apply mt-2 text-center text-lg font-extrabold text-black;
+    @apply mt-2 text-center text-lg font-bold;
   }
 
   a {
-    @apply flex flex-col rounded-md no-underline transition hover:scale-105 hover:no-underline;
-  }
-
-  img {
-    @apply self-center;
+    @apply flex flex-col rounded-md no-underline;
   }
 </style>
