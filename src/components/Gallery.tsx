@@ -20,7 +20,7 @@ function ProductImage({
       onClick={() => onExpand(image)}
       src={image.data.image.src}
       alt={image.data.title}
-      className="cursor-pointer rounded-lg object-cover"
+      className="aspect-[4/3] cursor-pointer rounded-lg object-cover"
       layoutId={`image-${image.id}`}
     />
   );
