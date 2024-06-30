@@ -13,7 +13,9 @@ export function Collapsible({ children }: { children: React.ReactNode }) {
 
   return (
     <UICollapsible open={open} onOpenChange={setOpen}>
-      <CollapsibleContent>{children}</CollapsibleContent>
+      <CollapsibleContent className="data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up overflow-hidden">
+        {children}
+      </CollapsibleContent>
       <CollapsibleTrigger
         className={"mx-auto block p-3"}
         aria-label={"toggle content"}

@@ -42,7 +42,13 @@ export function TeamMemberCollapsible({
 
       <p className={"mb-0"}>{excerpt}</p>
 
-      <CollapsibleContent>{children}</CollapsibleContent>
+      <CollapsibleContent
+        className={
+          "data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up overflow-hidden"
+        }
+      >
+        {children}
+      </CollapsibleContent>
       <CollapsibleTrigger
         className={"mx-auto mt-auto block p-3"}
         aria-label={"toggle content"}
