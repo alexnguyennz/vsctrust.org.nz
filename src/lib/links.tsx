@@ -1,5 +1,4 @@
 import {
-  Info,
   PersonStanding,
   HeartHandshake,
   HandCoins,
@@ -31,21 +30,15 @@ interface MenuLinks {
 export const menuLinks: MenuLinks = {
   "About Us": [
     {
-      title: "Who We Are",
-      href: "/who-we-are/",
-      description: "More about us",
-      icon: Info,
-    },
-    {
       title: "The Team",
       href: "/team/",
-      description: "Our team",
+      description: "Meet the team",
       icon: PersonStanding,
     },
     {
       title: "The Trust",
       href: "/trust/",
-      description: "Our trustees",
+      description: "Our people behind the scenes",
       icon: IconFriends,
     },
     {
@@ -97,13 +90,13 @@ export const menuLinks: MenuLinks = {
     {
       title: "Volunteer",
       href: "/volunteer/",
-      description: "How you can help",
+      description: "How you can help out",
       icon: HeartHandshake,
     },
     {
       title: "Sponsor a School",
       href: "/sponsor-a-school/",
-      description: "Partner with a school",
+      description: "Help a school or kindergarten",
       icon: IconBackpack,
     },
   ],

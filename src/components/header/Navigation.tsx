@@ -29,7 +29,7 @@ export function Navigation({ pathname }: { pathname: string }) {
             <NavigationMenuTrigger>{menu}</NavigationMenuTrigger>
 
             <NavigationMenuContent>
-              <ul className="w-[265px] space-y-1 p-3">
+              <ul className={cn("w-max space-y-2 p-3")}>
                 {menuLinks[menu].map((link) => (
                   <ListItem
                     key={link.title}

@@ -1,0 +1,42 @@
+---
+import { getEntry, type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+import { TeamMemberCollapsible } from "./TeamMemberCollapsible";
+
+interface Props {
+  trust: CollectionEntry<"team"> | CollectionEntry<"trust">;
+  category: "team" | "trust";
+}
+
+const { trust, category } = Astro.props;
+
+const entry = await getEntry(category, trust.slug);
+const { Content } = await entry!.render();
+---
+
+<TeamMemberCollapsible
+  name={trust.data.name}
+  position={trust.data.position}
+  excerpt={trust.data.excerpt}
+  client:visible
+>
+  <Image
+    slot="image"
+    src={trust.data.image}
+    width="192"
+    height="192"
+    alt=`${trust.data.name} profile image`
+    class="mx-auto rounded-full"
+  />
+
+  {
+    trust.slug === "leigh-keown" && (
+      <a slot="contact" href="mailto:hello@vsctrust.org.nz" class="mx-auto">
+        (✉)
+      </a>
+    )
+  }
+
+  <Content />
+</TeamMemberCollapsible>

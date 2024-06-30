@@ -20,7 +20,8 @@ h2 {
   @apply text-center text-3xl font-bold;
 }
 
-h2,
+.section-container > h2,
+.section-full-container > h2,
 p,
 main ul {
   @apply mb-4;

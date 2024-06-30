@@ -3,14 +3,14 @@ export function DoSomeGood() {
     <img
       src={"/logo/dosomegood.png"}
       alt={"Do Some Good logo"}
-      className={"size-6"}
+      className={"size-12"}
     />
   );
 }
 
 export function Take10() {
   return (
-    <img src={"/logo/take10.png"} alt={"Take 10 logo"} className={"size-6"} />
+    <img src={"/logo/take10.png"} alt={"Take 10 logo"} className={"size-12"} />
   );
 }
 
@@ -19,7 +19,7 @@ export function Take10Arvos() {
     <img
       src={"/logo/take10-arvos.png"}
       alt={"Take 10 Arvo's logo"}
-      className={"size-6"}
+      className={"size-12"}
     />
   );
 }
@@ -29,7 +29,7 @@ export function GenLink() {
     <img
       src={"/logo/gen-link.png"}
       alt={"Gen Link logo"}
-      className={"size-6"}
+      className={"size-12"}
     />
   );
 }
