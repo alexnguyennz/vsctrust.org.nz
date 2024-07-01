@@ -26,7 +26,7 @@ const { post } = Astro.props;
   </a>
 
   <div class="mt-4 flex flex-1 flex-col">
-    <h3 class="text-sm" transition:name={`news-author-${post.slug}`}>
+    <h3 class="text-sm">
       {
         new Date(post.data.date).toLocaleDateString("en-NZ", {
           year: "numeric",
@@ -40,7 +40,7 @@ const { post } = Astro.props;
       class="mb-0 line-clamp-2 text-base"
       transition:name={`news-title-${post.slug}`}
     >
-      <a href={`/news/${post.slug}/`} rel="prefetch">{post.data.title}</a>
+      <a href={`/news/${post.slug}/`}>{post.data.title}</a>
     </h2>
   </div>
 </article>

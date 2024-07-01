@@ -1,12 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
 
+import { NumberTicker } from "@/components/ui/number-ticker";
+
 interface Props {
   page: {
-    schools: string;
-    take10Visitors: string;
-    waterGiven: string;
-    mealsForTamariki: string;
+    schools: number;
+    take10Visitors: number;
+    waterGiven: number;
+    mealsForTamariki: number;
   };
 }
 
@@ -22,28 +24,28 @@ const {
       <section>
         <Icon name="tabler:backpack" class="h-8 w-8" />
         <div>
-          <h3>{schools}</h3>
+          <NumberTicker value={schools} client:visible />
           <h4>schools and kohanga reos</h4>
         </div>
       </section>
       <section>
         <Icon name="tabler:friends" class="h-8 w-8" />
         <div>
-          <h3>{take10Visitors.toLocaleString()}</h3>
+          <NumberTicker value={take10Visitors} client:visible />
           <h4>Take 10 visitors</h4>
         </div>
       </section>
       <section>
         <Icon name="tabler:bottle" class="h-8 w-8" />
         <div>
-          <h3>{waterGiven.toLocaleString()}</h3>
+          <NumberTicker value={waterGiven} client:visible />
           <h4>litres of water given</h4>
         </div>
       </section>
       <section>
         <Icon name="tabler:tools-kitchen-2" class="h-8 w-8" />
         <div>
-          <h3>{mealsForTamariki.toLocaleString()}</h3>
+          <NumberTicker value={mealsForTamariki} client:visible />
           <h4>meals for tamariki</h4>
         </div>
       </section>
@@ -54,10 +56,6 @@ const {
 <style>
   section section {
     @apply flex items-center gap-3 lg:justify-center;
-  }
-
-  h3 {
-    @apply text-xl font-bold;
   }
 
   h4 {

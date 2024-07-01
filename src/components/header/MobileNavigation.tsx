@@ -9,7 +9,7 @@ import {
 
 export function MobileNavigation() {
   return (
-    <ul tabIndex={-1} className={"mt-6 font-bold"}>
+    <ul tabIndex={-1} className={"mt-6 font-extrabold"}>
       <li tabIndex={0} className={"py-2"}>
         <a href="/" className={"block"}>
           Home
