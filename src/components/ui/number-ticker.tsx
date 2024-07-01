@@ -42,6 +42,10 @@ export function NumberTicker({
   );
 
   return (
-    <h3 className={cn("h-7 text-xl font-extrabold", className)} ref={ref} />
+    <>
+      <h3 className={cn("text-xl font-extrabold", className)} ref={ref}>
+        {value}
+      </h3>
+    </>
   );
 }
