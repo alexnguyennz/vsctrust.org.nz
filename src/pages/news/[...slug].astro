@@ -34,10 +34,7 @@ const author = await getEntry(post.data.author);
         <h2 class="text-left" transition:name={`news-title-${post.slug}`}>
           {post.data.title}
         </h2>
-        <div
-          class="mt-auto flex space-x-3"
-          transition:name={`news-author-${post.slug}`}
-        >
+        <div class="mt-auto flex space-x-3">
           <Image
             src={author.data.image}
             width="96"
