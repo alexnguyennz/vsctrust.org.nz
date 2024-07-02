@@ -44,7 +44,7 @@ export function NumberTicker({
   return (
     <>
       <h3 className={cn("text-xl font-extrabold", className)} ref={ref}>
-        {value}
+        0
       </h3>
     </>
   );
