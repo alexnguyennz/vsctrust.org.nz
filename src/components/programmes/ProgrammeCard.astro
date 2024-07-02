@@ -1,7 +1,7 @@
 ---
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 
-import { cn } from "@/lib/utils";
+const images = import.meta.glob("../../assets/img/programmes/*");
 
 const name = {
   dosomegood: "Do Some Good",
@@ -15,13 +15,28 @@ interface Props {
 }
 
 const { programme } = Astro.props;
+
+// Generate card background images
+const background = await getImage({
+  src: images[
+    `../../assets/img/programmes/${programme}.jpg`
+  ]() as unknown as string,
+  format: "webp",
+  width: 600,
+});
+
+const backgroundHover = await getImage({
+  src: images[
+    `../../assets/img/programmes/${programme}-hover.jpg`
+  ]() as unknown as string,
+  format: "webp",
+  width: 600,
+});
 ---
 
 <a
   href={`/${programme}/`}
-  class={cn(
-    `group shadow-border flex flex-col rounded-md transition-all duration-500 hover:no-underline programme-${programme}`,
-  )}
+  class={"group shadow-border flex flex-col rounded-md transition-all duration-500 hover:no-underline programme"}
 >
   <div class="relative min-h-[175px]">
     <Image
@@ -39,73 +54,26 @@ const { programme } = Astro.props;
     <slot />
   </div>
 </a>
-
-<style>
-  /* Do Some Good */
-  .programme-dosomegood {
-    background: url("/img/programmes/dosomegood.jpg") center/cover;
+<!--"url('/favicon.png')"-->
+<style
+  define:vars={{
+    background: `url('${background.src}')`,
+    backgroundHover: `url('${backgroundHover.src}')`,
+  }}
+>
+  .programme {
+    background: var(--background) center/cover;
   }
 
-  .programme-dosomegood:hover {
-    background: url("/img/programmes/dosomegood-hover.jpg") right/cover;
-  }
-
-  /* Preload hover background image */
-  .programme-dosomegood::before {
-    position: fixed;
-    opacity: 0;
-    z-index: -1;
-    background: url("/img/programmes/take10.jpg");
-  }
-
-  /* Take 10 */
-  .programme-take10 {
-    background: url("/img/programmes/take10.jpg") center/cover;
-  }
-
-  .programme-take10:hover {
-    background: url("/img/programmes/take10-hover.jpg") right/cover;
+  .programme:hover {
+    background: var(--backgroundHover) right/cover;
   }
 
   /* Preload hover background image */
-  .programme-take10::before {
+  .programme::before {
     position: fixed;
     opacity: 0;
     z-index: -1;
-    background: url("/img/programmes/take10-hover.jpg");
-  }
-
-  /* Take 10 Arvos */
-  .programme-take10-arvos {
-    background: url("/img/programmes/take10-arvos.jpg") center/cover;
-  }
-
-  .programme-take10-arvos:hover {
-    background: url("/img/programmes/take10-arvos-hover.jpg") right/cover;
-  }
-
-  /* Preload hover background image */
-  .programme-take10-arvos::before {
-    position: fixed;
-    opacity: 0;
-    z-index: -1;
-    background: url("/img/programmes/take10-arvos-hover.jpg");
-  }
-
-  /* Gen Link */
-  .programme-gen-link {
-    background: url("/img/programmes/gen-link.webp") center/cover;
-  }
-
-  .programme-gen-link:hover {
-    background: url("/img/programmes/gen-link-hover.jpg") right/cover;
-  }
-
-  /* Preload hover background image */
-  .programme-gen-link::before {
-    position: fixed;
-    opacity: 0;
-    z-index: -1;
-    background: url("/img/programmes/gen-link-hover.jpg");
+    background: var(--backgroundHover);
   }
 </style>

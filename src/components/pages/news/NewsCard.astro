@@ -17,8 +17,8 @@ const { post } = Astro.props;
   >
     <Image
       src={post.data.image}
-      width="300"
-      height="300"
+      width="500"
+      height="500"
       alt={post.data.title}
       class="aspect-[4/3] w-full rounded-2xl object-cover transition duration-500 group-hover:scale-110"
       transition:name={`news-image-${post.slug}`}
