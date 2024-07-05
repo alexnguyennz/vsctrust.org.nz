@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import type { GetImageResult } from "astro";
 import type { CollectionEntry } from "astro:content";
 
 type ProgrammeImage =
@@ -8,30 +9,38 @@ type ProgrammeImage =
   | CollectionEntry<"take10arvosImages">
   | CollectionEntry<"genlinkImages">;
 
-function ProductImage({
+function Thumbnail({
   image,
+  thumbnailImage,
   onExpand,
 }: {
   image: ProgrammeImage;
+  thumbnailImage: GetImageResult;
   onExpand: (image: ProgrammeImage) => void;
 }) {
   return (
     <motion.img
       onClick={() => onExpand(image)}
-      src={image.data.image.src}
+      src={thumbnailImage.src}
       alt={image.data.title}
-      className="aspect-[4/3] cursor-pointer rounded-lg object-cover"
+      className="aspect-[4/3] w-full cursor-pointer rounded-lg object-cover"
       layoutId={`image-${image.id}`}
     />
   );
 }
 
-export function Gallery({ imageData }: { imageData: ProgrammeImage[] }) {
+export function Gallery({
+  imageData,
+  thumbnails,
+}: {
+  imageData: ProgrammeImage[];
+  thumbnails: { [key: string]: GetImageResult };
+}) {
   const [images, setImages] = useState<ProgrammeImage[]>(imageData);
   const [primaryImage, setPrimaryImage] = useState<ProgrammeImage>(images[0]);
 
   function setAsPrimary(selectedImage: ProgrammeImage) {
-    // Reorder the images by placing the previously primary image at the bottom
+    // Reorder the images by placing the previous primary image at the bottom
     const newImages = [
       ...images.filter((image) => image.id !== selectedImage.id),
       primaryImage,
@@ -56,17 +65,18 @@ export function Gallery({ imageData }: { imageData: ProgrammeImage[] }) {
         </AnimatePresence>
       </div>
 
-      <aside className="flex h-[200px] gap-6 overflow-auto pr-6 lg:grid lg:h-[600px] lg:grid-cols-1 xl:col-span-2 xl:grid-cols-2">
+      <div className="flex h-[200px] gap-6 overflow-auto pr-6 lg:grid lg:h-[600px] lg:grid-cols-1 xl:col-span-2 xl:grid-cols-2">
         <AnimatePresence>
           {images.slice(1).map((image) => (
-            <ProductImage
+            <Thumbnail
               key={image.id}
               image={image}
+              thumbnailImage={thumbnails[image.id]}
               onExpand={setAsPrimary}
             />
           ))}
         </AnimatePresence>
-      </aside>
+      </div>
     </div>
   );
 }
