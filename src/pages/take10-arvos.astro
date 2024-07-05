@@ -1,18 +1,33 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import type { ImageMetadata } from "astro";
-import { Image } from "astro:assets";
+import type { GetImageResult, ImageMetadata } from "astro";
+import { Image, getImage } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Banner from "@/components/Banner.astro";
-import { Gallery } from "@/components/Gallery";
 import Marquee from "@/components/ui/marquee";
+import { Gallery } from "@/components/Gallery";
 
-const images = await getCollection("take10arvosImages");
 const sponsors = await getCollection("take10arvosSponsors");
 
 const page = await getEntry("pages", "take10-arvos");
 const { Content } = await page.render();
+
+// Generate thumbnails
+const images = await getCollection("take10arvosImages");
+const importedImages = import.meta.glob("../content/take10arvosImages/*");
+
+const thumbnails: { [key: string]: GetImageResult } = {};
+
+for await (const image of images) {
+  thumbnails[image.id] = await getImage({
+    src: importedImages[
+      `../content/take10arvosImages/${image.slug}.jpg`
+    ]() as unknown as string,
+    format: "webp",
+    width: 500,
+  });
+}
 ---
 
 <Layout title={page.data.title}>
@@ -87,6 +102,6 @@ const { Content } = await page.render();
   </section>
 
   <section class="section-container">
-    <Gallery imageData={images} client:visible />
+    <Gallery imageData={images} thumbnails={thumbnails} client:visible />
   </section>
 </Layout>

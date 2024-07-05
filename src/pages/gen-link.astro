@@ -1,15 +1,30 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import { Image } from "astro:assets";
+import type { GetImageResult } from "astro";
+import { Image, getImage } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Banner from "@/components/Banner.astro";
 import { Gallery } from "@/components/Gallery";
 
-const images = await getCollection("genlinkImages");
-
 const page = await getEntry("pages", "gen-link");
 const { Content } = await page.render();
+
+// Generate thumbnails
+const images = await getCollection("genlinkImages");
+const importedImages = import.meta.glob("../content/genlinkImages/*");
+
+const thumbnails: { [key: string]: GetImageResult } = {};
+
+for await (const image of images) {
+  thumbnails[image.id] = await getImage({
+    src: importedImages[
+      `../content/genlinkImages/${image.slug}.jpg`
+    ]() as unknown as string,
+    format: "webp",
+    width: 500,
+  });
+}
 ---
 
 <Layout title={page.data.title}>
@@ -77,6 +92,6 @@ const { Content } = await page.render();
   </section>
 
   <section class="section-container">
-    <Gallery imageData={images} client:visible />
+    <Gallery imageData={images} thumbnails={thumbnails} client:visible />
   </section>
 </Layout>

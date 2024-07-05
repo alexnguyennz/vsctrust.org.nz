@@ -1,18 +1,17 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import type { ImageMetadata } from "astro";
-import { Image } from "astro:assets";
+import type { GetImageResult, ImageMetadata } from "astro";
+import { Image, getImage } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Banner from "@/components/Banner.astro";
 import { Collapsible } from "../components/Collapsible";
 import School from "@/components/pages/dosomegood/School.astro";
-import { Gallery } from "@/components/Gallery";
 import poster from "@/assets/img/dosomegood/poster.png";
-import Marquee from "../components/ui/marquee";
+import Marquee from "@/components/ui/marquee";
+import { Gallery } from "@/components/Gallery";
 
-const images = await getCollection("dosomegoodImages");
 const sponsors = await getCollection("dosomegoodSponsors");
 const supporters = await getCollection("dosomegoodSupporters");
 const schools = (await getCollection("dosomegoodSchools")).sort(
@@ -21,6 +20,22 @@ const schools = (await getCollection("dosomegoodSchools")).sort(
 
 const page = await getEntry("pages", "dosomegood");
 const { Content } = await page.render();
+
+// Generate thumbnails
+const images = await getCollection("dosomegoodImages");
+const importedImages = import.meta.glob("../content/dosomegoodImages/*");
+
+const thumbnails: { [key: string]: GetImageResult } = {};
+
+for await (const image of images) {
+  thumbnails[image.id] = await getImage({
+    src: importedImages[
+      `../content/dosomegoodImages/${image.slug}.jpg`
+    ]() as unknown as string,
+    format: "webp",
+    width: 500,
+  });
+}
 ---
 
 <Layout title={page.data.title}>
@@ -196,7 +211,7 @@ const { Content } = await page.render();
   </section>
 
   <section class="section-container">
-    <Gallery imageData={images} client:visible />
+    <Gallery imageData={images} thumbnails={thumbnails} client:visible />
   </section>
 </Layout>
 
