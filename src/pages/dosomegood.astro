@@ -6,8 +6,7 @@ import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Banner from "@/components/Banner.astro";
-import { Collapsible } from "../components/Collapsible";
-import School from "@/components/pages/dosomegood/School.astro";
+import { SchoolsTable } from "@/components/pages/dosomegood/schools-table";
 import poster from "@/assets/img/dosomegood/poster.png";
 import Marquee from "@/components/ui/marquee";
 import { Gallery } from "@/components/Gallery";
@@ -119,14 +118,9 @@ for await (const image of images) {
   </section>
 
   <section class="section-container">
-    <h2>Our Schools</h2>
-    <Collapsible client:visible>
-      <div
-        class="mb-6 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
-      >
-        {schools.map((school) => <School school={school} />)}
-      </div>
-    </Collapsible>
+    <h2>Our {schools.length} Schools</h2>
+
+    <SchoolsTable schools={schools} />
   </section>
 
   <section class="section-full-container">

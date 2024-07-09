@@ -28,10 +28,9 @@ const author = await getEntry(post.data.author);
         height="700"
         alt={post.data.title}
         class="shadow-border h-96 w-full rounded-md object-cover"
-        transition:name={`news-image-${post.slug}`}
       />
       <div>
-        <h2 class="text-left" transition:name={`news-title-${post.slug}`}>
+        <h2 class="text-left">
           {post.data.title}
         </h2>
         <div class="mt-auto flex space-x-3">

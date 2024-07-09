@@ -13,7 +13,7 @@ take10arvos: >-
 genlink: >-
   Aiming to lessen the generation gap by connecting younger people with older
   folk within our local communities.
-schools: 21
+schools: 19
 take10Visitors: 30571
 waterGiven: 110583
 mealsForTamariki: 201357

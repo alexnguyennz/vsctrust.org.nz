@@ -18,13 +18,6 @@ const { Content } = await page.render();
 ---
 
 <Layout title={page.data.title}>
-  <Fragment slot="head">
-    <link rel="preload" href="/img/programmes/dosomegood.jpg" as="image" />
-    <link rel="preload" href="/img/programmes/take10.jpg" as="image" />
-    <link rel="preload" href="/img/programmes/take10-arvos.jpg" as="image" />
-    <link rel="preload" href="/img/programmes/gen-link.webp" as="image" />
-  </Fragment>
-
   <section class="section-container">
     <Programmes page={page.data} />
   </section>
