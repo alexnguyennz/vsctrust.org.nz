@@ -4,7 +4,6 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -17,10 +16,10 @@ export function SchoolsTable({
 }) {
   return (
     <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead>Name</TableHead>
-          <TableHead className="w-[200px]">Tamariki (children)</TableHead>
+      <TableHeader className={"sticky top-0 z-50 bg-white"}>
+        <TableRow className={"bg-slate-800 text-white"}>
+          <TableHead>School</TableHead>
+          <TableHead>Tamariki (children)</TableHead>
           <TableHead>Location</TableHead>
           <TableHead className="text-right">Partner Date</TableHead>
           <TableHead>Sponsored by</TableHead>
@@ -43,31 +42,26 @@ export function SchoolsTable({
             <TableCell className="text-right">
               {school.data.partnerDate}
             </TableCell>
-            {/* <div className="mt-auto text-center">
-                  <a
-                      href={school.data.sponsorUrl}
-                      target="_blank"
-                      rel="noopener nofollow noreferrer"
-                      className="inline-block"
-                  >
-                      <Image
-                          src={school.data.sponsorImage}
-                          width="128"
-                          height="128"
-                          alt="sponsor logo"
-                          class="object-contain"
-                      />
-                  </a>
-              </div>*/}
+            <TableCell>
+              {school.data.sponsorImage && school.data.sponsorUrl && (
+                <a
+                  href={school.data.sponsorUrl}
+                  target="_blank"
+                  rel="noopener nofollow noreferrer"
+                  className="inline-block"
+                >
+                  <img
+                    src={school.data.sponsorImage.src}
+                    width="128"
+                    height="128"
+                    alt="sponsor logo"
+                  />
+                </a>
+              )}
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
-      <TableFooter>
-        <TableRow>
-          <TableCell colSpan={4}>Total Schools</TableCell>
-          <TableCell className="text-right">{schools.length}</TableCell>
-        </TableRow>
-      </TableFooter>
     </Table>
   );
 }

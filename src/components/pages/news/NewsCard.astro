@@ -20,7 +20,6 @@ const { post } = Astro.props;
       width={500}
       alt={post.data.title}
       class="aspect-[4/3] w-full rounded-2xl object-cover transition duration-500 group-hover:scale-110"
-      transition:name={`news-image-${post.slug}`}
     />
   </a>
 
@@ -35,10 +34,7 @@ const { post } = Astro.props;
       }
     </h3>
 
-    <h2
-      class="mb-0 line-clamp-2 text-base"
-      transition:name={`news-title-${post.slug}`}
-    >
+    <h2 class="mb-0 line-clamp-2 text-base">
       <a href={`/news/${post.slug}/`}>{post.data.title}</a>
     </h2>
   </div>
