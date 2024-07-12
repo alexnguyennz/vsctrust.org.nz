@@ -10,4 +10,4 @@ order: 6
 ---
 Knowing VSCT is making a real impact in the lives of young kiwis, is what excites Leigh. There isn’t anything better than seeing a smile on a kids face and knowing you help put it there.
 
-Leigh has a 10-year-old daughter, and an 18-year-old stepson who lives in South Africa.
+Leigh has a 11-year-old daughter, and an 18-year-old stepson.
