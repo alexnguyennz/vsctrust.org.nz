@@ -12,4 +12,4 @@ My work background is in hospitality, having studied to start a journey in cheff
 
 Through volunteering I was introduced to Leigh and given the opportunity to work for VSCT and Do Some Good. I enjoy being on the road delivering food to schools and kindergartens right across Wellington, meeting like-minded and wonderfully friendly people in the community and the VSCT family, but most of all I am glad to be providing a basic necessity to those who too often go without. It falls on those of us who can afford food to provide for those that can’t.
 
-This is exactly the sort of work I want to be doing, I’ve had a blast so far (even on the rainy days), and I hope to be able to do more good for the people of Wellington in the near future.Add the team member's background or description here.
+This is exactly the sort of work I want to be doing, I’ve had a blast so far (even on the rainy days), and I hope to be able to do more good for the people of Wellington in the near future.
