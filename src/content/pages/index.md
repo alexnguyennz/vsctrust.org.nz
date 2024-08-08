@@ -14,8 +14,8 @@ genlink: >-
   Aiming to lessen the generation gap by connecting younger people with older
   folk within our local communities.
 schools: 22
-take10Visitors: 36340
-waterGiven: 16719
-mealsForTamariki: 24091
+take10Visitors: 39251
+waterGiven: 22137
+mealsForTamariki: 26286
 ---
 We support tamariki by providing food in schools/kindy’s/Kohanaga Reo’s, young people in the city on Friday and Saturday nights, rangatahi after school, and older people who may be feeling lonely or isolated.
