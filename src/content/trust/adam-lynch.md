@@ -2,7 +2,10 @@
 name: Adam Lynch
 position: Trustee
 image: /src/content/trust/adam-lynch.png
-excerpt: Wayne has spent the greater part of his working years in the corporate world as Vice President Sales Australasia for Goodyear Dunlop based in Melbourne.
+excerpt: >-
+  Having spent time running entertainment venues around NZ, Adam is passionate
+  about creating a positive drinking culture, and having space where at-risk
+  youth can take time out or get help when they are out.
 order: 4
 ---
 Having spent time running entertainment venues around NZ, Adam is passionate about creating a positive drinking culture, and having space where at-risk youth can take time out or get help when they are out (at Take 10).
