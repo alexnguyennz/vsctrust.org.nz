@@ -1,9 +1,9 @@
 ---
 title: Donate
 items:
-  - purchasing food and water
+  - 'weekly breakfast and lunch food items for our Do Some Good schools '
   - volunteer training
-  - uniforms
-  - kitchen equipment
-  - meals and resources for our volunteers
+  - 'cups, lollies, and first aid supplies for Take 10 '
+  - art and resources for Take 10 Arvo's
+  - meals and transport home for our volunteers
 ---
