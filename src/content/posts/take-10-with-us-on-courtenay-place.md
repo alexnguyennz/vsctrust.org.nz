@@ -3,7 +3,7 @@ _schema: posts
 title: 'Take 10 with us on Courtenay Place '
 date: 2025-02-27T00:00:00+13:00
 author: leigh-keown
-image: /public/img/news/take10-5-8-23-18.jpg
+image:
 published: false
 ---
 &nbsp;
