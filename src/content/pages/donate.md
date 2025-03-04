@@ -6,5 +6,4 @@ items:
   - 'cups, lollies, uniforms, and first aid supplies for Take 10 '
   - art, and food for Take 10 Arvo's
   - meals and transport home for our volunteers
-  - testing
 ---
