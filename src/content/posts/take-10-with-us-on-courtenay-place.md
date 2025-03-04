@@ -6,7 +6,7 @@ author: leigh-keown
 image: /public/img/news/take10-5-8-23-18.jpg
 published: true
 ---
-&nbsp;
+![](/public/img/news/take10-5-8-23-18-cm0huidv-z27ckfz.webp)
 
 We pride ourselves on being a safe space for people in the Courtenay place precinct, we are out every weekend, on Friday and Saturday nights from 10pm to 3am, on the corner of Taranaki Street and Courtenay Place, next to Lucky Chicken. We provide a free, safe rest area, with games, phone charging, and water - focussing on reducing harm through purposeful connection. Our trained volunteers, guided by a team leader, connect with people who visit us to have a break from the bars and clubs or they feel unsafe, have been affected by harm in some way or need advice on how to get home. We also act as a safe meeting place in case someone gets lost or sidetracked and can't find the group they are with.
 
