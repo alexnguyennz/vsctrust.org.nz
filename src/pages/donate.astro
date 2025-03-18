@@ -8,6 +8,12 @@ import Layout from "@/components/layouts/Layout.astro";
 import TextBanner from "@/components/TextBanner.astro";
 
 const page = await getEntry("pages", "donate");
+const { Content } = await page.render();
+
+const formattedTopContent = page.data.topContent
+  .split("\n")
+  .map((p) => `<p>${p}</p>`)
+  .join("");
 ---
 
 <Layout title={page.data.title}>
@@ -25,6 +31,8 @@ const page = await getEntry("pages", "donate");
   />
 
   <section class="section-container flex flex-col gap-6">
+    <div><Fragment set:html={formattedTopContent} /></div>
+
     <div class="self-center">
       <p class="bold-underline font-extrabold">
         Your donation will go towards:
@@ -52,6 +60,8 @@ const page = await getEntry("pages", "donate");
         </li>
       </ul>
     </div>
+
+    <Content />
 
     <div class="self-center" transition:animate="none">
       <iframe
