@@ -12,7 +12,7 @@ const { Content } = await page.render();
 
 const formattedTopContent = page.data.topContent
   .split("\n")
-  .map((p) => `<p>${p}</p>`)
+  .map((p: string) => `<p>${p}</p>`)
   .join("");
 ---
 
