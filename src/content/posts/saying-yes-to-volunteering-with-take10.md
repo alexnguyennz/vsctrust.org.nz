@@ -8,7 +8,7 @@ published: true
 ---
 Volunteers are the heart and soul of Take10, dedicated and passionate people who willingly give up their time to help people have safe, fun experiences in central Pōneke and at events around the Wellington, Hutt Valley and Porirua regions. Some of our volunteers have just started, and some have stuck with us for a number of years. No matter what, we are so grateful for each and every person who takes the time to volunteer, we love hearing about what they think of their experience, and what they love about it. Keep reading to hear from Issy, who shares what her volunteering journey has been like so far and why she would recommend volunteering with us to others.
 
-![](/public/img/news/img-20210321-wa0011-002.jpg "Issy &#40;right&#41; and another volunteer, outside the Take 10 space at Homegrown.")Issy (right) and another volunteer, outside the Take10 space at Homegrown.
+![](/public/img/news/img-20210321-wa0011-002.jpg "Issy &#40;right&#41; and another volunteer, outside the Take 10 space at Homegrown.")*Issy (right) and another volunteer, outside the Take10 space at Homegrown.*
 
 Looking back on my time with Take 10, I've been involved for over five years, and for me it was a no-brainer to sign up as a volunteer. It's a small thing for me to give up a few hours on the weekend, but it makes such a big difference for people. It's also a lot of fun! We have a great team of volunteers, and I really enjoy talking to people.
 
