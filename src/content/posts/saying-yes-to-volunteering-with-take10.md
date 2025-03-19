@@ -1,0 +1,19 @@
+---
+_schema: posts
+title: Saying Yes! to Volunteering with Take10
+date: 2025-03-20T00:00:00+13:00
+author: leigh-keown
+image: /src/content/posts/img-2068.jpeg
+published: true
+---
+Volunteers are the heart and soul of Take10, dedicated and passionate people who willingly give up their time to help people have safe, fun experiences in central Pōneke and at events around the Wellington, Hutt Valley and Porirua regions. Some of our volunteers have just started, and some have stuck with us for a number of years. No matter what, we are so grateful for each and every person who takes the time to volunteer, we love hearing about what they think of their experience, and what they love about it. Keep reading to hear from Issy, who shares what her volunteering journey has been like so far and why she would recommend volunteering with us to others.
+
+![](/public/img/news/img-20210321-wa0011-002.jpg "Issy &#40;right&#41; and another volunteer, outside the Take 10 space at Homegrown.")Issy (right) and another volunteer, outside the Take10 space at Homegrown.
+
+Looking back on my time with Take 10, I've been involved for over five years, and for me it was a no-brainer to sign up as a volunteer. It's a small thing for me to give up a few hours on the weekend, but it makes such a big difference for people. It's also a lot of fun! We have a great team of volunteers, and I really enjoy talking to people.
+
+Since I started volunteering I’ve seen how our service has grown and become an important part of the community. So many people know about us now and will come up to chat to us like we're old friends - they trust us and know we're here to help. I recently had one young person come up to me and say that they had just turned 18, and their Dad had brought them to Take 10 a few weeks ago so they would know exactly where to go if they were on a night out and needed anything at all. It's great to hear that not only do more and more young people know about us, but also their whānau.
+
+I have so many great memories of volunteering with Take 10. The ones that stick with me the most are small things, such as people coming up to me with a massive smile and thanking me for the work I do, or playing a game of jenga with a group of people who are making the most of the opportunity to take a break during their night. It’s the same when I think of the work we do, what stands out, for me, are the many small ways we work to prevent and reduce the impact of harm, such as encouraging people to take breaks and stay hydrated, and providing a safe place to meet friends or wait for Ubers. I also think the importance of having phone chargers is sometimes underrated; it's easy to be taken by surprise by a phone running out of battery, and from there things can quickly lead to someone becoming isolated, lost, scared, and feeling unsafe or ending up in an unsafe situation. It’s great that we are able to offer free phone charging to help prevent that.
+
+Volunteering can be a big choice, but it is one that I definitely don't regret making. I would highly encourage anyone thinking about volunteering with Take 10 to give it a go. There's no pressure to commit to regular volunteering if it turns out it's not for you, and if you do decide to keep volunteering you don't have to commit to a certain number of shifts. We have people who volunteer most weeks, but we also value people who volunteer once a month. It's a great way to give back to the community, and it also has some cool perks. For example, Take 10 is at quite a few events in the Wellington region, particularly concerts, which we get free entry to if we're volunteering on the day. I've also made some great friends through volunteering, so I'd recommend it to people who are new to Wellington and looking to meet like minded people.
