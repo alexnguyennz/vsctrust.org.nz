@@ -11,7 +11,9 @@ topContent: >
   
   Thank you for taking the time to consider donating to us!
 
-  Our organisation creates meaningful change throughout communities in the Pōneke, Te Awa Kairangi and Porirua (Wellington, Hutt Valley and Porirua) regions. Our work focusses around targeted programmes offering support, care, and creating connection and stronger, safer, more inclusive communities, together.
+  Our organisation creates meaningful change throughout communities in the Pōneke, Te Awa Kairangi and Porirua (Wellington, Hutt Valley and Porirua) regions. 
+  
+  Our work focusses around targeted programmes offering support, care, and creating connection and stronger, safer, more inclusive communities, together.
 
   We know our work makes a real impact, donating to us is your chance to make an impact too.
 ---
