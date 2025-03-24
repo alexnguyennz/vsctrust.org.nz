@@ -4,16 +4,13 @@ import { Image } from "astro:assets";
 
 import { Icon } from "astro-icon/components";
 
+import { marked } from "marked";
+
 import Layout from "@/components/layouts/Layout.astro";
 import TextBanner from "@/components/TextBanner.astro";
 
 const page = await getEntry("pages", "donate");
 const { Content } = await page.render();
-
-const formattedTopContent = page.data.topContent
-  .split("\n")
-  .map((p: string) => `<p>${p}</p>`)
-  .join("");
 ---
 
 <Layout title={page.data.title}>
@@ -32,7 +29,7 @@ const formattedTopContent = page.data.topContent
 
   <section class="section-container flex flex-col gap-6">
     <div class="mx-auto max-w-4xl">
-      <Fragment set:html={formattedTopContent} />
+      <Fragment set:html={marked.parse(page.data.topContent)} />
     </div>
 
     <div class="self-center">
