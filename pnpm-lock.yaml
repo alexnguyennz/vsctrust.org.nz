@@ -59,6 +59,9 @@ importers:
       framer-motion:
         specifier: ^11.2.12
         version: 11.2.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      marked:
+        specifier: ^15.0.7
+        version: 15.0.7
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -2181,6 +2184,11 @@ packages:
 
   markdown-table@3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
+
+  marked@15.0.7:
+    resolution: {integrity: sha512-dgLIeKGLx5FwziAnsk4ONoGwHwGPJzselimvlVskE9XLN4Orv9u2VA3GWw/lYUqjfA0rUT/6fqKwfZJapP9BEg==}
+    engines: {node: '>= 18'}
+    hasBin: true
 
   mdast-util-definitions@6.0.0:
     resolution: {integrity: sha512-scTllyX6pnYNZH/AIp/0ePz6s4cZtARxImwoPJ7kS42n+MnVsI4XbnG6d4ibehRIldYMWM2LD7ImQblVhUejVQ==}
@@ -5598,6 +5606,8 @@ snapshots:
   markdown-extensions@2.0.0: {}
 
   markdown-table@3.0.3: {}
+
+  marked@15.0.7: {}
 
   mdast-util-definitions@6.0.0:
     dependencies:

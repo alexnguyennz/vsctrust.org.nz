@@ -49,6 +49,8 @@ collections_config:
         type: text
         label: Sponsor A School Description
         cascade: true
+      topContent:
+        type: markdown
     _select_data: {}
     _structures: {}
     add_options:
