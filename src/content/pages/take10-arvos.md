@@ -9,15 +9,13 @@ Update
 
 Sadly, we have made the difficult decision to close Take10Arvos as of 9 March, with our last session happening in that week. The decision to close was not one that we ever wanted to make, but due to various factors, it was not sustainable for Take10Arvos to continue operating.
 
-We learned so much from the rangatahi who attended Take10, they are all unique, valued, and talented in many different ways, we are grateful to have had the opportunity to get to know each of them.
+We learned so much from the rangatahi who attended Take10Arvos, they are all unique, valued, and talented in many different ways, we are grateful to have had the opportunity to get to know each of them.
 
 Seeing rangatahi develop friendships with one another, becoming more comfortable in their identities while they explored who they are and who they want to be, and enjoying the privilege of spending time with them is something that will be sorely missed.
 
 For those that had been attending our programme for a longer time, we were inspired to see them step into roles of leadership and guidance, and we have loved seeing them grow into the strong and confident young adults they have become.
 
 Our staff and volunteers contributed so much to Take10Arvos, their commitment and deep care about our rangatahi and the community is something that never faltered throughout the 5 years Take10Arvo's was in operation.
-
-As volunteers, Albion, Rose, and Alice gave not only their time but also their kindness and empathy, creating connections with rangatahi and making a lasting impact on their lives.
 
 Jess - our Youth Co-ordinator, who facilitated and ran Take10Arvos, always did so with ehnthusiasm, warmth and affection, creating an atmosphere of fun and safety, where rangatahi felt free to be themselves and had the opportunity to flourish and grow.
 
