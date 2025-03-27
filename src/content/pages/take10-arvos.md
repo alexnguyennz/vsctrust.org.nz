@@ -4,21 +4,21 @@ wantToHelpDescription: We’re looking for volunteers to help in the afternoons,
 ---
 
 <p class="text-xl font-extrabold">
-Our focus is to increase the reach Take 10 has in the community by
-extending the services we offer to rangatahi in the form of a youth
-zone.
+Update
 </p>
 
-During the school term, we are at:
+Sadly, we have made the difficult decision to close Take10Arvos as of 9 March, with our last session happening in that week. The decision to close was not one that we ever wanted to make, but due to various factors, it was not sustainable for Take10Arvos to continue operating.
 
-- [Linden Community Centre](https://wellington.govt.nz/community-support-and-resources/resources-and-facilities/community-centres/locations/linden-community-centre) (10 Linden Avenue, Linden) every Tuesday and Thursday from 3 to 5pm
-- [Johnsonville Community Centre](https://www.johnsonvillecommunitycentre.org.nz/) (3 Frankmoore Ave, Johnsonville) every Friday from 3 to 5pm
+We learned so much from the rangatahi who attended Take10, they are all unique, valued, and talented in many different ways, we are grateful to have had the opportunity to get to know each of them.
 
-Take 10 Arvo's aims to:
-- support rangatahi
-- provide a safe and fun space for them to come to after school
+Seeing rangatahi develop friendships with one another, becoming more comfortable in their identities while they explored who they are and who they want to be, and enjoying the privilege of spending time with them is something that will be sorely missed.
 
-We keep our "safe zone" welcoming and non-judgmental, by:
--always using positive language
--greeting visitors with a smile, water, and lollies
--providing a private space for those who need more attention
+For those that had been attending our programme for a longer time, we were inspired to see them step into roles of leadership and guidance, and we have loved seeing them grow into the strong and confident young adults they have become.
+
+Our staff and volunteers contributed so much to Take10Arvos, their commitment and deep care about our rangatahi and the community is something that never faltered throughout the 5 years Take10Arvo's was in operation.
+
+As volunteers, Albion, Rose, and Alice gave not only their time but also their kindness and empathy, creating connections with rangatahi and making a lasting impact on their lives.
+
+Jess - our Youth Co-ordinator, who facilitated and ran Take10Arvos, always did so with ehnthusiasm, warmth and affection, creating an atmosphere of fun and safety, where rangatahi felt free to be themselves and had the opportunity to flourish and grow.
+
+We would also like to thank Beatrice, Jess's predecessor who was key in getting Arvo's to a place where it was a trusted and safe space for so many rangatahi. Bea's infectious energy, and positive can-do attitude was loved by all.
