@@ -9,6 +9,8 @@ import NewsCard from "@/components/pages/news/NewsCard.astro";
 import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
 import OurNumbers from "@/components/pages/home/OurNumbers.astro";
 
+import Newsletter from "@/components/Newsletter.astro";
+
 const posts = (await getCollection("posts", ({ data }) => data.published)).sort(
   (a, b) => Number(b.data.date) - Number(a.data.date),
 );
@@ -31,6 +33,8 @@ const { Content } = await page.render();
       <Content />
     </div>
   </section>
+
+  <section><div class="section-container"><Newsletter /></div></section>
 
   <section class="section-full-container">
     <h2>What people are saying</h2>

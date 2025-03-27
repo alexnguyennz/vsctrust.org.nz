@@ -1,0 +1,88 @@
+---
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+---
+
+<div>
+  <div>
+    <form
+      action="https://vsctrust.us11.list-manage.com/subscribe/post?u=8931bff157bafa644bad41e4a&id=ea3332c16f&f_id=00858de0f0"
+      method="post"
+      name="mc-embedded-subscribe-form"
+      class="validate mx-auto grid max-w-sm gap-3"
+      target="_self"
+    >
+      <div>
+        <div class="mc-field-group">
+          <Label htmlFor="mce-footer-EMAIL" className="required text-sm"
+            >Email Address</Label
+          >
+          <Input
+            className="shadow-border h-8 text-black"
+            type="email"
+            id="mce-footer-EMAIL"
+            name="EMAIL"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="mc-field-group">
+        <Label htmlFor="mce-footer-FNAME" className="required text-sm"
+          >First Name</Label
+        >
+        <Input
+          className="shadow-border h-8 text-black"
+          type="text"
+          id="mce-footer-FNAME"
+          name="FNAME"
+          required
+        />
+      </div>
+
+      <div class="mc-field-group">
+        <Label htmlFor="mce-footer-LNAME" className="required text-sm"
+          >Last Name</Label
+        >
+        <Input
+          className="shadow-border h-8 text-black"
+          type="text"
+          id="mce-footer-LNAME"
+          name="LNAME"
+          required
+        />
+      </div>
+
+      <div class="clear foot hidden">
+        <div class="response" style="display: none;"></div>
+        <div class="response" style="display: none;"></div>
+      </div>
+      <div aria-hidden="true" style="position: absolute; left: -5000px;">
+        /* real people should not fill this in and expect good things - do not
+        remove this or risk form bot signups */
+        <input
+          type="text"
+          name="b_8931bff157bafa644bad41e4a_ea3332c16f"
+          tabindex="-1"
+          value=""
+        />
+      </div>
+      <div class="optionalParent">
+        <div class="clear foot flex items-center justify-between">
+          <button
+            type="submit"
+            class="shadow-button place-self-start bg-gray-600 !px-2 !py-1"
+            >Subscribe</button
+          >
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  label.required:after {
+    @apply font-bold text-red-500;
+    content: " *";
+  }
+</style>
