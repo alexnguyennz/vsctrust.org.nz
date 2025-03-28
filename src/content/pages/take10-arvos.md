@@ -19,7 +19,7 @@ For those that had been attending our programme for a longer time, we were inspi
 
 Our staff and volunteers contributed so much to Take10Arvos, their commitment and deep care about our rangatahi and the community is something that never faltered throughout the 5 years Take10Arvo's was in operation.
 
-As volunteers, Albion, Rose, and Alice gave not only their time but also their kindness and empathy, creating connections with rangatahi and making a lasting impact on their lives. The same can be said of our previous volunteers, who put in so much time and energy  in the early days of Take10Arvos.
+As volunteers, Albion, Rose, and Alice gave not only their time but also their kindness and empathy, creating connections with rangatahi and making a lasting impact on their lives. The same can be said of our previous volunteers, who put in so much time and energy  in the early days of Take10Arvos to make the programme a success.
 
 Jess - our Youth Co-ordinator, who facilitated and ran Take10Arvos, always did so with enthusiasm, warmth and affection, creating an atmosphere of fun and safety, where rangatahi felt free to be themselves and had the opportunity to flourish and grow.
 
