@@ -1,8 +1,10 @@
 ---
 title: Take 10 Arvo's
-wantToHelpDescription: We’re looking for volunteers to help in the afternoons, talk to people, and make the Take 10 Arvo's area an inviting place to be. Interested? Get in touch!
+wantToHelpDescription: >-
+  We’re looking for volunteers to help in the afternoons, talk to people, and
+  make the Take 10 Arvo's area an inviting place to be. Interested? Get in
+  touch!
 ---
-
 <p class="text-xl font-extrabold">
 Update
 </p>
@@ -17,8 +19,8 @@ For those that had been attending our programme for a longer time, we were inspi
 
 Our staff and volunteers contributed so much to Take10Arvos, their commitment and deep care about our rangatahi and the community is something that never faltered throughout the 5 years Take10Arvo's was in operation.
 
-As volunteers, Albion, Rose, and Alice gave not only their time but also their kindness and empathy, creating connections with rangatahi and making a lasting impact on their lives.
+As volunteers, Albion, Rose, and Alice gave not only their time but also their kindness and empathy, creating connections with rangatahi and making a lasting impact on their lives. The same can be said of our previous volunteers, who put in so much time and energy  in the early days of Take10Arvos.
 
-Jess - our Youth Co-ordinator, who facilitated and ran Take10Arvos, always did so with ehnthusiasm, warmth and affection, creating an atmosphere of fun and safety, where rangatahi felt free to be themselves and had the opportunity to flourish and grow.
+Jess - our Youth Co-ordinator, who facilitated and ran Take10Arvos, always did so with enthusiasm, warmth and affection, creating an atmosphere of fun and safety, where rangatahi felt free to be themselves and had the opportunity to flourish and grow.
 
 We would also like to thank Beatrice, Jess's predecessor who was key in getting Arvo's to a place where it was a trusted and safe space for so many rangatahi. Bea's infectious energy, and positive can-do attitude was loved by all.
