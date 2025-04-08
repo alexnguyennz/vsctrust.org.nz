@@ -10,7 +10,7 @@ topContent: >-
   Kia ora,
 
 
-  Thank you for taking the time to consider donating to us!
+  Thank you for taking the time to consider donating to us.
 
 
   Our organisation creates meaningful change throughout communities in the
