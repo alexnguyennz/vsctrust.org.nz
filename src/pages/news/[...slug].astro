@@ -17,6 +17,8 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 
 const author = await getEntry(post.data.author);
+
+console.log("test", post.data.author);
 ---
 
 <Layout title={post.data.title}>
@@ -38,7 +40,7 @@ const author = await getEntry(post.data.author);
             src={author.data.image}
             width="96"
             height="96"
-            alt={post.data.author.slug}
+            alt={author.data.name}
             class="h-[56px] w-[56px] rounded-full"
           />
 
