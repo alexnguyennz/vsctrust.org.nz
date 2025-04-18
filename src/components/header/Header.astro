@@ -24,7 +24,7 @@ const pathname = new URL(Astro.request.url).pathname;
     >
 
     <div class="hidden lg:block">
-      <Navigation pathname={pathname} client:mouseover />
+      <Navigation pathname={pathname} client:visible />
     </div>
 
     <div class="lg:hidden">
