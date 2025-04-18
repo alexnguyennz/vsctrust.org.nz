@@ -1,10 +1,13 @@
 ---
-import { getCollection, getEntry, render } from "astro:content";
 import type { GetImageResult, ImageMetadata } from "astro";
+import { getCollection, getEntry, render } from "astro:content";
 import { Image, getImage } from "astro:assets";
+
 import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
+import H2 from "@/components/headings/h2.astro";
+
 import Banner from "@/components/Banner.astro";
 import { SchoolsTable } from "@/components/pages/dosomegood/schools-table";
 import poster from "@/assets/img/dosomegood/poster.png";
@@ -88,7 +91,7 @@ for await (const image of images) {
   </section>
 
   <section class="section-container text-center">
-    <h2>Want to help?</h2>
+    <H2>Want to help?</H2>
     <div class="grid gap-6 sm:grid-cols-2 lg:gap-10">
       <div class="flex flex-col">
         <p>
@@ -120,13 +123,13 @@ for await (const image of images) {
   </section>
 
   <section class="section-container">
-    <h2>Our {schools.length} Schools</h2>
+    <H2>Our {schools.length} Schools</H2>
 
     <SchoolsTable schools={schools} />
   </section>
 
   <section class="section-full-container">
-    <h2>Sponsors</h2>
+    <H2>Sponsors</H2>
 
     <Marquee
       pauseOnHover
@@ -166,7 +169,7 @@ for await (const image of images) {
   </section>
 
   <section class="section-full-container">
-    <h2>Supporters</h2>
+    <H2>Supporters</H2>
 
     <Marquee
       reverse

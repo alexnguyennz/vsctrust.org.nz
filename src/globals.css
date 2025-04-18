@@ -13,23 +13,16 @@ body {
   font-synthesis: none; /* Fix Safari bug with ugly bolded text */
 }
 
-h1 {
-  @apply text-4xl font-extrabold text-white;
-}
-
-h2 {
-  @apply text-center text-3xl font-extrabold;
-}
-
 .section-container > h2,
 .section-full-container > h2,
 p,
 main ul {
-  @apply mb-4;
+  margin-bottom: 1rem;
 }
 
 main ul {
-  @apply ml-6 list-disc;
+  margin-left: 1.5rem;
+  list-style-type: disc;
 }
 
 main a:hover,

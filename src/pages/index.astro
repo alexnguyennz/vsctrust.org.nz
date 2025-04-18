@@ -2,6 +2,8 @@
 import { getCollection, getEntry, render } from "astro:content";
 
 import Layout from "@/components/layouts/Layout.astro";
+import H2 from "@/components/headings/h2.astro";
+
 import Programmes from "@/components/pages/home/Programmes.astro";
 import { Quotes } from "@/components/pages/home/Quotes";
 
@@ -30,7 +32,7 @@ const { Content } = await render(entry);
 
   <section>
     <div class="section-container text-center">
-      <h2>Helping rangatahi and tamariki in Wellington</h2>
+      <H2>Helping rangatahi and tamariki in Wellington</H2>
 
       <Content />
     </div>
@@ -39,14 +41,14 @@ const { Content } = await render(entry);
   <section><div class="section-container"><Newsletter /></div></section>
 
   <section class="section-full-container">
-    <h2>What people are saying</h2>
+    <H2>What people are saying</H2>
 
     <Quotes />
   </section>
 
   <section>
     <div class="section-container">
-      <h2>Latest news</h2>
+      <H2>Latest news</H2>
 
       <div
         class="news-grid grid gap-6 sm:grid-cols-2 sm:gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"

@@ -3,6 +3,7 @@ import { getCollection, getEntry, render } from "astro:content";
 import { Image } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
+import H2 from "@/components/headings/h2.astro";
 
 export const getStaticPaths = async () => {
   const posts = await getCollection("posts", ({ data }) => data.published);
@@ -30,9 +31,9 @@ const author = await getEntry(post.data.author);
         class="shadow-border h-96 w-full rounded-md object-cover"
       />
       <div>
-        <h2 class="text-left">
+        <H2 class="text-left">
           {post.data.title}
-        </h2>
+        </H2>
         <div class="mt-auto flex space-x-3">
           <Image
             src={author.data.image}

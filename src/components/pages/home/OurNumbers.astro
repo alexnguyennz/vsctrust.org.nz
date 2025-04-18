@@ -1,6 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
 
+import H2 from "@/components/headings/h2.astro";
+
 import { NumberTicker } from "@/components/ui/number-ticker";
 
 interface Props {
@@ -19,13 +21,13 @@ const {
 
 <section class="bg-slate-800 text-white">
   <div class="section-container">
-    <h2 class="text-white">Our numbers</h2>
+    <H2 class="text-white">Our numbers</H2>
     <div class="grid justify-center gap-5 lg:grid-cols-4">
       <section>
         <Icon name="tabler:backpack" class="h-8 w-8" />
         <div>
           <NumberTicker value={schools} client:visible />
-          <h4>schools and kohanga reos</h4>
+          <h4>schools & kohanga reos</h4>
         </div>
       </section>
       <section>
