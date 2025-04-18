@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
+import Section from "@/components/layouts/section.astro";
+
 import TextBanner from "@/components/TextBanner.astro";
 import ProgrammeGrid from "@/components/programmes/ProgrammeGrid.astro";
 import ProgrammeCard from "@/components/programmes/ProgrammeCard.astro";
@@ -28,7 +30,7 @@ const title = "Volunteer";
     transition:name="volunteer"
   />
 
-  <section class="section-container">
+  <Section>
     <ProgrammeGrid>
       <ProgrammeCard programme="dosomegood">
         <p>
@@ -71,9 +73,9 @@ const title = "Volunteer";
         >Take 10 Role description</a
       >
     </div>
-  </section>
+  </Section>
 
-  <section class="section-container">
+  <Section>
     <Form name="volunteer">
       <div>
         <Label htmlFor="name" className="required">Name</Label>
@@ -113,5 +115,5 @@ const title = "Volunteer";
         />
       </div>
     </Form>
-  </section>
+  </Section>
 </Layout>

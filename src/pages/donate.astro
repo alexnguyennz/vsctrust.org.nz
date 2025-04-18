@@ -7,6 +7,7 @@ import { Icon } from "astro-icon/components";
 import { marked } from "marked";
 
 import Layout from "@/components/layouts/Layout.astro";
+import Section from "@/components/layouts/section.astro";
 import TextBanner from "@/components/TextBanner.astro";
 
 const entry = await getEntry("pages", "donate");
@@ -29,7 +30,7 @@ const { Content } = await render(entry);
     transition:name="donate"
   />
 
-  <section class="section-container flex flex-col gap-6">
+  <Section class="flex flex-col gap-6">
     <div class="mx-auto max-w-4xl">
       <Fragment set:html={marked.parse(entry.data.topContent)} />
     </div>
@@ -73,7 +74,7 @@ const { Content } = await render(entry);
     </div>
 
     <div class="mx-auto max-w-4xl"><Content /></div>
-  </section>
+  </Section>
 </Layout>
 
 <style>

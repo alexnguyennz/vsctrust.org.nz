@@ -2,6 +2,8 @@
 import { getCollection } from "astro:content";
 
 import Layout from "@/components/layouts/Layout.astro";
+import Section from "@/components/layouts/section.astro";
+
 import TextBanner from "@/components/TextBanner.astro";
 import TeamMember from "@/components/pages/team/TeamMember.astro";
 
@@ -15,7 +17,7 @@ const title = "The Team";
 <Layout title={title}>
   <TextBanner title={title} />
 
-  <section class="section-container">
+  <Section>
     <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
       {
         trustMembers.map((trust) => (
@@ -23,5 +25,5 @@ const title = "The Team";
         ))
       }
     </div>
-  </section>
+  </Section>
 </Layout>

@@ -4,6 +4,7 @@ import type { GetImageResult } from "astro";
 import { Image, getImage } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
+import Section from "@/components/layouts/section.astro";
 import H2 from "@/components/headings/h2.astro";
 
 import Banner from "@/components/Banner.astro";
@@ -34,7 +35,7 @@ for await (const image of images) {
 <Layout title={entry.data.title}>
   <Banner title={entry.data.title} programme="gen-link" />
 
-  <section class="section-container space-y-6">
+  <Section class="space-y-6">
     <div class="grid gap-6 sm:grid-cols-2">
       <Image
         src={import("@/assets/img/logo/gen-link.png")}
@@ -50,9 +51,9 @@ for await (const image of images) {
         <Content />
       </div>
     </div>
-  </section>
+  </Section>
 
-  <section class="section-container">
+  <Section>
     <H2>How it works</H2>
     <p>
       A van will pick up seniors and transport them to the Do Some Good school
@@ -83,9 +84,9 @@ for await (const image of images) {
         learning of new skills
       </li>
     </ul>
-  </section>
+  </Section>
 
-  <section class="section-container text-center">
+  <Section class="text-center">
     <H2>Want to help?</H2>
 
     <p>{entry.data.wantToHelpDescription}</p>
@@ -93,9 +94,9 @@ for await (const image of images) {
     <a href="/volunteer/" class="shadow-button bg-blue-500" rel="prefetch"
       >Volunteer</a
     >
-  </section>
+  </Section>
 
-  <section class="section-container">
+  <Section>
     <Gallery imageData={images} thumbnails={thumbnails} client:visible />
-  </section>
+  </Section>
 </Layout>

@@ -2,6 +2,8 @@
 import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
+import Section from "@/components/layouts/section.astro";
+
 import TextBanner from "@/components/TextBanner.astro";
 import Form from "@/components/Form.astro";
 import { Input } from "@/components/ui/input";
@@ -13,7 +15,7 @@ const title = "Contact Us";
 
 <Layout title={title}>
   <TextBanner title={title} />
-  <section class="section-container">
+  <Section>
     <p class="text-center">We’d love to hear from you. Please get in touch!</p>
 
     <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
@@ -27,9 +29,9 @@ const title = "Contact Us";
         <a href="tel:+64274448672">027 444 8672</a>
       </div>
     </div>
-  </section>
+  </Section>
 
-  <section class="section-container">
+  <Section>
     <Form name="contact">
       <div>
         <Label htmlFor="name" className="required">Name</Label>
@@ -62,5 +64,5 @@ const title = "Contact Us";
         />
       </div>
     </Form>
-  </section>
+  </Section>
 </Layout>

@@ -13,7 +13,6 @@ body {
   font-synthesis: none; /* Fix Safari bug with ugly bolded text */
 }
 
-.section-container > h2,
 .section-full-container > h2,
 p,
 main ul {
@@ -29,14 +28,6 @@ main a:hover,
 footer a:hover {
   text-decoration: underline 2px;
   text-underline-offset: 3px;
-}
-
-.section-container {
-  @apply mx-auto px-5 py-8 lg:container;
-}
-
-.section-full-container {
-  @apply mx-auto py-8;
 }
 
 /* Misc */

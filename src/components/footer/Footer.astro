@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
+import Section from "@/components/layouts/section.astro";
+
 import FooterNewsletter from "@/components/FooterNewsletter.astro";
 import { Rainbow } from "./Rainbow";
 
@@ -12,7 +14,7 @@ import { menuLinks } from "@/lib/links";
   class="mt-auto bg-gray-900 text-center text-sm text-white md:text-left"
   transition:animate="none"
 >
-  <div class="section-container space-y-6">
+  <Section class="space-y-6">
     <nav class="grid justify-center gap-6 md:grid-cols-4 lg:grid-cols-6">
       <div
         class="order-last space-y-6 justify-self-center md:order-first md:col-span-4 lg:col-span-2"
@@ -63,7 +65,9 @@ import { menuLinks } from "@/lib/links";
 
         <div class="mb-4">
           <h3>Facebook</h3>
-          <div class="flex items-center justify-center gap-3 md:justify-start">
+          <div
+            class="flex flex-wrap items-center justify-center gap-3 md:justify-start"
+          >
             <a
               href="https://www.facebook.com/dosomegoodnewzealand/"
               target="_blank"
@@ -187,7 +191,7 @@ import { menuLinks } from "@/lib/links";
         <Icon name="rainbow" class="h-8 w-12" />
       </Rainbow>
     </div>
-  </div>
+  </Section>
 </footer>
 
 <style>

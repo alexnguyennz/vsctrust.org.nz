@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 
+import Section from "@/components/layouts/section.astro";
 import H2 from "@/components/headings/h2.astro";
 
 import { NumberTicker } from "@/components/ui/number-ticker";
@@ -19,8 +20,8 @@ const {
 } = Astro.props;
 ---
 
-<section class="bg-slate-800 text-white">
-  <div class="section-container">
+<div class="bg-slate-800 text-white">
+  <Section>
     <H2 class="text-white">Our numbers</H2>
     <div class="grid justify-center gap-5 lg:grid-cols-4">
       <section>
@@ -52,8 +53,8 @@ const {
         </div>
       </section>
     </div>
-  </div>
-</section>
+  </Section>
+</div>
 
 <style>
   section section {

@@ -5,6 +5,8 @@ import { Image, getImage } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
+import Section from "@/components/layouts/section.astro";
+import FullSection from "@/components/layouts/full-section.astro";
 import H2 from "@/components/headings/h2.astro";
 
 import Banner from "@/components/Banner.astro";
@@ -39,7 +41,7 @@ for await (const image of images) {
 <Layout title={entry.data.title}>
   <Banner title={entry.data.title} programme="take10" />
 
-  <section class="section-container space-y-6">
+  <Section class="space-y-6">
     <div class="grid gap-6 sm:grid-cols-2">
       <div class="place-self-center">
         <Image
@@ -69,9 +71,9 @@ for await (const image of images) {
         <Content />
       </div>
     </div>
-  </section>
+  </Section>
 
-  <section class="section-container">
+  <Section>
     <video
       poster={poster.src}
       preload="none"
@@ -83,9 +85,9 @@ for await (const image of images) {
       <source src="/take10/video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-  </section>
+  </Section>
 
-  <section class="section-container">
+  <Section>
     <H2>How it works</H2>
 
     <div class="grid gap-10 sm:grid-cols-2">
@@ -107,9 +109,9 @@ for await (const image of images) {
         </ul>
       </div>
     </div>
-  </section>
+  </Section>
 
-  <section class="section-container text-center">
+  <Section class="text-center">
     <H2>Want to help?</H2>
 
     {
@@ -121,9 +123,9 @@ for await (const image of images) {
     <a href="/volunteer/" class="shadow-button bg-orange-400" rel="prefetch"
       >Volunteer</a
     >
-  </section>
+  </Section>
 
-  <section class="section-full-container">
+  <FullSection>
     <H2>Sponsors</H2>
 
     <Marquee
@@ -161,11 +163,11 @@ for await (const image of images) {
         )
       }
     </Marquee>
-  </section>
+  </FullSection>
 
-  <section class="section-container">
+  <Section>
     <Gallery imageData={images} thumbnails={thumbnails} client:visible />
-  </section>
+  </Section>
 </Layout>
 
 <style>
