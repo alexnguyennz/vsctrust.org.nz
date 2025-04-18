@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import type { GetImageResult, ImageMetadata } from "astro";
 import { Image, getImage } from "astro:assets";
 import { Icon } from "astro-icon/components";
@@ -17,8 +17,10 @@ const schools = (await getCollection("dosomegoodSchools")).sort(
   (a, b) => b.data.order! - a.data.order!,
 );
 
-const page = await getEntry("pages", "dosomegood");
-const { Content } = await page.render();
+const entry = await getEntry("pages", "dosomegood");
+if (!entry) throw new Error("Could not find page");
+
+const { Content } = await render(entry);
 
 // Generate thumbnails
 const images = await getCollection("dosomegoodImages");
@@ -29,7 +31,7 @@ const thumbnails: { [key: string]: GetImageResult } = {};
 for await (const image of images) {
   thumbnails[image.id] = await getImage({
     src: importedImages[
-      `../content/dosomegoodImages/${image.slug}.jpg`
+      `../content/dosomegoodImages/${image.id}.jpg`
     ]() as unknown as string,
     format: "webp",
     width: 500,
@@ -37,8 +39,8 @@ for await (const image of images) {
 }
 ---
 
-<Layout title={page.data.title}>
-  <Banner title={page.data.title} programme="dosomegood" />
+<Layout title={entry.data.title}>
+  <Banner title={entry.data.title} programme="dosomegood" />
 
   <section class="section-container space-y-6">
     <div class="grid gap-6 sm:grid-cols-2">
@@ -55,7 +57,7 @@ for await (const image of images) {
         />
         <ul class="awards space-y-2">
           {
-            page.data.awards.map((award: string) => (
+            entry.data.awards.map((award: string) => (
               <li>
                 <Icon name="lucide:award" class="h-6 w-6" />
                 {award}
@@ -90,7 +92,7 @@ for await (const image of images) {
     <div class="grid gap-6 sm:grid-cols-2 lg:gap-10">
       <div class="flex flex-col">
         <p>
-          {page.data.sponsorASchoolDescription}
+          {entry.data.sponsorASchoolDescription}
         </p>
 
         <div class="mt-auto">
@@ -103,7 +105,7 @@ for await (const image of images) {
       </div>
       <div class="flex flex-col">
         <p>
-          {page.data.volunteerDescription}
+          {entry.data.volunteerDescription}
         </p>
 
         <div class="mt-auto">

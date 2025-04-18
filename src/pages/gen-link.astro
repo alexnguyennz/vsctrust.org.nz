@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import type { GetImageResult } from "astro";
 import { Image, getImage } from "astro:assets";
 
@@ -7,8 +7,10 @@ import Layout from "@/components/layouts/Layout.astro";
 import Banner from "@/components/Banner.astro";
 import { Gallery } from "@/components/Gallery";
 
-const page = await getEntry("pages", "gen-link");
-const { Content } = await page.render();
+const entry = await getEntry("pages", "gen-link");
+if (!entry) throw new Error("Could not find page");
+
+const { Content } = await render(entry);
 
 // Generate thumbnails
 const images = await getCollection("genlinkImages");
@@ -19,7 +21,7 @@ const thumbnails: { [key: string]: GetImageResult } = {};
 for await (const image of images) {
   thumbnails[image.id] = await getImage({
     src: importedImages[
-      `../content/genlinkImages/${image.slug}.jpg`
+      `../content/genlinkImages/${image.id}.jpg`
     ]() as unknown as string,
     format: "webp",
     width: 500,
@@ -27,8 +29,8 @@ for await (const image of images) {
 }
 ---
 
-<Layout title={page.data.title}>
-  <Banner title={page.data.title} programme="gen-link" />
+<Layout title={entry.data.title}>
+  <Banner title={entry.data.title} programme="gen-link" />
 
   <section class="section-container space-y-6">
     <div class="grid gap-6 sm:grid-cols-2">
@@ -84,7 +86,7 @@ for await (const image of images) {
   <section class="section-container text-center">
     <h2>Want to help?</h2>
 
-    <p>{page.data.wantToHelpDescription}</p>
+    <p>{entry.data.wantToHelpDescription}</p>
 
     <a href="/volunteer/" class="shadow-button bg-blue-500" rel="prefetch"
       >Volunteer</a

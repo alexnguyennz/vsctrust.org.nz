@@ -11,7 +11,7 @@ const { post } = Astro.props;
 
 <article class="flex flex-col text-center">
   <a
-    href={`/news/${post.slug}/`}
+    href={`/news/${post.id}/`}
     rel="prefetch"
     class="group overflow-hidden rounded-2xl"
   >
@@ -35,7 +35,7 @@ const { post } = Astro.props;
     </h3>
 
     <h2 class="mb-0 line-clamp-2 text-base">
-      <a href={`/news/${post.slug}/`}>{post.data.title}</a>
+      <a href={`/news/${post.id}/`}>{post.data.title}</a>
     </h2>
   </div>
 </article>

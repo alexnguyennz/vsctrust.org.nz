@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Programmes from "@/components/pages/home/Programmes.astro";
@@ -15,13 +15,15 @@ const posts = (await getCollection("posts", ({ data }) => data.published)).sort(
   (a, b) => Number(b.data.date) - Number(a.data.date),
 );
 
-const page = await getEntry("pages", "index");
-const { Content } = await page.render();
+const entry = await getEntry("pages", "index");
+if (!entry) throw new Error("Could not find page");
+
+const { Content } = await render(entry);
 ---
 
-<Layout title={page.data.title}>
+<Layout title={entry.data.title}>
   <section class="section-container">
-    <Programmes page={page.data} />
+    <Programmes page={entry.data} />
   </section>
 
   <HowYouCanHelp />
@@ -54,7 +56,7 @@ const { Content } = await page.render();
     </div>
   </section>
 
-  <OurNumbers page={page.data} />
+  <OurNumbers page={entry.data} />
 </Layout>
 
 <style>

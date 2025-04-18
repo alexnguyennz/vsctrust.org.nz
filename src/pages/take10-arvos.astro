@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import type { GetImageResult, ImageMetadata } from "astro";
 import { Image, getImage } from "astro:assets";
 
@@ -10,8 +10,10 @@ import { Gallery } from "@/components/Gallery";
 
 const sponsors = await getCollection("take10arvosSponsors");
 
-const page = await getEntry("pages", "take10-arvos");
-const { Content } = await page.render();
+const entry = await getEntry("pages", "take10-arvos");
+if (!entry) throw new Error("Could not find page");
+
+const { Content } = await render(entry);
 
 // Generate thumbnails
 const images = await getCollection("take10arvosImages");
@@ -22,7 +24,7 @@ const thumbnails: { [key: string]: GetImageResult } = {};
 for await (const image of images) {
   thumbnails[image.id] = await getImage({
     src: importedImages[
-      `../content/take10arvosImages/${image.slug}.jpg`
+      `../content/take10arvosImages/${image.id}.jpg`
     ]() as unknown as string,
     format: "webp",
     width: 500,
@@ -30,8 +32,8 @@ for await (const image of images) {
 }
 ---
 
-<Layout title={page.data.title}>
-  <Banner title={page.data.title} programme="take10-arvos" />
+<Layout title={entry.data.title}>
+  <Banner title={entry.data.title} programme="take10-arvos" />
 
   <section class="section-container space-y-6">
     <div class="grid gap-6 sm:grid-cols-2">

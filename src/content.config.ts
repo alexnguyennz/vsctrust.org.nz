@@ -1,8 +1,20 @@
-import { z, defineCollection, reference } from "astro:content";
+import { defineCollection, z, reference } from "astro:content";
+import { glob } from "astro/loaders";
+
 import { imagesSchema, sponsorsSchema } from "@/lib/schemas";
 
+const pages = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/pages",
+  }),
+});
+
 const posts = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/posts",
+  }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -14,7 +26,10 @@ const posts = defineCollection({
 });
 
 const team = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/team",
+  }),
   schema: ({ image }) =>
     z.object({
       name: z.string(),
@@ -26,7 +41,10 @@ const team = defineCollection({
 });
 
 const trust = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/trust",
+  }),
   schema: ({ image }) =>
     z.object({
       name: z.string(),
@@ -38,19 +56,34 @@ const trust = defineCollection({
 });
 
 const dosomegoodImages = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/dosomegoodImages",
+  }),
   schema: imagesSchema,
 });
+
 const dosomegoodSponsors = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/dosomegoodSponsors",
+  }),
   schema: sponsorsSchema,
 });
+
 const dosomegoodSupporters = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/dosomegoodSupporters",
+  }),
   schema: sponsorsSchema,
 });
+
 const dosomegoodSchools = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/dosomegoodSchools",
+  }),
   schema: ({ image }) =>
     z.object({
       name: z.string(),
@@ -65,30 +98,50 @@ const dosomegoodSchools = defineCollection({
 });
 
 const take10Images = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/take10Images",
+  }),
   schema: imagesSchema,
 });
+
 const take10Sponsors = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/take10Sponsors",
+  }),
   schema: sponsorsSchema,
 });
 
 const take10arvosImages = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/take10arvosImages",
+  }),
   schema: imagesSchema,
 });
+
 const take10arvosSponsors = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/take10arvosSponsors",
+  }),
   schema: sponsorsSchema,
 });
 
 const genlinkImages = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/genlinkImages",
+  }),
   schema: imagesSchema,
 });
 
 export const collections = {
+  pages,
   posts,
+  team,
+  trust,
   dosomegoodImages,
   dosomegoodSponsors,
   dosomegoodSupporters,
@@ -98,6 +151,4 @@ export const collections = {
   take10arvosImages,
   take10arvosSponsors,
   genlinkImages,
-  team,
-  trust,
 };
