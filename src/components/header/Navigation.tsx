@@ -63,7 +63,7 @@ export function Navigation({ pathname }: { pathname: string }) {
             href="/donate/"
             className={cn(
               navigationMenuTriggerStyle(),
-              "shadow-button bg-blue-500 text-red-50 hover:text-red-50 focus:text-red-50",
+              "relative inline-block rounded-md border border-black bg-blue-500 px-4 py-2 font-bold tracking-wide text-white no-underline shadow hover:text-white hover:no-underline focus:text-white active:left-1 active:top-1 active:shadow-none",
             )}
           >
             Donate

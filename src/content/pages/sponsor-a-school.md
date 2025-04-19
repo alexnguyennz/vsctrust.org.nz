@@ -10,4 +10,4 @@ Each business will have something different to offer or a different way in which
 
 Want to sponsor a school or kindergarten? Read through our brochure and fill in the form below if you’re interested!
 
-<a href="/dosomegood/brochure.pdf" class="shadow-button bg-gray-600">Brochure</a>
+<a href="/dosomegood/brochure.pdf" class="shadow border border-black relative inline-block rounded-md px-4 py-2 font-bold tracking-wide text-white no-underline hover:no-underline active:left-1 active:top-1 active:shadow-none bg-gray-600">Brochure</a>

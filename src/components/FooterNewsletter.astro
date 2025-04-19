@@ -1,4 +1,6 @@
 ---
+import Button from "@/components/layouts/button.astro";
+
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 ---
@@ -69,10 +71,8 @@ import { Label } from "@/components/ui/label";
       </div>
       <div class="optionalParent">
         <div class="clear foot flex items-center justify-between">
-          <button
-            type="submit"
-            class="shadow-button place-self-start bg-gray-600 !px-2 !py-1"
-            >Subscribe</button
+          <Button type="submit" class="place-self-start bg-gray-600 px-2 py-1"
+            >Subscribe</Button
           >
         </div>
       </div>

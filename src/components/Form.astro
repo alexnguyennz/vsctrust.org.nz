@@ -1,4 +1,6 @@
 ---
+import Button from "@/components/layouts/button.astro";
+
 interface Props {
   name: string;
 }
@@ -18,9 +20,7 @@ const { name } = Astro.props;
   <input type="hidden" name="_to" value="hello@vsctrust.org.nz" />
   <input type="text" name="_gotcha" class="hidden" />
 
-  <button type="submit" class="shadow-button place-self-start bg-gray-600"
-    >Send</button
-  >
+  <Button type="submit" class="place-self-start bg-gray-600">Send</Button>
 </form>
 
 <style is:global>
