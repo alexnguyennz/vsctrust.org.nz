@@ -1,11 +1,9 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
-
-//import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://vsctrust.org.nz",
@@ -18,9 +16,6 @@ export default defineConfig({
   },
   integrations: [
     react(),
-    tailwind({
-      applyBaseStyles: false,
-    }),
     mdx(),
     sitemap({
       filter: (page) =>
@@ -61,7 +56,7 @@ export default defineConfig({
   ],
 
   prefetch: true,
-  /*vite: {
+  vite: {
     plugins: [tailwindcss()],
-  },*/
+  },
 });

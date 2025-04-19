@@ -10,7 +10,9 @@ const pathname = new URL(Astro.request.url).pathname;
 <header
   class="sticky top-0 z-20 w-full border-b border-b-gray-200 bg-slate-50 shadow-sm"
 >
-  <div class="my-5 flex items-center justify-between gap-10 px-5 lg:container">
+  <div
+    class="mx-auto my-5 flex items-center justify-between gap-10 px-5 lg:container"
+  >
     <a href="/" aria-label="home page" rel="prefetch"
       ><Image
         src={import("@/assets/img/logo.png")}
