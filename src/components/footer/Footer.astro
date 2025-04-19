@@ -28,7 +28,7 @@ import { menuLinks } from "@/lib/links";
             class="mx-auto"
           />
 
-          <ul class="space-y-1">
+          <ul class="space-y-2.5">
             <li class="flex items-center gap-1">
               <Icon name="tabler:at" class="h-5 w-5" />
               <a href="mailto:hello@vsctrust.org.nz">hello@vsctrust.org.nz</a>
@@ -46,8 +46,10 @@ import { menuLinks } from "@/lib/links";
       {
         Object.keys(menuLinks).map((menu) => (
           <div>
-            <h2>{menu}</h2>
-            <ul>
+            <h2 class="mb-2 text-center text-base font-extrabold text-slate-300 md:text-left">
+              {menu}
+            </h2>
+            <ul class="space-y-2.5">
               {menuLinks[menu].map((link) => (
                 <li>
                   <a href={link.href} rel="prefetch">
@@ -61,10 +63,14 @@ import { menuLinks } from "@/lib/links";
       }
 
       <div>
-        <h2>Follow Us</h2>
+        <h2
+          class="mb-2 text-center text-base font-extrabold text-slate-300 md:text-left"
+        >
+          Follow Us
+        </h2>
 
         <div class="mb-4">
-          <h3>Facebook</h3>
+          <h3 class="mb-2">Facebook</h3>
           <div
             class="flex flex-wrap items-center justify-center gap-3 md:justify-start"
           >
@@ -124,7 +130,7 @@ import { menuLinks } from "@/lib/links";
         </div>
 
         <div>
-          <h3>Instagram</h3>
+          <h3 class="mb-2">Instagram</h3>
 
           <div class="flex items-center justify-center gap-3 md:justify-start">
             <a
@@ -193,18 +199,3 @@ import { menuLinks } from "@/lib/links";
     </div>
   </Section>
 </footer>
-
-<style>
-  h2 {
-    @apply text-center text-base font-extrabold text-slate-300 md:text-left;
-  }
-
-  h2,
-  h3 {
-    @apply mb-2;
-  }
-
-  ul {
-    @apply space-y-2.5;
-  }
-</style>

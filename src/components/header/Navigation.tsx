@@ -52,7 +52,8 @@ export function Navigation({ pathname }: { pathname: string }) {
             className={cn(
               navigationMenuTriggerStyle(),
               "hover:bg-gray-900 hover:text-white focus:bg-gray-900 focus:text-white",
-              pathname === "/contact/" && "active-link",
+              pathname === "/contact/" &&
+                "bg-gray-900 text-white hover:text-white focus:text-white",
             )}
           >
             Contact
@@ -90,7 +91,9 @@ const ListItem = forwardRef<
           className={cn(
             "group flex select-none items-center gap-3 space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-gray-900 hover:fill-white hover:text-white focus:bg-gray-900 focus:text-white",
             className,
-            href && pathname.startsWith(href) && "active-link",
+            href &&
+              pathname.startsWith(href) &&
+              "bg-gray-900 text-white hover:text-white focus:text-white",
           )}
           rel="prefetch"
           {...props}

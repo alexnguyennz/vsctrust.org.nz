@@ -55,7 +55,7 @@ for await (const image of images) {
           transition:name="programme-image-take10"
         />
 
-        <ul class="awards space-y-2">
+        <ul class="space-y-2 [&>li]:flex [&>li]:items-center [&>li]:gap-2">
           {
             entry.data.awards.map((award: string) => (
               <li>
@@ -171,9 +171,3 @@ for await (const image of images) {
     <Gallery imageData={images} thumbnails={thumbnails} client:visible />
   </Section>
 </Layout>
-
-<style>
-  .awards li {
-    @apply flex items-center gap-2;
-  }
-</style>

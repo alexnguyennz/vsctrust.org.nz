@@ -61,12 +61,10 @@ const author = await getEntry(post.data.author);
       </div>
     </div>
 
-    <div class="post"><Content /></div>
+    <div
+      class="[&_img]:mx-auto [&_img]:mb-4 [&_img]:mt-6 [&_img]:max-w-2xl [&_img]:rounded-md"
+    >
+      <Content />
+    </div>
   </article>
 </Layout>
-
-<style is:global>
-  .post img {
-    @apply mx-auto mb-4 mt-6 max-w-2xl rounded-md;
-  }
-</style>

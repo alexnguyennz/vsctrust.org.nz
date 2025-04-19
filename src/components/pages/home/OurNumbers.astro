@@ -23,7 +23,9 @@ const {
 <div class="bg-slate-800 text-white">
   <Section>
     <H2 class="text-white">Our numbers</H2>
-    <div class="grid justify-center gap-5 lg:grid-cols-4">
+    <div
+      class="grid justify-center gap-5 lg:grid-cols-4 [&>section]:flex [&>section]:items-center [&>section]:gap-3 [&>section]:lg:justify-center"
+    >
       <section>
         <Icon name="tabler:backpack" class="h-8 w-8" />
         <div>
@@ -55,13 +57,3 @@ const {
     </div>
   </Section>
 </div>
-
-<style>
-  section section {
-    @apply flex items-center gap-3 lg:justify-center;
-  }
-
-  h4 {
-    @apply text-slate-300;
-  }
-</style>

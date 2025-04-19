@@ -22,23 +22,3 @@ const { name } = Astro.props;
 
   <Button type="submit" class="place-self-start bg-gray-600">Send</Button>
 </form>
-
-<style is:global>
-  input,
-  textarea {
-    @apply mt-1 appearance-none; /* reset Safari styles to fix inputs with box shadow */
-  }
-
-  form button[role="combobox"] {
-    @apply mt-1;
-  }
-
-  label span {
-    @apply text-red-500;
-  }
-
-  label.required:after {
-    @apply font-bold text-red-500;
-    content: " *";
-  }
-</style>
