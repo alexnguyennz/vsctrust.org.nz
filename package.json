@@ -23,7 +23,6 @@
     "@radix-ui/react-navigation-menu": "1.1.4",
     "@radix-ui/react-select": "2.0.0",
     "@radix-ui/react-tooltip": "1.0.7",
-    "@tailwindcss/vite": "^4.1.4",
     "astro": "5.7.3",
     "astro-icon": "1.1.0",
     "class-variance-authority": "0.7.0",
@@ -34,7 +33,7 @@
     "react-dom": "18.3.1",
     "sharp": "0.33.4",
     "tailwind-merge": "2.3.0",
-    "tailwindcss": "4.1.4",
+    "tailwindcss": "3.4.4",
     "tailwindcss-animate": "1.0.7",
     "typescript": "5.5.2"
   },
