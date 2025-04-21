@@ -1,20 +1,24 @@
 ---
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 import { Image } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
+import Section from "@/components/layouts/section.astro";
+
 import TextBanner from "@/components/TextBanner.astro";
 import Form from "@/components/Form.astro";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-const page = await getEntry("pages", "sponsor-a-school");
-const { Content } = await page.render();
+const entry = await getEntry("pages", "sponsor-a-school");
+if (!entry) throw new Error("Could not find page");
+
+const { Content } = await render(entry);
 ---
 
-<Layout title={page.data.title}>
-  <TextBanner title={page.data.title} />
+<Layout title={entry.data.title}>
+  <TextBanner title={entry.data.title} />
 
   <Image
     src={import("@/assets/img/home/sponsor.png")}
@@ -27,13 +31,13 @@ const { Content } = await page.render();
     transition:name="sponsor"
   />
 
-  <section class="section-container flex flex-col space-y-6">
+  <Section class="flex flex-col space-y-6">
     <div class="self-center">
       <Content />
     </div>
-  </section>
+  </Section>
 
-  <section class="section-container">
+  <Section>
     <Form name="sponsor">
       <div>
         <Label htmlFor="name" className="required">Name</Label>
@@ -83,5 +87,5 @@ const { Content } = await page.render();
         />
       </div>
     </Form>
-  </section>
+  </Section>
 </Layout>

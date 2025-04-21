@@ -1,6 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
 
+import Section from "@/components/layouts/section.astro";
+import H2 from "@/components/headings/h2.astro";
+
 import { NumberTicker } from "@/components/ui/number-ticker";
 
 interface Props {
@@ -17,15 +20,17 @@ const {
 } = Astro.props;
 ---
 
-<section class="bg-slate-800 text-white">
-  <div class="section-container">
-    <h2 class="text-white">Our numbers</h2>
-    <div class="grid justify-center gap-5 lg:grid-cols-4">
+<div class="bg-slate-800 text-white">
+  <Section>
+    <H2 class="text-white">Our numbers</H2>
+    <div
+      class="grid justify-center gap-5 lg:grid-cols-4 [&>section]:flex [&>section]:items-center [&>section]:gap-3 [&>section]:lg:justify-center"
+    >
       <section>
         <Icon name="tabler:backpack" class="h-8 w-8" />
         <div>
           <NumberTicker value={schools} client:visible />
-          <h4>schools and kohanga reos</h4>
+          <h4>schools & kohanga reos</h4>
         </div>
       </section>
       <section>
@@ -50,15 +55,5 @@ const {
         </div>
       </section>
     </div>
-  </div>
-</section>
-
-<style>
-  section section {
-    @apply flex items-center gap-3 lg:justify-center;
-  }
-
-  h4 {
-    @apply text-slate-300;
-  }
-</style>
+  </Section>
+</div>

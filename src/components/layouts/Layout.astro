@@ -1,7 +1,7 @@
 ---
 import "@/globals.css";
 
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 import Header from "@/components/header/Header.astro";
 import Footer from "@/components/footer/Footer.astro";
@@ -38,7 +38,7 @@ const { title } = Astro.props;
       crossorigin="anonymous"
     />
 
-    <ViewTransitions fallback="swap" />
+    <ClientRouter fallback="swap" />
 
     <slot name="head" />
   </head>

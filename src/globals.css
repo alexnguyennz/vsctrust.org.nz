@@ -13,23 +13,15 @@ body {
   font-synthesis: none; /* Fix Safari bug with ugly bolded text */
 }
 
-h1 {
-  @apply text-4xl font-extrabold text-white;
-}
-
-h2 {
-  @apply text-center text-3xl font-extrabold;
-}
-
-.section-container > h2,
 .section-full-container > h2,
 p,
 main ul {
-  @apply mb-4;
+  margin-bottom: 1rem;
 }
 
 main ul {
-  @apply ml-6 list-disc;
+  margin-left: 1.5rem;
+  list-style-type: disc;
 }
 
 main a:hover,
@@ -38,17 +30,15 @@ footer a:hover {
   text-underline-offset: 3px;
 }
 
-.section-container {
-  @apply mx-auto px-5 py-8 lg:container;
-}
-
-.section-full-container {
-  @apply mx-auto py-8;
-}
-
 /* Misc */
 .shadow-border {
-  @apply border border-black shadow-box;
+  border: 1px solid black;
+  box-shadow:
+    1px 1px 0 0 black,
+    2px 2px 0 0 black,
+    3px 3px 0 0 black,
+    4px 4px 0 0 black,
+    5px 5px 0 0 black;
 }
 
 .shadow-text {
@@ -59,6 +49,20 @@ footer a:hover {
     1px 1px 0 #000;
 }
 
-.shadow-button {
-  @apply shadow-border shadow-text relative inline-block rounded-md px-4 py-2 font-bold tracking-wide text-white no-underline hover:no-underline active:left-1 active:top-1 active:shadow-none;
+.shadow {
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  box-shadow:
+    1px 1px 0 0 black,
+    2px 2px 0 0 black,
+    3px 3px 0 0 black,
+    4px 4px 0 0 black,
+    5px 5px 0 0 black;
 }
+
+/*.shadow-button {
+  @apply shadow-border shadow-text relative inline-block rounded-md px-4 py-2 font-bold tracking-wide text-white no-underline hover:no-underline active:left-1 active:top-1 active:shadow-none;
+}*/

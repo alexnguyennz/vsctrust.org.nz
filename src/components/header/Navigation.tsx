@@ -52,7 +52,8 @@ export function Navigation({ pathname }: { pathname: string }) {
             className={cn(
               navigationMenuTriggerStyle(),
               "hover:bg-gray-900 hover:text-white focus:bg-gray-900 focus:text-white",
-              pathname === "/contact/" && "active-link",
+              pathname === "/contact/" &&
+                "bg-gray-900 text-white hover:text-white focus:text-white",
             )}
           >
             Contact
@@ -63,7 +64,7 @@ export function Navigation({ pathname }: { pathname: string }) {
             href="/donate/"
             className={cn(
               navigationMenuTriggerStyle(),
-              "shadow-button bg-blue-500 text-red-50 hover:text-red-50 focus:text-red-50",
+              "relative inline-block rounded-md border border-black bg-blue-500 px-4 py-2 font-bold tracking-wide text-white no-underline shadow hover:text-white hover:no-underline focus:text-white active:left-1 active:top-1 active:shadow-none",
             )}
           >
             Donate
@@ -90,7 +91,9 @@ const ListItem = forwardRef<
           className={cn(
             "group flex select-none items-center gap-3 space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-gray-900 hover:fill-white hover:text-white focus:bg-gray-900 focus:text-white",
             className,
-            href && pathname.startsWith(href) && "active-link",
+            href &&
+              pathname.startsWith(href) &&
+              "bg-gray-900 text-white hover:text-white focus:text-white",
           )}
           rel="prefetch"
           {...props}

@@ -1,9 +1,12 @@
 ---
 import { Image } from "astro:assets";
+
+import Section from "@/components/layouts/section.astro";
+import H2 from "@/components/headings/h2.astro";
 ---
 
-<section class="section-container">
-  <h2>How you can help</h2>
+<Section>
+  <H2>How you can help</H2>
   <div class="flex flex-wrap justify-center gap-6 lg:gap-10">
     <a href="/donate/">
       <Image
@@ -11,10 +14,10 @@ import { Image } from "astro:assets";
         width="48"
         height="48"
         alt=""
-        class="self-center"
+        class="mx-auto"
         transition:name="donate"
       />
-      <h3>Make a Donation</h3>
+      <h3 class="mt-2 text-center text-lg font-bold">Make a Donation</h3>
     </a>
 
     <a href="/volunteer/">
@@ -23,10 +26,10 @@ import { Image } from "astro:assets";
         width="48"
         height="48"
         alt=""
-        class="self-center"
+        class="mx-auto"
         transition:name="volunteer"
       />
-      <h3>Become a Volunteer</h3>
+      <h3 class="mt-2 text-center text-lg font-bold">Become a Volunteer</h3>
     </a>
 
     <a href="/sponsor-a-school/">
@@ -35,20 +38,10 @@ import { Image } from "astro:assets";
         width="48"
         height="48"
         alt=""
-        class="self-center"
+        class="mx-auto"
         transition:name="sponsor"
       />
-      <h3>Sponsor a School</h3>
+      <h3 class="mt-2 text-center text-lg font-bold">Sponsor a School</h3>
     </a>
   </div>
-</section>
-
-<style>
-  h3 {
-    @apply mt-2 text-center text-lg font-bold;
-  }
-
-  a {
-    @apply flex flex-col rounded-md no-underline;
-  }
-</style>
+</Section>

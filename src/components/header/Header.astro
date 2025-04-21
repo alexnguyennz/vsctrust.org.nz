@@ -10,7 +10,9 @@ const pathname = new URL(Astro.request.url).pathname;
 <header
   class="sticky top-0 z-20 w-full border-b border-b-gray-200 bg-slate-50 shadow-sm"
 >
-  <div class="my-5 flex items-center justify-between gap-10 px-5 lg:container">
+  <div
+    class="mx-auto my-5 flex items-center justify-between gap-10 px-5 lg:container"
+  >
     <a href="/" aria-label="home page" rel="prefetch"
       ><Image
         src={import("@/assets/img/logo.png")}
@@ -24,7 +26,7 @@ const pathname = new URL(Astro.request.url).pathname;
     >
 
     <div class="hidden lg:block">
-      <Navigation pathname={pathname} client:mouseover />
+      <Navigation pathname={pathname} client:visible />
     </div>
 
     <div class="lg:hidden">
@@ -32,9 +34,3 @@ const pathname = new URL(Astro.request.url).pathname;
     </div>
   </div>
 </header>
-
-<style is:global>
-  a.active-link {
-    @apply bg-gray-900 text-white hover:text-white focus:text-white;
-  }
-</style>

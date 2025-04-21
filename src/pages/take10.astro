@@ -1,10 +1,14 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import type { GetImageResult, ImageMetadata } from "astro";
 import { Image, getImage } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
+import Section from "@/components/layouts/section.astro";
+import FullSection from "@/components/layouts/full-section.astro";
+import H2 from "@/components/headings/h2.astro";
+
 import Banner from "@/components/Banner.astro";
 import poster from "@/assets/img/take10/poster.png";
 import Marquee from "@/components/ui/marquee";
@@ -12,9 +16,10 @@ import { Gallery } from "@/components/Gallery";
 
 const sponsors = await getCollection("take10Sponsors");
 
-const page = await getEntry("pages", "take10");
+const entry = await getEntry("pages", "take10");
+if (!entry) throw new Error("Could not find page");
 
-const { Content } = await page.render();
+const { Content } = await render(entry);
 
 // Generate thumbnails
 const images = await getCollection("take10Images");
@@ -25,7 +30,7 @@ const thumbnails: { [key: string]: GetImageResult } = {};
 for await (const image of images) {
   thumbnails[image.id] = await getImage({
     src: importedImages[
-      `../content/take10Images/${image.slug}.jpg`
+      `../content/take10Images/${image.id}.jpg`
     ]() as unknown as string,
     format: "webp",
     width: 500,
@@ -33,10 +38,10 @@ for await (const image of images) {
 }
 ---
 
-<Layout title={page.data.title}>
-  <Banner title={page.data.title} programme="take10" />
+<Layout title={entry.data.title}>
+  <Banner title={entry.data.title} programme="take10" />
 
-  <section class="section-container space-y-6">
+  <Section class="space-y-6">
     <div class="grid gap-6 sm:grid-cols-2">
       <div class="place-self-center">
         <Image
@@ -50,9 +55,9 @@ for await (const image of images) {
           transition:name="programme-image-take10"
         />
 
-        <ul class="awards space-y-2">
+        <ul class="space-y-2 [&>li]:flex [&>li]:items-center [&>li]:gap-2">
           {
-            page.data.awards.map((award: string) => (
+            entry.data.awards.map((award: string) => (
               <li>
                 <Icon name="lucide:award" class="h-6 w-6" />
                 {award}
@@ -66,9 +71,9 @@ for await (const image of images) {
         <Content />
       </div>
     </div>
-  </section>
+  </Section>
 
-  <section class="section-container">
+  <Section>
     <video
       poster={poster.src}
       preload="none"
@@ -80,10 +85,10 @@ for await (const image of images) {
       <source src="/take10/video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-  </section>
+  </Section>
 
-  <section class="section-container">
-    <h2>How it works</h2>
+  <Section>
+    <H2>How it works</H2>
 
     <div class="grid gap-10 sm:grid-cols-2">
       <div>
@@ -104,24 +109,26 @@ for await (const image of images) {
         </ul>
       </div>
     </div>
-  </section>
+  </Section>
 
-  <section class="section-container text-center">
-    <h2>Want to help?</h2>
+  <Section class="text-center">
+    <H2>Want to help?</H2>
 
     {
-      page.data.wantToHelpDescription.map((description: string) => (
+      entry.data.wantToHelpDescription.map((description: string) => (
         <p>{description}</p>
       ))
     }
 
-    <a href="/volunteer/" class="shadow-button bg-orange-400" rel="prefetch"
-      >Volunteer</a
+    <a
+      href="/volunteer/"
+      class="relative inline-block rounded-md border border-black bg-orange-400 px-4 py-2 font-bold tracking-wide text-white no-underline shadow hover:no-underline active:left-1 active:top-1 active:shadow-none"
+      rel="prefetch">Volunteer</a
     >
-  </section>
+  </Section>
 
-  <section class="section-full-container">
-    <h2>Sponsors</h2>
+  <FullSection>
+    <H2>Sponsors</H2>
 
     <Marquee
       pauseOnHover
@@ -158,15 +165,9 @@ for await (const image of images) {
         )
       }
     </Marquee>
-  </section>
+  </FullSection>
 
-  <section class="section-container">
+  <Section>
     <Gallery imageData={images} thumbnails={thumbnails} client:visible />
-  </section>
+  </Section>
 </Layout>
-
-<style>
-  .awards li {
-    @apply flex items-center gap-2;
-  }
-</style>

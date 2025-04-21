@@ -1,5 +1,5 @@
 ---
-import { getEntry, type CollectionEntry } from "astro:content";
+import { getEntry, render, type CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 
 import { TeamMemberCollapsible } from "./TeamMemberCollapsible";
@@ -11,8 +11,10 @@ interface Props {
 
 const { trust, category } = Astro.props;
 
-const entry = await getEntry(category, trust.slug);
-const { Content } = await entry!.render();
+const entry = await getEntry(category, trust.id);
+if (!entry) throw new Error("Could not find team member");
+
+const { Content } = await render(entry);
 ---
 
 <TeamMemberCollapsible
@@ -31,7 +33,7 @@ const { Content } = await entry!.render();
   />
 
   {
-    trust.slug === "leigh-keown" && (
+    trust.id === "leigh-keown" && (
       <a slot="contact" href="mailto:hello@vsctrust.org.nz" class="mx-auto">
         (✉)
       </a>

@@ -1,26 +1,27 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import { Image } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
+import H2 from "@/components/headings/h2.astro";
 
 export const getStaticPaths = async () => {
   const posts = await getCollection("posts", ({ data }) => data.published);
 
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post },
   }));
 };
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 const author = await getEntry(post.data.author);
 ---
 
 <Layout title={post.data.title}>
-  <article class="section-container space-y-10">
+  <article class="mx-auto space-y-10 px-5 py-8 lg:container">
     <div class="grid gap-6 md:grid-cols-2 md:gap-10">
       <Image
         src={post.data.image}
@@ -30,15 +31,15 @@ const author = await getEntry(post.data.author);
         class="shadow-border h-96 w-full rounded-md object-cover"
       />
       <div>
-        <h2 class="text-left">
+        <H2 class="text-left">
           {post.data.title}
-        </h2>
+        </H2>
         <div class="mt-auto flex space-x-3">
           <Image
             src={author.data.image}
             width="96"
             height="96"
-            alt={post.data.author.slug}
+            alt={author.data.name}
             class="h-[56px] w-[56px] rounded-full"
           />
 
@@ -60,12 +61,10 @@ const author = await getEntry(post.data.author);
       </div>
     </div>
 
-    <div class="post"><Content /></div>
+    <div
+      class="[&_img]:mx-auto [&_img]:mb-4 [&_img]:mt-6 [&_img]:max-w-2xl [&_img]:rounded-md"
+    >
+      <Content />
+    </div>
   </article>
 </Layout>
-
-<style is:global>
-  .post img {
-    @apply mx-auto mb-4 mt-6 max-w-2xl rounded-md;
-  }
-</style>

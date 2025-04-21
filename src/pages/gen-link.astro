@@ -1,14 +1,19 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import type { GetImageResult } from "astro";
 import { Image, getImage } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
+import Section from "@/components/layouts/section.astro";
+import H2 from "@/components/headings/h2.astro";
+
 import Banner from "@/components/Banner.astro";
 import { Gallery } from "@/components/Gallery";
 
-const page = await getEntry("pages", "gen-link");
-const { Content } = await page.render();
+const entry = await getEntry("pages", "gen-link");
+if (!entry) throw new Error("Could not find page");
+
+const { Content } = await render(entry);
 
 // Generate thumbnails
 const images = await getCollection("genlinkImages");
@@ -19,7 +24,7 @@ const thumbnails: { [key: string]: GetImageResult } = {};
 for await (const image of images) {
   thumbnails[image.id] = await getImage({
     src: importedImages[
-      `../content/genlinkImages/${image.slug}.jpg`
+      `../content/genlinkImages/${image.id}.jpg`
     ]() as unknown as string,
     format: "webp",
     width: 500,
@@ -27,10 +32,10 @@ for await (const image of images) {
 }
 ---
 
-<Layout title={page.data.title}>
-  <Banner title={page.data.title} programme="gen-link" />
+<Layout title={entry.data.title}>
+  <Banner title={entry.data.title} programme="gen-link" />
 
-  <section class="section-container space-y-6">
+  <Section class="space-y-6">
     <div class="grid gap-6 sm:grid-cols-2">
       <Image
         src={import("@/assets/img/logo/gen-link.png")}
@@ -46,10 +51,10 @@ for await (const image of images) {
         <Content />
       </div>
     </div>
-  </section>
+  </Section>
 
-  <section class="section-container">
-    <h2>How it works</h2>
+  <Section>
+    <H2>How it works</H2>
     <p>
       A van will pick up seniors and transport them to the Do Some Good school
       in their area. This will happen weekly across the schools. The Generation
@@ -79,19 +84,21 @@ for await (const image of images) {
         learning of new skills
       </li>
     </ul>
-  </section>
+  </Section>
 
-  <section class="section-container text-center">
-    <h2>Want to help?</h2>
+  <Section class="text-center">
+    <H2>Want to help?</H2>
 
-    <p>{page.data.wantToHelpDescription}</p>
+    <p>{entry.data.wantToHelpDescription}</p>
 
-    <a href="/volunteer/" class="shadow-button bg-blue-500" rel="prefetch"
-      >Volunteer</a
+    <a
+      href="/volunteer/"
+      class="relative inline-block rounded-md border border-black bg-blue-500 px-4 py-2 font-bold tracking-wide text-white no-underline shadow hover:no-underline active:left-1 active:top-1 active:shadow-none"
+      rel="prefetch">Volunteer</a
     >
-  </section>
+  </Section>
 
-  <section class="section-container">
+  <Section>
     <Gallery imageData={images} thumbnails={thumbnails} client:visible />
-  </section>
+  </Section>
 </Layout>

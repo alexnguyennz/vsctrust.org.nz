@@ -2,6 +2,9 @@
 import { Image } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
+import Section from "@/components/layouts/section.astro";
+import Button from "@/components/layouts/button.astro";
+
 import TextBanner from "@/components/TextBanner.astro";
 import ProgrammeGrid from "@/components/programmes/ProgrammeGrid.astro";
 import ProgrammeCard from "@/components/programmes/ProgrammeCard.astro";
@@ -28,7 +31,7 @@ const title = "Volunteer";
     transition:name="volunteer"
   />
 
-  <section class="section-container">
+  <Section>
     <ProgrammeGrid>
       <ProgrammeCard programme="dosomegood">
         <p>
@@ -67,13 +70,13 @@ const title = "Volunteer";
     <div class="mt-6 flex justify-center">
       <a
         href="/take10/volunteer.pdf"
-        class="shadow-button bg-gray-600 text-center text-sm"
+        class="relative inline-block rounded-md border border-black bg-gray-600 px-4 py-2 text-center text-sm font-bold tracking-wide text-white no-underline shadow hover:no-underline active:left-1 active:top-1 active:shadow-none"
         >Take 10 Role description</a
       >
     </div>
-  </section>
+  </Section>
 
-  <section class="section-container">
+  <Section>
     <Form name="volunteer">
       <div>
         <Label htmlFor="name" className="required">Name</Label>
@@ -113,5 +116,5 @@ const title = "Volunteer";
         />
       </div>
     </Form>
-  </section>
+  </Section>
 </Layout>

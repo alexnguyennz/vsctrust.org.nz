@@ -1,0 +1,29 @@
+---
+import { cn } from "@/lib/utils";
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<button
+  class={cn(
+    "border border-black relative inline-block rounded-md px-4 py-2 font-bold tracking-wide text-white no-underline hover:no-underline active:left-1 active:top-1 active:shadow-none",
+    className,
+  )}
+  {...rest}><slot /></button
+>
+
+<style>
+  button {
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+    box-shadow:
+      1px 1px 0 0 black,
+      2px 2px 0 0 black,
+      3px 3px 0 0 black,
+      4px 4px 0 0 black,
+      5px 5px 0 0 black;
+  }
+</style>

@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 
+import H1 from "@/components/headings/h1.astro";
+
 interface Props {
   title: string;
   programme: string;
@@ -20,9 +22,9 @@ const { title, programme } = Astro.props;
     class="h-[170px] w-full bg-gray-100 object-cover"
   />
 
-  <h1
-    class="shadow-text absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center"
+  <H1
+    class="shadow-text absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-white"
   >
     {title}
-  </h1>
+  </H1>
 </section>

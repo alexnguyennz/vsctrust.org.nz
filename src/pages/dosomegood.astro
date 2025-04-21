@@ -1,10 +1,15 @@
 ---
-import { getCollection, getEntry } from "astro:content";
 import type { GetImageResult, ImageMetadata } from "astro";
+import { getCollection, getEntry, render } from "astro:content";
 import { Image, getImage } from "astro:assets";
+
 import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
+import Section from "@/components/layouts/section.astro";
+import FullSection from "@/components/layouts/full-section.astro";
+import H2 from "@/components/headings/h2.astro";
+
 import Banner from "@/components/Banner.astro";
 import { SchoolsTable } from "@/components/pages/dosomegood/schools-table";
 import poster from "@/assets/img/dosomegood/poster.png";
@@ -17,8 +22,10 @@ const schools = (await getCollection("dosomegoodSchools")).sort(
   (a, b) => b.data.order! - a.data.order!,
 );
 
-const page = await getEntry("pages", "dosomegood");
-const { Content } = await page.render();
+const entry = await getEntry("pages", "dosomegood");
+if (!entry) throw new Error("Could not find page");
+
+const { Content } = await render(entry);
 
 // Generate thumbnails
 const images = await getCollection("dosomegoodImages");
@@ -29,7 +36,7 @@ const thumbnails: { [key: string]: GetImageResult } = {};
 for await (const image of images) {
   thumbnails[image.id] = await getImage({
     src: importedImages[
-      `../content/dosomegoodImages/${image.slug}.jpg`
+      `../content/dosomegoodImages/${image.id}.jpg`
     ]() as unknown as string,
     format: "webp",
     width: 500,
@@ -37,10 +44,10 @@ for await (const image of images) {
 }
 ---
 
-<Layout title={page.data.title}>
-  <Banner title={page.data.title} programme="dosomegood" />
+<Layout title={entry.data.title}>
+  <Banner title={entry.data.title} programme="dosomegood" />
 
-  <section class="section-container space-y-6">
+  <Section class="space-y-6">
     <div class="grid gap-6 sm:grid-cols-2">
       <div class="place-self-center">
         <Image
@@ -53,10 +60,10 @@ for await (const image of images) {
           class="mx-auto mb-6"
           transition:name="programme-image-dosomegood"
         />
-        <ul class="awards space-y-2">
+        <ul class="space-y-2">
           {
-            page.data.awards.map((award: string) => (
-              <li>
+            entry.data.awards.map((award: string) => (
+              <li class="flex items-center gap-2">
                 <Icon name="lucide:award" class="h-6 w-6" />
                 {award}
               </li>
@@ -69,9 +76,9 @@ for await (const image of images) {
         <Content />
       </div>
     </div>
-  </section>
+  </Section>
 
-  <section class="section-container">
+  <Section>
     <video
       poster={poster.src}
       preload="none"
@@ -83,48 +90,48 @@ for await (const image of images) {
       <source src="/dosomegood/video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-  </section>
+  </Section>
 
-  <section class="section-container text-center">
-    <h2>Want to help?</h2>
+  <Section class="text-center">
+    <H2>Want to help?</H2>
     <div class="grid gap-6 sm:grid-cols-2 lg:gap-10">
       <div class="flex flex-col">
         <p>
-          {page.data.sponsorASchoolDescription}
+          {entry.data.sponsorASchoolDescription}
         </p>
 
         <div class="mt-auto">
           <a
             href="/sponsor-a-school/"
-            class="shadow-button self-center bg-red-600"
+            class="relative inline-block self-center rounded-md border border-black bg-red-600 px-4 py-2 font-bold tracking-wide text-white no-underline shadow hover:no-underline active:left-1 active:top-1 active:shadow-none"
             rel="prefetch">Sponsor a School</a
           >
         </div>
       </div>
       <div class="flex flex-col">
         <p>
-          {page.data.volunteerDescription}
+          {entry.data.volunteerDescription}
         </p>
 
         <div class="mt-auto">
           <a
             href="/volunteer/"
-            class="shadow-button self-center bg-red-600"
+            class="relative inline-block self-center rounded-md border border-black bg-red-600 px-4 py-2 font-bold tracking-wide text-white no-underline shadow hover:no-underline active:left-1 active:top-1 active:shadow-none"
             rel="prefetch">Volunteer</a
           >
         </div>
       </div>
     </div>
-  </section>
+  </Section>
 
-  <section class="section-container">
-    <h2>Our {schools.length} Schools</h2>
+  <Section>
+    <H2>Our {schools.length} Schools</H2>
 
     <SchoolsTable schools={schools} />
-  </section>
+  </Section>
 
-  <section class="section-full-container">
-    <h2>Sponsors</h2>
+  <FullSection>
+    <H2>Sponsors</H2>
 
     <Marquee
       pauseOnHover
@@ -161,10 +168,10 @@ for await (const image of images) {
         )
       }
     </Marquee>
-  </section>
+  </FullSection>
 
-  <section class="section-full-container">
-    <h2>Supporters</h2>
+  <FullSection>
+    <H2>Supporters</H2>
 
     <Marquee
       reverse
@@ -202,15 +209,9 @@ for await (const image of images) {
         )
       }
     </Marquee>
-  </section>
+  </FullSection>
 
-  <section class="section-container">
+  <Section>
     <Gallery imageData={images} thumbnails={thumbnails} client:visible />
-  </section>
+  </Section>
 </Layout>
-
-<style>
-  .awards li {
-    @apply flex items-center gap-2;
-  }
-</style>

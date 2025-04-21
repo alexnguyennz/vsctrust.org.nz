@@ -1,5 +1,8 @@
 ---
 import Layout from "@/components/layouts/Layout.astro";
+import Section from "@/components/layouts/section.astro";
+import H2 from "@/components/headings/h2.astro";
+
 import TextBanner from "@/components/TextBanner.astro";
 import Link from "@/components/pages/media/Link.astro";
 
@@ -9,7 +12,7 @@ const title = "Media";
 <Layout title={title}>
   <TextBanner title={title} />
 
-  <section class="section-container space-y-10 text-center">
+  <Section class="space-y-10 text-center">
     <p>
       Something missing here? <a href="/contact/" rel="prefetch"
         >Please get in touch!</a
@@ -17,7 +20,7 @@ const title = "Media";
     </p>
 
     <div>
-      <h2>2024</h2>
+      <H2>2024</H2>
 
       <Link
         link="https://www.newstalkzb.co.nz/on-air/wellington/wellington-mornings-with-nick-mills/audio/take-10-keeping-people-safe-late-at-night-on-courtenay-place/"
@@ -35,7 +38,7 @@ const title = "Media";
     </div>
 
     <div>
-      <h2>2023</h2>
+      <H2>2023</H2>
 
       <Link
         link="https://www.stuff.co.nz/national/131295499/a-night-out-with-the-volunteers-keeping-wellingtons-party-animals-safe"
@@ -46,7 +49,7 @@ const title = "Media";
     </div>
 
     <div>
-      <h2>2022</h2>
+      <H2>2022</H2>
 
       <Link
         link="https://wellington.govt.nz/news-and-events/news-and-information/our-wellington/2022/02/take-10-a-city-safe-haven-for-rangatahi"
@@ -57,7 +60,7 @@ const title = "Media";
     </div>
 
     <div>
-      <h2>2021</h2>
+      <H2>2021</H2>
 
       <Link
         link="https://wellington.scoop.co.nz/?p=136975"
@@ -68,7 +71,7 @@ const title = "Media";
     </div>
 
     <div>
-      <h2>2020</h2>
+      <H2>2020</H2>
 
       <Link
         link="https://www.stuff.co.nz/dominion-post/news/hutt-valley/123476077/christmas-appeal-doing-some-good-with-some-good-sandwiches"
@@ -94,7 +97,7 @@ const title = "Media";
     </div>
 
     <div>
-      <h2>2019</h2>
+      <H2>2019</H2>
 
       <Link
         link="https://wellington.govt.nz/news-and-events/news-and-information/our-wellington/2019/11/take-10"
@@ -105,7 +108,7 @@ const title = "Media";
     </div>
 
     <div>
-      <h2>2017</h2>
+      <H2>2017</H2>
 
       <Link
         link="https://www.stuff.co.nz/national/97778917/alcoholfree-safe-zone-planned-for-wellingtons-courtenay-place"
@@ -114,5 +117,5 @@ const title = "Media";
         Alcohol-free ‘safe zone’ planned for Wellington’s Courtenay Place
       </Link>
     </div>
-  </section>
+  </Section>
 </Layout>

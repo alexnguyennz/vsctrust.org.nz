@@ -1,7 +1,11 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 
 import Layout from "@/components/layouts/Layout.astro";
+import Section from "@/components/layouts/section.astro";
+import FullSection from "@/components/layouts/full-section.astro";
+import H2 from "@/components/headings/h2.astro";
+
 import Programmes from "@/components/pages/home/Programmes.astro";
 import { Quotes } from "@/components/pages/home/Quotes";
 
@@ -15,46 +19,44 @@ const posts = (await getCollection("posts", ({ data }) => data.published)).sort(
   (a, b) => Number(b.data.date) - Number(a.data.date),
 );
 
-const page = await getEntry("pages", "index");
-const { Content } = await page.render();
+const entry = await getEntry("pages", "index");
+if (!entry) throw new Error("Could not find page");
+
+const { Content } = await render(entry);
 ---
 
-<Layout title={page.data.title}>
-  <section class="section-container">
-    <Programmes page={page.data} />
-  </section>
+<Layout title={entry.data.title}>
+  <Section>
+    <Programmes page={entry.data} />
+  </Section>
 
   <HowYouCanHelp />
 
-  <section>
-    <div class="section-container text-center">
-      <h2>Helping rangatahi and tamariki in Wellington</h2>
+  <Section class="text-center">
+    <H2>Helping rangatahi and tamariki in Wellington</H2>
 
-      <Content />
-    </div>
-  </section>
+    <Content />
+  </Section>
 
-  <section><div class="section-container"><Newsletter /></div></section>
+  <Section><Newsletter /></Section>
 
-  <section class="section-full-container">
-    <h2>What people are saying</h2>
+  <FullSection>
+    <H2>What people are saying</H2>
 
     <Quotes />
-  </section>
+  </FullSection>
 
-  <section>
-    <div class="section-container">
-      <h2>Latest news</h2>
+  <Section>
+    <H2>Latest news</H2>
 
-      <div
-        class="news-grid grid gap-6 sm:grid-cols-2 sm:gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
-      >
-        {posts.slice(0, 5).map((post) => <NewsCard post={post} />)}
-      </div>
+    <div
+      class="news-grid grid gap-6 sm:grid-cols-2 sm:gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
+    >
+      {posts.slice(0, 5).map((post) => <NewsCard post={post} />)}
     </div>
-  </section>
+  </Section>
 
-  <OurNumbers page={page.data} />
+  <OurNumbers page={entry.data} />
 </Layout>
 
 <style>
