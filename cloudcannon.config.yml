@@ -1,26 +1,27 @@
+_schema: _schema
 paths:
   uploads: /public/img/news
-  static:
+  static: public
   collections: /src/content
   data: ''
   layouts:
 collections_config:
   pages:
     path: /src/content/pages
+    name: Pages
+    singular_name:
+    icon: text_snippet
     output: true
     url: /[slug]/
     filter:
     parse_branch_index:
-    name: Pages
-    description: ''
-    icon: text_snippet
     documentation:
+    description: ''
     preview:
     sort:
     sort_options:
-    singular_name:
     singular_key:
-    _editables: {}
+    _editables:
     _enabled_editors:
       - visual
       - content
@@ -51,18 +52,22 @@ collections_config:
         cascade: true
       topContent:
         type: markdown
-    _select_data: {}
-    _structures: {}
+        cascade: true
+    _select_data:
+    _structures:
     add_options:
     create:
     disable_add: true
     disable_add_folder: true
     disable_file_actions: true
     new_preview_url:
-    schemas: {}
+    schemas:
     schema_key:
   posts:
     path: /src/content/posts
+    name: Posts
+    singular_name:
+    icon: event_available
     output: true
     url: /news/[slug]/
     filter:
@@ -70,10 +75,8 @@ collections_config:
       include:
       exclude:
     parse_branch_index:
-    name: Posts
-    description: ''
-    icon: event_available
     documentation:
+    description: ''
     preview:
       text:
       subtext:
@@ -87,9 +90,8 @@ collections_config:
       - key: date
         order: descending
         label:
-    singular_name:
     singular_key:
-    _editables: {}
+    _editables:
     _enabled_editors:
       - content
     _inputs:
@@ -127,16 +129,16 @@ collections_config:
         type: checkbox
         comment: Untick and save to make this post a draft
         cascade: true
-    _select_data: {}
-    _structures: {}
+    _select_data:
+    _structures:
     add_options:
     create:
       path:
-      extra_data: {}
+      extra_data:
       publish_to:
-      _inputs: {}
-      _select_data: {}
-      _structures: {}
+      _inputs:
+      _select_data:
+      _structures:
     disable_add: false
     disable_add_folder: true
     disable_file_actions: false
@@ -151,29 +153,29 @@ collections_config:
         name: Post
         icon: event_available
         preview:
-        _editables: {}
-        _inputs: {}
-        _select_data: {}
-        _structures: {}
+        _editables:
+        _inputs:
+        _select_data:
+        _structures:
         create:
         new_preview_url:
     schema_key:
   dosomegoodImages:
     path: /src/content/dosomegoodImages
+    name: 'Images '
+    singular_name:
+    icon: image
     output: false
     url:
     filter:
     parse_branch_index:
-    name: 'Images '
-    description: ''
-    icon: image
     documentation:
+    description: ''
     preview:
     sort:
     sort_options:
-    singular_name:
     singular_key:
-    _editables: {}
+    _editables:
     _enabled_editors:
       - data
     _inputs:
@@ -192,8 +194,8 @@ collections_config:
           height:
           expandable:
         cascade: true
-    _select_data: {}
-    _structures: {}
+    _select_data:
+    _structures:
     add_options:
     create:
     disable_add: false
@@ -210,29 +212,29 @@ collections_config:
         name: Gallery Image
         icon: image
         preview:
-        _editables: {}
-        _inputs: {}
-        _select_data: {}
-        _structures: {}
+        _editables:
+        _inputs:
+        _select_data:
+        _structures:
         create:
         new_preview_url:
     schema_key:
   dosomegoodSchools:
     path: /src/content/dosomegoodSchools
+    name: 'Schools '
+    singular_name:
+    icon: backpack
     output: false
     url:
     filter:
     parse_branch_index:
-    name: 'Schools '
-    description: ''
-    icon: backpack
     documentation:
+    description: ''
     preview:
     sort:
     sort_options:
-    singular_name:
     singular_key:
-    _editables: {}
+    _editables:
     _enabled_editors:
       - data
     _inputs:
@@ -265,16 +267,16 @@ collections_config:
       order:
         type: number
         cascade: true
-    _select_data: {}
-    _structures: {}
+    _select_data:
+    _structures:
     add_options:
     create:
       path: '{name|slugify}.md'
-      extra_data: {}
+      extra_data:
       publish_to:
-      _inputs: {}
-      _select_data: {}
-      _structures: {}
+      _inputs:
+      _select_data:
+      _structures:
     disable_add: false
     disable_add_folder: true
     disable_file_actions: false
@@ -289,35 +291,35 @@ collections_config:
         name: School
         icon: backpack
         preview:
-        _editables: {}
-        _inputs: {}
-        _select_data: {}
-        _structures: {}
+        _editables:
+        _inputs:
+        _select_data:
+        _structures:
         create:
           path:
-          extra_data: {}
+          extra_data:
           publish_to:
-          _inputs: {}
-          _select_data: {}
-          _structures: {}
+          _inputs:
+          _select_data:
+          _structures:
         new_preview_url:
     schema_key:
   dosomegoodSponsors:
     path: /src/content/dosomegoodSponsors
+    name: 'Sponsors '
+    singular_name:
+    icon: handshake
     output: false
     url:
     filter:
     parse_branch_index:
-    name: 'Sponsors '
-    description: ''
-    icon: handshake
     documentation:
+    description: ''
     preview:
     sort:
     sort_options:
-    singular_name:
     singular_key:
-    _editables: {}
+    _editables:
     _enabled_editors:
       - data
     _inputs:
@@ -336,16 +338,16 @@ collections_config:
           height:
           expandable:
         cascade: true
-    _select_data: {}
-    _structures: {}
+    _select_data:
+    _structures:
     add_options:
     create:
       path: '{name|slugify}.md'
-      extra_data: {}
+      extra_data:
       publish_to:
-      _inputs: {}
-      _select_data: {}
-      _structures: {}
+      _inputs:
+      _select_data:
+      _structures:
     disable_add: false
     disable_add_folder: true
     disable_file_actions: false
@@ -360,29 +362,29 @@ collections_config:
         name: Sponsor
         icon: handshake
         preview:
-        _editables: {}
-        _inputs: {}
-        _select_data: {}
-        _structures: {}
+        _editables:
+        _inputs:
+        _select_data:
+        _structures:
         create:
         new_preview_url:
     schema_key:
   dosomegoodSupporters:
     path: /src/content/dosomegoodSupporters
+    name: 'Supporters '
+    singular_name:
+    icon: handshake
     output: false
     url:
     filter:
     parse_branch_index:
-    name: 'Supporters '
-    description: ''
-    icon: handshake
     documentation:
+    description: ''
     preview:
     sort:
     sort_options:
-    singular_name:
     singular_key:
-    _editables: {}
+    _editables:
     _enabled_editors:
       - data
     _inputs:
@@ -401,16 +403,16 @@ collections_config:
           height:
           expandable:
         cascade: true
-    _select_data: {}
-    _structures: {}
+    _select_data:
+    _structures:
     add_options:
     create:
       path: '{name|slugify}.md'
-      extra_data: {}
+      extra_data:
       publish_to:
-      _inputs: {}
-      _select_data: {}
-      _structures: {}
+      _inputs:
+      _select_data:
+      _structures:
     disable_add: false
     disable_add_folder: true
     disable_file_actions: false
@@ -425,29 +427,29 @@ collections_config:
         name: Supporter
         icon: handshake
         preview:
-        _editables: {}
-        _inputs: {}
-        _select_data: {}
-        _structures: {}
+        _editables:
+        _inputs:
+        _select_data:
+        _structures:
         create:
         new_preview_url:
     schema_key:
   take10Images:
     path: /src/content/take10Images
+    name: 'Images '
+    singular_name:
+    icon: image
     output: false
     url:
     filter:
     parse_branch_index:
-    name: 'Images '
-    description: ''
-    icon: image
     documentation:
+    description: ''
     preview:
     sort:
     sort_options:
-    singular_name:
     singular_key:
-    _editables: {}
+    _editables:
     _enabled_editors:
       - data
     _inputs:
@@ -466,8 +468,8 @@ collections_config:
           height:
           expandable:
         cascade: true
-    _select_data: {}
-    _structures: {}
+    _select_data:
+    _structures:
     add_options:
     create:
     disable_add: false
@@ -484,29 +486,29 @@ collections_config:
         name: Gallery Image
         icon: image
         preview:
-        _editables: {}
-        _inputs: {}
-        _select_data: {}
-        _structures: {}
+        _editables:
+        _inputs:
+        _select_data:
+        _structures:
         create:
         new_preview_url:
     schema_key:
   take10Sponsors:
     path: /src/content/take10Sponsors
+    name: 'Sponsors '
+    singular_name:
+    icon: handshake
     output: false
     url:
     filter:
     parse_branch_index:
-    name: 'Sponsors '
-    description: ''
-    icon: handshake
     documentation:
+    description: ''
     preview:
     sort:
     sort_options:
-    singular_name:
     singular_key:
-    _editables: {}
+    _editables:
     _enabled_editors:
       - data
     _inputs:
@@ -525,16 +527,16 @@ collections_config:
           height:
           expandable:
         cascade: true
-    _select_data: {}
-    _structures: {}
+    _select_data:
+    _structures:
     add_options:
     create:
       path: '{name|slugify}.md'
-      extra_data: {}
+      extra_data:
       publish_to:
-      _inputs: {}
-      _select_data: {}
-      _structures: {}
+      _inputs:
+      _select_data:
+      _structures:
     disable_add: false
     disable_add_folder: true
     disable_file_actions: false
@@ -549,29 +551,29 @@ collections_config:
         name: Sponsor
         icon: handshake
         preview:
-        _editables: {}
-        _inputs: {}
-        _select_data: {}
-        _structures: {}
+        _editables:
+        _inputs:
+        _select_data:
+        _structures:
         create:
         new_preview_url:
     schema_key:
   take10arvosImages:
     path: /src/content/take10arvosImages
+    name: 'Images '
+    singular_name:
+    icon: image
     output: false
     url:
     filter:
     parse_branch_index:
-    name: 'Images '
-    description: ''
-    icon: image
     documentation:
+    description: ''
     preview:
     sort:
     sort_options:
-    singular_name:
     singular_key:
-    _editables: {}
+    _editables:
     _enabled_editors:
       - data
     _inputs:
@@ -590,8 +592,8 @@ collections_config:
           height:
           expandable:
         cascade: true
-    _select_data: {}
-    _structures: {}
+    _select_data:
+    _structures:
     add_options:
     create:
     disable_add: false
@@ -608,29 +610,29 @@ collections_config:
         name: Gallery Image
         icon: image
         preview:
-        _editables: {}
-        _inputs: {}
-        _select_data: {}
-        _structures: {}
+        _editables:
+        _inputs:
+        _select_data:
+        _structures:
         create:
         new_preview_url:
     schema_key:
   take10arvosSponsors:
     path: /src/content/take10arvosSponsors
+    name: 'Sponsors '
+    singular_name:
+    icon: handshake
     output: false
     url:
     filter:
     parse_branch_index:
-    name: 'Sponsors '
-    description: ''
-    icon: handshake
     documentation:
+    description: ''
     preview:
     sort:
     sort_options:
-    singular_name:
     singular_key:
-    _editables: {}
+    _editables:
     _enabled_editors:
       - data
     _inputs:
@@ -649,16 +651,16 @@ collections_config:
           height:
           expandable:
         cascade: true
-    _select_data: {}
-    _structures: {}
+    _select_data:
+    _structures:
     add_options:
     create:
       path: '{name|slugify}.md'
-      extra_data: {}
+      extra_data:
       publish_to:
-      _inputs: {}
-      _select_data: {}
-      _structures: {}
+      _inputs:
+      _select_data:
+      _structures:
     disable_add: false
     disable_add_folder: true
     disable_file_actions: false
@@ -673,29 +675,29 @@ collections_config:
         name: Sponsor
         icon: handshake
         preview:
-        _editables: {}
-        _inputs: {}
-        _select_data: {}
-        _structures: {}
+        _editables:
+        _inputs:
+        _select_data:
+        _structures:
         create:
         new_preview_url:
     schema_key:
   genlinkImages:
     path: /src/content/genlinkImages
+    name: 'Images '
+    singular_name:
+    icon: image
     output: false
     url:
     filter:
     parse_branch_index:
-    name: 'Images '
-    description: ''
-    icon: image
     documentation:
+    description: ''
     preview:
     sort:
     sort_options:
-    singular_name:
     singular_key:
-    _editables: {}
+    _editables:
     _enabled_editors:
       - data
     _inputs:
@@ -714,8 +716,8 @@ collections_config:
           height:
           expandable:
         cascade: true
-    _select_data: {}
-    _structures: {}
+    _select_data:
+    _structures:
     add_options:
     create:
     disable_add: false
@@ -732,15 +734,18 @@ collections_config:
         name: Gallery Image
         icon: image
         preview:
-        _editables: {}
-        _inputs: {}
-        _select_data: {}
-        _structures: {}
+        _editables:
+        _inputs:
+        _select_data:
+        _structures:
         create:
         new_preview_url:
     schema_key:
   trust:
     path: /src/content/trust
+    name: Trust Members
+    singular_name:
+    icon: people
     output: true
     url:
     filter:
@@ -748,10 +753,8 @@ collections_config:
       include: []
       exclude:
     parse_branch_index:
-    name: Trust Members
-    description: ''
-    icon: people
     documentation:
+    description: ''
     preview:
       text:
       subtext:
@@ -775,9 +778,8 @@ collections_config:
       - key: order
         order: ascending
         label: Order
-    singular_name:
     singular_key:
-    _editables: {}
+    _editables:
     _enabled_editors:
       - content
     _inputs:
@@ -808,16 +810,16 @@ collections_config:
         type: number
         comment: Order of members on the Trust page
         cascade: true
-    _select_data: {}
-    _structures: {}
+    _select_data:
+    _structures:
     add_options:
     create:
       path: '{name|slugify}.md'
-      extra_data: {}
+      extra_data:
       publish_to:
-      _inputs: {}
-      _select_data: {}
-      _structures: {}
+      _inputs:
+      _select_data:
+      _structures:
     disable_add: false
     disable_add_folder: true
     disable_file_actions: false
@@ -832,26 +834,27 @@ collections_config:
         name: Trust Member
         icon: people
         preview:
-        _editables: {}
-        _inputs: {}
-        _select_data: {}
-        _structures: {}
+        _editables:
+        _inputs:
+        _select_data:
+        _structures:
         create:
         new_preview_url:
     schema_key:
   team:
     path: /src/content/team
+    name: Team Members
+    singular_name:
+    icon: people
     output: true
     url:
     filter:
       base:
-      include: [ ]
+      include: []
       exclude:
     parse_branch_index:
-    name: Team Members
-    description: ''
-    icon: people
     documentation:
+    description: ''
     preview:
       text:
       subtext:
@@ -875,9 +878,8 @@ collections_config:
       - key: order
         order: ascending
         label: Order
-    singular_name:
     singular_key:
-    _editables: { }
+    _editables:
     _enabled_editors:
       - content
     _inputs:
@@ -908,16 +910,16 @@ collections_config:
         type: number
         comment: Order of members on the Team page
         cascade: true
-    _select_data: { }
-    _structures: { }
+    _select_data:
+    _structures:
     add_options:
     create:
       path: '{name|slugify}.md'
-      extra_data: { }
+      extra_data:
       publish_to:
-      _inputs: { }
-      _select_data: { }
-      _structures: { }
+      _inputs:
+      _select_data:
+      _structures:
     disable_add: false
     disable_add_folder: true
     disable_file_actions: false
@@ -932,10 +934,10 @@ collections_config:
         name: Team Member
         icon: people
         preview:
-        _editables: { }
-        _inputs: { }
-        _select_data: { }
-        _structures: { }
+        _editables:
+        _inputs:
+        _select_data:
+        _structures:
         create:
         new_preview_url:
     schema_key:
@@ -967,11 +969,6 @@ collection_groups:
     collections:
       - team
       - trust
-_inputs: {}
-_select_data: {}
-_structures: {}
-_editables: {}
-data_config: {}
 editor:
   default_path:
 source_editor:
