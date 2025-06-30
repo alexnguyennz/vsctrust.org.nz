@@ -1,7 +1,7 @@
 ---
 _schema: posts
 title: All Things Kai at Owhiro Bay
-date:
+date: 2025-05-24T00:00:00+12:00
 author: leigh-keown
 image: /src/content/posts/8f79d397-5064-720f-98b9-66c04df32f5b.jpg
 published: true
