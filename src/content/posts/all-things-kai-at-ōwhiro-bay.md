@@ -1,6 +1,6 @@
 ---
 _schema: posts
-title: All Things Kai at Ōwhiro Bay
+title: All Things Kai at Owhiro Bay
 date:
 author: leigh-keown
 image: /src/content/posts/8f79d397-5064-720f-98b9-66c04df32f5b.jpg
