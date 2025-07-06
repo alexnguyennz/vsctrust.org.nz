@@ -34,6 +34,10 @@ collections_config:
         type: text
         label: Take 10
         cascade: true
+      take10Auckland:
+        type: text
+        label: Take 10 Auckland
+        cascade: true
       take10Arvos:
         type: text
         label: Take 10 Arvo's
@@ -544,6 +548,130 @@ collections_config:
     schemas:
       take10Sponsors:
         path: /src/schemas/programmes/take10/sponsors.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: Sponsor
+        icon: handshake
+        preview:
+        _editables:
+        _inputs:
+        _select_data:
+        _structures:
+        create:
+        new_preview_url:
+    schema_key:
+  take10AucklandImages:
+    path: /src/content/take10AucklandImages
+    name: 'Images '
+    singular_name:
+    icon: image
+    output: false
+    url:
+    filter:
+    parse_branch_index:
+    documentation:
+    description: ''
+    preview:
+    sort:
+    sort_options:
+    singular_key:
+    _editables:
+    _enabled_editors:
+      - data
+    _inputs:
+      /src/content/take10AucklandImages:
+        type: image
+        options:
+          paths:
+            uploads: /src/content/take10AucklandImages
+            dam_uploads:
+            dam_static:
+          mime_type:
+          correct_orientation: true
+          empty_type:
+          resize_style: contain
+          width:
+          height:
+          expandable:
+        cascade: true
+    _select_data:
+    _structures:
+    add_options:
+    create:
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    new_preview_url:
+    schemas:
+      take10AucklandImages:
+        path: /src/schemas/programmes/take10-auckland/images.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: Gallery Image
+        icon: image
+        preview:
+        _editables:
+        _inputs:
+        _select_data:
+        _structures:
+        create:
+        new_preview_url:
+    schema_key:
+  take10AucklandSponsors:
+    path: /src/content/take10AucklandSponsors
+    name: 'Sponsors '
+    singular_name:
+    icon: handshake
+    output: false
+    url:
+    filter:
+    parse_branch_index:
+    documentation:
+    description: ''
+    preview:
+    sort:
+    sort_options:
+    singular_key:
+    _editables:
+    _enabled_editors:
+      - data
+    _inputs:
+      image:
+        type: image
+        options:
+          paths:
+            uploads: /src/content/take10AucklandSponsors
+            dam_uploads:
+            dam_static:
+          mime_type:
+          correct_orientation: true
+          empty_type:
+          resize_style: contain
+          width:
+          height:
+          expandable:
+        cascade: true
+    _select_data:
+    _structures:
+    add_options:
+    create:
+      path: '{name|slugify}.md'
+      extra_data:
+      publish_to:
+      _inputs:
+      _select_data:
+      _structures:
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    new_preview_url:
+    schemas:
+      take10AucklandSponsors:
+        path: /src/schemas/programmes/take10-auckland/sponsors.md
         reorder_inputs: true
         hide_extra_inputs: false
         remove_empty_inputs: false

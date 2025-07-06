@@ -97,6 +97,22 @@ const dosomegoodSchools = defineCollection({
     }),
 });
 
+const take10AucklandImages = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/take10AucklandImages",
+  }),
+  schema: imagesSchema,
+});
+
+const take10AucklandSponsors = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/take10AucklandSponsors",
+  }),
+  schema: sponsorsSchema,
+});
+
 const take10Images = defineCollection({
   loader: glob({
     pattern: "**/[^_]*.{md,mdx}",
@@ -148,6 +164,8 @@ export const collections = {
   dosomegoodSchools,
   take10Images,
   take10Sponsors,
+  take10AucklandImages,
+  take10AucklandSponsors,
   take10arvosImages,
   take10arvosSponsors,
   genlinkImages,

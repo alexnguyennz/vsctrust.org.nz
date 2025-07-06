@@ -14,6 +14,16 @@ export function Take10() {
   );
 }
 
+export function Take10Auckland() {
+  return (
+    <img
+      src={"/logo/take10-auckland.png"}
+      alt={"Take 10 Auckland logo"}
+      className={"size-12"}
+    />
+  );
+}
+
 export function Take10Arvos() {
   return (
     <img

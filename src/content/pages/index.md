@@ -7,6 +7,10 @@ take10: >-
   Providing a late-night safe zone on Courtenay Place where we offer water,
   phone charging, medical help, and refuge to reduce alcohol and drug related
   harm.
+take10auckland: >-
+  Providing a late-night safe zone outside Ellen Melville Centre where we offer water,
+  phone charging, medical help, and refuge to reduce alcohol and drug related
+  harm.
 take10arvos: >-
   Assisting rangatahi in our communities by providing a safe place to hang out,
   do homework or play some games.

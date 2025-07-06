@@ -6,6 +6,7 @@ import type { CollectionEntry } from "astro:content";
 type ProgrammeImage =
   | CollectionEntry<"dosomegoodImages">
   | CollectionEntry<"take10Images">
+  | CollectionEntry<"take10AucklandImages">
   | CollectionEntry<"take10arvosImages">
   | CollectionEntry<"genlinkImages">;
 
