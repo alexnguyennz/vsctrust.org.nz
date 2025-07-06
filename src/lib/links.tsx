@@ -15,6 +15,7 @@ import {
   DoSomeGood,
   GenLink,
   Take10,
+  Take10Auckland,
   Take10Arvos,
 } from "@/components/ProgrammeLogos.tsx";
 
@@ -68,10 +69,10 @@ export const menuLinks: MenuLinks = {
       icon: Take10,
     },
     {
-      title: "Take 10 Arvo's",
-      href: "/take10-arvos/",
-      description: "After-school youth zone",
-      icon: Take10Arvos,
+      title: "Take 10 Auckland",
+      href: "/take10-auckland/",
+      description: "Late-night safe zone",
+      icon: Take10Auckland,
     },
     {
       title: "Generation Link",

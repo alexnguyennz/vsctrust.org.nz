@@ -16,7 +16,7 @@ export function RoleSelect() {
         <SelectContent>
           <SelectItem value="Do Some Good">Do Some Good</SelectItem>
           <SelectItem value="Take 10">Take 10</SelectItem>
-          <SelectItem value="Take 10 Arvo's">Take 10 Arvo's</SelectItem>
+          <SelectItem value="Take 10 Auckland">Take 10 Auckland</SelectItem>
           <SelectItem value="Gen Link">Gen Link</SelectItem>
         </SelectContent>
       </Select>

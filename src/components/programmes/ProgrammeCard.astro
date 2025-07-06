@@ -6,12 +6,18 @@ const images = import.meta.glob("../../assets/img/programmes/*");
 const name = {
   dosomegood: "Do Some Good",
   take10: "Take 10",
+  "take10-auckland": "Take 10 Auckland",
   "take10-arvos": "Take 10 Arvo's",
   "gen-link": "Gen Link",
 };
 
 interface Props {
-  programme: "dosomegood" | "take10" | "take10-arvos" | "gen-link";
+  programme:
+    | "dosomegood"
+    | "take10"
+    | "take10-auckland"
+    | "take10-arvos"
+    | "gen-link";
 }
 
 const { programme } = Astro.props;
