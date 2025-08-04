@@ -1,6 +1,6 @@
 ---
 _schema: posts
-title: The Post shares Take 10's success working with local businesses.
+title: The Post shares Take 10's success working with local businesses
 date: 2025-08-05T00:00:00+12:00
 author: leigh-keown
 image: /src/content/posts/take10-5-8-23-62-2.jpg
