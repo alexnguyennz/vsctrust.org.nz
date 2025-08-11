@@ -1,12 +1,19 @@
 ---
 title: Take 10 Auckland
-awards:
-  []
-wantToHelpDescription: 
-  - We’re looking for volunteers to come out on Friday and Saturday nights, hand out water, talk to people, and make the Take 10 area an inviting place to be. Interested? Get in touch!
-  - We are also always on the lookout for medics and registered youth workers to join us and help make a difference.
-volunteerDescription: We’re looking for volunteers to come out and clean schools, make food, and spend time with tamariki. Interested? Get in touch!
+awards: []
+wantToHelpDescription:
+  - >-
+    We’re looking for volunteers to come out on Friday and Saturday nights, hand
+    out water, talk to people, and make the Take 10 area an inviting place to
+    be. Interested? Get in touch!
+  - >-
+    We are also always on the lookout for medics and registered youth workers to
+    join us and help make a difference.
+volunteerDescription: >-
+  We’re looking for volunteers to come out and clean schools, make food, and
+  spend time with tamariki. Interested? Get in touch!
 ---
+**Update:**  We are currently set up on Quay Street, near the Viaduct, from 10:00pm to 3:00am on Friday and Saturday nights. We are offering the same great services as at Ellen Melville Centre, a safe space, water, lollies, games, first aid and meaningful kōrero and support.We would love to meet you!
 
 Kia ora Auckland!
 
@@ -22,9 +29,6 @@ If you are on a night out drop by and say Kia ora, we would love to meet you!
 
 What makes us different?
 
-- **Preventative** – we catch people before they become
-  victims by stopping them from becoming isolated and helping to
-  reconnect people
-- **Approach-able** – people are often more willing to
-  come to us than the police or emergency services
-- **Safe** – we give people a safe place to go - where they can charge their phones, take a break, sober up, have a chat, get medical support, and get help to get home safely
+* **Preventative** – we catch people before they become victims by stopping them from becoming isolated and helping to reconnect people
+* **Approach-able** – people are often more willing to come to us than the police or emergency services
+* **Safe** – we give people a safe place to go - where they can charge their phones, take a break, sober up, have a chat, get medical support, and get help to get home safely
