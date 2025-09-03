@@ -13,7 +13,9 @@ volunteerDescription: >-
   We’re looking for volunteers to come out and clean schools, make food, and
   spend time with tamariki. Interested? Get in touch!
 ---
-**Update:**  We are currently set up on Quay Street, near the Viaduct, from 10:00pm to 3:00am on Friday and Saturday nights. We are offering the same great services as at Ellen Melville Centre, a safe space, water, lollies, games, first aid and meaningful kōrero and support.We would love to meet you!
+**Update:**  We are currently set up at Te Komititanga Square from 10:00pm to 3:00am on Friday and Saturday nights. We are offering the same great services as at Ellen Melville Centre, a safe space, water, lollies, games, first aid and meaningful kōrero and support.
+
+We would love to meet you!
 
 Kia ora Auckland!
 
