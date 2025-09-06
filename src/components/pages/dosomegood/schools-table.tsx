@@ -16,7 +16,7 @@ export function SchoolsTable({
 }) {
   return (
     <Table>
-      <TableHeader className={"sticky top-0 z-50 bg-white"}>
+      <TableHeader className={"sticky top-0 bg-white"}>
         <TableRow className={"bg-slate-800 text-white"}>
           <TableHead>School</TableHead>
           <TableHead>Tamariki (children)</TableHead>
