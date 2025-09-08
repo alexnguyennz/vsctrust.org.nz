@@ -17,6 +17,8 @@ volunteerDescription: >-
 
 We would love to meet you!
 
+&nbsp;
+
 Kia ora Auckland!
 
 We are so excited to be expanding into Auckland with a 10 week pilot supported by Auckland Council, starting on the 18th of July.
