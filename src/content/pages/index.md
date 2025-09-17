@@ -8,7 +8,7 @@ take10: >-
   phone charging, medical help, and refuge to reduce alcohol and drug related
   harm.
 take10auckland: >-
-  Providing a late-night safe zone outside Ellen Melville Centre where we offer
+  Providing a late-night safe zone at Te Komititanga Square where we offer
   water, phone charging, medical help, and refuge to reduce alcohol and drug
   related harm.
 take10arvos: >-
