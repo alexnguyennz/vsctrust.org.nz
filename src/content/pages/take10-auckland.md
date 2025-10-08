@@ -13,7 +13,7 @@ volunteerDescription: >-
   We’re looking for volunteers to come out and clean schools, make food, and
   spend time with tamariki. Interested? Get in touch!
 ---
-**Update:**  Our successful 10-week pilot has now concluded, but we are happy to announce we will be back soon with a pop-up running from 14th November to 13th of December at Te Komititanga Square from 10:00 pm to 3:00 am on Friday and Saturday nights, and then back again at the start of February next year for 2026.
+Our successful 10-week pilot has now concluded, but we are happy to announce we will be back soon with a pop-up running from 14th November to 13th of December at Te Komititanga Square from 10:00 pm to 3:00 am on Friday and Saturday nights, and then back again at the start of February next year for 2026.
 
 We felt so inspired by the hospitality and aroha of the people of Tāmaki Makaurau (Auckland) throughout our ten-week pilot; the opportunity to meet so many new faces and be welcomed into the city was a huge privilege.
 
