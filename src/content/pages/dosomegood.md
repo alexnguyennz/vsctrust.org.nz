@@ -18,8 +18,6 @@ volunteerDescription: >-
 
 <p class="text-xl font-extrabold">Making a difference.</p>
 
-&nbsp;
-
 Do Some Good's food support programme ensures all tamariki across Wellington, Porirua, and the Hutt Valley have access to fresh and tasty kai throughout their day in education, including lunch, breakfast, and snacks.
 
 Our programme started with one school in Wainuiomata in 2017, before expanding out to support more schools and kindergartens across Wellington, Porirua and Hutt Valley.
