@@ -21,20 +21,6 @@ The volunteers who came on board to support our work and spend their Friday and 
 
 And of course we want to take a moment to extend a huge thank you to Auckland Council for their continual support making all of this possible.
 
-&nbsp;
-
-Kia ora Auckland!
-
-We are so excited to be expanding into Auckland with a 10 week pilot supported by Auckland Council, starting on the 18th of July.
-
-In Auckland, Take10 will be providing the same great services that make it such a relied upon safe-zone in Central Wellington, games, phone charging, water, transport advice, first-aid medical support, friendly trained volunteers who love to kōrero with anyone who visits, and acting as a safe spot for people to relax, take a break or come to if they are lost or become separated from the people they are with.
-
-We'll be set up outside Ellen Melville Centre, every weekend over the 10-week pilot from 10:00pm to 3:00am, Friday and Saturday night.
-
-Taking our mahi into a new city and being able to meet, and support a whole new group of people is something we are so looking forward too.
-
-If you are on a night out drop by and say Kia ora, we would love to meet you!
-
 What makes us different?
 
 * **Preventative** – we catch people before they become victims by stopping them from becoming isolated and helping to reconnect people
