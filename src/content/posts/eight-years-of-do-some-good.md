@@ -4,7 +4,7 @@ title: Eight Years Of Do Some Good
 date: 2025-09-01T00:00:00+12:00
 author: leigh-keown
 image: /src/content/posts/faf385d2-3cf4-9caa-6f28-c32f33918e5d.jpeg
-published: false
+published: true
 ---
 &nbsp;
 
@@ -29,10 +29,6 @@ The 2020 lockdown brought to light the need for more support for schools. Wellin
 During the Covid era we also delivered food hampers to whānau who were doing it tough in lockdown, on average delivering 190 each week.
 
 Over time, more kindergartens also partnered with Do Some Good. Whānau Manaaki spoke about us with kaiako from kindergartens within their organisation, letting them know how support from Do Some Good could benefit the kindergartens they were teaching at. Kaiako then began reaching out to us about support.
-
-&nbsp;
-
-&nbsp;
 
 Do Some Good is continually evolving to ensure it is an adaptive programme built to respond to what best serves schools and kindergartens. Kaiako and other staff take a real lead in our programme, letting us know what kai would be best for tamariki in their care before we make our weekly deliveries, and once it has arrived, providing it to tamariki in a way that meets their needs.
 
