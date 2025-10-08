@@ -6,7 +6,7 @@ author: leigh-keown
 image: /src/content/posts/faf385d2-3cf4-9caa-6f28-c32f33918e5d.jpeg
 published: true
 ---
-Looking back over the eight years Do Some Good has been running, gives our team a special appreciation for the care and love given to tamariki by tumuaki, kaiako, and other staff in kindergartens and schools.
+Looking back over the eight years Do Some Good has been running, gives our team a special appreciation for the care and love given to tamariki by Tumuaki, kaiako, and other staff in kindergartens and schools.
 
 Do Some Good was born from a conversation between a teacher-aide at Arakura School who is a sister in law to a VSCT board member. She relayed to him that she was bringing in a loaf of bread every day to make sandwiches and toast for tamariki.
 
