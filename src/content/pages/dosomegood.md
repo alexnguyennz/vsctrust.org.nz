@@ -12,11 +12,15 @@ volunteerDescription: >-
 ---
 &nbsp;
 
+&nbsp;
+
 <p class="text-xl font-extrabold">Feeding tamariki.</p>
 
 <p class="text-xl font-extrabold">Supporting communities.</p>
 
 <p class="text-xl font-extrabold">Making a difference.</p>
+
+&nbsp;
 
 Do Some Good's food support programme ensures all tamariki across Wellington, Porirua, and the Hutt Valley have access to fresh and tasty kai throughout their day in education, including lunch, breakfast, and snacks.
 
