@@ -1,7 +1,7 @@
 ---
 _schema: posts
 title: Take 10 Launches in Auckland
-date: 2025-09-01T00:00:00+12:00
+date: 2025-10-10T00:00:00+13:00
 author: leigh-keown
 image: /src/content/posts/da76e9d9-b32f-fd42-4b6a-819824809874-2.jpeg
 published: true
