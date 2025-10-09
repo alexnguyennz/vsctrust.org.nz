@@ -1,7 +1,7 @@
 ---
 _schema: posts
 title: Eight Years Of Do Some Good
-date: 2025-09-01T00:00:00+12:00
+date: 2025-10-10T00:00:00+13:00
 author: leigh-keown
 image: /src/content/posts/faf385d2-3cf4-9caa-6f28-c32f33918e5d.jpeg
 published: true
