@@ -14,7 +14,7 @@ import { menuLinks } from "@/lib/links";
   class="mt-auto bg-gray-900 text-center text-sm text-white md:text-left"
   transition:animate="none"
 >
-  <Section class="space-y-6">
+  <Section class="space-y-6 py-10">
     <nav class="grid justify-center gap-6 md:grid-cols-4 lg:grid-cols-6">
       <div
         class="order-last space-y-6 justify-self-center md:order-first md:col-span-4 lg:col-span-2"
@@ -46,7 +46,7 @@ import { menuLinks } from "@/lib/links";
       {
         Object.keys(menuLinks).map((menu) => (
           <div>
-            <h2 class="mb-2 text-center text-base font-extrabold text-slate-300 md:text-left">
+            <h2 class="mb-2 text-center font-extrabold text-slate-400 md:text-left">
               {menu}
             </h2>
             <ul class="space-y-2.5">
@@ -63,9 +63,7 @@ import { menuLinks } from "@/lib/links";
       }
 
       <div>
-        <h2
-          class="mb-2 text-center text-base font-extrabold text-slate-300 md:text-left"
-        >
+        <h2 class="mb-2 text-center font-extrabold text-slate-400 md:text-left">
           Follow Us
         </h2>
 
