@@ -32,7 +32,6 @@ export default defineConfig({
         tabler: [
           "at",
           "phone",
-          "copyright",
           "backpack",
           "friends",
           "bottle",

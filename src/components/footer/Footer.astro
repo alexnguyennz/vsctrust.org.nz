@@ -4,7 +4,9 @@ import { Icon } from "astro-icon/components";
 
 import Section from "@/components/layouts/section.astro";
 
-import FooterNewsletter from "@/components/FooterNewsletter.astro";
+import Newsletter from "@/components/Newsletter.astro";
+import { NewsletterModal } from "@/components/pages/home/NewsletterModal.tsx";
+
 import { Rainbow } from "./Rainbow";
 
 import { menuLinks } from "@/lib/links";
@@ -17,7 +19,7 @@ import { menuLinks } from "@/lib/links";
   <Section class="space-y-6 py-10">
     <nav class="grid justify-center gap-6 md:grid-cols-4 lg:grid-cols-6">
       <div
-        class="order-last space-y-6 justify-self-center md:order-first md:col-span-4 lg:col-span-2"
+        class="order-last flex flex-col gap-6 justify-self-center md:order-first md:col-span-4 lg:col-span-2"
       >
         <div class="flex items-center gap-6">
           <Image
@@ -40,7 +42,7 @@ import { menuLinks } from "@/lib/links";
           </ul>
         </div>
 
-        <FooterNewsletter />
+        <NewsletterModal client:idle><Newsletter /></NewsletterModal>
       </div>
 
       {
@@ -162,9 +164,9 @@ import { menuLinks } from "@/lib/links";
       </div>
     </nav>
 
-    <div class="flex flex-col items-center">
-      <p class="mb-2 flex items-center gap-1">
-        <Icon name="tabler:copyright" class="h-4 w-4" />
+    <div class="flex flex-col items-center gap-3">
+      <p>
+        &copy;
         {new Date().getFullYear()} Vulnerable Support Charitable Trust
       </p>
 

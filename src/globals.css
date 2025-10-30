@@ -62,6 +62,41 @@ footer a:hover {
     5px 5px 0 0 black;
 }
 
-/*.shadow-button {
-  @apply shadow-border shadow-text relative inline-block rounded-md px-4 py-2 font-bold tracking-wide text-white no-underline hover:no-underline active:left-1 active:top-1 active:shadow-none;
-}*/
+@layer utilities {
+  .shadow-button {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-radius: 0.375rem;
+    color: white;
+    text-decoration: none;
+    background-color: #4b5563;
+    border: 1px solid black;
+
+    box-shadow:
+      1px 1px 0 0 black,
+      2px 2px 0 0 black,
+      3px 3px 0 0 black,
+      4px 4px 0 0 black,
+      5px 5px 0 0 black;
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+
+    transition: all 0.05s ease;
+  }
+
+  .shadow-button:hover {
+    text-decoration: none;
+  }
+
+  .shadow-button:active {
+    left: 0.25rem;
+    top: 0.25rem;
+    box-shadow: none;
+  }
+}
