@@ -74,12 +74,6 @@ export const menuLinks: MenuLinks = {
       description: "Late-night safe zone",
       icon: Take10Auckland,
     },
-    {
-      title: "Generation Link",
-      href: "/gen-link/",
-      description: "Connecting kids with elders",
-      icon: GenLink,
-    },
   ],
   "Get Involved": [
     {

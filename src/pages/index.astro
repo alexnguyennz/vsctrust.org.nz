@@ -11,7 +11,6 @@ import { Quotes } from "@/components/pages/home/Quotes";
 
 import NewsCard from "@/components/pages/news/NewsCard.astro";
 import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
-import OurNumbers from "@/components/pages/home/OurNumbers.astro";
 
 import Newsletter from "@/components/Newsletter.astro";
 
@@ -26,11 +25,11 @@ const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title}>
+  <HowYouCanHelp />
+
   <Section>
     <Programmes page={entry.data} />
   </Section>
-
-  <HowYouCanHelp />
 
   <Section class="text-center">
     <H2>Helping rangatahi and tamariki in Wellington</H2>
@@ -55,8 +54,6 @@ const { Content } = await render(entry);
       {posts.slice(0, 5).map((post) => <NewsCard post={post} />)}
     </div>
   </Section>
-
-  <!--<OurNumbers page={entry.data} />-->
 </Layout>
 
 <style>

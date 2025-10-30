@@ -8,16 +8,10 @@ const name = {
   take10: "Take 10",
   "take10-auckland": "Take 10 Auckland",
   "take10-arvos": "Take 10 Arvo's",
-  "gen-link": "Gen Link",
 };
 
 interface Props {
-  programme:
-    | "dosomegood"
-    | "take10"
-    | "take10-auckland"
-    | "take10-arvos"
-    | "gen-link";
+  programme: "dosomegood" | "take10" | "take10-auckland";
 }
 
 const { programme } = Astro.props;
@@ -60,7 +54,7 @@ const backgroundHover = await getImage({
     <slot />
   </div>
 </a>
-<!--"url('/favicon.png')"-->
+
 <style
   define:vars={{
     background: `url('${background.src}')`,

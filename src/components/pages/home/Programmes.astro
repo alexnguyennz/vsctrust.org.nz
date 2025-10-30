@@ -7,13 +7,11 @@ interface Props {
     dosomegood: string;
     take10: string;
     take10auckland: string;
-    take10arvos: string;
-    genlink: string;
   };
 }
 
 const {
-  page: { dosomegood, take10, take10auckland, take10arvos, genlink },
+  page: { dosomegood, take10, take10auckland },
 } = Astro.props;
 ---
 
@@ -33,12 +31,6 @@ const {
   <ProgrammeCard programme="take10-auckland">
     <p>
       {take10auckland}
-    </p>
-  </ProgrammeCard>
-
-  <ProgrammeCard programme="gen-link">
-    <p>
-      {genlink}
     </p>
   </ProgrammeCard>
 </ProgrammeGrid>
