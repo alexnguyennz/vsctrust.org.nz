@@ -29,7 +29,7 @@ export function Navigation({ pathname }: { pathname: string }) {
             <NavigationMenuTrigger>{menu}</NavigationMenuTrigger>
 
             <NavigationMenuContent>
-              <ul className={cn("w-max space-y-2 p-3")}>
+              <ul className={cn("w-max space-y-1.5 p-3")}>
                 {menuLinks[menu].map((link) => (
                   <ListItem
                     key={link.title}
@@ -51,9 +51,9 @@ export function Navigation({ pathname }: { pathname: string }) {
             href="/contact/"
             className={cn(
               navigationMenuTriggerStyle(),
-              "hover:bg-gray-900 hover:text-white focus:bg-gray-900 focus:text-white",
+              "hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white",
               pathname === "/contact/" &&
-                "bg-gray-900 text-white hover:text-white focus:text-white",
+                "bg-gray-700 text-white hover:text-white focus:text-white",
             )}
           >
             Contact
@@ -64,7 +64,7 @@ export function Navigation({ pathname }: { pathname: string }) {
             href="/donate/"
             className={cn(
               navigationMenuTriggerStyle(),
-              "relative inline-block rounded-md border border-black bg-blue-500 px-4 py-2 font-bold tracking-wide text-white no-underline shadow hover:text-white hover:no-underline focus:text-white active:left-1 active:top-1 active:shadow-none",
+              "relative inline-block rounded-md border border-black bg-blue-500 px-4 py-2 font-semibold text-white no-underline shadow hover:text-white hover:no-underline focus:text-white active:left-1 active:top-1 active:shadow-none",
             )}
           >
             Donate
@@ -89,19 +89,19 @@ const ListItem = forwardRef<
           ref={ref}
           href={href}
           className={cn(
-            "group flex select-none items-center gap-3 space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-gray-900 hover:fill-white hover:text-white focus:bg-gray-900 focus:text-white",
+            "group flex select-none items-center gap-3 space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-gray-700 hover:fill-white hover:text-white focus:bg-gray-700 focus:text-white",
             className,
             href &&
               pathname.startsWith(href) &&
-              "bg-gray-900 text-white hover:text-white focus:text-white",
+              "bg-gray-700 text-white hover:text-white focus:text-white",
           )}
           rel="prefetch"
           {...props}
         >
           <Icon className={"size-6"} />
           <div>
-            <div className="font-extrabold leading-none">{title}</div>
-            <span className={"text-sm"}>{children}</span>
+            <div className="font-semibold leading-none">{title}</div>
+            <span className="text-sm">{children}</span>
           </div>
         </a>
       </NavigationMenuLink>

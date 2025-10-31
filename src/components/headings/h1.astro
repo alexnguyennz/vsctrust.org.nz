@@ -4,4 +4,4 @@ import { cn } from "@/lib/utils";
 const { class: className, ...rest } = Astro.props;
 ---
 
-<h1 class={cn("text-5xl font-extrabold", className)} {...rest}><slot /></h1>
+<h1 class={cn("text-5xl font-semibold", className)} {...rest}><slot /></h1>
