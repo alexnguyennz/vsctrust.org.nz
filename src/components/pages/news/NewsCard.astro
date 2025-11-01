@@ -4,9 +4,10 @@ import { Image } from "astro:assets";
 
 interface Props {
   post: CollectionEntry<"posts">;
+  hideTransition?: boolean;
 }
 
-const { post } = Astro.props;
+const { post, hideTransition } = Astro.props;
 ---
 
 <article class="flex flex-col text-center">
@@ -19,6 +20,7 @@ const { post } = Astro.props;
       src={post.data.image}
       width={500}
       alt={post.data.title}
+      transition:name={`news-image-${post.id}`}
       class="aspect-[4/3] w-full rounded-2xl object-cover transition duration-500 group-hover:scale-110"
     />
   </a>

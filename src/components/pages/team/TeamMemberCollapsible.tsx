@@ -34,7 +34,7 @@ export function TeamMemberCollapsible({
       {image}
 
       <div className={"text-center"}>
-        <h2 className="text-lg font-bold">
+        <h2 className="text-lg font-semibold">
           {name} {contact}
         </h2>
         <h3 className="text-center">{position}</h3>
@@ -44,7 +44,7 @@ export function TeamMemberCollapsible({
 
       <CollapsibleContent
         className={
-          "data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up overflow-hidden"
+          "overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down"
         }
       >
         {children}

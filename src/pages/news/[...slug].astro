@@ -29,6 +29,7 @@ const author = await getEntry(post.data.author);
         height="700"
         alt={post.data.title}
         class="shadow-border h-96 w-full rounded-md object-cover"
+        transition:name={`news-image-${post.id}`}
       />
       <div>
         <H2 class="text-left">

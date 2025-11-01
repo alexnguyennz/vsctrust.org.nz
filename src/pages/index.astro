@@ -52,18 +52,9 @@ const { Content } = await render(entry);
     <H2>Latest news</H2>
 
     <div
-      class="news-grid grid gap-6 sm:grid-cols-2 sm:gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
+      class="mx-auto grid max-w-screen-lg gap-6 sm:grid-cols-2 lg:grid-cols-3"
     >
-      {posts.slice(0, 5).map((post) => <NewsCard post={post} />)}
+      {posts.slice(0, 3).map((post) => <NewsCard post={post} />)}
     </div>
   </Section>
 </Layout>
-
-<style>
-  .news-grid {
-    grid-template-rows: 1fr;
-    grid-auto-rows: 0;
-    row-gap: 0;
-    overflow: hidden;
-  }
-</style>
