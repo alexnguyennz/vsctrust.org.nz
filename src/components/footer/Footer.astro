@@ -13,7 +13,7 @@ import { menuLinks } from "@/lib/links";
 ---
 
 <footer
-  class="mt-auto bg-gray-900 text-center text-sm text-white md:text-left"
+  class="mt-auto border-gray-200 bg-gray-100 text-center text-sm md:text-left"
   transition:animate="none"
 >
   <Section class="space-y-6 py-10">
@@ -48,7 +48,7 @@ import { menuLinks } from "@/lib/links";
       {
         Object.keys(menuLinks).map((menu) => (
           <div>
-            <h2 class="mb-2 text-center font-semibold text-slate-400 md:text-left">
+            <h2 class="mb-2 text-center text-neutral-500 md:text-left">
               {menu}
             </h2>
             <ul class="space-y-2.5">
@@ -65,7 +65,7 @@ import { menuLinks } from "@/lib/links";
       }
 
       <div>
-        <h2 class="mb-2 text-center font-semibold text-slate-400 md:text-left">
+        <h2 class="mb-2 text-center text-neutral-500 md:text-left">
           Follow Us
         </h2>
 
@@ -170,7 +170,7 @@ import { menuLinks } from "@/lib/links";
         {new Date().getFullYear()} Vulnerable Support Charitable Trust
       </p>
 
-      <p class="text-slate-400">
+      <p>
         We are a registered charity
         <a
           href="https://register.charities.govt.nz/Charity/CC55753"

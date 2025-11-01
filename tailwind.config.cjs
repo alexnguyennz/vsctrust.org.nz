@@ -9,8 +9,8 @@ module.exports = {
     extend: {
       animation: {
         marquee: "marquee var(--duration) linear infinite",
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "accordion-down": "accordion-down 0s ease-out",
+        "accordion-up": "accordion-up 0s ease-out",
         "collapsible-down": "collapsible-down 0.2s ease-out",
         "collapsible-up": "collapsible-up 0.2s ease-out",
       },
