@@ -36,7 +36,6 @@ export default defineConfig({
           "friends",
           "bottle",
           "pizza",
-          "tools-kitchen-2",
           "plus",
           "users",
           "location",

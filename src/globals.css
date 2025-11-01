@@ -10,11 +10,11 @@
 
 body {
   font-family: "Sora", sans-serif;
-  font-synthesis: none; /* Fix Safari bug with ugly bolded text */
 }
 
 .section-full-container > h2,
-main ul {
+main ul,
+main p:not(:last-child) {
   margin-bottom: 1rem;
 }
 
