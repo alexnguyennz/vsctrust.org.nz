@@ -88,7 +88,7 @@ const ListItem = forwardRef<
           ref={ref}
           href={href}
           className={cn(
-            "group flex select-none items-center gap-3 space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-gray-200 focus:bg-gray-200",
+            "group flex select-none items-center gap-3 space-y-1 rounded-md px-3 py-1.5 no-underline outline-none transition-colors hover:bg-gray-200 focus:bg-gray-200",
             className,
             href && pathname.startsWith(href) && "bg-gray-200",
           )}

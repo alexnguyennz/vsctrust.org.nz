@@ -4,17 +4,16 @@ import { Image } from "astro:assets";
 
 interface Props {
   post: CollectionEntry<"posts">;
-  hideTransition?: boolean;
 }
 
-const { post, hideTransition } = Astro.props;
+const { post } = Astro.props;
 ---
 
-<article class="flex flex-col text-center">
+<article class="flex flex-col">
   <a
     href={`/news/${post.id}/`}
     rel="prefetch"
-    class="group overflow-hidden rounded-2xl"
+    class="shadow-border group overflow-hidden rounded-3xl bg-black"
   >
     <Image
       src={post.data.image}
@@ -26,7 +25,10 @@ const { post, hideTransition } = Astro.props;
   </a>
 
   <div class="mt-4 flex flex-1 flex-col">
-    <h3 class="text-sm">
+    <h2 class="line-clamp-1 font-semibold">
+      <a href={`/news/${post.id}/`}>{post.data.title}</a>
+    </h2>
+    <h3 class="mt-auto text-sm">
       {
         new Date(post.data.date).toLocaleDateString("en-NZ", {
           year: "numeric",
@@ -35,9 +37,5 @@ const { post, hideTransition } = Astro.props;
         })
       }
     </h3>
-
-    <h2 class="mb-0 line-clamp-2 text-base font-semibold">
-      <a href={`/news/${post.id}/`}>{post.data.title}</a>
-    </h2>
   </div>
 </article>

@@ -31,13 +31,13 @@ const { Content } = await render(entry);
   />
 
   <Section class="flex flex-col gap-6">
-    <div class="max-w-4xls mx-autos">
+    <div>
       <Fragment set:html={marked.parse(entry.data.topContent)} />
     </div>
 
     <div>
       <p>Your donation will go towards:</p>
-      <ul class="ml-0 space-y-2 [&>li]:flex [&>li]:items-center [&>li]:gap-2">
+      <ul class="ml-0 space-y-3 [&>li]:flex [&>li]:items-center [&>li]:gap-2">
         <li>
           <Icon name="tabler:bottle" class="size-6" />
           {entry.data.items[0]}
@@ -67,6 +67,6 @@ const { Content } = await render(entry);
       ></iframe>
     </div>
 
-    <div class="mx-auto max-w-4xl"><Content /></div>
+    <div class="mx-auto"><Content /></div>
   </Section>
 </Layout>

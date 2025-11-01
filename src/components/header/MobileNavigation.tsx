@@ -9,7 +9,7 @@ import {
 
 export function MobileNavigation() {
   return (
-    <ul className={"mt-6 font-extrabold"}>
+    <ul className="mt-6 font-semibold">
       <li>
         <a href="/" className="block py-2">
           Home

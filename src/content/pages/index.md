@@ -22,4 +22,4 @@ take10Visitors: 46521
 waterGiven: 26841
 mealsForTamariki: 29587
 ---
-We support tamariki by providing kai in schools and kindergartens and young people on Friday and Saturday nights.
+We support tamariki by providing kai in schools and kindergartens, and young people on Friday and Saturday nights.
