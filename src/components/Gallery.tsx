@@ -66,7 +66,7 @@ export function Gallery({
         </AnimatePresence>
       </div>
 
-      <div className="flex h-[200px] gap-6 overflow-auto pr-6 lg:grid lg:h-[600px] lg:grid-cols-1 xl:col-span-2 xl:grid-cols-2">
+      <div className="flex h-[200px] gap-6 overflow-auto pr-6 lg:grid lg:h-[400px] lg:grid-cols-1 xl:col-span-2 xl:grid-cols-2">
         <AnimatePresence>
           {images.slice(1).map((image) => (
             <Thumbnail

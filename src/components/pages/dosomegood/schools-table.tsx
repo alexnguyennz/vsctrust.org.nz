@@ -17,7 +17,7 @@ export function SchoolsTable({
   return (
     <Table>
       <TableHeader className={"sticky top-0 bg-white"}>
-        <TableRow className={"bg-slate-800 text-white"}>
+        <TableRow>
           <TableHead>School</TableHead>
           <TableHead>Tamariki (children)</TableHead>
           <TableHead>Location</TableHead>
