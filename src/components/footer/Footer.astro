@@ -12,43 +12,32 @@ import { Rainbow } from "./Rainbow";
 import { menuLinks } from "@/lib/links";
 ---
 
+<!--<NewsletterModal client:idle><Newsletter /></NewsletterModal>-->
 <footer
   class="mt-auto border-t border-amber-100 bg-[#fefbf2] text-center text-sm md:text-left"
   transition:animate="none"
 >
-  <Section class="space-y-6 py-10">
-    <nav class="grid justify-center gap-6 md:grid-cols-4 lg:grid-cols-6">
-      <div
-        class="order-last flex flex-col gap-6 justify-self-center md:order-first md:col-span-4 lg:col-span-2"
-      >
-        <div class="flex items-center gap-6">
-          <Image
-            src={import("../../assets/img/icon.png")}
-            width="72"
-            height="72"
-            alt="Vulnerable Support Charitable Trust logo"
-            class="mx-auto"
-          />
-
-          <ul class="space-y-3">
-            <li class="flex items-center gap-1.5">
-              <Icon name="tabler:at" class="size-5" />
-              <a href="mailto:hello@vsctrust.org.nz">hello@vsctrust.org.nz</a>
-            </li>
-            <li class="flex items-center gap-1.5">
-              <Icon name="tabler:phone" class="size-5" />
-              <a href="tel:+64274448672">027 444 8672</a>
-            </li>
-          </ul>
-        </div>
-
-        <NewsletterModal client:idle><Newsletter /></NewsletterModal>
-      </div>
+  <Section class="space-y-6 py-12">
+    <nav class="grid justify-center gap-6 md:grid-cols-4 lg:grid-cols-5">
+      <!-- <div>
+      <ul class="space-y-3">
+        <li class="flex items-center gap-1.5">
+          <Icon name="tabler:at" class="size-5" />
+          <a href="mailto:hello@vsctrust.org.nz">hello@vsctrust.org.nz</a>
+        </li>
+        <li class="flex items-center gap-1.5">
+          <Icon name="tabler:phone" class="size-5" />
+          <a href="tel:+64274448672">027 444 8672</a>
+        </li>
+      </ul>
+      </div>-->
 
       {
         Object.keys(menuLinks).map((menu) => (
           <div>
-            <h2 class="mb-3 text-center text-stone-500 md:text-left">{menu}</h2>
+            <h2 class="mb-3 text-center font-semibold text-stone-500 md:text-left">
+              {menu}
+            </h2>
             <ul class="space-y-3">
               {menuLinks[menu].map((link) => (
                 <li>
@@ -62,11 +51,30 @@ import { menuLinks } from "@/lib/links";
         ))
       }
 
-      <div>
-        <h2 class="mb-3 text-center text-stone-500 md:text-left">Follow Us</h2>
+      <div class="col-span-2">
+        <h2 class="mb-3 text-center font-semibold text-stone-500 md:text-left">
+          Contact Us
+        </h2>
 
-        <div class="flex flex-col gap-3">
-          <div class="flex items-center justify-center gap-3 md:justify-start">
+        <ul class="mb-6 flex gap-6">
+          <li class="flex items-center gap-1.5">
+            <Icon name="tabler:at" class="size-5" />
+            <a href="mailto:hello@vsctrust.org.nz">hello@vsctrust.org.nz</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <Icon name="tabler:phone" class="size-5" />
+            <a href="tel:+64274448672">+64 27 444 8672</a>
+          </li>
+        </ul>
+
+        <h2 class="mb-3 text-center font-semibold text-stone-500 md:text-left">
+          Follow Us
+        </h2>
+
+        <div class="flex gap-6">
+          <div
+            class="flex flex-col items-center justify-center gap-3 md:justify-start"
+          >
             <Image
               src={import("../../assets/img/logo/dosomegood.png")}
               width="48"
@@ -95,7 +103,9 @@ import { menuLinks } from "@/lib/links";
             </div>
           </div>
 
-          <div class="flex items-center justify-center gap-3 md:justify-start">
+          <div
+            class="flex flex-col items-center justify-center gap-3 md:justify-start"
+          >
             <Image
               src={import("../../assets/img/logo/take10.png")}
               width="48"
@@ -123,7 +133,9 @@ import { menuLinks } from "@/lib/links";
             </div>
           </div>
 
-          <div class="flex items-center justify-center gap-3 md:justify-start">
+          <div
+            class="flex flex-col items-center justify-center gap-3 md:justify-start"
+          >
             <Image
               src={import("../../assets/img/logo/take10-auckland.png")}
               width="48"
@@ -155,7 +167,15 @@ import { menuLinks } from "@/lib/links";
       </div>
     </nav>
 
-    <div class="flex flex-col items-center gap-3">
+    <div class="flex flex-col items-center gap-3 text-stone-500">
+      <Image
+        src={import("../../assets/img/icon.png")}
+        width="72"
+        height="72"
+        alt="Vulnerable Support Charitable Trust logo"
+        class="mx-auto"
+      />
+
       <p>
         &copy;
         {new Date().getFullYear()} Vulnerable Support Charitable Trust
