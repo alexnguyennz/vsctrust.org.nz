@@ -24,19 +24,19 @@ import { menuLinks } from "@/lib/links";
         <div class="flex items-center gap-6">
           <Image
             src={import("../../assets/img/icon.png")}
-            width="96"
-            height="96"
+            width="72"
+            height="72"
             alt="Vulnerable Support Charitable Trust logo"
             class="mx-auto"
           />
 
-          <ul class="space-y-2.5">
-            <li class="flex items-center gap-1">
-              <Icon name="tabler:at" class="h-5 w-5" />
+          <ul class="space-y-3">
+            <li class="flex items-center gap-1.5">
+              <Icon name="tabler:at" class="size-5" />
               <a href="mailto:hello@vsctrust.org.nz">hello@vsctrust.org.nz</a>
             </li>
-            <li class="flex items-center gap-1">
-              <Icon name="tabler:phone" class="h-5 w-5" />
+            <li class="flex items-center gap-1.5">
+              <Icon name="tabler:phone" class="size-5" />
               <a href="tel:+64274448672">027 444 8672</a>
             </li>
           </ul>
@@ -48,8 +48,8 @@ import { menuLinks } from "@/lib/links";
       {
         Object.keys(menuLinks).map((menu) => (
           <div>
-            <h2 class="mb-2 text-center text-stone-400 md:text-left">{menu}</h2>
-            <ul class="space-y-2.5">
+            <h2 class="mb-3 text-center text-stone-500 md:text-left">{menu}</h2>
+            <ul class="space-y-3">
               {menuLinks[menu].map((link) => (
                 <li>
                   <a href={link.href} rel="prefetch">
@@ -63,98 +63,93 @@ import { menuLinks } from "@/lib/links";
       }
 
       <div>
-        <h2 class="mb-2 text-center text-stone-400 md:text-left">Follow Us</h2>
+        <h2 class="mb-3 text-center text-stone-500 md:text-left">Follow Us</h2>
 
-        <div class="mb-4">
-          <h3 class="mb-2">Facebook</h3>
-          <div
-            class="flex flex-wrap items-center justify-center gap-3 md:justify-start"
-          >
-            <a
-              href="https://www.facebook.com/dosomegoodnewzealand/"
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              aria-label="Do Some Good Facebook page"
-            >
-              <Image
-                src={import("../../assets/img/logo/dosomegood.png")}
-                width="40"
-                height="40"
-                alt="Do Some Good logo"
-              />
-            </a>
-            <a
-              href="https://www.facebook.com/take10wgtn/"
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              aria-label="Take 10 Facebook page"
-            >
-              <Image
-                src={import("../../assets/img/logo/take10.png")}
-                width="40"
-                height="40"
-                alt="Take 10 logo"
-              />
-            </a>
-            <a
-              href="https://www.facebook.com/take10auckland/"
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              aria-label="Take 10 Auckland Facebook page"
-            >
-              <Image
-                src={import("../../assets/img/logo/take10-auckland.png")}
-                width="40"
-                height="40"
-                alt="Take 10 Auckland logo"
-              />
-            </a>
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center justify-center gap-3 md:justify-start">
+            <Image
+              src={import("../../assets/img/logo/dosomegood.png")}
+              width="48"
+              height="48"
+              alt="Do Some Good logo"
+            />
+
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="https://www.facebook.com/dosomegoodnewzealand/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                aria-label="Do Some Good Facebook page"
+              >
+                <Icon name="tabler:brand-facebook" class="size-5" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/dosomegoodnz/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                aria-label="Do Some Good Instagram page"
+              >
+                <Icon name="tabler:brand-instagram" class="size-5" />
+              </a>
+            </div>
           </div>
-        </div>
-
-        <div>
-          <h3 class="mb-2">Instagram</h3>
 
           <div class="flex items-center justify-center gap-3 md:justify-start">
-            <a
-              href="https://www.instagram.com/dosomegoodnz/"
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              aria-label="Do Some Good Instagram page"
-            >
-              <Image
-                src={import("../../assets/img/logo/dosomegood.png")}
-                width="40"
-                height="40"
-                alt="Do Some Good logo"
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/take10wgtn/"
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              aria-label="Take 10 Instagram page"
-            >
-              <Image
-                src={import("../../assets/img/logo/take10.png")}
-                width="40"
-                height="40"
-                alt="Take 10 logo"
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/take10auckland/"
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              aria-label="Take 10 Auckland Instagram page"
-            >
-              <Image
-                src={import("../../assets/img/logo/take10-auckland.png")}
-                width="40"
-                height="40"
-                alt="Take 10 Auckland logo"
-              />
-            </a>
+            <Image
+              src={import("../../assets/img/logo/take10.png")}
+              width="48"
+              height="48"
+              alt="Take 10 logo"
+            />
+
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="https://www.facebook.com/take10wgtn/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                aria-label="Take 10 Facebook page"
+              >
+                <Icon name="tabler:brand-facebook" class="size-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/take10wgtn/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                aria-label="Take 10 Instagram page"
+              >
+                <Icon name="tabler:brand-instagram" class="size-5" />
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-center gap-3 md:justify-start">
+            <Image
+              src={import("../../assets/img/logo/take10-auckland.png")}
+              width="48"
+              height="48"
+              alt="Take 10 Auckland logo"
+            />
+
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="https://www.facebook.com/take10auckland/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                aria-label="Take 10 Auckland Facebook page"
+              >
+                <Icon name="tabler:brand-facebook" class="size-5" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/take10auckland/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                aria-label="Take 10 Auckland Instagram page"
+              >
+                <Icon name="tabler:brand-instagram" class="size-5" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
