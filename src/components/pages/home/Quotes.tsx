@@ -24,7 +24,7 @@ const Card = ({ quote }: { name?: string; quote: string }) => {
         "relative w-72 cursor-default overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 p-5 transition-colors hover:bg-gray-100"
       }
     >
-      <blockquote>{quote}</blockquote>
+      <blockquote className="text-sm text-gray-600">{quote}</blockquote>
     </figure>
   );
 };
