@@ -41,6 +41,8 @@ export default defineConfig({
           "location",
           "calendar",
           "blender",
+          "brand-facebook",
+          "brand-instagram",
         ],
       },
       svgoOptions: {
