@@ -1,13 +1,10 @@
 ---
 title: Sponsor a School
 ---
+As of 2025 the [cost of living crisis is affecting 1 in 2 people in Aotearoa](https://www.scoop.co.nz/stories/AK2503/S00308/one-in-two-new-zealanders-are-affected-by-the-cost-of-living-crisis.htm#:~:text=One%20In%20Two%20New%20Zealanders,%E2%80%A2), which has been linked to child poverty levels remaining steady at 11.7% to 13.7%.
 
-In 2020/21 one in six children lived in households where food ran out sometimes (**12.0%**) or often (**2.9%**) due to a lack of money.
+Do Some Good’s Food Support Programme is here to alleviate the pressures felt by tamariki and their whānau through providing kai to education providers across Wellington, Hutt Valley, and Porirua.
 
-We want to help build connections between businesses and low decile schools to generate positive change in how we look after our people.
-
-Each business will have something different to offer or a different way in which they can help.
-
-Want to sponsor a school or kindergarten? Read through our brochure and fill in the form below if you’re interested!
+Want to sponsor a school or kindergarten? Get in touch with us at [hello@vsctrust.org.nz](mailto:hello@vsctrust.org.nz)
 
 <a href="/dosomegood/brochure.pdf" class="shadow border border-black relative inline-block rounded-md px-4 py-2 font-bold tracking-wide text-white no-underline hover:no-underline active:left-1 active:top-1 active:shadow-none bg-gray-600">Brochure</a>
