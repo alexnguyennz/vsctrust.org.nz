@@ -9,7 +9,7 @@ const pathname = new URL(Astro.request.url).pathname;
 
 <header
   id="site-header"
-  class="sticky top-0 z-20 w-full border-b border-transparent bg-white transition"
+  class="sticky top-0 z-20 w-full bg-white transition"
   transition:animate="none"
 >
   <div
@@ -43,9 +43,9 @@ const pathname = new URL(Astro.request.url).pathname;
 
     window.addEventListener("scroll", () => {
       if (window.scrollY > 10) {
-        header?.classList.add("border-stone-200");
+        header?.classList.add("border-b", "border-stone-200");
       } else {
-        header?.classList.remove("border-stone-200");
+        header?.classList.remove("border-b", "border-stone-200");
       }
     });
   }
