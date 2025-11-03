@@ -20,16 +20,18 @@ const { Content } = await render(entry);
 <Layout title={entry.data.title}>
   <TextBanner title={entry.data.title} />
 
-  <Image
-    src={import("@/assets/img/home/sponsor.png")}
-    width="77"
-    height="77"
-    alt="sponsor image"
-    fetchpriority="high"
-    loading="eager"
-    class="mx-auto"
-    transition:name="sponsor"
-  />
+  <Section>
+    <Image
+      src={import("@/assets/img/home/sponsor.png")}
+      width="77"
+      height="77"
+      alt="sponsor image"
+      fetchpriority="high"
+      loading="eager"
+      class="mx-auto"
+      transition:name="sponsor"
+    /></Section
+  >
 
   <Section class="flex flex-col space-y-6">
     <div class="self-center">

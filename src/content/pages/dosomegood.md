@@ -4,7 +4,7 @@ awards:
   - Finalist of 2019 Hutt City's Regional Community Awards
 sponsorASchoolDescription: >-
   Sponsor a school or kindergarten and help us to continue delivering kai to
-  tamariki who need it in our local communities, within Wellington, Porirua, and
+  tamariki who need it in our local communities within Wellington, Porirua, and
   Hutt Valley. 
 volunteerDescription: >-
   We’re looking for volunteers to come out and clean schools, make food, and

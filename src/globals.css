@@ -12,6 +12,10 @@ body {
   font-family: "Sora", sans-serif;
 }
 
+strong {
+  font-weight: 600;
+}
+
 .section-full-container > h2,
 main ul,
 main p:not(:last-child) {

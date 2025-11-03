@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
-import Button from "@/components/layouts/button.astro";
+import AnchorButton from "@/components/layouts/anchor-button.astro";
 
 import TextBanner from "@/components/TextBanner.astro";
 import ProgrammeGrid from "@/components/programmes/ProgrammeGrid.astro";
@@ -20,16 +20,18 @@ const title = "Volunteer";
 <Layout title={title}>
   <TextBanner title={title} />
 
-  <Image
-    src={import("@/assets/img/home/volunteer.png")}
-    width="77"
-    height="77"
-    alt="volunteer image"
-    fetchpriority="high"
-    loading="eager"
-    class="mx-auto"
-    transition:name="volunteer"
-  />
+  <Section>
+    <Image
+      src={import("@/assets/img/home/volunteer.png")}
+      width="77"
+      height="77"
+      alt="volunteer image"
+      fetchpriority="high"
+      loading="eager"
+      class="mx-auto"
+      transition:name="volunteer"
+    /></Section
+  >
 
   <Section>
     <ProgrammeGrid>
@@ -63,10 +65,8 @@ const title = "Volunteer";
     </ProgrammeGrid>
 
     <div class="mt-6 flex justify-center">
-      <a
-        href="/take10/volunteer.pdf"
-        class="relative inline-block rounded-md border border-black bg-gray-600 px-4 py-2 text-center text-sm font-bold tracking-wide text-white no-underline shadow hover:no-underline active:left-1 active:top-1 active:shadow-none"
-        >Take 10 Role description</a
+      <AnchorButton href="/take10/volunteer.pdf" class="bg-gray-600 text-sm"
+        >Take 10 Role Description</AnchorButton
       >
     </div>
   </Section>

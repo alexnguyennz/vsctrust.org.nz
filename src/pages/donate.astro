@@ -19,16 +19,18 @@ const { Content } = await render(entry);
 <Layout title={entry.data.title}>
   <TextBanner title={entry.data.title} />
 
-  <Image
-    src={import("@/assets/img/home/donate.png")}
-    width="77"
-    height="77"
-    alt="donate image"
-    fetchpriority="high"
-    loading="eager"
-    class="mx-auto"
-    transition:name="donate"
-  />
+  <Section>
+    <Image
+      src={import("@/assets/img/home/donate.png")}
+      width="77"
+      height="77"
+      alt="donate image"
+      fetchpriority="high"
+      loading="eager"
+      class="mx-auto"
+      transition:name="donate"
+    /></Section
+  >
 
   <Section class="flex flex-col gap-6">
     <div>
