@@ -14,15 +14,15 @@ import { menuLinks } from "@/lib/links";
 
 <!--<NewsletterModal client:idle><Newsletter /></NewsletterModal>-->
 <footer
-  class="mt-auto border-t border-amber-50 bg-[#fefbf2] text-center text-sm md:text-left"
+  class="mt-auto border-t border-amber-50 bg-[#fefbf2] text-center text-sm lg:text-left"
   transition:animate="none"
 >
-  <Section class="space-y-6 py-12">
-    <nav class="grid justify-center gap-6 md:grid-cols-4 lg:grid-cols-5">
+  <Section class="space-y-9 py-12">
+    <nav class="grid justify-center gap-6 lg:grid-cols-5">
       {
         Object.keys(menuLinks).map((menu) => (
           <div>
-            <h2 class="mb-3 text-center font-semibold text-stone-500 md:text-left">
+            <h2 class="mb-3 text-center font-semibold text-stone-400 lg:text-left">
               {menu}
             </h2>
             <ul class="space-y-3">
@@ -38,8 +38,8 @@ import { menuLinks } from "@/lib/links";
         ))
       }
 
-      <div class="col-span-2">
-        <h2 class="mb-3 text-center font-semibold text-stone-500 md:text-left">
+      <div class="lg:col-span-2">
+        <h2 class="mb-3 text-center font-semibold text-stone-400 lg:text-left">
           Contact Us
         </h2>
 
@@ -54,13 +54,13 @@ import { menuLinks } from "@/lib/links";
           </li>
         </ul>
 
-        <h2 class="mb-3 text-center font-semibold text-stone-500 md:text-left">
+        <h2 class="mb-3 text-center font-semibold text-stone-400 lg:text-left">
           Follow Us
         </h2>
 
-        <div class="flex gap-6">
+        <div class="flex justify-center gap-9 lg:justify-start">
           <div
-            class="flex flex-col items-center justify-center gap-3 md:justify-start"
+            class="flex flex-col items-center justify-center gap-3 lg:justify-start"
           >
             <Image
               src={import("../../assets/img/logo/dosomegood.png")}
@@ -91,7 +91,7 @@ import { menuLinks } from "@/lib/links";
           </div>
 
           <div
-            class="flex flex-col items-center justify-center gap-3 md:justify-start"
+            class="flex flex-col items-center justify-center gap-3 lg:justify-start"
           >
             <Image
               src={import("../../assets/img/logo/take10.png")}
@@ -121,7 +121,7 @@ import { menuLinks } from "@/lib/links";
           </div>
 
           <div
-            class="flex flex-col items-center justify-center gap-3 md:justify-start"
+            class="flex flex-col items-center justify-center gap-3 lg:justify-start"
           >
             <Image
               src={import("../../assets/img/logo/take10-auckland.png")}
@@ -154,7 +154,7 @@ import { menuLinks } from "@/lib/links";
       </div>
     </nav>
 
-    <div class="flex flex-col items-center gap-3 text-stone-500">
+    <div class="flex flex-col items-center gap-3">
       <Image
         src={import("../../assets/img/icon.png")}
         width="72"
@@ -163,12 +163,12 @@ import { menuLinks } from "@/lib/links";
         class="mx-auto"
       />
 
-      <p>
+      <p class="text-stone-400">
         &copy;
         {new Date().getFullYear()} Vulnerable Support Charitable Trust
       </p>
 
-      <p>
+      <p class="text-stone-400">
         We are a registered charity
         <a
           href="https://register.charities.govt.nz/Charity/CC55753"
@@ -179,7 +179,7 @@ import { menuLinks } from "@/lib/links";
       </p>
 
       <Rainbow client:visible>
-        <Icon name="rainbow" class="h-8 w-12" />
+        <Icon name="rainbow" class="h-8 w-12 rounded-lg" />
       </Rainbow>
     </div>
   </Section>
