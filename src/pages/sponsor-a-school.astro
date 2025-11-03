@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
+import AnchorButton from "@/components/layouts/anchor-button.astro";
 
 import TextBanner from "@/components/TextBanner.astro";
 import Form from "@/components/Form.astro";
@@ -46,6 +47,10 @@ const { Content } = await render(entry);
       />
 
       <Content />
+
+      <AnchorButton href="/dosomegood/brochure.pdf" class="bg-gray-600 text-sm"
+        >Brochure</AnchorButton
+      >
     </div>
 
     <div>
