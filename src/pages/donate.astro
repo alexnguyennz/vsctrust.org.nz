@@ -32,43 +32,53 @@ const { Content } = await render(entry);
     /></Section
   >
 
-  <Section class="flex flex-col gap-6">
+  <Section class="grid gap-6 lg:grid-cols-2 lg:gap-9">
     <div>
+      <Image
+        src={import("@/assets/img/banner/default.jpg")}
+        width="512"
+        height="512"
+        alt="Do Some Good logo"
+        fetchpriority="high"
+        loading="eager"
+        class="mx-auto mb-6 max-h-64 w-full rounded-3xl object-cover shadow-lg"
+      />
+
       <Fragment set:html={marked.parse(entry.data.topContent)} />
+
+      <div>
+        <p>Your donation will go towards:</p>
+        <ul class="ml-0 space-y-3 [&>li]:flex [&>li]:items-center [&>li]:gap-2">
+          <li>
+            <Icon name="tabler:bottle" class="size-6" />
+            {entry.data.items[0]}
+          </li>
+          <li>
+            <Icon name="lucide:person-standing" class="size-6" />
+            {entry.data.items[1]}
+          </li>
+          <li>
+            <Icon name="lucide:shirt" class="size-6" />
+            {entry.data.items[2]}
+          </li>
+          <li>
+            <Icon name="tabler:blender" class="size-6" />
+            {entry.data.items[3]}
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <div>
-      <p>Your donation will go towards:</p>
-      <ul class="ml-0 space-y-3 [&>li]:flex [&>li]:items-center [&>li]:gap-2">
-        <li>
-          <Icon name="tabler:bottle" class="size-6" />
-          {entry.data.items[0]}
-        </li>
-        <li>
-          <Icon name="lucide:person-standing" class="size-6" />
-          {entry.data.items[1]}
-        </li>
-        <li>
-          <Icon name="lucide:shirt" class="size-6" />
-          {entry.data.items[2]}
-        </li>
-        <li>
-          <Icon name="tabler:blender" class="size-6" />
-          {entry.data.items[3]}
-        </li>
-      </ul>
-    </div>
-
-    <div class="self-center" transition:animate="none">
+    <div class="space-y-6" transition:animate="none">
       <iframe
         title="Donorbox"
         name="donorbox"
         src="https://donorbox.org/embed/vulnerable-support-charitable-trust"
         loading="lazy"
-        class="shadow-border h-[620px] w-[300px] rounded-md sm:h-[600px] sm:w-[400px]"
+        class="mx-auto h-[620px] w-[300px] rounded-2xl shadow-lg sm:h-[612px] sm:w-[400px]"
       ></iframe>
-    </div>
 
-    <div class="mx-auto"><Content /></div>
+      <div class="mx-auto text-sm"><Content /></div>
+    </div>
   </Section>
 </Layout>

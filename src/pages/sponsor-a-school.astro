@@ -33,61 +33,71 @@ const { Content } = await render(entry);
     /></Section
   >
 
-  <Section class="flex flex-col space-y-6">
-    <div class="self-center">
+  <Section class="grid gap-6 lg:grid-cols-2 lg:gap-9">
+    <div>
+      <Image
+        src={import("@/assets/img/banner/default.jpg")}
+        width="512"
+        height="512"
+        alt="Do Some Good logo"
+        fetchpriority="high"
+        loading="eager"
+        class="mx-auto mb-6 max-h-64 w-full rounded-3xl object-cover shadow-lg"
+      />
+
       <Content />
     </div>
-  </Section>
 
-  <Section>
-    <Form name="sponsor">
-      <div>
-        <Label htmlFor="name" className="required">Name</Label>
-        <Input
-          className="shadow-border"
-          type="text"
-          id="name"
-          name="name"
-          required
-        />
-      </div>
+    <div>
+      <Form name="sponsor">
+        <div>
+          <Label htmlFor="name" className="required">Name</Label>
+          <Input
+            className="shadow-border"
+            type="text"
+            id="name"
+            name="name"
+            required
+          />
+        </div>
 
-      <div>
-        <Label htmlFor="email" className="required">Email</Label>
-        <Input
-          className="shadow-border"
-          type="email"
-          id="email"
-          name="email"
-          required
-        />
-      </div>
+        <div>
+          <Label htmlFor="email" className="required">Email</Label>
+          <Input
+            className="shadow-border"
+            type="email"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
 
-      <div>
-        <Label htmlFor="phone">Phone Number</Label>
-        <Input className="shadow-border" type="tel" id="phone" name="phone" />
-      </div>
+        <div>
+          <Label htmlFor="phone">Phone Number</Label>
+          <Input className="shadow-border" type="tel" id="phone" name="phone" />
+        </div>
 
-      <div>
-        <Label htmlFor="website">Website</Label>
-        <Input
-          className="shadow-border"
-          type="url"
-          id="website"
-          name="website"
-        />
-      </div>
+        <div>
+          <Label htmlFor="website">Website</Label>
+          <Input
+            className="shadow-border"
+            type="url"
+            id="website"
+            name="website"
+          />
+        </div>
 
-      <div class="sm:col-span-2">
-        <Label htmlFor="message" className="required">Message</Label>
-        <Textarea
-          className="shadow-border"
-          id="message"
-          name="message"
-          rows={4}
-          required
-        />
-      </div>
-    </Form>
+        <div class="sm:col-span-2">
+          <Label htmlFor="message" className="required">Message</Label>
+          <Textarea
+            className="shadow-border"
+            id="message"
+            name="message"
+            rows={4}
+            required
+          />
+        </div>
+      </Form>
+    </div>
   </Section>
 </Layout>
