@@ -1,7 +1,7 @@
 ---
 title: "Pablos Art at Take 10 Arvo's"
 date: 2022-03-10T00:00:00Z
-author: jessica-armstrong
+author: leigh-keown
 image: /src/content/posts/pablos-art-at-take-10-arvos.jpg
 published: true
 ---
