@@ -14,7 +14,7 @@ const { prevUrl, nextUrl } = Astro.props;
     prevUrl && (
       <a
         href={prevUrl === "/news/1/" ? "/news/" : prevUrl}
-        class="relative inline-flex rounded-md border border-black bg-gray-600 px-4 py-2 font-bold tracking-wide text-white no-underline shadow hover:no-underline active:left-1 active:top-1 active:shadow-none"
+        class="relative inline-block rounded-md border border-black/50 bg-gray-600 px-4 py-2 font-semibold tracking-wide text-white no-underline transition-all hover:bg-opacity-90 hover:no-underline active:translate-x-1 active:translate-y-1 active:shadow-none"
         aria-label="previous page"
         rel="prefetch"
       >
@@ -26,7 +26,7 @@ const { prevUrl, nextUrl } = Astro.props;
     nextUrl && (
       <a
         href={nextUrl}
-        class="relative inline-flex rounded-md border border-black bg-gray-600 px-4 py-2 font-bold tracking-wide text-white no-underline shadow hover:no-underline active:left-1 active:top-1 active:shadow-none"
+        class="relative inline-block rounded-md border border-black/50 bg-gray-600 px-4 py-2 font-semibold tracking-wide text-white no-underline transition-all hover:bg-opacity-90 hover:no-underline active:translate-x-1 active:translate-y-1 active:shadow-none"
         aria-label="next page"
         rel="prefetch"
       >
@@ -35,3 +35,17 @@ const { prevUrl, nextUrl } = Astro.props;
     )
   }
 </div>
+
+<style>
+  a {
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+    box-shadow:
+      1px 1px 0 0 black,
+      2px 2px 0 0 black,
+      4px 4px 0 0 black;
+  }
+</style>
