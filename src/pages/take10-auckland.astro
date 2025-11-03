@@ -43,24 +43,24 @@ for await (const image of images) {
 <Layout title={entry.data.title}>
   <Banner title={entry.data.title} programme="take10" />
 
-  <Section>
-    <div class="grid items-center gap-6 md:grid-cols-2">
-      <Image
-        src={import("@/assets/img/logo/take10-auckland.png")}
-        width="256"
-        height="256"
-        alt="Take 10 Auckland logo"
-        fetchpriority="high"
-        loading="eager"
-        class="mx-auto mb-6"
-        transition:name="programme-image-take10-auckland"
-      />
+  <Section class="flex flex-col items-center gap-6 md:flex-row md:gap-12">
+    <Image
+      src={import("@/assets/img/logo/take10-auckland.png")}
+      width="256"
+      height="256"
+      alt="Take 10 Auckland logo"
+      fetchpriority="high"
+      loading="eager"
+      class="mx-auto"
+      transition:name="programme-image-take10-auckland"
+    />
 
+    <div>
       <Image
         src={map}
         width="1240"
         alt="Take 10 Auckland location map"
-        class="mx-auto w-full rounded-3xl shadow-lg"
+        class="mx-auto w-full max-w-3xl rounded-3xl shadow-lg"
       />
     </div>
   </Section>
