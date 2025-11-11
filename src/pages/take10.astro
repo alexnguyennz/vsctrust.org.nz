@@ -2,7 +2,6 @@
 import { getCollection, getEntry, render } from "astro:content";
 import type { GetImageResult, ImageMetadata } from "astro";
 import { Image, getImage } from "astro:assets";
-import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
@@ -41,19 +40,6 @@ for await (const image of images) {
 
 <Layout title={entry.data.title}>
   <Banner title={entry.data.title} programme="take10" />
-
-  <Section>
-    <Image
-      src={import("@/assets/img/logo/take10.png")}
-      width="256"
-      height="256"
-      alt="Take 10 logo"
-      fetchpriority="high"
-      loading="eager"
-      class="mx-auto"
-      transition:name="programme-image-take10"
-    />
-  </Section>
 
   <Section>
     <Gallery imageData={images} thumbnails={thumbnails} client:visible />

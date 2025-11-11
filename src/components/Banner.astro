@@ -1,30 +1,32 @@
 ---
-import { Image } from "astro:assets";
-
-import H1 from "@/components/headings/h1.astro";
+import { Image, Picture } from "astro:assets";
 
 interface Props {
   title: string;
   programme: string;
 }
 
-const { title, programme } = Astro.props;
+const { programme } = Astro.props;
 ---
 
-<!--<section class="relative">
-  <Image
-    src={import(`../assets/img/banner/${programme}.jpg`)}
-    width="1500"
-    height="170"
-    alt=""
+<section class="pb-5">
+  <!--<Image
+    src={import(`../assets/img/banner/${programme}.png`)}
+    width="2500"
+    height="1500"
+    alt={`${programme} banner`}
     fetchpriority="high"
     loading="eager"
-    class="max-h-64 w-full bg-gray-100 object-cover"
+    class="max-h-[300px] w-full bg-gray-100 object-cover object-bottom sm:max-h-[400px] lg:max-h-[500px] 2xl:max-h-[600px]"
+  />-->
+  <Picture
+    src={import(
+      `../assets/img/banner/${programme}.${programme === "default" ? "jpg" : "png"}`
+    )}
+    width="2500"
+    height="1500"
+    formats={["avif", "webp"]}
+    alt={`${programme} banner`}
+    class="max-h-[200px] w-full bg-gray-100 object-cover object-bottom sm:max-h-[350px] lg:max-h-[400px] 2xl:max-h-[600px]"
   />
-
-  <H1
-    class="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-white"
-  >
-    {title}
-  </H1>
-</section>-->
+</section>

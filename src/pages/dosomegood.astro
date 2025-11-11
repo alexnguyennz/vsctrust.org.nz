@@ -3,8 +3,6 @@ import type { GetImageResult, ImageMetadata } from "astro";
 import { getCollection, getEntry, render } from "astro:content";
 import { Image, getImage } from "astro:assets";
 
-import { Icon } from "astro-icon/components";
-
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
 import FullSection from "@/components/layouts/full-section.astro";
@@ -12,16 +10,12 @@ import H2 from "@/components/headings/h2.astro";
 import AnchorButton from "@/components/layouts/anchor-button.astro";
 
 import Banner from "@/components/Banner.astro";
-import { SchoolsTable } from "@/components/pages/dosomegood/schools-table";
 import poster from "@/assets/img/dosomegood/poster.png";
 import Marquee from "@/components/ui/marquee";
 import { Gallery } from "@/components/Gallery";
 
 const sponsors = await getCollection("dosomegoodSponsors");
 const supporters = await getCollection("dosomegoodSupporters");
-const schools = (await getCollection("dosomegoodSchools")).sort(
-  (a, b) => b.data.order! - a.data.order!,
-);
 
 const entry = await getEntry("pages", "dosomegood");
 if (!entry) throw new Error("Could not find page");
@@ -47,19 +41,6 @@ for await (const image of images) {
 
 <Layout title={entry.data.title}>
   <Banner title={entry.data.title} programme="dosomegood" />
-
-  <Section>
-    <Image
-      src={import("@/assets/img/logo/dosomegood_lg.png")}
-      width="256"
-      height="256"
-      alt="Do Some Good logo"
-      fetchpriority="high"
-      loading="eager"
-      class="mx-auto"
-      transition:name="programme-image-dosomegood"
-    />
-  </Section>
 
   <Section>
     <Gallery imageData={images} thumbnails={thumbnails} client:visible />

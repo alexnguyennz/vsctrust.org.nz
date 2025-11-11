@@ -5,7 +5,7 @@ import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
 import AnchorButton from "@/components/layouts/anchor-button.astro";
 
-import TextBanner from "@/components/TextBanner.astro";
+import Banner from "@/components/Banner.astro";
 import ProgrammeGrid from "@/components/programmes/ProgrammeGrid.astro";
 import ProgrammeCard from "@/components/programmes/ProgrammeCard.astro";
 import Form from "@/components/Form.astro";
@@ -18,7 +18,7 @@ const title = "Volunteer";
 ---
 
 <Layout title={title}>
-  <TextBanner title={title} />
+  <Banner title={title} programme="volunteer" />
 
   <Section>
     <Image

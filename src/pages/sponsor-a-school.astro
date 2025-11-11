@@ -6,7 +6,7 @@ import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
 import AnchorButton from "@/components/layouts/anchor-button.astro";
 
-import TextBanner from "@/components/TextBanner.astro";
+import Banner from "@/components/Banner.astro";
 import Form from "@/components/Form.astro";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -19,7 +19,7 @@ const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title}>
-  <TextBanner title={entry.data.title} />
+  <Banner title={entry.data.title} programme="sponsor-a-school" />
 
   <Section>
     <Image
@@ -36,16 +36,6 @@ const { Content } = await render(entry);
 
   <Section class="grid gap-6 lg:grid-cols-2 lg:gap-9">
     <div>
-      <Image
-        src={import("@/assets/img/banner/default.jpg")}
-        width="512"
-        height="512"
-        alt="Do Some Good logo"
-        fetchpriority="high"
-        loading="eager"
-        class="mx-auto mb-6 max-h-64 w-full rounded-3xl object-cover shadow-lg"
-      />
-
       <Content />
 
       <AnchorButton href="/dosomegood/brochure.pdf" class="bg-gray-600 text-sm"

@@ -2,17 +2,14 @@
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
 import H2 from "@/components/headings/h2.astro";
-import TextBanner from "@/components/TextBanner.astro";
+import Banner from "@/components/Banner.astro";
 
 const title = "404 - Page Not Found";
 ---
 
 <Layout title={title}>
-  <TextBanner title={title} />
+  <Banner title={title} programme="default" />
   <Section class="flex flex-col justify-center">
     <H2>Sorry, this page doesn't exist.</H2>
-    <a href="/" class="shadow-button self-center bg-gray-600" rel="prefetch"
-      >Home</a
-    >
   </Section>
 </Layout>

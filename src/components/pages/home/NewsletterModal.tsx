@@ -5,9 +5,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
-import { cn } from "@/lib/utils.ts";
 
 interface NewsletterModalProps {
   children: React.ReactNode;
@@ -35,11 +33,6 @@ export const NewsletterModal = ({ children }: NewsletterModalProps) => {
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      {/*<DialogTrigger asChild>
-        <button className="shadow-button relative inline-block rounded-md border border-black/50 bg-gray-600 px-4 py-2 font-semibold tracking-wide text-white no-underline transition-all hover:bg-opacity-90 hover:no-underline active:translate-x-1 active:translate-y-1 active:shadow-none">
-          Subscribe to our newsletter
-        </button>
-      </DialogTrigger>*/}
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Subscribe to our newsletter</DialogTitle>

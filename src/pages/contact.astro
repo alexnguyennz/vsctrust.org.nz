@@ -6,7 +6,7 @@ import { Icon } from "astro-icon/components";
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
 
-import TextBanner from "@/components/TextBanner.astro";
+import Banner from "@/components/Banner.astro";
 import Form from "@/components/Form.astro";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,7 +16,7 @@ const title = "Contact Us";
 ---
 
 <Layout title={title}>
-  <TextBanner title={title} />
+  <Banner title={title} programme="contact" />
 
   <Section class="grid gap-6 lg:grid-cols-2 lg:gap-9">
     <div>
