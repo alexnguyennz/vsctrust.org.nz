@@ -1,5 +1,5 @@
 ---
-import { Image, Picture } from "astro:assets";
+import { Picture } from "astro:assets";
 
 interface Props {
   title: string;
@@ -10,21 +10,12 @@ const { programme } = Astro.props;
 ---
 
 <section class="pb-5">
-  <!--<Image
-    src={import(`../assets/img/banner/${programme}.png`)}
-    width="2500"
-    height="1500"
-    alt={`${programme} banner`}
-    fetchpriority="high"
-    loading="eager"
-    class="max-h-[300px] w-full bg-gray-100 object-cover object-bottom sm:max-h-[400px] lg:max-h-[500px] 2xl:max-h-[600px]"
-  />-->
   <Picture
     src={import(
       `../assets/img/banner/${programme}.${programme === "default" ? "jpg" : "png"}`
     )}
-    width="2500"
-    height="1500"
+    width="2000"
+    height="1250"
     formats={["avif", "webp"]}
     alt={`${programme} banner`}
     class="max-h-[200px] w-full bg-gray-100 object-cover object-bottom sm:max-h-[350px] lg:max-h-[400px] 2xl:max-h-[600px]"
