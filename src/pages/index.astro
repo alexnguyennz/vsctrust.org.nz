@@ -29,11 +29,13 @@ const { Content } = await render(entry);
   <Section>
     <Picture
       src={import(`../assets/img/banner/home.png`)}
-      width="2000"
-      height="1250"
+      width="768"
+      height="165"
       formats={["avif", "webp"]}
       alt={`Home banner`}
-      class="mx-auto w-full max-w-3xl bg-gray-100 object-cover object-top"
+      class="mx-auto w-full max-w-3xl object-cover"
+      priority={true}
+      fetchpriority="high"
     />
   </Section>
 
