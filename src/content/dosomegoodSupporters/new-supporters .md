@@ -1,6 +1,6 @@
 ---
 _schema: dosomegoodSupporters
-name:
+name: Aorangi Royal Arch Chapter
 image: /src/content/dosomegoodSupporters/arac-logo.jpg
-website:
+website: http://aorangi2300ec.org.nz/379-2/
 ---
