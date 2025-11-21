@@ -1,5 +1,7 @@
 ---
-import { Picture } from "astro:assets";
+import { Image, Picture } from "astro:assets";
+
+import { cn } from "@/lib/utils.ts";
 
 interface Props {
   title: string;
@@ -7,17 +9,45 @@ interface Props {
 }
 
 const { programme } = Astro.props;
+
+const textPositions: Record<string, string> = {
+  contact: "right-5 lg:right-40",
+  donate: "right-5 lg:right-40",
+  volunteer: "left-5 lg:left-40",
+  "sponsor-a-school": "left-5 lg:left-40",
+  dosomegood: "left-5  top-1/2 -translate-y-1/2 w-32 sm:w-32 md:w-48 lg:w-64",
+  take10:
+    "left-5 top-1/2 -translate-y-1/2 lg:top-5 lg:translate-y-0 w-32 sm:w-32 md:w-48 lg:w-64",
+  "take10-auckland":
+    "left-5 top-1/2 -translate-y-1/2 lg:top-5 lg:translate-y-0 w-32 sm:w-32 md:w-48 lg:w-64",
+  youth: "right-5 bottom-5 sm:right-10 lg:right-20",
+  seniors: "right-5 bottom-10",
+  default: "right-5 bottom-5",
+};
+
+const textClasses = textPositions[programme] || textPositions.default;
 ---
 
 <section class="pb-5">
-  <Picture
-    src={import(
-      `../assets/img/banner/${programme}.${programme === "default" ? "jpg" : "png"}`
-    )}
-    width="2000"
-    height="1250"
-    formats={["avif", "webp"]}
-    alt={`${programme} banner`}
-    class="max-h-[200px] w-full bg-gray-100 object-cover object-bottom sm:max-h-[350px] lg:max-h-[400px] 2xl:max-h-[600px]"
-  />
+  <div class="relative">
+    <Picture
+      src={import(`../assets/img/banner/${programme}/image.png`)}
+      width="2000"
+      height="1250"
+      formats={["avif", "webp"]}
+      alt={`${programme} banner`}
+      class="max-h-[200px] w-full bg-gray-100 object-cover object-center sm:max-h-[350px] lg:max-h-[400px] 2xl:max-h-[600px]"
+    />
+
+    <Image
+      src={import(`../assets/img/banner/${programme}/text.png`)}
+      width="2000"
+      height="1250"
+      alt={`${programme} banner`}
+      class={cn(
+        "pointer-events-none absolute bottom-5 lg:bottom-10 h-auto w-48 select-none sm:w-64 md:w-96 lg:w-[500px]",
+        textClasses,
+      )}
+    />
+  </div>
 </section>
