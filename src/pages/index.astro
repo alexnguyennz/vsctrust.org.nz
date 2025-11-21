@@ -26,18 +26,16 @@ const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title}>
-  <Section>
-    <Picture
-      src={import(`../assets/img/banner/home.png`)}
-      width="768"
-      height="165"
-      formats={["avif", "webp"]}
-      alt={`Home banner`}
-      class="mx-auto w-full max-w-3xl object-cover"
-      priority={true}
-      fetchpriority="high"
-    />
-  </Section>
+  <Picture
+    src={import(`../assets/img/banner/home.png`)}
+    width="2200"
+    height="300"
+    formats={["avif", "webp"]}
+    alt={`Home banner`}
+    class="mx-auto w-full object-cover"
+    priority={true}
+    fetchpriority="high"
+  />
 
   <HowYouCanHelp />
 
