@@ -24,6 +24,19 @@ export function Navigation({ pathname }: { pathname: string }) {
   return (
     <NavigationMenu>
       <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            href="/"
+            className={cn(
+              navigationMenuTriggerStyle(),
+              "hover:bg-stone-100 focus:bg-stone-100",
+              pathname === "/" && "bg-stone-100",
+            )}
+          >
+            Home
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+
         {Object.keys(menuLinks).map((menu) => (
           <NavigationMenuItem key={menu}>
             <NavigationMenuTrigger>{menu}</NavigationMenuTrigger>
@@ -58,6 +71,7 @@ export function Navigation({ pathname }: { pathname: string }) {
             Contact
           </NavigationMenuLink>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
           <a
             href="/donate/"
