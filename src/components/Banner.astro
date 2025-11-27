@@ -15,17 +15,24 @@ const textPositions: Record<string, string> = {
   donate: "right-5 lg:right-40",
   volunteer: "left-5 lg:left-40",
   "sponsor-a-school": "right-5 lg:right-40",
-  dosomegood: "left-5 top-1/2 -translate-y-1/2 w-28 sm:w-32 md:w-40 lg:w-52",
-  take10:
-    "left-5 top-1/2 -translate-y-1/2 lg:top-5 lg:translate-y-0 w-28 sm:w-32 md:w-40 lg:w-52",
-  "take10-auckland":
-    "left-5 top-1/2 -translate-y-1/2 w-28 sm:w-32 md:w-40 lg:w-52",
+  dosomegood: "right-5 lg:right-40",
+  take10: "right-5 lg:right-40",
+  "take10-auckland": "right-5 lg:right-40",
   youth: "right-5 bottom-5 sm:right-10 lg:right-20",
   seniors: "right-5 bottom-10",
   default: "right-5 bottom-5",
 };
 
 const textClasses = textPositions[programme] || textPositions.default;
+
+const logoPositions: Record<string, string> = {
+  dosomegood: "left-5 top-1/2 -translate-y-1/2 w-28 sm:w-32 md:w-36 lg:w-44",
+  take10: "left-5 top-1/2 -translate-y-1/2 w-28 sm:w-32 md:w-36 lg:w-44",
+  "take10-auckland":
+    "left-5 top-1/2 -translate-y-1/2 w-28 sm:w-32 md:w-36 lg:w-44",
+};
+
+const logoClasses = logoPositions[programme];
 ---
 
 <section class="pb-5">
@@ -49,5 +56,22 @@ const textClasses = textPositions[programme] || textPositions.default;
         textClasses,
       )}
     />
+
+    {
+      (programme === "dosomegood" ||
+        programme === "take10" ||
+        programme === "take10-auckland") && (
+        <Image
+          src={import(`../assets/img/banner/${programme}/logo.png`)}
+          width="2000"
+          height="1250"
+          alt={`${programme} banner`}
+          class={cn(
+            "pointer-events-none absolute bottom-5 h-auto w-48 select-none sm:w-64 md:w-96 lg:bottom-10 lg:w-[500px]",
+            logoClasses,
+          )}
+        />
+      )
+    }
   </div>
 </section>
