@@ -16,6 +16,8 @@ volunteerDescription: >-
 
 &nbsp;
 
+&nbsp;
+
 <p class="text-lg font-semibold">Feeding tamariki.</p>
 
 <p class="text-lg font-semibold">Supporting communities.</p>
@@ -24,7 +26,9 @@ volunteerDescription: >-
 
 &nbsp;
 
-# **What do we do?**
+&nbsp;
+
+# What do we do?
 
 &nbsp;
 
@@ -38,7 +42,9 @@ Kai from our deliveries is also taken home by whānau of tamariki at kindergarte
 
 We started out supporting one school in Wainuiomata in 2017, before expanding out to support more schools and kindergartens across Wellington, Porirua and Hutt Valley.
 
-# **How do we do it?**
+&nbsp;
+
+# How do we do it?
 
 &nbsp;
 
@@ -46,13 +52,17 @@ We work with corporate partners and other donors and supporters to deliver our p
 
 Our corporate partners also volunteer their time at our schools, completing needed mahi during volunteer working bees, a real highlight for both volunteer teams and tamariki - who often get to muck in and help out with the fun jobs on the day too!
 
-# **We need your help!**
+&nbsp;
+
+# We need your help!
 
 &nbsp;
 
 Recently, our food support programme has felt the impact of the continuing cost-of-living crisis and current economic climate, with less funding available to support our work and an increased need in the community.
 
 We remain hopeful that more donors and corporate partners will be able to step up and demonstrate their aroha for our tamariki to ensure we can continue to deliver our programme.
+
+&nbsp;
 
 ### **Now is the time to show your support.**
 
