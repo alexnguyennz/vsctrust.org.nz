@@ -64,3 +64,18 @@ footer a:hover {
       4px 4px 0 0 black;
   }
 }
+
+@layer base {
+  /* H1 */
+  h1 {
+    @apply mb-3 mt-6 text-2xl;
+  }
+
+  h2 {
+    @apply mb-3 mt-6 text-xl;
+  }
+
+  h3 {
+    @apply mb-3 text-lg;
+  }
+}
