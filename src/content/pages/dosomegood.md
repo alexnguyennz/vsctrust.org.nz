@@ -10,6 +10,7 @@ volunteerDescription: >-
   We’re looking for volunteers to come out and clean schools, make food, and
   spend time with tamariki. Interested? Get in touch!
 ---
+&nbsp;
 
 <p class="text-lg font-semibold">Feeding tamariki.</p>
 
@@ -17,23 +18,33 @@ volunteerDescription: >-
 
 <p class="text-lg font-semibold">Making a difference.</p>
 
-Do Some Good's food support programme ensures all tamariki across Wellington, Porirua, and the Hutt Valley have access to fresh and tasty kai throughout their day in education, including lunch, breakfast, and snacks.
+&nbsp;
 
-Our programme started with one school in Wainuiomata in 2017, before expanding out to support more schools and kindergartens across Wellington, Porirua and Hutt Valley.
+# What do we do?
 
-The food support programme addresses not only the physical but emotional and educational needs of tamariki. A well-fed child is better able to engage and focus on their learnings.
+We deliver fresh and tasty kai to kindergartens and primary schools, across Weliington, Porirua and Hutt Valley, including fruit and veggies, dairy products, bread, cold cuts of meat, popcorn, and other snacks.
 
-Many whānau are often able to take leftover kai home to make meals throughout the week and we are often told by education providers we work with that our support acts as an equaliser, meaning our programme contributes to all tamariki having the opportunity to thrive and flourish in education and at home.
+Our food support programme ensures tamariki across Wellington, Porirua, and the Hutt Valley have access to fresh and tasty kai throughout their day in education, including lunch, breakfast, and snacks.
 
-We work with corporate partners to deliver our programme, providing them with the opportunity to be part of a concerted effort to create social cohesion and well-connected communities, where everyone is doing their bit and tamariki experiencing hardship are protected from harm.
+Access to kai addresses not only the physical but emotional and educational needs of tamariki. A well-fed child is better able to engage and focus on their learnings and making positive connections with those around them.
 
-Our corporate partners also volunteer their time at kura, completing needed mahi during volunteer working bees, a real highlight for both the volunteers and schools, as both groups have the opportunity to meet new people and celebrate the day with a sausage sizzle after mahi is completed.
+Kai from our deliveries is also taken home by whānau of tamariki at kindergartens and schools we support to make meals throughout the week. We are often told by education providers we work with that our support acts as an equaliser, meaning our programme contributes to all tamariki having the opportunity to thrive and flourish in education and at home.
+
+We started out supporting one school in Wainuiomata in 2017, before expanding out to support more schools and kindergartens across Wellington, Porirua and Hutt Valley.
+
+# How do we do it?
+
+We work with corporate partners and other donors and supporters to deliver our programme. A key focus here is providing the business community with the opportunity to be part of a concerted effort to create social cohesion and well-connected communities, where everyone is doing their bit and tamariki experiencing hardship are better protected from harm.
+
+Our corporate partners also volunteer their time at our schools, completing needed mahi during volunteer working bees, a real highlight for both volunteer teams and tamariki - who often get to muck in and help out with the fun jobs on the day too!
+
+# We need your help!
 
 Recently, our food support programme has felt the impact of the continuing cost-of-living crisis and current economic climate, with less funding available to support our work and an increased need in the community.
 
-We remain hopeful the community will step up and demonstrate their aroha for our tamariki to ensure we can continue to deliver our programme for tamariki who need it in our community.
+We remain hopeful that more donors and corporate partners will be able to step up and demonstrate their aroha for our tamariki to ensure we can continue to deliver our programme.
 
-Now is the time to show your support.
+### Now is the time to show your support.
 
 If you are, or know of a business or individual who is able to and would like to give back to the community and make a difference in the lives of our tamariki, please get in touch.
 
