@@ -18,6 +18,8 @@ volunteerDescription: >-
 
 &nbsp;
 
+&nbsp;
+
 <p class="text-lg font-semibold">Feeding tamariki.</p>
 
 <p class="text-lg font-semibold">Supporting communities.</p>
@@ -28,7 +30,9 @@ volunteerDescription: >-
 
 &nbsp;
 
-# What do we do?
+&nbsp;
+
+# **What do we do?**
 
 &nbsp;
 
@@ -44,7 +48,7 @@ We started out supporting one school in Wainuiomata in 2017, before expanding ou
 
 &nbsp;
 
-# How do we do it?
+# **How do we do it?**
 
 &nbsp;
 
@@ -54,7 +58,7 @@ Our corporate partners also volunteer their time at our schools, completing need
 
 &nbsp;
 
-# We need your help!
+# **We need your help!**
 
 &nbsp;
 
