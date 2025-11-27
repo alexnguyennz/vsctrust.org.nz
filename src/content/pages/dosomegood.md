@@ -20,15 +20,13 @@ volunteerDescription: >-
 
 &nbsp;
 
+&nbsp;
+
 <p class="text-lg font-semibold">Feeding tamariki.</p>
 
 <p class="text-lg font-semibold">Supporting communities.</p>
 
 <p class="text-lg font-semibold">Making a difference.</p>
-
-&nbsp;
-
-&nbsp;
 
 &nbsp;
 
