@@ -1,10 +1,12 @@
 ---
+import { Image } from "astro:assets";
+
 import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
 
-import TextBanner from "@/components/TextBanner.astro";
+import Banner from "@/components/Banner.astro";
 import Form from "@/components/Form.astro";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,55 +16,72 @@ const title = "Contact Us";
 ---
 
 <Layout title={title}>
-  <TextBanner title={title} />
-  <Section>
-    <p class="text-center">We’d love to hear from you. Please get in touch!</p>
+  <Banner title={title} programme="contact" />
 
-    <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
-      <div>
-        <Icon name="tabler:at" class="mx-auto h-5 w-5" />
-        <a href="mailto:hello@vsctrust.org.nz">hello@vsctrust.org.nz</a>
-      </div>
-
-      <div>
-        <Icon name="tabler:phone" class="mx-auto h-5 w-5" />
-        <a href="tel:+64274448672">027 444 8672</a>
-      </div>
+  <Section class="grid gap-6 lg:grid-cols-2 lg:gap-9">
+    <div>
+      <Image
+        src={import("@/assets/img/banner/default.jpg")}
+        width="512"
+        height="512"
+        alt="Do Some Good logo"
+        fetchpriority="high"
+        loading="eager"
+        class="mx-auto mb-6 max-h-64 w-full rounded-3xl object-cover shadow-lg"
+      />
     </div>
-  </Section>
 
-  <Section>
-    <Form name="contact">
+    <div class="space-y-6">
       <div>
-        <Label htmlFor="name" className="required">Name</Label>
-        <Input
-          className="shadow-border"
-          type="text"
-          id="name"
-          name="name"
-          required
-        />
+        <p class="text-center">
+          We’d love to hear from you. Please get in touch!
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+          <div>
+            <Icon name="tabler:at" class="mx-auto h-5 w-5" />
+            <a href="mailto:hello@vsctrust.org.nz">hello@vsctrust.org.nz</a>
+          </div>
+
+          <div>
+            <Icon name="tabler:phone" class="mx-auto h-5 w-5" />
+            <a href="tel:+64274448672">+64 27 444 8672</a>
+          </div>
+        </div>
       </div>
-      <div>
-        <Label htmlFor="email" className="required">Email</Label>
-        <Input
-          className="shadow-border"
-          type="email"
-          id="email"
-          name="email"
-          required
-        />
-      </div>
-      <div class="sm:col-span-2">
-        <Label htmlFor="message" className="required">Message</Label>
-        <Textarea
-          className="shadow-border"
-          id="message"
-          name="message"
-          rows={4}
-          required
-        />
-      </div>
-    </Form>
+
+      <Form name="contact">
+        <div>
+          <Label htmlFor="name" className="required">Name</Label>
+          <Input
+            className="shadow-border"
+            type="text"
+            id="name"
+            name="name"
+            required
+          />
+        </div>
+        <div>
+          <Label htmlFor="email" className="required">Email</Label>
+          <Input
+            className="shadow-border"
+            type="email"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+        <div class="sm:col-span-2">
+          <Label htmlFor="message" className="required">Message</Label>
+          <Textarea
+            className="shadow-border"
+            id="message"
+            name="message"
+            rows={4}
+            required
+          />
+        </div>
+      </Form>
+    </div>
   </Section>
 </Layout>

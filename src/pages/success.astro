@@ -1,21 +1,17 @@
 ---
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
-import TextBanner from "@/components/TextBanner.astro";
+import Banner from "@/components/Banner.astro";
 
 const title = "Message Sent";
 ---
 
 <Layout title={title}>
-  <TextBanner title={title} />
+  <Banner title={title} programme="contact" />
+
   <Section class="flex flex-col justify-center gap-6">
     <h2 class="text-center text-lg">
       Thanks for your message - we'll get back to you as soon as possible.
     </h2>
-    <a
-      href="/"
-      class="relative inline-block self-center rounded-md border border-black bg-gray-600 px-4 py-2 font-bold tracking-wide text-white no-underline shadow hover:no-underline active:left-1 active:top-1 active:shadow-none"
-      rel="prefetch">Home</a
-    >
   </Section>
 </Layout>

@@ -4,7 +4,6 @@ import { getCollection } from "astro:content";
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
 
-import TextBanner from "@/components/TextBanner.astro";
 import NewsGrid from "@/components/pages/news/NewsGrid.astro";
 import NewsCard from "@/components/pages/news/NewsCard.astro";
 import Pagination from "@/components/pages/news/Pagination.astro";
@@ -17,8 +16,6 @@ const title = "News";
 ---
 
 <Layout title={title}>
-  <TextBanner title={title} />
-
   <Section class="space-y-6">
     <NewsGrid>
       {posts.slice(0, 8).map((post) => <NewsCard post={post} />)}

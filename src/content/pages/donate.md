@@ -25,4 +25,4 @@ topContent: >-
   We know our work makes a real impact, donating to us is your chance to make an
   impact too.
 ---
-Once your donation has been completed, you will receive a receipt via email automatically. If you have any queries or concerns related to this please contact [hello@vsctrust.org.nz](mailto:hello@vsctrust.org.nz?Subject=DONATION%20ENQ%20SURNAMEHERE) with the subject line DONATION ENQ followed by your surname.
+Once your donation has been completed, you will receive a receipt via email automatically. If you have any queries or concerns related to this please contact [hello@vsctrust.org.nz](mailto:hello@vsctrust.org.nz?Subject=DONATION%20ENQ%20SURNAMEHERE) with the subject line: DONATION ENQ followed by your surname.

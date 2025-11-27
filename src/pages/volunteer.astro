@@ -3,9 +3,9 @@ import { Image } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
-import Button from "@/components/layouts/button.astro";
+import AnchorButton from "@/components/layouts/anchor-button.astro";
 
-import TextBanner from "@/components/TextBanner.astro";
+import Banner from "@/components/Banner.astro";
 import ProgrammeGrid from "@/components/programmes/ProgrammeGrid.astro";
 import ProgrammeCard from "@/components/programmes/ProgrammeCard.astro";
 import Form from "@/components/Form.astro";
@@ -18,18 +18,20 @@ const title = "Volunteer";
 ---
 
 <Layout title={title}>
-  <TextBanner title={title} />
+  <Banner title={title} programme="volunteer" />
 
-  <Image
-    src={import("@/assets/img/home/volunteer.png")}
-    width="77"
-    height="77"
-    alt="volunteer image"
-    fetchpriority="high"
-    loading="eager"
-    class="mx-auto"
-    transition:name="volunteer"
-  />
+  <Section>
+    <Image
+      src={import("@/assets/img/home/volunteer.png")}
+      width="77"
+      height="77"
+      alt="volunteer image"
+      fetchpriority="high"
+      loading="eager"
+      class="mx-auto"
+      transition:name="volunteer"
+    /></Section
+  >
 
   <Section>
     <ProgrammeGrid>
@@ -53,24 +55,18 @@ const title = "Volunteer";
       </ProgrammeCard>
 
       <ProgrammeCard programme="take10-auckland">
-        <p class="mb-0">
+        <p>Take 10 Auckland Help provide a safe zone on Auckland Central.</p>
+
+        <p>
           We’re looking for volunteers on Friday or Saturday nights from 10pm to
           3am.
-        </p>
-      </ProgrammeCard>
-      <ProgrammeCard programme="gen-link">
-        <p class="mb-0">
-          Gen Link aims to lessen the generation gap by connecting tamariki with
-          older folk within their local communities.
         </p>
       </ProgrammeCard>
     </ProgrammeGrid>
 
     <div class="mt-6 flex justify-center">
-      <a
-        href="/take10/volunteer.pdf"
-        class="relative inline-block rounded-md border border-black bg-gray-600 px-4 py-2 text-center text-sm font-bold tracking-wide text-white no-underline shadow hover:no-underline active:left-1 active:top-1 active:shadow-none"
-        >Take 10 Role description</a
+      <AnchorButton href="/take10/volunteer.pdf" class="bg-gray-600 text-sm"
+        >Take 10 Role Description</AnchorButton
       >
     </div>
   </Section>

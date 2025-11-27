@@ -3,19 +3,22 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Mulish";
+  font-family: "Sora";
   font-display: swap;
-  src: url("/fonts/Mulish.woff2") format("woff2");
+  src: url("/fonts/Sora.woff2") format("woff2");
 }
 
 body {
-  font-family: "Mulish", sans-serif;
-  font-synthesis: none; /* Fix Safari bug with ugly bolded text */
+  font-family: "Sora", sans-serif;
+}
+
+strong {
+  font-weight: 600;
 }
 
 .section-full-container > h2,
-p,
-main ul {
+main ul,
+main p:not(:last-child) {
   margin-bottom: 1rem;
 }
 
@@ -32,13 +35,12 @@ footer a:hover {
 
 /* Misc */
 .shadow-border {
-  border: 1px solid black;
+  border: 1px solid #9ca3af;
   box-shadow:
     1px 1px 0 0 black,
     2px 2px 0 0 black,
     3px 3px 0 0 black,
-    4px 4px 0 0 black,
-    5px 5px 0 0 black;
+    4px 4px 0 0 black;
 }
 
 .shadow-text {
@@ -49,20 +51,16 @@ footer a:hover {
     1px 1px 0 #000;
 }
 
-.shadow {
-  text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
-  box-shadow:
-    1px 1px 0 0 black,
-    2px 2px 0 0 black,
-    3px 3px 0 0 black,
-    4px 4px 0 0 black,
-    5px 5px 0 0 black;
+@layer utilities {
+  .shadow-button {
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+    box-shadow:
+      1px 1px 0 0 black,
+      2px 2px 0 0 black,
+      4px 4px 0 0 black;
+  }
 }
-
-/*.shadow-button {
-  @apply shadow-border shadow-text relative inline-block rounded-md px-4 py-2 font-bold tracking-wide text-white no-underline hover:no-underline active:left-1 active:top-1 active:shadow-none;
-}*/

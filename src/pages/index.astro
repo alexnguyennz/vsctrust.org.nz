@@ -11,9 +11,9 @@ import { Quotes } from "@/components/pages/home/Quotes";
 
 import NewsCard from "@/components/pages/news/NewsCard.astro";
 import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
-import OurNumbers from "@/components/pages/home/OurNumbers.astro";
 
 import Newsletter from "@/components/Newsletter.astro";
+import { Picture } from "astro:assets";
 
 const posts = (await getCollection("posts", ({ data }) => data.published)).sort(
   (a, b) => Number(b.data.date) - Number(a.data.date),
@@ -26,19 +26,33 @@ const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title}>
+  <Picture
+    src={import(`../assets/img/banner/home.png`)}
+    width="2200"
+    height="300"
+    formats={["avif", "webp"]}
+    alt={`Home banner`}
+    class="mx-auto w-full object-cover"
+    priority={true}
+    fetchpriority="high"
+  />
+
+  <HowYouCanHelp />
+
   <Section>
     <Programmes page={entry.data} />
   </Section>
 
-  <HowYouCanHelp />
-
   <Section class="text-center">
-    <H2>Helping rangatahi and tamariki in Wellington</H2>
+    <H2>Helping rangatahi and tamariki</H2>
 
     <Content />
   </Section>
 
-  <Section><Newsletter /></Section>
+  <Section
+    ><H2>Subscribe to our newsletter</H2>
+    <Newsletter />
+  </Section>
 
   <FullSection>
     <H2>What people are saying</H2>
@@ -49,21 +63,8 @@ const { Content } = await render(entry);
   <Section>
     <H2>Latest news</H2>
 
-    <div
-      class="news-grid grid gap-6 sm:grid-cols-2 sm:gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
-    >
-      {posts.slice(0, 5).map((post) => <NewsCard post={post} />)}
+    <div class="mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-9">
+      {posts.slice(0, 3).map((post) => <NewsCard post={post} />)}
     </div>
   </Section>
-
-  <!--<OurNumbers page={entry.data} />-->
 </Layout>
-
-<style>
-  .news-grid {
-    grid-template-rows: 1fr;
-    grid-auto-rows: 0;
-    row-gap: 0;
-    overflow: hidden;
-  }
-</style>

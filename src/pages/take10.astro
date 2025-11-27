@@ -2,12 +2,12 @@
 import { getCollection, getEntry, render } from "astro:content";
 import type { GetImageResult, ImageMetadata } from "astro";
 import { Image, getImage } from "astro:assets";
-import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
 import FullSection from "@/components/layouts/full-section.astro";
 import H2 from "@/components/headings/h2.astro";
+import AnchorButton from "@/components/layouts/anchor-button.astro";
 
 import Banner from "@/components/Banner.astro";
 import poster from "@/assets/img/take10/poster.png";
@@ -41,36 +41,12 @@ for await (const image of images) {
 <Layout title={entry.data.title}>
   <Banner title={entry.data.title} programme="take10" />
 
-  <Section class="space-y-6">
-    <div class="grid gap-6 sm:grid-cols-2">
-      <div class="place-self-center">
-        <Image
-          src={import("@/assets/img/logo/take10.png")}
-          width="256"
-          height="256"
-          alt="Take 10 logo"
-          fetchpriority="high"
-          loading="eager"
-          class="mx-auto mb-6"
-          transition:name="programme-image-take10"
-        />
+  <Section>
+    <Gallery imageData={images} thumbnails={thumbnails} client:visible />
+  </Section>
 
-        <ul class="space-y-2 [&>li]:flex [&>li]:items-center [&>li]:gap-2">
-          {
-            entry.data.awards.map((award: string) => (
-              <li>
-                <Icon name="lucide:award" class="h-6 w-6" />
-                {award}
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-
-      <div>
-        <Content />
-      </div>
-    </div>
+  <Section>
+    <Content />
   </Section>
 
   <Section>
@@ -79,7 +55,7 @@ for await (const image of images) {
       preload="none"
       controls
       muted
-      class="shadow-border mx-auto w-full max-w-2xl rounded-md bg-black"
+      class="mx-auto w-full max-w-2xl rounded-3xl shadow-lg"
     >
       <source src="/take10/video.webm" type="video/webm" />
       <source src="/take10/video.mp4" type="video/mp4" />
@@ -120,10 +96,8 @@ for await (const image of images) {
       ))
     }
 
-    <a
-      href="/volunteer/"
-      class="relative inline-block rounded-md border border-black bg-orange-400 px-4 py-2 font-bold tracking-wide text-white no-underline shadow hover:no-underline active:left-1 active:top-1 active:shadow-none"
-      rel="prefetch">Volunteer</a
+    <AnchorButton href="/volunteer/" class="bg-orange-400" rel="prefetch"
+      >Volunteer</AnchorButton
     >
   </Section>
 
@@ -132,7 +106,7 @@ for await (const image of images) {
 
     <Marquee
       pauseOnHover
-      className="gap-10 [--duration:45s] [--gap:4rem]"
+      className="gap-10 [--duration:90s] [--gap:4rem]"
       client:visible
     >
       {
@@ -166,8 +140,4 @@ for await (const image of images) {
       }
     </Marquee>
   </FullSection>
-
-  <Section>
-    <Gallery imageData={images} thumbnails={thumbnails} client:visible />
-  </Section>
 </Layout>

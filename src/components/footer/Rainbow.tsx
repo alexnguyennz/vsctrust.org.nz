@@ -9,9 +9,7 @@ export function Rainbow({ children }: { children: React.ReactNode }) {
   return (
     <TooltipProvider delayDuration={0}>
       <UITooltip>
-        <TooltipTrigger aria-label={"toggle tooltip"}>
-          {children}
-        </TooltipTrigger>
+        <TooltipTrigger aria-label="toggle tooltip">{children}</TooltipTrigger>
         <TooltipContent>
           We proudly support the rainbow community
         </TooltipContent>

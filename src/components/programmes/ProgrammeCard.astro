@@ -8,16 +8,10 @@ const name = {
   take10: "Take 10",
   "take10-auckland": "Take 10 Auckland",
   "take10-arvos": "Take 10 Arvo's",
-  "gen-link": "Gen Link",
 };
 
 interface Props {
-  programme:
-    | "dosomegood"
-    | "take10"
-    | "take10-auckland"
-    | "take10-arvos"
-    | "gen-link";
+  programme: "dosomegood" | "take10" | "take10-auckland";
 }
 
 const { programme } = Astro.props;
@@ -42,25 +36,25 @@ const backgroundHover = await getImage({
 
 <a
   href={`/${programme}/`}
-  class={"group shadow-border flex flex-col rounded-md transition-all duration-500 hover:no-underline programme"}
+  class="programme group flex flex-col rounded-3xl shadow-lg transition-all duration-500 hover:no-underline"
 >
-  <div class="relative min-h-[175px]">
+  <div class="relative min-h-[192px] lg:min-h-[256px]">
     <Image
       src={import(`../../assets/img/logo/${programme}.png`)}
       width="256"
       height="256"
       alt={`${name[programme]} logo`}
-      class="absolute right-1/2 top-1/2 z-10 size-32 -translate-y-1/2 translate-x-1/2 self-center transition-all duration-500 group-hover:right-5 group-hover:top-5 group-hover:size-16 group-hover:translate-x-0 group-hover:translate-y-0"
+      class="absolute right-1/2 top-1/2 z-10 size-40 -translate-y-1/2 translate-x-1/2 self-center transition-all duration-500 group-hover:right-5 group-hover:top-5 group-hover:size-16 group-hover:translate-x-0 group-hover:translate-y-0"
       transition:name={`programme-image-${programme}`}
     />
   </div>
   <div
-    class="z-10 grow bg-black bg-opacity-65 p-3 text-white underline-offset-0 transition-opacity duration-500 group-hover:opacity-0"
+    class="scribble z-10 grow bg-black/75 p-4 text-white underline-offset-0 transition duration-500 hover:translate-x-3 group-hover:opacity-0"
   >
     <slot />
   </div>
 </a>
-<!--"url('/favicon.png')"-->
+
 <style
   define:vars={{
     background: `url('${background.src}')`,
@@ -68,18 +62,49 @@ const backgroundHover = await getImage({
   }}
 >
   .programme {
-    background: var(--background) center/cover;
+    position: relative;
+    overflow: hidden;
   }
 
-  .programme:hover {
-    background: var(--backgroundHover) right/cover;
+  /* Base image */
+  .programme::before,
+  .programme::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition:
+      opacity 0.5s ease,
+      background-position 0.5s ease;
+  }
+
+  .programme::before {
+    background-image: var(--background);
+    opacity: 1;
+  }
+
+  /* Hover image */
+  .programme::after {
+    background-image: var(--backgroundHover);
+    opacity: 0;
+  }
+
+  .programme:hover::after {
+    opacity: 1;
+    background-position: right;
+  }
+
+  .programme:hover::before {
+    opacity: 0;
+  }
+
+  .programme:hover::after {
+    background-position: right;
   }
 
   /* Preload hover background image */
-  .programme::before {
-    position: fixed;
-    opacity: 0;
-    z-index: -1;
-    background: var(--backgroundHover);
+  .programme::after {
+    will-change: opacity;
   }
 </style>

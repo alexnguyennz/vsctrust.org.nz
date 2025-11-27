@@ -11,7 +11,7 @@ wantToHelpDescription:
 volunteerDescription: We’re looking for volunteers to come out and clean schools, make food, and spend time with tamariki. Interested? Get in touch!
 ---
 
-<p class="text-xl font-extrabold">
+<p class="text-lg font-semibold">
 Take 10 is a late-night "safe zone" for vulnerable youth in
 Wellington’s entertainment district.
 </p>

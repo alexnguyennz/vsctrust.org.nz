@@ -7,17 +7,19 @@ import H2 from "@/components/headings/h2.astro";
 
 <Section>
   <H2>How you can help</H2>
-  <div class="flex flex-wrap justify-center gap-6 lg:gap-10">
+  <div
+    class="flex flex-col flex-wrap justify-center gap-6 sm:flex-row lg:gap-12"
+  >
     <a href="/donate/">
       <Image
         src={import("@/assets/img/home/donate.png")}
         width="48"
         height="48"
         alt=""
-        class="mx-auto"
+        class="mx-auto size-10 lg:size-12"
         transition:name="donate"
       />
-      <h3 class="mt-2 text-center text-lg font-bold">Make a Donation</h3>
+      <h3 class="mt-2 text-center text-lg font-semibold">Make a donation</h3>
     </a>
 
     <a href="/volunteer/">
@@ -26,10 +28,10 @@ import H2 from "@/components/headings/h2.astro";
         width="48"
         height="48"
         alt=""
-        class="mx-auto"
+        class="mx-auto size-10 lg:size-12"
         transition:name="volunteer"
       />
-      <h3 class="mt-2 text-center text-lg font-bold">Become a Volunteer</h3>
+      <h3 class="mt-2 text-center text-lg font-semibold">Become a volunteer</h3>
     </a>
 
     <a href="/sponsor-a-school/">
@@ -38,10 +40,10 @@ import H2 from "@/components/headings/h2.astro";
         width="48"
         height="48"
         alt=""
-        class="mx-auto"
+        class="mx-auto size-10 lg:size-12"
         transition:name="sponsor"
       />
-      <h3 class="mt-2 text-center text-lg font-bold">Sponsor a School</h3>
+      <h3 class="mt-2 text-center text-lg font-semibold">Sponsor a school</h3>
     </a>
   </div>
 </Section>

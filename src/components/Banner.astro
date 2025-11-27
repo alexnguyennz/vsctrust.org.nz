@@ -1,30 +1,53 @@
 ---
-import { Image } from "astro:assets";
+import { Image, Picture } from "astro:assets";
 
-import H1 from "@/components/headings/h1.astro";
+import { cn } from "@/lib/utils.ts";
 
 interface Props {
   title: string;
   programme: string;
 }
 
-const { title, programme } = Astro.props;
+const { programme } = Astro.props;
+
+const textPositions: Record<string, string> = {
+  contact: "right-5 lg:right-40",
+  donate: "right-5 lg:right-40",
+  volunteer: "left-5 lg:left-40",
+  "sponsor-a-school": "right-5 lg:right-40",
+  dosomegood: "left-5 top-1/2 -translate-y-1/2 w-28 sm:w-32 md:w-40 lg:w-52",
+  take10:
+    "left-5 top-1/2 -translate-y-1/2 lg:top-5 lg:translate-y-0 w-28 sm:w-32 md:w-40 lg:w-52",
+  "take10-auckland":
+    "left-5 top-1/2 -translate-y-1/2 w-28 sm:w-32 md:w-40 lg:w-52",
+  youth: "right-5 bottom-5 sm:right-10 lg:right-20",
+  seniors: "right-5 bottom-10",
+  default: "right-5 bottom-5",
+};
+
+const textClasses = textPositions[programme] || textPositions.default;
 ---
 
-<section class="relative">
-  <Image
-    src={import(`../assets/img/banner/${programme}.jpg`)}
-    width="1500"
-    height="170"
-    alt=""
-    fetchpriority="high"
-    loading="eager"
-    class="h-[170px] w-full bg-gray-100 object-cover"
-  />
+<section class="pb-5">
+  <div class="relative">
+    <Picture
+      src={import(`../assets/img/banner/${programme}/image.png`)}
+      width="2000"
+      height="1250"
+      formats={["avif", "webp"]}
+      alt={`${programme} banner`}
+      class="max-h-[200px] w-full bg-gray-100 object-cover object-center sm:max-h-[350px] lg:max-h-[400px] 2xl:max-h-[600px]"
+    />
 
-  <H1
-    class="shadow-text absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-white"
-  >
-    {title}
-  </H1>
+    <Image
+      src={import(`../assets/img/banner/${programme}/text.png`)}
+      width="2000"
+      height="1250"
+      alt={`${programme} banner`}
+      class={cn(
+        "pointer-events-none absolute bottom-5 lg:bottom-10 h-auto w-48 select-none sm:w-64 md:w-96 lg:w-[500px]",
+        textClasses,
+      )}
+    />
+  </div>
 </section>

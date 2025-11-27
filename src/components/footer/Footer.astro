@@ -4,52 +4,28 @@ import { Icon } from "astro-icon/components";
 
 import Section from "@/components/layouts/section.astro";
 
-import FooterNewsletter from "@/components/FooterNewsletter.astro";
+import Newsletter from "@/components/Newsletter.astro";
+import { NewsletterModal } from "@/components/pages/home/NewsletterModal.tsx";
+
 import { Rainbow } from "./Rainbow";
 
 import { menuLinks } from "@/lib/links";
 ---
 
+<NewsletterModal client:idle><Newsletter /></NewsletterModal>
 <footer
-  class="mt-auto bg-gray-900 text-center text-sm text-white md:text-left"
+  class="mt-auto border-t border-amber-50 bg-[#fefbf2] text-center text-sm lg:text-left"
   transition:animate="none"
 >
-  <Section class="space-y-6">
-    <nav class="grid justify-center gap-6 md:grid-cols-4 lg:grid-cols-6">
-      <div
-        class="order-last space-y-6 justify-self-center md:order-first md:col-span-4 lg:col-span-2"
-      >
-        <div class="flex items-center gap-6">
-          <Image
-            src={import("../../assets/img/icon.png")}
-            width="96"
-            height="96"
-            alt="Vulnerable Support Charitable Trust logo"
-            class="mx-auto"
-          />
-
-          <ul class="space-y-2.5">
-            <li class="flex items-center gap-1">
-              <Icon name="tabler:at" class="h-5 w-5" />
-              <a href="mailto:hello@vsctrust.org.nz">hello@vsctrust.org.nz</a>
-            </li>
-            <li class="flex items-center gap-1">
-              <Icon name="tabler:phone" class="h-5 w-5" />
-              <a href="tel:+64274448672">027 444 8672</a>
-            </li>
-          </ul>
-        </div>
-
-        <FooterNewsletter />
-      </div>
-
+  <Section class="space-y-9 py-12">
+    <nav class="grid justify-center gap-6 lg:grid-cols-5">
       {
         Object.keys(menuLinks).map((menu) => (
           <div>
-            <h2 class="mb-2 text-center text-base font-extrabold text-slate-300 md:text-left">
+            <h2 class="mb-3 text-center font-semibold text-stone-400 lg:text-left">
               {menu}
             </h2>
-            <ul class="space-y-2.5">
+            <ul class="space-y-3">
               {menuLinks[menu].map((link) => (
                 <li>
                   <a href={link.href} rel="prefetch">
@@ -62,129 +38,138 @@ import { menuLinks } from "@/lib/links";
         ))
       }
 
-      <div>
-        <h2
-          class="mb-2 text-center text-base font-extrabold text-slate-300 md:text-left"
-        >
+      <div class="lg:col-span-2">
+        <h2 class="mb-3 text-center font-semibold text-stone-400 lg:text-left">
+          Contact Us
+        </h2>
+
+        <ul class="mb-6 flex gap-6">
+          <li class="flex items-center gap-1.5">
+            <Icon name="tabler:at" class="size-5" />
+            <a href="mailto:hello@vsctrust.org.nz">hello@vsctrust.org.nz</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <Icon name="tabler:phone" class="size-5" />
+            <a href="tel:+64274448672">+64 27 444 8672</a>
+          </li>
+        </ul>
+
+        <h2 class="mb-3 text-center font-semibold text-stone-400 lg:text-left">
           Follow Us
         </h2>
 
-        <div class="mb-4">
-          <h3 class="mb-2">Facebook</h3>
+        <div class="flex justify-center gap-9 lg:justify-start">
           <div
-            class="flex flex-wrap items-center justify-center gap-3 md:justify-start"
+            class="flex flex-col items-center justify-center gap-3 lg:justify-start"
           >
-            <a
-              href="https://www.facebook.com/dosomegoodnewzealand/"
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              aria-label="Do Some Good Facebook page"
-            >
-              <Image
-                src={import("../../assets/img/logo/dosomegood.png")}
-                width="40"
-                height="40"
-                alt="Do Some Good logo"
-              />
-            </a>
-            <a
-              href="https://www.facebook.com/take10wgtn/"
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              aria-label="Take 10 Facebook page"
-            >
-              <Image
-                src={import("../../assets/img/logo/take10.png")}
-                width="40"
-                height="40"
-                alt="Take 10 logo"
-              />
-            </a>
-            <a
-              href="https://www.facebook.com/take10auckland/"
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              aria-label="Take 10 Auckland Facebook page"
-            >
-              <Image
-                src={import("../../assets/img/logo/take10-auckland.png")}
-                width="40"
-                height="40"
-                alt="Take 10 Auckland logo"
-              />
-            </a>
-            <a
-              href="https://www.facebook.com/people/GenLink/100081309057125/"
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              aria-label="Gen Link Facebook page"
-            >
-              <Image
-                src={import("../../assets/img/logo/gen-link.png")}
-                width="40"
-                height="40"
-                alt="Gen Link logo"
-              />
-            </a>
+            <Image
+              src={import("../../assets/img/logo/dosomegood.png")}
+              width="48"
+              height="48"
+              alt="Do Some Good logo"
+            />
+
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="https://www.facebook.com/dosomegoodnewzealand/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                aria-label="Do Some Good Facebook page"
+              >
+                <Icon name="tabler:brand-facebook" class="size-5" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/dosomegoodnz/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                aria-label="Do Some Good Instagram page"
+              >
+                <Icon name="tabler:brand-instagram" class="size-5" />
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div>
-          <h3 class="mb-2">Instagram</h3>
+          <div
+            class="flex flex-col items-center justify-center gap-3 lg:justify-start"
+          >
+            <Image
+              src={import("../../assets/img/logo/take10.png")}
+              width="48"
+              height="48"
+              alt="Take 10 logo"
+            />
 
-          <div class="flex items-center justify-center gap-3 md:justify-start">
-            <a
-              href="https://www.instagram.com/dosomegoodnz/"
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              aria-label="Do Some Good Instagram page"
-            >
-              <Image
-                src={import("../../assets/img/logo/dosomegood.png")}
-                width="40"
-                height="40"
-                alt="Do Some Good logo"
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/take10wgtn/"
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              aria-label="Take 10 Instagram page"
-            >
-              <Image
-                src={import("../../assets/img/logo/take10.png")}
-                width="40"
-                height="40"
-                alt="Take 10 logo"
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/take10auckland/"
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              aria-label="Take 10 Auckland Instagram page"
-            >
-              <Image
-                src={import("../../assets/img/logo/take10-auckland.png")}
-                width="40"
-                height="40"
-                alt="Take 10 Auckland logo"
-              />
-            </a>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="https://www.facebook.com/take10wgtn/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                aria-label="Take 10 Facebook page"
+              >
+                <Icon name="tabler:brand-facebook" class="size-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/take10wgtn/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                aria-label="Take 10 Instagram page"
+              >
+                <Icon name="tabler:brand-instagram" class="size-5" />
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col items-center justify-center gap-3 lg:justify-start"
+          >
+            <Image
+              src={import("../../assets/img/logo/take10-auckland.png")}
+              width="48"
+              height="48"
+              alt="Take 10 Auckland logo"
+            />
+
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="https://www.facebook.com/take10auckland/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                aria-label="Take 10 Auckland Facebook page"
+              >
+                <Icon name="tabler:brand-facebook" class="size-5" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/take10auckland/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                aria-label="Take 10 Auckland Instagram page"
+              >
+                <Icon name="tabler:brand-instagram" class="size-5" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </nav>
 
-    <div class="flex flex-col items-center">
-      <p class="mb-2 flex items-center gap-1">
-        <Icon name="tabler:copyright" class="h-4 w-4" />
+    <div class="flex flex-col items-center gap-3">
+      <Image
+        src={import("../../assets/img/icon.png")}
+        width="72"
+        height="72"
+        alt="Vulnerable Support Charitable Trust logo"
+        class="mx-auto"
+      />
+
+      <p class="text-stone-400">
+        &copy;
         {new Date().getFullYear()} Vulnerable Support Charitable Trust
       </p>
 
-      <p class="text-slate-400">
-        VSCT is a registered New Zealand charity
+      <p class="text-stone-400">
+        We are a registered charity
         <a
           href="https://register.charities.govt.nz/Charity/CC55753"
           target="_blank"
@@ -194,7 +179,7 @@ import { menuLinks } from "@/lib/links";
       </p>
 
       <Rainbow client:visible>
-        <Icon name="rainbow" class="h-8 w-12" />
+        <Icon name="rainbow" class="h-8 w-12 rounded-lg" />
       </Rainbow>
     </div>
   </Section>

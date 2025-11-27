@@ -2,7 +2,6 @@ import {
   PersonStanding,
   HeartHandshake,
   HandCoins,
-  Newspaper,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -13,10 +12,8 @@ import {
 } from "@tabler/icons-react";
 import {
   DoSomeGood,
-  GenLink,
   Take10,
   Take10Auckland,
-  Take10Arvos,
 } from "@/components/ProgrammeLogos.tsx";
 
 interface MenuLinks {
@@ -48,12 +45,6 @@ export const menuLinks: MenuLinks = {
       description: "Stay up-to-date",
       icon: IconWriting,
     },
-    {
-      title: "Media",
-      href: "/media/",
-      description: "Our media coverage",
-      icon: Newspaper,
-    },
   ],
   "Our Work": [
     {
@@ -73,12 +64,6 @@ export const menuLinks: MenuLinks = {
       href: "/take10-auckland/",
       description: "Late-night safe zone",
       icon: Take10Auckland,
-    },
-    {
-      title: "Generation Link",
-      href: "/gen-link/",
-      description: "Connecting kids with elders",
-      icon: GenLink,
     },
   ],
   "Get Involved": [

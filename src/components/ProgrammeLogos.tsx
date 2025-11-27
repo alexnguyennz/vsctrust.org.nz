@@ -23,23 +23,3 @@ export function Take10Auckland() {
     />
   );
 }
-
-export function Take10Arvos() {
-  return (
-    <img
-      src={"/logo/take10-arvos.png"}
-      alt={"Take 10 Arvo's logo"}
-      className={"size-12"}
-    />
-  );
-}
-
-export function GenLink() {
-  return (
-    <img
-      src={"/logo/gen-link.png"}
-      alt={"Gen Link logo"}
-      className={"size-12"}
-    />
-  );
-}

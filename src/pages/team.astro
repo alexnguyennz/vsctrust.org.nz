@@ -4,7 +4,6 @@ import { getCollection } from "astro:content";
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
 
-import TextBanner from "@/components/TextBanner.astro";
 import TeamMember from "@/components/pages/team/TeamMember.astro";
 
 const trustMembers = (await getCollection("team")).sort(
@@ -15,10 +14,8 @@ const title = "The Team";
 ---
 
 <Layout title={title}>
-  <TextBanner title={title} />
-
   <Section>
-    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-6 md:grid-cols-2 md:gap-9 lg:grid-cols-3">
       {
         trustMembers.map((trust) => (
           <TeamMember trust={trust} category="team" />

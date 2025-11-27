@@ -4,8 +4,9 @@ import { Image } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
+import AnchorButton from "@/components/layouts/anchor-button.astro";
 
-import TextBanner from "@/components/TextBanner.astro";
+import Banner from "@/components/Banner.astro";
 import Form from "@/components/Form.astro";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -18,74 +19,80 @@ const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title}>
-  <TextBanner title={entry.data.title} />
-
-  <Image
-    src={import("@/assets/img/home/sponsor.png")}
-    width="77"
-    height="77"
-    alt="sponsor image"
-    fetchpriority="high"
-    loading="eager"
-    class="mx-auto"
-    transition:name="sponsor"
-  />
-
-  <Section class="flex flex-col space-y-6">
-    <div class="self-center">
-      <Content />
-    </div>
-  </Section>
+  <Banner title={entry.data.title} programme="sponsor-a-school" />
 
   <Section>
-    <Form name="sponsor">
-      <div>
-        <Label htmlFor="name" className="required">Name</Label>
-        <Input
-          className="shadow-border"
-          type="text"
-          id="name"
-          name="name"
-          required
-        />
-      </div>
+    <Image
+      src={import("@/assets/img/home/sponsor.png")}
+      width="77"
+      height="77"
+      alt="sponsor image"
+      fetchpriority="high"
+      loading="eager"
+      class="mx-auto"
+      transition:name="sponsor"
+    /></Section
+  >
 
-      <div>
-        <Label htmlFor="email" className="required">Email</Label>
-        <Input
-          className="shadow-border"
-          type="email"
-          id="email"
-          name="email"
-          required
-        />
-      </div>
+  <Section class="grid gap-6 lg:grid-cols-2 lg:gap-9">
+    <div>
+      <Content />
 
-      <div>
-        <Label htmlFor="phone">Phone Number</Label>
-        <Input className="shadow-border" type="tel" id="phone" name="phone" />
-      </div>
+      <AnchorButton href="/dosomegood/brochure.pdf" class="bg-gray-600 text-sm"
+        >Brochure</AnchorButton
+      >
+    </div>
 
-      <div>
-        <Label htmlFor="website">Website</Label>
-        <Input
-          className="shadow-border"
-          type="url"
-          id="website"
-          name="website"
-        />
-      </div>
+    <div>
+      <Form name="sponsor">
+        <div>
+          <Label htmlFor="name" className="required">Name</Label>
+          <Input
+            className="shadow-border"
+            type="text"
+            id="name"
+            name="name"
+            required
+          />
+        </div>
 
-      <div class="sm:col-span-2">
-        <Label htmlFor="message" className="required">Message</Label>
-        <Textarea
-          className="shadow-border"
-          id="message"
-          name="message"
-          rows={4}
-          required
-        />
-      </div>
-    </Form>
+        <div>
+          <Label htmlFor="email" className="required">Email</Label>
+          <Input
+            className="shadow-border"
+            type="email"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+
+        <div>
+          <Label htmlFor="phone">Phone Number</Label>
+          <Input className="shadow-border" type="tel" id="phone" name="phone" />
+        </div>
+
+        <div>
+          <Label htmlFor="website">Website</Label>
+          <Input
+            className="shadow-border"
+            type="url"
+            id="website"
+            name="website"
+          />
+        </div>
+
+        <div class="sm:col-span-2">
+          <Label htmlFor="message" className="required">Message</Label>
+          <Textarea
+            className="shadow-border"
+            id="message"
+            name="message"
+            rows={4}
+            required
+          />
+        </div>
+      </Form>
+    </div>
   </Section>
 </Layout>

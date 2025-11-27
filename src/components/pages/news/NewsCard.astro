@@ -9,22 +9,26 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<article class="flex flex-col text-center">
+<article class="flex flex-col">
   <a
     href={`/news/${post.id}/`}
     rel="prefetch"
-    class="group overflow-hidden rounded-2xl"
+    class="group overflow-hidden rounded-3xl shadow-lg"
   >
     <Image
       src={post.data.image}
       width={500}
       alt={post.data.title}
-      class="aspect-[4/3] w-full rounded-2xl object-cover transition duration-500 group-hover:scale-110"
+      transition:name={`news-image-${post.id}`}
+      class="aspect-[4/3] w-full rounded-3xl object-cover transition duration-500 group-hover:scale-110"
     />
   </a>
 
   <div class="mt-4 flex flex-1 flex-col">
-    <h3 class="text-sm">
+    <h2 class="line-clamp-1 font-semibold">
+      <a href={`/news/${post.id}/`}>{post.data.title}</a>
+    </h2>
+    <h3 class="mt-auto text-sm">
       {
         new Date(post.data.date).toLocaleDateString("en-NZ", {
           year: "numeric",
@@ -33,9 +37,5 @@ const { post } = Astro.props;
         })
       }
     </h3>
-
-    <h2 class="mb-0 line-clamp-2 text-base font-extrabold">
-      <a href={`/news/${post.id}/`}>{post.data.title}</a>
-    </h2>
   </div>
 </article>
