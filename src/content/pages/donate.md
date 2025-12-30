@@ -14,17 +14,25 @@ topContent: >-
   Thank you for taking the time to consider donating to us.
 
 
-  Our organisation creates meaningful change throughout communities in the
-  Pōneke, Te Awa Kairangi and Porirua (Wellington, Hutt Valley and Porirua)
-  regions.
+  Our organisation works to create change for younger generations within our
+  local communities across Wellington, Porirua, and Hutt Valley.
 
 
-  Our work focusses around targeted programmes offering support, care, and
-  creating connections. Building stronger, safer and more inclusive communities
-  -  together.
+  Our targeted programmes offer support, care, and create connections.
 
 
-  We know our work makes a real impact, donating to us is your chance to make an
-  impact too.
+  Through our work we build stronger, safer, and more inclusive communities.
+
+
+  We have also recently expanded into Auckland with our programme Take 10
+  establishing a positive presence in the Queen Street and Te Komititanga Square
+  area.
+
+
+  We know our work makes a real impact.
+
+
+  If you choose to donate to us, know that you are choosing to make an impact
+  too.
 ---
 Once your donation has been completed, you will receive a receipt via email automatically. If you have any queries or concerns related to this please contact [hello@vsctrust.org.nz](mailto:hello@vsctrust.org.nz?Subject=DONATION%20ENQ%20SURNAMEHERE) with the subject line: DONATION ENQ followed by your surname.
