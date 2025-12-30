@@ -10,6 +10,7 @@ volunteerDescription: >-
   We’re looking for volunteers to come out and clean schools, make food, and
   spend time with tamariki. Interested? Get in touch!
 ---
+&nbsp;
 
 <p class="text-lg font-semibold">Feeding tamariki.</p>
 
@@ -17,17 +18,19 @@ volunteerDescription: >-
 
 <p class="text-lg font-semibold">Making a difference.</p>
 
+&nbsp;
+
 # **What do we do?**
 
-We deliver fresh and tasty kai to kindergartens and primary schools, across Weliington, Porirua, and Hutt Valley, including fruit and veggies, dairy products, bread, cold cuts of meat, popcorn, and other snacks.
+We deliver fresh and tasty kai to kindergartens and primary schools, across Wellington, Porirua, and Hutt Valley, including fruit and veggies, dairy products, bread, cold cuts of meat, popcorn, and other snacks.
 
-Our food support programme ensures tamariki across Wellington, Porirua, and the Hutt Valley have access to fresh and tasty kai throughout their day in education, including lunch, breakfast, and snacks.
+Our food support programme ensures tamariki have access to fresh and tasty kai throughout their day.
 
 Access to kai addresses not only the physical but emotional and educational needs of tamariki. A well-fed child is better able to engage and focus on their learnings and making positive connections with those around them.
 
 Kai from our deliveries is also taken home by whānau of tamariki at kindergartens and schools we support to make meals throughout the week. We are often told by education providers we work with that our support acts as an equaliser, meaning our programme contributes to all tamariki having the opportunity to thrive and flourish in education and at home.
 
-We started out supporting one school in Wainuiomata in 2017, before expanding out to support more schools and kindergartens across Wellington, Porirua, and Hutt Valley.
+We started out supporting one school in Wainuiomata in 2017, before expanding out to support more schools and kindergartens.
 
 # **How do we do it?**
 
