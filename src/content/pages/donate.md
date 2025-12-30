@@ -1,7 +1,9 @@
 ---
 title: Donate
 items:
-  - weekly breakfast and lunch food items for our Do Some Good schools
+  - >-
+    weekly breakfast and lunch food items for our Do Some Good schools and
+    kindergartens
   - volunteer training
   - cups, lollies, uniforms, and first aid supplies for Take 10
   - meals and transport home for our volunteers
