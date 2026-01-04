@@ -30,6 +30,6 @@ Being based on Courtenay Place places us at the centre of the nightlife scene an
 
 What makes us different?
 
-* **Preventative** – Our safe zone provides space for people who need it to set a new course for their night
+* **Preventative** – Our safe zone provides space for people who need it to change the direction their night is going in, and prevent harm occuring
 * **Approachable** – People are often more willing to come to us than emergency services
-* **Safe** – We are inclusive and non-judgemental. We keep our space safe for everyone by effectively responding to anyone who acts in an unsafe manner, before the situation is able to escalate and causes harm
+* **Safe** – We are inclusive and non-judgemental. We keep our space safe for everyone by effectively responding to anyone who acts in an unsafe manner, before the situation is able to escalate and cause harm
