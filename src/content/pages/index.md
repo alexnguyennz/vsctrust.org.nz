@@ -22,10 +22,12 @@ take10Visitors: 46521
 waterGiven: 26841
 mealsForTamariki: 29587
 ---
-Vulnerable Support Charitable Trust is a leading provider of support to those who are at risk of harm across Wellington, Porirua, and Hutt Valley. At the heart of our practice model is a practice of reducing harm, promoting respect, and working towards an equitable future.  We respect all communities and provide support in a non-judgemental and inclusive manner.
+Vulnerable Support Charitable Trust is a leading provider of support to those who are at risk of harm across Wellington, Porirua, and Hutt Valley.
 
-We recently expanded our work into Auckland, with Take 10 opening in Te Komititanga Square. After receiving an awesome welcome from a new city, we have been so happy to find we are able to support a whole new group of people.
+At the heart of our practice model is a practice of reducing harm, promoting respect, and working towards an equitable future.  We respect all communities and provide support in a non-judgemental and inclusive manner.
+
+We recently expanded our work into Tāmaki Makarua (Auckland), with Take 10 opening in the city in July 2025. After receiving an awesome welcome from a new city, we have been so happy to find we are able to support a whole new group of people.
 
 Our vision is for inclusive local communities where all people are prospering, able to achieve their goals, valued, and protected from harm.
 
-Our mission is to provide support to those who are vulnerable in our local communities through action-oriented programmes that make meaningful change; with demonstrable positive outcomes that both bring communities together, and at the same time promote inclusion, equity, and social cohesion.
+Our mission is to provide support to those who are vulnerable in our local communities through action-oriented programmes that make change; with demonstrable positive outcomes that both bring communities together, and at the same time promote inclusion, equity, and social cohesion.
