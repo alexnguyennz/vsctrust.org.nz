@@ -24,7 +24,7 @@ mealsForTamariki: 29587
 ---
 Vulnerable Support Charitable Trust is a leading provider of support to those who are at risk of harm across Wellington, Porirua, and Hutt Valley.
 
-At the heart of our practice model is a firm basis of reducing harm, promoting respect, and working towards an equitable future.  We respect all communities and provide support in a non-judgemental and inclusive manner.
+At the heart of our holistic practice model is a firm basis of reducing harm, promoting respect, and working towards an equitable future.  We respect all communities and provide support in a non-judgemental and inclusive manner.
 
 We recently expanded our work into Tāmaki Makarua (Auckland), with Take 10 opening in the city in July 2025. After receiving an awesome welcome from a new city, we have been so happy to find we are able to support a whole new group of people.
 
