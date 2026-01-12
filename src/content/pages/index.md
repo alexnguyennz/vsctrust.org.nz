@@ -26,7 +26,7 @@ Vulnerable Support Charitable Trust is a leading provider of support to those wh
 
 At the heart of our holistic practice model is a firm basis of reducing harm, promoting respect, and working towards an equitable future.  We respect all communities and provide support in a non-judgemental and inclusive manner.
 
-We recently expanded our work into Tāmaki Makarua (Auckland), with Take 10 opening in the city in July 2025. After receiving an awesome welcome from a new city, we have been so happy to find we are able to support a whole new group of people.
+We recently expanded our work into Tāmaki Makaurau (Auckland), with Take 10 opening in the city in July 2025. After receiving an awesome welcome from a new city, we have been so happy to find we are able to support a whole new group of people.
 
 Our vision is for inclusive local communities where all people are prospering, able to achieve their goals, valued, and protected from harm.
 
