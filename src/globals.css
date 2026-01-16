@@ -71,7 +71,7 @@ footer a:hover {
   }
 
   h2 {
-    @apply mb-3 mt-6 text-xl;
+    @apply mb-3 mt-3 text-xl;
   }
 
   h3 {
