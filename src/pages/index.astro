@@ -12,8 +12,9 @@ import { Quotes } from "@/components/pages/home/Quotes";
 import NewsCard from "@/components/pages/news/NewsCard.astro";
 import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
 
-import Newsletter from "@/components/Newsletter.astro";
+/*
 import { Picture } from "astro:assets";
+*/
 
 const posts = (await getCollection("posts", ({ data }) => data.published)).sort(
   (a, b) => Number(b.data.date) - Number(a.data.date),
@@ -47,11 +48,6 @@ const { Content } = await render(entry);
     <H2>Helping rangatahi and tamariki</H2>
 
     <Content />
-  </Section>
-
-  <Section
-    ><H2>Subscribe to our newsletter</H2>
-    <Newsletter />
   </Section>
 
   <FullSection>

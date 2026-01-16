@@ -10,9 +10,11 @@ import { NewsletterModal } from "@/components/pages/home/NewsletterModal.tsx";
 import { Rainbow } from "./Rainbow";
 
 import { menuLinks } from "@/lib/links";
+import H2 from "@/components/headings/h2.astro";
 ---
 
 <NewsletterModal client:idle><Newsletter /></NewsletterModal>
+
 <footer
   class="mt-auto border-t border-amber-50 bg-[#fefbf2] text-center text-sm lg:text-left"
   transition:animate="none"
@@ -22,7 +24,7 @@ import { menuLinks } from "@/lib/links";
       {
         Object.keys(menuLinks).map((menu) => (
           <div>
-            <h2 class="mb-3 text-center font-semibold text-stone-400 lg:text-left">
+            <h2 class="mb-3 text-center text-sm font-semibold text-stone-400 lg:text-left">
               {menu}
             </h2>
             <ul class="space-y-3">
@@ -39,7 +41,9 @@ import { menuLinks } from "@/lib/links";
       }
 
       <div class="lg:col-span-2">
-        <h2 class="mb-3 text-center font-semibold text-stone-400 lg:text-left">
+        <h2
+          class="mb-3 text-center text-sm font-semibold text-stone-400 lg:text-left"
+        >
           Contact Us
         </h2>
 
@@ -54,7 +58,9 @@ import { menuLinks } from "@/lib/links";
           </li>
         </ul>
 
-        <h2 class="mb-3 text-center font-semibold text-stone-400 lg:text-left">
+        <h2
+          class="mb-3 text-center text-sm font-semibold text-stone-400 lg:text-left"
+        >
           Follow Us
         </h2>
 
@@ -155,13 +161,9 @@ import { menuLinks } from "@/lib/links";
     </nav>
 
     <div class="flex flex-col items-center gap-3">
-      <Image
-        src={import("../../assets/img/icon.png")}
-        width="72"
-        height="72"
-        alt="Vulnerable Support Charitable Trust logo"
-        class="mx-auto"
-      />
+      <Section class="text-left">
+        <Newsletter />
+      </Section>
 
       <p class="text-stone-400">
         &copy;

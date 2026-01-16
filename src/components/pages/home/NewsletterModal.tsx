@@ -35,7 +35,9 @@ export const NewsletterModal = ({ children }: NewsletterModalProps) => {
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Subscribe to our newsletter</DialogTitle>
+          <DialogTitle className="my-0">
+            Subscribe to our newsletter
+          </DialogTitle>
         </DialogHeader>
         {children}
       </DialogContent>
