@@ -12,6 +12,11 @@ body {
   font-family: "Sora", sans-serif;
 }
 
+/*p {
+  font-size: 1rem; !* 16px *!
+  line-height: 1.5rem;
+}*/
+
 strong {
   font-weight: 600;
 }
@@ -76,5 +81,9 @@ footer a:hover {
 
   h3 {
     @apply mb-3 text-lg;
+  }
+
+  p {
+    @apply lg:text-lg;
   }
 }
