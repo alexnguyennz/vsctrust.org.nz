@@ -15,13 +15,17 @@ wantToHelpDescription:
     join us and help make a difference.
 volunteerDescription:
 ---
-#### Take 10 is a late-night "safe zone" in Wellington’s entertainment district.
+### Take 10 is a late-night "safe zone" in Wellington’s entertainment district.
+
+&nbsp;
 
 Coming to our safe space gives people the opportunity too — take a break, play some games, drink water, reconnect with themselves and the people they are with, charge their phone, get first-aid, wait for a friend, get help to get home safely, and have a kōrero with one of our fully trained team leaders and volunteers, who are able to provide support and care.
 
 Being based on Courtenay Place places us at the centre of the nightlife scene and means we are able to quickly provide support when needed. We share good relationships with the hospitality and security sector and we provide non-judgemental support.
 
-What makes us different?
+&nbsp;
+
+#### What makes us different?
 
 * **Preventative** – Our safe zone provides space for people who need it to change the direction their night is going in, and prevent harm occurring
 * **Approachable** – People are often more willing to come to us than emergency services
