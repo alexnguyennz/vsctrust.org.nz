@@ -43,7 +43,7 @@ const NavigationMenuItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <NavigationMenuPrimitive.Item
     ref={ref}
-    className={cn("relative", className)}
+    className={cn("relative text-lg", className)}
     {...props}
   />
 ));

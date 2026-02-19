@@ -112,7 +112,7 @@ const ListItem = forwardRef<
           <Icon className={"size-6"} />
           <div>
             <div className="font-semibold leading-none">{title}</div>
-            <span className="text-sm">{children}</span>
+            <span className="text-base">{children}</span>
           </div>
         </a>
       </NavigationMenuLink>
