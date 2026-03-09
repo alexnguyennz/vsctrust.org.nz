@@ -3,7 +3,7 @@ _schema: posts
 title: Doing Good in the New Year
 date: 2026-03-09T00:00:00+13:00
 author: leigh-keown
-image: /src/content/posts/536fe85e-1f7a-2a1f-7f42-88f3244c4c21.png
+image: /src/content/posts/536fe85e-1f7a-2a1f-7f42-88f3244c4c21-1.png
 published: true
 ---
 After a great break over the summer we are back delivering kai to schools and kindergartens across the Wellington, Porirua, and Hutt Valley region.
