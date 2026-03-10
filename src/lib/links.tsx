@@ -68,8 +68,8 @@ export const menuLinks: MenuLinks = {
   ],
   "Get Involved": [
     {
-      title: "Donate",
-      href: "/donate/",
+      title: "Support Us",
+      href: "/support-us/",
       description: "Support what we do",
       icon: HandCoins,
     },

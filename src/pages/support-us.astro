@@ -10,7 +10,7 @@ import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
 import Banner from "@/components/Banner.astro";
 
-const entry = await getEntry("pages", "donate");
+const entry = await getEntry("pages", "support-us");
 if (!entry) throw new Error("Could not find page");
 
 const { Content } = await render(entry);

@@ -1,5 +1,5 @@
 ---
-title: Donate
+title: Support Us
 items:
   - fresh kai for our Do Some Good schools and kindergartens
   - volunteer training
