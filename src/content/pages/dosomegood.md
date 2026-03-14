@@ -10,6 +10,11 @@ volunteerDescription: >-
   We’re looking for volunteers to come out and clean schools, make food, and
   spend time with tamariki. Interested? Get in touch!
 ---
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 <p class="text-lg font-semibold">Feeding tamariki.</p>
 
@@ -17,7 +22,13 @@ volunteerDescription: >-
 
 <p class="text-lg font-semibold">Making a difference.</p>
 
-### **What do we do?**
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+# **What do we do?**
 
 We deliver fresh and tasty kai to kindergartens and primary schools, across Wellington, Porirua, and Hutt Valley, including fruit and veggies, dairy products, bread, cold cuts of meat, popcorn, and other snacks.
 
@@ -29,13 +40,13 @@ Kai from our deliveries is also taken home by whānau of tamariki at kindergarte
 
 We started out supporting one school in Wainuiomata in 2017, before expanding out to support more schools and kindergartens.
 
-### **How do we do it?**
+# **How do we do it?**
 
 We work with corporate partners and other donors and supporters to deliver our programme. A key focus here is providing the business community with the opportunity to be part of a concerted effort to create social cohesion and well-connected communities, where everyone is doing their bit and tamariki experiencing hardship are better protected from harm.
 
 Our corporate partners also volunteer their time at our schools, completing needed mahi during volunteer working bees, a real highlight for both volunteer teams and tamariki - who often get to muck in and help out with the fun jobs on the day too!
 
-### **We need your help!**
+# **We need your help!**
 
 Recently, our food support programme has felt the impact of the continuing cost-of-living crisis and current economic climate, with less funding available to support our work and an increased need in the community.
 
@@ -43,7 +54,7 @@ We remain hopeful that more donors and corporate partners will be able to step u
 
 ### **Now is the time to show your support.**
 
-If you are, or know of a business or individual who is able to and would like to give back to the community and make a difference in the lives of our tamariki, please get in touch.
+If you are, or know of a business or individual who is able to and would like to give back to the community and make a difference in the lives of our tamariki and their whānau, please get in touch.
 
 We are also very interested in hearing from businesses, groups, or individuals who would like to undertake community fundraising with us.
 
