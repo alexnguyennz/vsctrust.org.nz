@@ -19,7 +19,7 @@ The volunteers who came on board to support our work and spend their Friday and 
 
 And of course we want to take a moment to extend a huge thank you to Auckland Council for their continual support making all of this possible.
 
-What makes us different?
+# **What makes us different?**
 
 * **Preventative** – we catch people before they become victims by stopping them from becoming isolated and helping to reconnect people
 * **Approach-able** – people are often more willing to come to us than the police or emergency services
