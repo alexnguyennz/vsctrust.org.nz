@@ -24,7 +24,9 @@ mealsForTamariki: 29587
 ---
 Vulnerable Support Charitable Trust is a leading provider of support to those who are at risk of harm across Wellington, Porirua, and Hutt Valley.
 
-At the heart of our holistic practice model is a firm basis of reducing harm, promoting respect, and working towards an equitable future.  We respect all communities and provide support in a non-judgemental and inclusive manner.
+At the heart of our holistic practice model is a firm basis of reducing harm, promoting respect, and working towards an equitable future.
+
+We respect all communities and provide support in a non-judgemental and inclusive manner.<br><br>We run two flagship programmes, Do Some Good, a food support programme providing fresh and tasty kai for tamariki and their whānau in schools and kindergartens across Wellington, Porirua, and Hutt Valley, as well as Take 10, a late night safe zone operating from 10:00pm to 3:00am on Friday and Saturday nights on the corner of Courtenay Place and Taranaki St.
 
 We recently expanded our work into Tāmaki Makaurau (Auckland), with Take 10 opening in the city in July 2025. After receiving an awesome welcome from a new city, we have been so happy to find we are able to support a whole new group of people.
 
