@@ -83,7 +83,8 @@ footer a:hover {
     @apply mb-3 text-lg;
   }
 
-  p {
+  p,
+  li {
     @apply lg:text-lg;
   }
 }
