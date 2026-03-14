@@ -21,7 +21,7 @@ const Card = ({ quote }: { name?: string; quote: string }) => {
   return (
     <figure
       className={
-        "relative w-72 cursor-default overflow-hidden rounded-3xl border border-gray-200 bg-gray-50 p-5 transition-colors hover:bg-gray-100"
+        "relative w-72 cursor-default overflow-hidden rounded-3xl border border-gray-100 bg-gray-50 p-5 transition-colors hover:bg-gray-100"
       }
     >
       <blockquote className="text-sm text-gray-600">{quote}</blockquote>

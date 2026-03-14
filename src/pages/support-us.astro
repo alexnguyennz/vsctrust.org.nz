@@ -10,7 +10,7 @@ import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
 import Banner from "@/components/Banner.astro";
 
-const entry = await getEntry("pages", "donate");
+const entry = await getEntry("pages", "support-us");
 if (!entry) throw new Error("Could not find page");
 
 const { Content } = await render(entry);
@@ -34,6 +34,16 @@ const { Content } = await render(entry);
 
   <Section class="grid gap-6 lg:grid-cols-2 lg:gap-9">
     <div>
+      <Image
+        src={import("@/assets/img/banner/support-us.jpg")}
+        width="512"
+        height="512"
+        alt="Do Some Good logo"
+        fetchpriority="high"
+        loading="eager"
+        class="mx-auto mb-6 max-h-96 w-full rounded-3xl object-cover shadow-lg"
+      />
+
       <Fragment set:html={marked.parse(entry.data.topContent)} />
 
       <div>

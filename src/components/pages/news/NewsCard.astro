@@ -13,18 +13,18 @@ const { post } = Astro.props;
   <a
     href={`/news/${post.id}/`}
     rel="prefetch"
-    class="group overflow-hidden rounded-3xl shadow-lg"
+    class="group overflow-hidden rounded-3xl"
   >
     <Image
       src={post.data.image}
-      width={500}
+      width={325}
       alt={post.data.title}
       transition:name={`news-image-${post.id}`}
-      class="aspect-[4/3] w-full rounded-3xl object-cover transition duration-500 group-hover:scale-110"
+      class="mx-auto aspect-[4/3] w-full rounded-3xl object-cover shadow-lg sm:w-auto"
     />
   </a>
 
-  <div class="mt-0 flex flex-1 flex-col">
+  <div class="mt-0 flex flex-1 flex-col text-center">
     <h2 class="mb-0 line-clamp-1 text-base font-semibold">
       <a href={`/news/${post.id}/`}>{post.data.title}</a>
     </h2>

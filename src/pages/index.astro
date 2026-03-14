@@ -12,8 +12,9 @@ import { Quotes } from "@/components/pages/home/Quotes";
 import NewsCard from "@/components/pages/news/NewsCard.astro";
 import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
 
-import Newsletter from "@/components/Newsletter.astro";
+/*
 import { Picture } from "astro:assets";
+*/
 
 const posts = (await getCollection("posts", ({ data }) => data.published)).sort(
   (a, b) => Number(b.data.date) - Number(a.data.date),
@@ -26,8 +27,8 @@ const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title}>
-  <Picture
-    src={import(`../assets/img/banner/home.png`)}
+  <!--<Picture
+    src={import("@/assets/img/banner/home.png")}
     width="2200"
     height="300"
     formats={["avif", "webp"]}
@@ -35,24 +36,19 @@ const { Content } = await render(entry);
     class="mx-auto w-full object-cover"
     priority={true}
     fetchpriority="high"
-  />
-
-  <HowYouCanHelp />
+  />-->
 
   <Section>
     <Programmes page={entry.data} />
   </Section>
 
-  <Section class="text-center">
-    <H2>Helping rangatahi and tamariki</H2>
+  <Section>
+    <H2>Working together for a better tomorrow</H2>
 
     <Content />
   </Section>
 
-  <Section
-    ><H2>Subscribe to our newsletter</H2>
-    <Newsletter />
-  </Section>
+  <HowYouCanHelp />
 
   <FullSection>
     <H2>What people are saying</H2>

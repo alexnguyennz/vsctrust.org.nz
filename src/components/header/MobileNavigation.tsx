@@ -43,7 +43,7 @@ export function MobileNavigation() {
         </a>
       </li>
       <li>
-        <a href="/donate/" className={"block py-2"}>
+        <a href="/support-us/" className={"block py-2"}>
           Donate
         </a>
       </li>

@@ -12,6 +12,11 @@ body {
   font-family: "Sora", sans-serif;
 }
 
+/*p {
+  font-size: 1rem; !* 16px *!
+  line-height: 1.5rem;
+}*/
+
 strong {
   font-weight: 600;
 }
@@ -66,16 +71,20 @@ footer a:hover {
 }
 
 @layer base {
-  /* H1 */
   h1 {
     @apply mb-3 mt-6 text-2xl;
   }
 
   h2 {
-    @apply mb-3 mt-6 text-xl;
+    @apply mb-3 mt-3 text-xl;
   }
 
   h3 {
     @apply mb-3 text-lg;
+  }
+
+  p,
+  li {
+    @apply lg:text-lg;
   }
 }
