@@ -10,23 +10,12 @@ volunteerDescription: >-
   We’re looking for volunteers to come out and clean schools, make food, and
   spend time with tamariki. Interested? Get in touch!
 ---
-&nbsp;
-
-&nbsp;
-
-&nbsp;
 
 <p class="text-lg font-semibold">Feeding tamariki.</p>
 
 <p class="text-lg font-semibold">Supporting communities.</p>
 
 <p class="text-lg font-semibold">Making a difference.</p>
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
 
 # **What do we do?**
 
