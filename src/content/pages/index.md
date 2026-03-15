@@ -1,11 +1,11 @@
 ---
 title: Home
 dosomegood: >-
-  A food support programme that connects local business communities wanting to
-  do good with schools and kindergartens across the region. We undertake
-  volunteer days completing needed mahi and also provide fresh and tasty kai for
-  tamariki and their whānau, so that all are able to have the opportunity to
-  thrive and flourish. 
+  A food support programme that connects local businesses wanting to do good
+  with schools and kindergartens across the region. We undertake volunteer days
+  completing needed mahi and also provide fresh and tasty kai for tamariki and
+  their whānau, so that all are able to have the opportunity to thrive and
+  flourish. 
 take10: >-
   An inclusive and non-judgemental late-night safe space on Courtenay Place,
   offering water, phone charging, games, first-aid medical help, transport
@@ -31,7 +31,7 @@ Vulnerable Support Charitable Trust is a leading provider of support to those wh
 
 At the heart of our holistic practice model is a firm basis of reducing harm, promoting respect, and working towards an equitable future.
 
-We respect all communities and provide support in a non-judgemental and inclusive manner.<br><br>We run two flagship programmes, Do Some Good, a food support programme providing fresh and tasty kai for tamariki and their whānau in schools and kindergartens across Wellington, Porirua, and Hutt Valley, as well as Take 10, a late night safe zone operating from 10:00pm to 3:00am on Friday and Saturday nights on the corner of Courtenay Place and Taranaki St.
+We respect all communities and provide support in a non-judgemental and inclusive manner.<br><br>We run two flagship programmes, Do Some Good, a food support programme connecting local businesses wanting to do good,  providing fresh and tasty kai for tamariki and their whānau in schools and kindergartens across Wellington, Porirua, and Hutt Valley and undertaking regular volunteer days. As well as Take 10, a late night safe space operating from 10:00pm to 3:00am on Friday and Saturday nights on the corner of Courtenay Place and Taranaki St, promoting safe nights out for students and others who are in the city at night.
 
 We recently expanded our work into Tāmaki Makaurau (Auckland), with Take 10 opening in the city in July 2025. After receiving an awesome welcome from a new city, we have been so happy to find we are able to support a whole new group of people.
 
