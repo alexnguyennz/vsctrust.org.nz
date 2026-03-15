@@ -1,16 +1,21 @@
 ---
 title: Home
 dosomegood: >-
-  Influencing positive change for tamariki in hardship. We help businesses find
-  ways to help kiwi kids who need it most.
+  A food support programme that connects local business communities wanting to
+  do good with schools and kindergartens across the region. We undertake
+  volunteer days completing needed mahi and also provide fresh and tasty kai for
+  tamariki and their whānau, so that all are able to have the opportunity to
+  thrive and flourish. 
 take10: >-
-  Providing a late-night safe zone on Courtenay Place where we offer water,
-  phone charging, medical help, and refuge to reduce alcohol and drug related
-  harm.
+  An inclusive and non-judgemental late-night safe space on Courtenay Place,
+  offering water, phone charging, games, first-aid medical help, transport
+  advice, help to get home safely, and support and meaningful kōrero from
+  trained volunteers. 
 take10auckland: >-
-  Providing a late-night safe zone at Te Komititanga Square where we offer
-  water, phone charging, medical help, and refuge to reduce alcohol and drug
-  related harm.
+  An inclusive and non-judgemental late-night safe space in the Quay Street
+  District, offering water, phone charging, games, first-aid medical help,
+  transport advice, help to get home safely, and support and meaningful kōrero
+  from trained volunteers. 
 take10arvos: >-
   Assisting rangatahi in our communities by providing a safe place to hang out,
   do homework or play some games.
