@@ -2,7 +2,7 @@
 _schema: trust
 name: Leigh Keown
 position: VSCT Operations Manager
-image: /src/content/team/leigh-keown.png
+image: /src/content/team/screenshot-20260602-093251-gallery.jpg
 excerpt: >-
   Leigh takes charge of the day-to-day running of both Take 10 and Do Some Good.
   Having watched and supported the Trust’s journey with Clint since its
