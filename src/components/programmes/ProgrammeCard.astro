@@ -34,59 +34,29 @@ const backgroundHover = await getImage({
 });
 ---
 
-<details class="programme-card">
-  <summary class="cursor-pointer list-none">
-    <div class="programme relative h-[240px] overflow-hidden rounded-3xl shadow-lg">
-      
-      <Image
-        src={background}
-        width={600}
-        alt={`${name[programme]} background`}
-        class="absolute inset-0 h-full w-full object-cover"
-      />
+<a
+  href={`/${programme}/`}
+  class="programme group flex flex-col rounded-3xl shadow-lg transition-all duration-500 hover:no-underline"
+>
+  <div class="relative min-h-[240px] lg:min-h-[284px]">
+    <Image
+      src={background}
+      width={600}
+      alt={`${name[programme]} background`}
+      class="absolute inset-0 h-full w-full object-cover"
+    />
 
-      <div class="absolute inset-0 bg-black/20"></div>
+    <Image
+      src={import(`../../assets/img/logo/${programme}.png`)}
+      width={256}
+      height={256}
+      alt={`${name[programme]} logo`}
+      class="absolute left-1/2 top-1/2 z-10 size-40 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 group-hover:right-5 group-hover:top-5 group-hover:left-auto group-hover:translate-x-0 group-hover:translate-y-0"
+    />
 
-      <Image
-        src={import(`../../assets/img/logo/${programme}.png`)}
-        width={150}
-        height={150}
-        alt={`${name[programme]} logo`}
-        class="absolute left-1/2 top-1/2 z-10 size-32 -translate-x-1/2 -translate-y-1/2 object-contain"
-      />
-
-      <div class="absolute bottom-0 left-0 right-0 z-10 bg-black/65 px-5 py-4">
-        <h3 class="text-xl font-bold text-white">
-          {name[programme]}
-        </h3>
-      </div>
-
-    </div>
-  </summary>
-
-  <div class="mt-4 rounded-3xl bg-white p-6 shadow-lg">
-    <div class="text-gray-800">
+    <div class="z-10 grow bg-black/75 p-4 text-white underline-offset-0 transition duration-500 group-hover:opacity-0">
       <slot />
     </div>
-
-    <a
-      href={`/${programme}/`}
-      class="mt-5 inline-block font-semibold text-[#f5a623] hover:underline"
-    >
-      View programme →
-    </a>
   </div>
-</details>
-<style>
-  .programme-card summary::-webkit-details-marker {
-    display: none;
-  }
+</a>
 
-  .programme-card summary {
-    list-style: none;
-  }
-
-  .programme-card summary::-webkit-details-marker {
-    display: none;
-  }
-</style>
