@@ -27,21 +27,24 @@ const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title}>
-  <div class="relative">
-    <Picture
-      src={import("@/assets/img/banner/home/home.png")}
-      width="2200"
-      height="300"
-      formats={["avif", "webp"]}
-      alt={`Home banner`}
-      class="mx-auto w-full object-cover"
-      priority={true}
-      fetchpriority="high"
-    />
-    <div class="absolute inset-0 flex items-center justify-center bg-black/30">
-      <h1 class="text-white text-4xl md:text-6xl font-bold text-center">Take10</h1>
-    </div>
+  <div class="relative h-screen w-full overflow-hidden">
+  <Picture
+    src={import("@/assets/img/banner/home/home.png")}
+    width={2200}
+    height={300}
+    formats={["avif", "webp"]}
+    alt="Home banner"
+    class="absolute inset-0 h-full w-full object-cover"
+    priority={true}
+    fetchpriority="high"
+  />
+
+  <div class="absolute inset-0 flex items-center justify-center bg-black/30">
+    <h1 class="text-white text-4xl md:text-6xl font-bold text-center">
+      Take10
+    </h1>
   </div>
+</div>
 
   <Section>
     <Programmes page={entry.data} />
