@@ -15,7 +15,7 @@ import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
 
 import { Picture, Image } from "astro:assets";
 import take10Logo from "@/assets/img/logo/take10.png";
-import doSomeGoodLogo from "@/assets/img/logo/dosomegood_lg.png";
+import doSomeGoodLogo from "@/assets/img/logo/dosomegood-new.png";
 
 const posts = (await getCollection("posts", ({ data }) => data.published)).sort(
   (a, b) => Number(b.data.date) - Number(a.data.date),
@@ -53,8 +53,8 @@ const { Content } = await render(entry);
   <a href="/take10/" class="hover:opacity-80 transition">
     <Image
       src={take10Logo}
-      width={80}
-      height={80}
+      width={100}
+height={100}
       alt="Take 10"
       class="rounded-full object-contain"
     />
@@ -63,8 +63,8 @@ const { Content } = await render(entry);
   <a href="/dosomegood/" class="hover:opacity-80 transition">
     <Image
       src={doSomeGoodLogo}
-      width={80}
-      height={80}
+      width={100}
+height={100}
       alt="Do Some Good"
       class="rounded-full object-contain"
     />
