@@ -29,8 +29,8 @@ export function Navigation({ pathname }: { pathname: string }) {
             href="/"
             className={cn(
               navigationMenuTriggerStyle(),
-              "hover:bg-stone-100 focus:bg-stone-100",
-              pathname === "/" && "bg-stone-100",
+             "hover:bg-white/10 focus:bg-white/10",
+pathname === "/" && "bg-white/10",
             )}
           >
             Home
