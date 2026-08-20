@@ -13,8 +13,9 @@ import NewsCard from "@/components/pages/news/NewsCard.astro";
 import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
 
 
-import { Picture } from "astro:assets";
-
+import { Picture, Image } from "astro:assets";
+import take10Logo from "@/assets/img/logo/take10.png";
+import doSomeGoodLogo from "@/assets/img/logo/dosomegood_lg.png";
 
 const posts = (await getCollection("posts", ({ data }) => data.published)).sort(
   (a, b) => Number(b.data.date) - Number(a.data.date),
@@ -48,6 +49,27 @@ const { Content } = await render(entry);
   <p class="mt-4 text-lg md:text-2xl">
     Working together for a better tomorrow
   </p>
+      <div class="mt-6 flex justify-center items-center gap-6">
+  <a href="/take10/" class="hover:opacity-80 transition">
+    <Image
+      src={take10Logo}
+      width={80}
+      height={80}
+      alt="Take 10"
+      class="rounded-full object-contain"
+    />
+  </a>
+
+  <a href="/dosomegood/" class="hover:opacity-80 transition">
+    <Image
+      src={doSomeGoodLogo}
+      width={80}
+      height={80}
+      alt="Do Some Good"
+      class="rounded-full object-contain"
+    />
+  </a>
+</div>
 </div>
   </div>
 </div>
