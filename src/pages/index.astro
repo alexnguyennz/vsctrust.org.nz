@@ -12,9 +12,9 @@ import { Quotes } from "@/components/pages/home/Quotes";
 import NewsCard from "@/components/pages/news/NewsCard.astro";
 import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
 
-/*
+
 import { Picture } from "astro:assets";
-*/
+
 
 const posts = (await getCollection("posts", ({ data }) => data.published)).sort(
   (a, b) => Number(b.data.date) - Number(a.data.date),
@@ -27,8 +27,8 @@ const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title}>
-  <!--<Picture
-    src={import("@/assets/img/banner/home.png")}
+  <Picture
+    src={import("@/assets/img/banner/home/home.png")}
     width="2200"
     height="300"
     formats={["avif", "webp"]}
@@ -36,7 +36,7 @@ const { Content } = await render(entry);
     class="mx-auto w-full object-cover"
     priority={true}
     fetchpriority="high"
-  />-->
+  />
 
   <Section>
     <Programmes page={entry.data} />
