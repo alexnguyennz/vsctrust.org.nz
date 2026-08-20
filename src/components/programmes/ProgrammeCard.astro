@@ -39,13 +39,11 @@ const backgroundHover = await getImage({
   class="programme group flex flex-col rounded-3xl shadow-lg transition-all duration-500 hover:no-underline"
 >
   <div class="relative min-h-[240px] lg:min-h-[284px]">
-    <Image
+  <img
   src={background.src}
-  width={600}
   alt={`${name[programme]} background`}
   class="absolute inset-0 h-full w-full object-cover"
-    />
-
+/>
     <Image
       src={import(`../../assets/img/logo/${programme}.png`)}
       width={256}
