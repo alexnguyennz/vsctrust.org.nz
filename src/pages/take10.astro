@@ -168,3 +168,402 @@
   /* HERO */
 
   .hero {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .hero-image-wrap {
+    position: relative;
+    min-height: 420px;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-fade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      #ffffff 0%,
+      #ffffff 20%,
+      rgba(255,255,255,0.85) 35%,
+      rgba(255,255,255,0.3) 55%,
+      rgba(255,255,255,0) 75%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 520px;
+    padding: 60px 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 420px;
+  }
+
+  .eyebrow,
+  .section-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    color: #f15a24;
+  }
+
+  .hero h1 {
+    font-size: clamp(50px, 7vw, 90px);
+    line-height: 0.9;
+    margin: 0 0 20px;
+    color: #171717;
+  }
+
+  .hero-tagline {
+    font-size: clamp(16px, 1.4vw, 20px);
+    line-height: 1.5;
+    max-width: 420px;
+    margin: 0;
+    color: #444;
+    font-weight: 400;
+  }
+
+
+  /* INTRO */
+
+  .intro {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 70px 30px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .intro-dot {
+    position: absolute;
+    border-radius: 50%;
+    background: #f15a24;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .dot-1 {
+    width: 14px;
+    height: 14px;
+    top: 30px;
+    left: 8%;
+    opacity: 0.18;
+  }
+
+  .dot-2 {
+    width: 8px;
+    height: 8px;
+    top: 90px;
+    left: 18%;
+    opacity: 0.12;
+  }
+
+  .dot-3 {
+    width: 18px;
+    height: 18px;
+    bottom: 40px;
+    right: 10%;
+    opacity: 0.15;
+  }
+
+  .dot-4 {
+    width: 10px;
+    height: 10px;
+    top: 50px;
+    right: 20%;
+    opacity: 0.14;
+  }
+
+  .dot-5 {
+    width: 6px;
+    height: 6px;
+    bottom: 90px;
+    left: 22%;
+    opacity: 0.16;
+  }
+
+  .intro .section-label,
+  .intro h2,
+  .intro-divider,
+  .intro-text {
+    position: relative;
+    z-index: 1;
+  }
+
+  .intro h2 {
+    font-size: clamp(30px, 3.5vw, 46px);
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  .intro-divider {
+    width: 60px;
+    height: 4px;
+    background: #f15a24;
+    border-radius: 4px;
+    margin: 26px auto 34px;
+  }
+
+  .intro-text {
+    font-size: 20px;
+    line-height: 1.7;
+    color: #555;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+
+  /* STATS */
+
+  .stats {
+    background: #fdf1ea;
+    padding: 70px 5vw;
+  }
+
+  .stats-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 0 15px;
+    border-left: 1px solid rgba(241,90,36,0.2);
+  }
+
+  .stat-item:first-child {
+    border-left: none;
+  }
+
+  .stat-icon {
+    font-size: 28px;
+    margin: 0 0 10px;
+    line-height: 1;
+  }
+
+  .stat-number {
+    font-family: 'Fredoka', Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 3.2vw, 40px);
+    color: #f15a24;
+    margin: 0 0 8px;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+
+  /* LOCATIONS */
+
+  .locations {
+    background: #f5f5f2;
+    padding: 100px 5vw 120px;
+  }
+
+  .locations-heading {
+    text-align: center;
+    margin-bottom: 55px;
+  }
+
+  .locations-heading .section-label {
+    color: #f15a24;
+  }
+
+  .locations-heading h2 {
+    font-size: clamp(42px, 5vw, 70px);
+    margin: 0;
+  }
+
+
+  /* CARDS */
+
+  .location-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .location-card {
+    background: white;
+    color: #171717;
+    text-decoration: none;
+    border-radius: 18px;
+    overflow: hidden;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .location-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  }
+
+
+  /* CARD IMAGES */
+
+  .card-image {
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .location-card:hover .card-overlay {
+    opacity: 1;
+  }
+
+  .card-overlay span {
+    background: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+  }
+
+
+  /* CARD CONTENT */
+
+  .card-content {
+    padding: 35px;
+  }
+
+  .card-number {
+    color: #f15a24;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0 0 15px;
+  }
+
+  .card-content h3 {
+    font-size: 34px;
+    margin: 0 0 18px;
+  }
+
+  .card-content p:not(.card-number) {
+    color: #666;
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  .card-link {
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+
+  /* MOBILE */
+
+  @media (max-width: 800px) {
+
+    .hero {
+      padding: 10px;
+    }
+
+    .hero-image-wrap {
+      min-height: 500px;
+      border-radius: 16px;
+    }
+
+    .hero-fade {
+      background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #ffffff 35%,
+        rgba(255,255,255,0.6) 55%,
+        rgba(255,255,255,0) 80%
+      );
+    }
+
+    .hero-content {
+      max-width: 100%;
+      padding: 30px 25px;
+      justify-content: flex-end;
+      min-height: 500px;
+    }
+
+    .intro {
+      padding: 60px 25px 30px;
+    }
+
+    .intro-dot {
+      display: none;
+    }
+
+    .stats {
+      padding: 50px 20px;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px 15px;
+    }
+
+    .stat-item {
+      border-left: none;
+      border-top: 1px solid rgba(241,90,36,0.2);
+      padding-top: 25px;
+    }
+
+    .stat-item:first-child,
+    .stat-item:nth-child(2) {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .locations {
+      padding: 75px 20px 90px;
+    }
+
+    .location-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .card-image {
+      height: 300px;
+    }
+
+  }
+
+</style>
