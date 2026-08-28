@@ -12,7 +12,6 @@ import take10Logo from "@/assets/img/logo/take10.png";
 import doSomeGoodLogo from "@/assets/img/logo/dosomegood-new.png";
 import doSomeGoodPhoto from "@/assets/img/programmes/dosomegood.jpg";
 import take10Photo from "@/assets/img/programmes/take10.jpg";
-import take10AucklandPhoto from "@/assets/img/programmes/take10-auckland.jpg";
 const posts = (await getCollection("posts", ({ data }) => data.published)).sort(
   (a, b) => Number(b.data.date) - Number(a.data.date),
 );
@@ -94,7 +93,7 @@ height={100}
       </a>
 
       <a href="/take10-auckland/" class="group relative block h-80 overflow-hidden rounded-2xl">
-        <img src={take10AucklandPhoto.src} alt="Take 10 Auckland" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <img src="/img/news/take10/take10-auckland.jpg" alt="Take 10 Auckland" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
         <div class="absolute bottom-0 left-0 right-0 p-6">
           <p class="text-white text-xl font-bold">Take 10 Auckland</p>
