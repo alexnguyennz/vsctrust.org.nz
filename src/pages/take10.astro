@@ -22,6 +22,9 @@
 
   <!-- INTRODUCTION -->
   <section class="intro">
+    <div class="intro-blob intro-blob-1"></div>
+    <div class="intro-blob intro-blob-2"></div>
+
     <p class="section-label">TAKE 10</p>
 
     <h2>A safe space when you need it.</h2>
@@ -239,8 +242,41 @@
   .intro {
     max-width: 900px;
     margin: 0 auto;
-    padding: 120px 30px 60px;
+    padding: 70px 30px 50px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .intro-blob {
+    position: absolute;
+    border-radius: 50%;
+    background: #f15a24;
+    opacity: 0.06;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .intro-blob-1 {
+    width: 380px;
+    height: 380px;
+    top: -180px;
+    left: -140px;
+  }
+
+  .intro-blob-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -160px;
+    right: -100px;
+  }
+
+  .intro .section-label,
+  .intro h2,
+  .intro-divider,
+  .intro-text {
+    position: relative;
+    z-index: 1;
   }
 
   .intro .section-label {
@@ -451,7 +487,12 @@
     }
 
     .intro {
-      padding: 80px 25px 40px;
+      padding: 60px 25px 30px;
+    }
+
+    .intro-blob-1,
+    .intro-blob-2 {
+      display: none;
     }
 
     .stats {
