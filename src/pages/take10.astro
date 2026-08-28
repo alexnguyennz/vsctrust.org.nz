@@ -33,12 +33,40 @@
   </section>
 
 
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stats-grid">
+
+      <div class="stat-item">
+        <p class="stat-number">2,000+</p>
+        <p class="stat-label">People supported every weekend</p>
+      </div>
+
+      <div class="stat-item">
+        <p class="stat-number">Fri &amp; Sat</p>
+        <p class="stat-label">10pm – 3am, every week</p>
+      </div>
+
+      <div class="stat-item">
+        <p class="stat-number">2</p>
+        <p class="stat-label">Cities: Wellington &amp; Auckland</p>
+      </div>
+
+      <div class="stat-item">
+        <p class="stat-number">100%</p>
+        <p class="stat-label">Free, safe &amp; non-judgemental</p>
+      </div>
+
+    </div>
+  </section>
+
+
   <!-- CHOOSE YOUR TAKE 10 -->
   <section class="locations">
 
     <div class="locations-heading">
       <p class="section-label">OUR LOCATIONS</p>
-      <h2>Choose your <span class="take10-font">Take 10</span></h2>
+      <h2>Choose your <span class="take10-font take10-orange">Take 10</span></h2>
     </div>
 
 
@@ -55,7 +83,7 @@
 
         <div class="card-content">
           <p class="card-number">01</p>
-          <h3><span class="take10-font">Take 10</span> Wellington</h3>
+          <h3><span class="take10-font take10-orange">Take 10</span> Wellington</h3>
 
           <p>
             Discover Take 10 Wellington and the team
@@ -81,7 +109,7 @@
 
         <div class="card-content">
           <p class="card-number">02</p>
-          <h3><span class="take10-font">Take 10</span> Auckland</h3>
+          <h3><span class="take10-font take10-orange">Take 10</span> Auckland</h3>
 
           <p>
             Discover Take 10 Auckland and the team
@@ -117,6 +145,11 @@
   .hero h1 {
     font-family: 'Fredoka', Arial, sans-serif;
     font-weight: 700;
+  }
+
+  /* Take 10 en orange partout sauf le hero */
+  .take10-orange {
+    color: #f15a24;
   }
 
 
@@ -182,7 +215,7 @@
   .intro {
     max-width: 900px;
     margin: 0 auto;
-    padding: 120px 30px 100px;
+    padding: 120px 30px 60px;
     text-align: center;
   }
 
@@ -205,6 +238,45 @@
   }
 
 
+  /* STATS */
+
+  .stats {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 30px 100px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    border-top: 1px solid #e5e5e2;
+    border-bottom: 1px solid #e5e5e2;
+    padding: 45px 0;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .stat-number {
+    font-family: 'Fredoka', Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 3.2vw, 40px);
+    color: #f15a24;
+    margin: 0 0 8px;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+
   /* LOCATIONS */
 
   .locations {
@@ -224,10 +296,6 @@
   .locations-heading h2 {
     font-size: clamp(42px, 5vw, 70px);
     margin: 0;
-  }
-
-  .locations-heading .take10-font {
-    color: inherit;
   }
 
 
@@ -334,7 +402,16 @@
     }
 
     .intro {
-      padding: 80px 25px;
+      padding: 80px 25px 40px;
+    }
+
+    .stats {
+      padding: 40px 20px 70px;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px 15px;
     }
 
     .locations {
