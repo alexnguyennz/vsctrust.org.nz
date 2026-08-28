@@ -9,6 +9,7 @@
       <div class="hero-overlay">
         <div class="hero-content">
           <p class="eyebrow">VULNERABLE SUPPORT CHARITABLE TRUST</p>
+          <span class="hero-badge">🌙 Every Friday &amp; Saturday night</span>
           <h1>Take 10</h1>
           <p class="hero-tagline">
             Creating a safe space to pause, rest and feel supported.
@@ -25,6 +26,8 @@
 
     <h2>A safe space when you need it.</h2>
 
+    <div class="intro-divider"></div>
+
     <p class="intro-text">
       Take 10 provides a welcoming and supportive space for people
       who need a moment to pause, rest, reconnect and feel safe
@@ -35,28 +38,34 @@
 
   <!-- STATS -->
   <section class="stats">
-    <div class="stats-grid">
+    <div class="stats-inner">
+      <div class="stats-grid">
 
-      <div class="stat-item">
-        <p class="stat-number">2,000+</p>
-        <p class="stat-label">People supported every weekend</p>
+        <div class="stat-item">
+          <p class="stat-icon">🙌</p>
+          <p class="stat-number">2,000+</p>
+          <p class="stat-label">People supported every weekend</p>
+        </div>
+
+        <div class="stat-item">
+          <p class="stat-icon">🌙</p>
+          <p class="stat-number">Fri &amp; Sat</p>
+          <p class="stat-label">10pm – 3am, every week</p>
+        </div>
+
+        <div class="stat-item">
+          <p class="stat-icon">📍</p>
+          <p class="stat-number">2</p>
+          <p class="stat-label">Cities: Wellington &amp; Auckland</p>
+        </div>
+
+        <div class="stat-item">
+          <p class="stat-icon">💛</p>
+          <p class="stat-number">100%</p>
+          <p class="stat-label">Free, safe &amp; non-judgemental</p>
+        </div>
+
       </div>
-
-      <div class="stat-item">
-        <p class="stat-number">Fri &amp; Sat</p>
-        <p class="stat-label">10pm – 3am, every week</p>
-      </div>
-
-      <div class="stat-item">
-        <p class="stat-number">2</p>
-        <p class="stat-label">Cities: Wellington &amp; Auckland</p>
-      </div>
-
-      <div class="stat-item">
-        <p class="stat-number">100%</p>
-        <p class="stat-label">Free, safe &amp; non-judgemental</p>
-      </div>
-
     </div>
   </section>
 
@@ -157,6 +166,7 @@
 
   .hero {
     width: 100%;
+    padding: 20px;
   }
 
   .hero-image {
@@ -164,6 +174,8 @@
     background-size: cover;
     background-position: center;
     position: relative;
+    border-radius: 24px;
+    overflow: hidden;
   }
 
   .hero-overlay {
@@ -171,7 +183,8 @@
     inset: 0;
     background: linear-gradient(
       to top,
-      rgba(0,0,0,0.65),
+      rgba(20,10,0,0.75),
+      rgba(241,90,36,0.08) 55%,
       rgba(0,0,0,0.05)
     );
 
@@ -192,6 +205,17 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 18px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #f15a24;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 50px;
+    margin-bottom: 22px;
   }
 
   .hero h1 {
@@ -226,7 +250,15 @@
   .intro h2 {
     font-size: clamp(30px, 3.5vw, 46px);
     line-height: 1.15;
-    margin: 0 0 30px;
+    margin: 0;
+  }
+
+  .intro-divider {
+    width: 60px;
+    height: 4px;
+    background: #f15a24;
+    border-radius: 4px;
+    margin: 26px auto 34px;
   }
 
   .intro-text {
@@ -241,23 +273,35 @@
   /* STATS */
 
   .stats {
+    background: #fdf1ea;
+    padding: 70px 5vw;
+  }
+
+  .stats-inner {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 60px 30px 100px;
   }
 
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    border-top: 1px solid #e5e5e2;
-    border-bottom: 1px solid #e5e5e2;
-    padding: 45px 0;
   }
 
   .stat-item {
     text-align: center;
     padding: 0 15px;
+    border-left: 1px solid rgba(241,90,36,0.2);
+  }
+
+  .stat-item:first-child {
+    border-left: none;
+  }
+
+  .stat-icon {
+    font-size: 28px;
+    margin: 0 0 10px;
+    line-height: 1;
   }
 
   .stat-number {
@@ -393,8 +437,13 @@
 
   @media (max-width: 800px) {
 
+    .hero {
+      padding: 10px;
+    }
+
     .hero-image {
       min-height: 550px;
+      border-radius: 16px;
     }
 
     .hero-content {
@@ -406,12 +455,24 @@
     }
 
     .stats {
-      padding: 40px 20px 70px;
+      padding: 50px 20px;
     }
 
     .stats-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 30px 15px;
+    }
+
+    .stat-item {
+      border-left: none;
+      border-top: 1px solid rgba(241,90,36,0.2);
+      padding-top: 25px;
+    }
+
+    .stat-item:first-child,
+    .stat-item:nth-child(2) {
+      border-top: none;
+      padding-top: 0;
     }
 
     .locations {
