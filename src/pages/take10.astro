@@ -5,16 +5,18 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-image-wrap">
-      <img src="/img/news/take10/take10-hero.jpg" alt="Take 10" class="hero-photo" />
-      <div class="hero-fade"></div>
-      <div class="hero-content">
-        <p class="eyebrow">VULNERABLE SUPPORT CHARITABLE TRUST</p>
-        <h1>Take 10</h1>
-        <p class="hero-tagline">
-          Creating a safe space to pause, rest and feel supported.
-        </p>
+    <div class="hero-image" style="background-image: url('/img/news/take10/take10-hero.jpg');">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <span class="hero-badge">🌙 Every Friday &amp; Saturday night</span>
+          <p class="eyebrow">VULNERABLE SUPPORT CHARITABLE TRUST</p>
+          <h1>Take 10</h1>
+          <p class="hero-tagline">
+            Creating a safe space to pause, rest and feel supported.
+          </p>
+        </div>
       </div>
+      <div class="hero-side-fade"></div>
     </div>
   </section>
 
@@ -172,45 +174,49 @@
     padding: 20px;
   }
 
-  .hero-image-wrap {
+  .hero-image {
+    min-height: 650px;
+    background-size: cover;
+    background-position: center;
     position: relative;
-    min-height: 420px;
     border-radius: 24px;
     overflow: hidden;
-    background: #ffffff;
   }
 
-  .hero-photo {
+  .hero-overlay {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    background: linear-gradient(
+      to top,
+      rgba(20,10,0,0.75),
+      rgba(241,90,36,0.08) 55%,
+      rgba(0,0,0,0.05)
+    );
+
+    display: flex;
+    align-items: flex-end;
+    z-index: 1;
   }
 
-  .hero-fade {
+  .hero-side-fade {
     position: absolute;
     inset: 0;
     background: linear-gradient(
       to right,
-      #ffffff 0%,
-      #ffffff 20%,
-      rgba(255,255,255,0.85) 35%,
-      rgba(255,255,255,0.3) 55%,
-      rgba(255,255,255,0) 75%
+      rgba(255,255,255,0.5) 0%,
+      rgba(255,255,255,0.15) 18%,
+      rgba(255,255,255,0) 35%
     );
+    z-index: 1;
+    pointer-events: none;
   }
 
   .hero-content {
+    color: white;
+    padding: 70px;
+    max-width: 850px;
     position: relative;
-    z-index: 1;
-    max-width: 520px;
-    padding: 60px 5vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 420px;
+    z-index: 2;
   }
 
   .eyebrow,
@@ -220,22 +226,31 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 18px;
-    color: #f15a24;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #f15a24;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 50px;
+    margin-bottom: 22px;
   }
 
   .hero h1 {
-    font-size: clamp(50px, 7vw, 90px);
+    font-size: clamp(60px, 9vw, 120px);
     line-height: 0.9;
-    margin: 0 0 20px;
-    color: #171717;
+    margin: 0 0 25px;
+    color: #ffffff;
   }
 
   .hero-tagline {
-    font-size: clamp(16px, 1.4vw, 20px);
-    line-height: 1.5;
-    max-width: 420px;
+    font-size: clamp(18px, 1.6vw, 24px);
+    line-height: 1.4;
+    max-width: 650px;
     margin: 0;
-    color: #444;
     font-weight: 400;
   }
 
@@ -501,26 +516,17 @@
       padding: 10px;
     }
 
-    .hero-image-wrap {
-      min-height: 500px;
+    .hero-image {
+      min-height: 550px;
       border-radius: 16px;
     }
 
-    .hero-fade {
-      background: linear-gradient(
-        to bottom,
-        #ffffff 0%,
-        #ffffff 35%,
-        rgba(255,255,255,0.6) 55%,
-        rgba(255,255,255,0) 80%
-      );
+    .hero-content {
+      padding: 35px 25px;
     }
 
-    .hero-content {
-      max-width: 100%;
-      padding: 30px 25px;
-      justify-content: flex-end;
-      min-height: 500px;
+    .hero-side-fade {
+      display: none;
     }
 
     .intro {
