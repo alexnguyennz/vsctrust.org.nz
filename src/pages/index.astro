@@ -4,7 +4,6 @@ import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
 import FullSection from "@/components/layouts/full-section.astro";
 import H2 from "@/components/headings/h2.astro";
-import Programmes from "@/components/pages/home/Programmes.astro";
 import { Quotes } from "@/components/pages/home/Quotes";
 import NewsCard from "@/components/pages/news/NewsCard.astro";
 import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
@@ -13,6 +12,7 @@ import take10Logo from "@/assets/img/logo/take10.png";
 import doSomeGoodLogo from "@/assets/img/logo/dosomegood-new.png";
 import doSomeGoodPhoto from "@/assets/img/programmes/dosomegood.jpg";
 import take10Photo from "@/assets/img/programmes/take10.jpg";
+import take10AucklandPhoto from "@/assets/img/programmes/take10-auckland.jpg";
 const posts = (await getCollection("posts", ({ data }) => data.published)).sort(
   (a, b) => Number(b.data.date) - Number(a.data.date),
 );
@@ -66,8 +66,43 @@ height={100}
 </div>
   </div>
 </div>
+
   <Section id="our-programmes">
-    <Programmes page={entry.data} />
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-900">Our Programmes</h2>
+      <div class="mx-auto mt-4 h-1 w-20 bg-orange-500"></div>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3">
+
+      <a href="/dosomegood/" class="group relative block h-80 overflow-hidden rounded-2xl">
+        <img src={doSomeGoodPhoto.src} alt="Do Some Good" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <p class="text-white text-xl font-bold">Do Some Good</p>
+          <p class="mt-1 text-sm text-white/80">Wellington, Porirua &amp; Hutt Valley</p>
+        </div>
+      </a>
+
+      <a href="/take10/" class="group relative block h-80 overflow-hidden rounded-2xl">
+        <img src={take10Photo.src} alt="Take 10 Wellington" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <p class="text-white text-xl font-bold">Take 10 Wellington</p>
+          <p class="mt-1 text-sm text-white/80">Fri &amp; Sat, 10pm–3am</p>
+        </div>
+      </a>
+
+      <a href="/take10-auckland/" class="group relative block h-80 overflow-hidden rounded-2xl">
+        <img src={take10AucklandPhoto.src} alt="Take 10 Auckland" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <p class="text-white text-xl font-bold">Take 10 Auckland</p>
+          <p class="mt-1 text-sm text-white/80">Tāmaki Makaurau</p>
+        </div>
+      </a>
+
+    </div>
   </Section>
 
   <Section>
@@ -99,7 +134,7 @@ height={100}
         <div class="md:order-1">
           <p class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-2">Take 10</p>
           <p class="text-gray-700 leading-relaxed">
-            A late night safe space operating from 10pm to 3am on Friday and Saturday nights on the corner of Courtenay Place and Taranaki St, promoting safe nights out for students and others in the city at night. We recently expanded into Tāmaki Makaurau, with Take 10 opening in Auckland in July 2025.
+            A late night safe space operating from 10pm to 3am on Friday and Saturday nights, promoting safe nights out for students and others in the city. Take 10 now runs in both Wellington, on the corner of Courtenay Place and Taranaki St, and in Tāmaki Makaurau (Auckland), where our second location opened in July 2025.
           </p>
           <a href="/take10/" class="inline-block mt-4 text-sm font-semibold underline underline-offset-4 hover:text-orange-500 transition">Explore Take 10 →</a>
         </div>
