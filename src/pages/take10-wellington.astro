@@ -1,0 +1,143 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import type { GetImageResult, ImageMetadata } from "astro";
+import { Image, getImage } from "astro:assets";
+
+import Layout from "@/components/layouts/Layout.astro";
+import Section from "@/components/layouts/section.astro";
+import FullSection from "@/components/layouts/full-section.astro";
+import H2 from "@/components/headings/h2.astro";
+import AnchorButton from "@/components/layouts/anchor-button.astro";
+
+import Banner from "@/components/Banner.astro";
+import poster from "@/assets/img/take10/poster.png";
+import Marquee from "@/components/ui/marquee";
+import { Gallery } from "@/components/Gallery";
+
+const sponsors = await getCollection("take10Sponsors");
+
+const entry = await getEntry("pages", "take10");
+if (!entry) throw new Error("Could not find page");
+
+const { Content } = await render(entry);
+
+// Generate thumbnails
+const images = await getCollection("take10Images");
+const importedImages = import.meta.glob("../content/take10Images/*");
+
+const thumbnails: { [key: string]: GetImageResult } = {};
+
+for await (const image of images) {
+  thumbnails[image.id] = await getImage({
+    src: importedImages[
+      `../content/take10Images/${image.id}.jpg`
+    ]() as unknown as string,
+    format: "webp",
+    width: 500,
+  });
+}
+---
+
+<Layout title={entry.data.title}>
+  <Banner title={entry.data.title} programme="take10" />
+
+  <Section>
+    <Gallery imageData={images} thumbnails={thumbnails} client:visible />
+  </Section>
+
+  <Section>
+    <Content />
+  </Section>
+
+  <Section>
+    <video
+      poster={poster.src}
+      preload="none"
+      controls
+      muted
+      class="mx-auto w-full max-w-2xl rounded-3xl shadow-lg"
+    >
+      <source src="/take10/video.webm" type="video/webm" />
+      <source src="/take10/video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </Section>
+
+  <Section>
+    <H2>How it works</H2>
+
+    <div class="grid gap-10 sm:grid-cols-2">
+      <div>
+        <p>We aim to:</p>
+        <ul>
+          <li>prevent harm</li>
+          <li>offer a safe & trusted space</li>
+          <li>provide friendly & welcoming support</li>
+        </ul>
+      </div>
+
+      <div>
+        <p>We keep our "safe zone" welcoming and non-judgmental by:</p>
+        <ul>
+          <li>always using positive language</li>
+          <li>greeting visitors with a smile, water, and lollies</li>
+          <li>providing a private space for those who need more attention</li>
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <Section class="text-center">
+    <H2>Want to help?</H2>
+
+    {
+      entry.data.wantToHelpDescription.map((description: string) => (
+        <p>{description}</p>
+      ))
+    }
+
+    <AnchorButton href="/volunteer/" class="bg-orange-400" rel="prefetch"
+      >Volunteer</AnchorButton
+    >
+  </Section>
+
+  <FullSection>
+    <H2>Sponsors</H2>
+
+    <Marquee
+      pauseOnHover
+      className="gap-10 [--duration:90s] [--gap:4rem]"
+      client:visible
+    >
+      {
+        sponsors.map(({ data: sponsor }) =>
+          sponsor.website ? (
+            <a
+              href={sponsor.website}
+              target="_blank"
+              rel="noopener nofollow noreferrer"
+            >
+              <Image
+                src={sponsor.image as ImageMetadata}
+                height="64"
+                alt={sponsor.name!}
+                loading="eager"
+                class="mx-auto"
+              />
+            </a>
+          ) : (
+            <div>
+              <Image
+                src={sponsor.image as ImageMetadata}
+                height="64"
+                alt={sponsor.name!}
+                loading="eager"
+                class="mx-auto"
+              />
+            </div>
+          ),
+        )
+      }
+    </Marquee>
+  </FullSection>
+</Layout>
