@@ -11,6 +11,8 @@ import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
 import { Picture, Image } from "astro:assets";
 import take10Logo from "@/assets/img/logo/take10.png";
 import doSomeGoodLogo from "@/assets/img/logo/dosomegood-new.png";
+import doSomeGoodPhoto from "@/assets/img/programmes/dosomegood.jpg";
+import take10Photo from "@/assets/img/programmes/take10.jpg";
 const posts = (await getCollection("posts", ({ data }) => data.published)).sort(
   (a, b) => Number(b.data.date) - Number(a.data.date),
 );
@@ -67,10 +69,51 @@ height={100}
   <Section id="our-programmes">
     <Programmes page={entry.data} />
   </Section>
+
   <Section>
-    <H2>Working together for a better tomorrow</H2>
-    <Content />
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <p class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-3">Who we are</p>
+      <H2>Working together for a better tomorrow</H2>
+      <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+        Vulnerable Support Charitable Trust is a leading provider of support to those who are at risk of harm across Wellington, Porirua, and Hutt Valley. At the heart of our holistic practice model is a firm basis of reducing harm, promoting respect, and working towards an equitable future.
+      </p>
+    </div>
+
+    <div class="grid gap-16">
+
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <img src={doSomeGoodPhoto.src} alt="Do Some Good" class="rounded-2xl w-full h-72 object-cover" />
+        <div>
+          <p class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-2">Do Some Good</p>
+          <p class="text-gray-700 leading-relaxed">
+            A food support programme connecting local businesses wanting to do good, providing fresh and tasty kai for tamariki and their whānau in schools and kindergartens across Wellington, Porirua, and Hutt Valley. We also undertake regular volunteer days at the schools and kindergartens we support.
+          </p>
+          <a href="/dosomegood/" class="inline-block mt-4 text-sm font-semibold underline underline-offset-4 hover:text-orange-500 transition">Explore Do Some Good →</a>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="md:order-2">
+          <img src={take10Photo.src} alt="Take 10" class="rounded-2xl w-full h-72 object-cover" />
+        </div>
+        <div class="md:order-1">
+          <p class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-2">Take 10</p>
+          <p class="text-gray-700 leading-relaxed">
+            A late night safe space operating from 10pm to 3am on Friday and Saturday nights on the corner of Courtenay Place and Taranaki St, promoting safe nights out for students and others in the city at night. We recently expanded into Tāmaki Makaurau, with Take 10 opening in Auckland in July 2025.
+          </p>
+          <a href="/take10/" class="inline-block mt-4 text-sm font-semibold underline underline-offset-4 hover:text-orange-500 transition">Explore Take 10 →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-16 bg-gray-50 rounded-2xl p-10 text-center max-w-3xl mx-auto">
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Our vision is for inclusive local communities where all people are prospering, able to achieve their goals, valued, and protected from harm. We respect all communities and provide support in a non-judgemental and inclusive manner.
+      </p>
+    </div>
   </Section>
+
   <HowYouCanHelp />
   <FullSection>
     <H2>What people are saying</H2>
