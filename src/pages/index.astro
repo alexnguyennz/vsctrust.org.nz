@@ -30,17 +30,17 @@ const { Content } = await render(entry);
     priority={true}
     fetchpriority="high"
   />
-  <div class="absolute inset-0 flex items-center justify-center bg-black/30">
+  <div class="absolute inset-0 flex items-center justify-center bg-black/20">
     <div class="text-center text-white">
       <span class="inline-block bg-orange-500 text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-4">Wellington &amp; Auckland</span>
-  <h1 class="text-3xl md:text-5xl font-bold">
+  <h1 class="text-2xl md:text-4xl font-bold" style="font-family: 'Fredoka', sans-serif;">
     Supporting people, strengthening communities
   </h1>
   <p class="mt-4 text-lg md:text-2xl">
     Working together for a better tomorrow
   </p>
       <div class="mt-6 flex justify-center items-center gap-6">
-  <a href="/take10/" class="group flex flex-col items-center gap-1.5 hover:opacity-90 transition">
+  <a href="/take10/" class="hover:opacity-80 transition">
     <Image
       src={take10Logo}
       width={100}
@@ -48,9 +48,8 @@ height={100}
       alt="Take 10"
       class="rounded-full object-contain"
     />
-    <span class="text-xs font-medium">Take 10</span>
   </a>
-  <a href="/dosomegood/" class="group flex flex-col items-center gap-1.5 hover:opacity-90 transition">
+  <a href="/dosomegood/" class="hover:opacity-80 transition">
     <Image
       src={doSomeGoodLogo}
       width={100}
@@ -58,7 +57,6 @@ height={100}
       alt="Do Some Good"
       class="rounded-full object-contain"
     />
-    <span class="text-xs font-medium">Do Some Good</span>
   </a>
 </div>
       <div class="mt-7">
@@ -88,6 +86,8 @@ height={100}
 </Layout>
 
 <style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap');
+
   html {
     scroll-behavior: smooth;
   }
