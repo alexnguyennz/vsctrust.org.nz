@@ -19,6 +19,7 @@ import Layout from "@/components/layouts/Layout.astro";
         </div>
       </div>
       <div class="hero-side-fade"></div>
+      <div class="hero-top-shade"></div>
     </div>
   </section>
 
@@ -211,6 +212,17 @@ import Layout from "@/components/layouts/Layout.astro";
       rgba(255,255,255,0.15) 18%,
       rgba(255,255,255,0) 35%
     );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-top-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 110px;
+    background: rgba(0,0,0,0.55);
     z-index: 1;
     pointer-events: none;
   }
