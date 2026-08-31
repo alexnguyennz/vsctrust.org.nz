@@ -65,26 +65,10 @@ pathname === "/" && "bg-white/10",
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          
-            href="/volunteer/"
-            className={cn(
-              navigationMenuTriggerStyle(),
-              "relative inline-block rounded-full border border-orange-500 bg-white px-4 py-2 font-semibold tracking-wide text-orange-500 no-underline transition-all hover:bg-orange-50 hover:no-underline focus:text-orange-500",
-            )}
-          >
-            Volunteer
-          </a>
+          <a href="/volunteer/" className={cn(navigationMenuTriggerStyle(), "relative inline-block rounded-full border border-orange-500 bg-white px-4 py-2 font-semibold tracking-wide text-orange-500 no-underline transition-all hover:bg-orange-50 hover:no-underline focus:text-orange-500")}>Volunteer</a>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          
-            href="/support-us/"
-            className={cn(
-              navigationMenuTriggerStyle(),
-              "relative inline-block rounded-full bg-orange-500 px-4 py-2 font-semibold tracking-wide text-white no-underline transition-all hover:bg-orange-600 hover:no-underline focus:text-white",
-            )}
-          >
-            Donate
-          </a>
+          <a href="/support-us/" className={cn(navigationMenuTriggerStyle(), "relative inline-block rounded-full bg-orange-500 px-4 py-2 font-semibold tracking-wide text-white no-underline transition-all hover:bg-orange-600 hover:no-underline focus:text-white")}>Donate</a>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
