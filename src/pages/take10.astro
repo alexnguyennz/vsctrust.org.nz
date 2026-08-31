@@ -191,9 +191,10 @@ import Layout from "@/components/layouts/Layout.astro";
     inset: 0;
     background: linear-gradient(
       to top,
-      rgba(20,10,0,0.75),
+      rgba(20,10,0,0.75) 0%,
       rgba(241,90,36,0.08) 55%,
-      rgba(0,0,0,0.05)
+      rgba(0,0,0,0.05) 75%,
+      rgba(0,0,0,0.35) 100%
     );
 
     display: flex;
@@ -549,16 +550,16 @@ import Layout from "@/components/layouts/Layout.astro";
       gap: 30px 15px;
     }
 
-    .stat-item {
-      border-left: none;
-      border-top: 1px solid rgba(241,90,36,0.2);
-      padding-top: 25px;
-    }
-
     .stat-item:first-child,
     .stat-item:nth-child(2) {
       border-top: none;
       padding-top: 0;
+    }
+
+    .stat-item {
+      border-left: none;
+      border-top: 1px solid rgba(241,90,36,0.2);
+      padding-top: 25px;
     }
 
     .locations {
