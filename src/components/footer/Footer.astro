@@ -16,21 +16,25 @@ import H2 from "@/components/headings/h2.astro";
 <NewsletterModal client:idle><Newsletter /></NewsletterModal>
 
 <footer
-  class="mt-auto border-t border-amber-50 bg-[#fefbf2] text-center text-sm lg:text-left"
+  class="mt-auto bg-white text-center text-sm lg:text-left"
   transition:animate="none"
 >
-  <Section class="space-y-9 py-12">
-    <nav class="grid justify-center gap-6 lg:grid-cols-5">
+  <Section class="space-y-12 py-16">
+    <nav class="grid justify-center gap-10 lg:grid-cols-5 lg:gap-6">
       {
         Object.keys(menuLinks).map((menu) => (
           <div>
-            <h2 class="mb-3 text-center text-sm font-semibold text-stone-400 lg:text-left">
+            <h2 class="mb-4 text-center text-xs font-bold uppercase tracking-wide text-orange-500 lg:text-left">
               {menu}
             </h2>
-            <ul class="space-y-3">
+            <ul class="space-y-2.5">
               {menuLinks[menu].map((link) => (
                 <li>
-                  <a href={link.href} rel="prefetch">
+                  
+                    href={link.href}
+                    rel="prefetch"
+                    class="text-stone-600 transition hover:text-orange-500"
+                  >
                     {link.title}
                   </a>
                 </li>
@@ -41,116 +45,131 @@ import H2 from "@/components/headings/h2.astro";
       }
 
       <div class="lg:col-span-2">
-        <h2
-          class="mb-3 text-center text-sm font-semibold text-stone-400 lg:text-left"
-        >
+        <h2 class="mb-4 text-center text-xs font-bold uppercase tracking-wide text-orange-500 lg:text-left">
           Contact Us
         </h2>
 
-        <ul class="mb-6 flex gap-6">
+        <ul class="mb-8 flex flex-col items-center gap-3 lg:flex-row lg:items-start lg:gap-6">
           <li class="flex items-center gap-1.5">
-            <Icon name="tabler:at" class="size-5" />
-            <a href="mailto:hello@vsctrust.org.nz">hello@vsctrust.org.nz</a>
+            <Icon name="tabler:at" class="size-5 text-orange-500" />
+            
+              href="mailto:hello@vsctrust.org.nz"
+              class="text-stone-600 transition hover:text-orange-500"
+            >
+              hello@vsctrust.org.nz
+            </a>
           </li>
           <li class="flex items-center gap-1.5">
-            <Icon name="tabler:phone" class="size-5" />
-            <a href="tel:+64274448672">+64 27 444 8672</a>
+            <Icon name="tabler:phone" class="size-5 text-orange-500" />
+            
+              href="tel:+64274448672"
+              class="text-stone-600 transition hover:text-orange-500"
+            >
+              +64 27 444 8672
+            </a>
           </li>
         </ul>
 
-        <h2
-          class="mb-3 text-center text-sm font-semibold text-stone-400 lg:text-left"
-        >
+        <h2 class="mb-4 text-center text-xs font-bold uppercase tracking-wide text-orange-500 lg:text-left">
           Follow Us
         </h2>
 
-        <div class="flex justify-center gap-9 lg:justify-start">
-          <div
-            class="flex flex-col items-center justify-center gap-3 lg:justify-start"
-          >
-            <Image
-              src={import("../../assets/img/logo/dosomegood.png")}
-              width="48"
-              height="48"
-              alt="Do Some Good logo"
-            />
+        <div class="flex justify-center gap-8 lg:justify-start">
+          <div class="flex flex-col items-center justify-center gap-3 lg:justify-start">
+            <div class="rounded-full bg-stone-50 p-2 transition hover:bg-orange-50">
+              <Image
+                src={import("../../assets/img/logo/dosomegood.png")}
+                width="40"
+                height="40"
+                alt="Do Some Good logo"
+                class="rounded-full"
+              />
+            </div>
 
             <div class="flex flex-wrap gap-3">
-              <a
+              
                 href="https://www.facebook.com/dosomegoodnewzealand/"
                 target="_blank"
                 rel="noreferrer noopener nofollow"
                 aria-label="Do Some Good Facebook page"
+                class="text-stone-500 transition hover:text-orange-500"
               >
                 <Icon name="tabler:brand-facebook" class="size-5" />
               </a>
 
-              <a
+              
                 href="https://www.instagram.com/dosomegoodnz/"
                 target="_blank"
                 rel="noreferrer noopener nofollow"
                 aria-label="Do Some Good Instagram page"
+                class="text-stone-500 transition hover:text-orange-500"
               >
                 <Icon name="tabler:brand-instagram" class="size-5" />
               </a>
             </div>
           </div>
 
-          <div
-            class="flex flex-col items-center justify-center gap-3 lg:justify-start"
-          >
-            <Image
-              src={import("../../assets/img/logo/take10.png")}
-              width="48"
-              height="48"
-              alt="Take 10 logo"
-            />
+          <div class="flex flex-col items-center justify-center gap-3 lg:justify-start">
+            <div class="rounded-full bg-stone-50 p-2 transition hover:bg-orange-50">
+              <Image
+                src={import("../../assets/img/logo/take10.png")}
+                width="40"
+                height="40"
+                alt="Take 10 logo"
+                class="rounded-full"
+              />
+            </div>
 
             <div class="flex flex-wrap gap-3">
-              <a
+              
                 href="https://www.facebook.com/take10wgtn/"
                 target="_blank"
                 rel="noreferrer noopener nofollow"
                 aria-label="Take 10 Facebook page"
+                class="text-stone-500 transition hover:text-orange-500"
               >
                 <Icon name="tabler:brand-facebook" class="size-5" />
               </a>
-              <a
+              
                 href="https://www.instagram.com/take10wgtn/"
                 target="_blank"
                 rel="noreferrer noopener nofollow"
                 aria-label="Take 10 Instagram page"
+                class="text-stone-500 transition hover:text-orange-500"
               >
                 <Icon name="tabler:brand-instagram" class="size-5" />
               </a>
             </div>
           </div>
 
-          <div
-            class="flex flex-col items-center justify-center gap-3 lg:justify-start"
-          >
-            <Image
-              src={import("../../assets/img/logo/take10-auckland.png")}
-              width="48"
-              height="48"
-              alt="Take 10 Auckland logo"
-            />
+          <div class="flex flex-col items-center justify-center gap-3 lg:justify-start">
+            <div class="rounded-full bg-stone-50 p-2 transition hover:bg-orange-50">
+              <Image
+                src={import("../../assets/img/logo/take10-auckland.png")}
+                width="40"
+                height="40"
+                alt="Take 10 Auckland logo"
+                class="rounded-full"
+              />
+            </div>
 
             <div class="flex flex-wrap gap-3">
-              <a
+              
                 href="https://www.facebook.com/take10auckland/"
                 target="_blank"
                 rel="noreferrer noopener nofollow"
                 aria-label="Take 10 Auckland Facebook page"
+                class="text-stone-500 transition hover:text-orange-500"
               >
                 <Icon name="tabler:brand-facebook" class="size-5" />
               </a>
 
-              <a
+              
                 href="https://www.instagram.com/take10auckland/"
                 target="_blank"
                 rel="noreferrer noopener nofollow"
                 aria-label="Take 10 Auckland Instagram page"
+                class="text-stone-500 transition hover:text-orange-500"
               >
                 <Icon name="tabler:brand-instagram" class="size-5" />
               </a>
@@ -160,21 +179,24 @@ import H2 from "@/components/headings/h2.astro";
       </div>
     </nav>
 
-    <div class="flex flex-col items-center gap-3">
+    <div class="border-t border-stone-100 pt-10">
       <Section class="text-left">
         <Newsletter />
       </Section>
+    </div>
 
-      <p class="text-sm text-stone-400">
+    <div class="flex flex-col items-center gap-2 border-t border-stone-100 pt-8">
+      <p class="text-xs text-stone-400">
         &copy;
         {new Date().getFullYear()} Vulnerable Support Charitable Trust
       </p>
 
-      <p class="text-sm text-stone-400">
+      <p class="text-xs text-stone-400">
         We are a registered charity
-        <a
+        
           href="https://register.charities.govt.nz/Charity/CC55753"
           target="_blank"
+          class="underline underline-offset-2 hover:text-orange-500"
         >
           CC55753</a
         >
