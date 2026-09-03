@@ -2,11 +2,9 @@
 _schema: trust
 name: Jordan Vearer
 position: 'Take 10 Auckland Team Leader '
-image: >-
-  /src/content/team/avatar-profile-icon-in-flat-style-male-user-profile-illustration-on-isolated-background-man-profile-sign-business-concept-vector.jpg
-excerpt: >-
-  I'm originally from Canada but moved to Aotearoa 3 years ago to pursue rugby
-  and attend the University of Auckland. Before moving I fell in love with
+image: /src/content/team/jordan.
+excerpt: I'm originally from Canada but moved to Aotearoa 3 years ago to pursue
+  rugby and attend the University of Auckland. Before moving I fell in love with
   volunteering and working in harm reduction. I think it's such a unique and fun
   community of people with big hearts and a good sense of humour.   There is
   something incredibly special about getting to be a safe person for someone
