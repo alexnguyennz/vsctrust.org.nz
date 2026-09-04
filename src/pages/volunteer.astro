@@ -15,12 +15,10 @@ const title = "Volunteer";
 ---
 
 <Layout title={title}>
-
   <!-- HERO -->
   <section class="volunteer-hero">
     <div class="volunteer-hero-content">
       <div class="volunteer-hero-text">
-
         <p class="volunteer-eyebrow">GET INVOLVED</p>
 
         <h1>Make a difference.</h1>
@@ -33,11 +31,9 @@ const title = "Volunteer";
           Join our community of volunteers and help us support people
           experiencing vulnerability across Aotearoa.
         </p>
-
       </div>
     </div>
   </section>
-
 
   <!-- PROGRAMMES -->
   <Section>
@@ -48,12 +44,10 @@ const title = "Volunteer";
         <div class="orange-line"></div>
       </div>
 
-
       <div class="volunteer-cards">
 
         <!-- TAKE 10 -->
         <a href="/take10/" class="volunteer-card">
-
           <div class="volunteer-logo">
             <Image
               src={import("@/assets/img/logo/take10.png")}
@@ -75,13 +69,10 @@ const title = "Volunteer";
           </p>
 
           <span class="learn-more">Learn more</span>
-
         </a>
-
 
         <!-- DO SOME GOOD -->
         <a href="/dosomegood/" class="volunteer-card">
-
           <div class="volunteer-logo dosomegood-logo">
             <Image
               src={import("@/assets/img/logo/dosomegood.png")}
@@ -104,11 +95,9 @@ const title = "Volunteer";
           </p>
 
           <span class="learn-more">Learn more</span>
-
         </a>
 
       </div>
-
 
       <!-- TAKE 10 AUCKLAND INFORMATION -->
       <div class="take10-auckland-note">
@@ -116,36 +105,25 @@ const title = "Volunteer";
         Volunteers are needed on Friday or Saturday nights from 10pm to 3am.
       </div>
 
-
       <!-- APPLY BUTTON -->
       <div class="apply-wrapper">
-
-        <AnchorButton
-          href="#volunteer-form"
-          class="apply-button"
-        >
+        <AnchorButton href="#volunteer-form" class="apply-button">
           Apply to Volunteer →
         </AnchorButton>
 
         <p>We’d love to hear from you!</p>
-
       </div>
 
     </div>
   </Section>
 
-
   <!-- FORM -->
   <Section>
     <div id="volunteer-form">
-
       <Form name="volunteer">
 
         <div>
-          <Label htmlFor="name" className="required">
-            Name
-          </Label>
-
+          <Label htmlFor="name" className="required">Name</Label>
           <Input
             className="shadow-border"
             type="text"
@@ -155,12 +133,8 @@ const title = "Volunteer";
           />
         </div>
 
-
         <div>
-          <Label htmlFor="email" className="required">
-            Email
-          </Label>
-
+          <Label htmlFor="email" className="required">Email</Label>
           <Input
             className="shadow-border"
             type="email"
@@ -170,21 +144,13 @@ const title = "Volunteer";
           />
         </div>
 
-
         <div class="sm:col-span-2">
-          <Label htmlFor="role" className="required">
-            Role
-          </Label>
-
+          <Label htmlFor="role" className="required">Role</Label>
           <RoleSelect client:load />
         </div>
 
-
         <div class="sm:col-span-2">
-          <Label htmlFor="message" className="required">
-            Message
-          </Label>
-
+          <Label htmlFor="message" className="required">Message</Label>
           <Textarea
             className="shadow-border"
             id="message"
@@ -195,18 +161,41 @@ const title = "Volunteer";
         </div>
 
       </Form>
-
     </div>
   </Section>
-
 </Layout>
 
-
 <style>
+  /* ========================================
+     VOLUNTEER PAGE — HEADER
+     ======================================== */
 
-  /* =========================
-     VOLUNTEER HERO
-     ========================= */
+  /* Menu text in BLACK */
+  :global(header a) {
+    color: #171717 !important;
+  }
+
+  :global(header a:hover) {
+    color: #171717 !important;
+  }
+
+  /* Text inside the round buttons stays WHITE */
+  :global(header a.rounded-full) {
+    color: #ffffff !important;
+  }
+
+  :global(header a.rounded-full:hover) {
+    color: #ffffff !important;
+  }
+
+  :global(header a.rounded-full *) {
+    color: #ffffff !important;
+  }
+
+
+  /* ========================================
+     HERO
+     ======================================== */
 
   .volunteer-hero {
     background: #fffaf0;
@@ -216,7 +205,6 @@ const title = "Volunteer";
     position: relative;
     overflow: hidden;
   }
-
 
   .volunteer-hero::after {
     content: "";
@@ -230,7 +218,6 @@ const title = "Volunteer";
     opacity: 0.55;
   }
 
-
   .volunteer-hero-content {
     width: 100%;
     max-width: 1200px;
@@ -240,13 +227,11 @@ const title = "Volunteer";
     z-index: 1;
   }
 
-
   .volunteer-hero-text {
     max-width: 650px;
     margin-left: auto;
     margin-right: 40px;
   }
-
 
   .volunteer-eyebrow {
     color: #f47b20;
@@ -256,7 +241,6 @@ const title = "Volunteer";
     margin-bottom: 18px;
   }
 
-
   .volunteer-hero h1 {
     color: #171717;
     font-size: clamp(48px, 6vw, 76px);
@@ -265,7 +249,6 @@ const title = "Volunteer";
     margin: 0 0 8px;
     font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
   }
-
 
   .volunteer-hero h2 {
     color: #f47b20;
@@ -277,14 +260,12 @@ const title = "Volunteer";
     font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
   }
 
-
   .orange-line {
     width: 70px;
     height: 4px;
     background: #f47b20;
     margin: 28px 0;
   }
-
 
   .volunteer-intro {
     color: #3f4650;
@@ -295,20 +276,18 @@ const title = "Volunteer";
   }
 
 
-  /* =========================
+  /* ========================================
      PROGRAMMES
-     ========================= */
+     ======================================== */
 
   .volunteer-programmes {
     padding: 35px 0 20px;
   }
 
-
   .volunteer-heading {
     text-align: center;
     margin-bottom: 42px;
   }
-
 
   .volunteer-heading h2 {
     color: #171717;
@@ -319,15 +298,9 @@ const title = "Volunteer";
     font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
   }
 
-
   .volunteer-heading .orange-line {
     margin: 18px auto 0;
   }
-
-
-  /* =========================
-     CARDS
-     ========================= */
 
   .volunteer-cards {
     display: grid;
@@ -336,7 +309,6 @@ const title = "Volunteer";
     max-width: 900px;
     margin: 0 auto;
   }
-
 
   .volunteer-card {
     min-height: 500px;
@@ -355,27 +327,15 @@ const title = "Volunteer";
     text-decoration: none !important;
   }
 
-
   .volunteer-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.09);
     text-decoration: none !important;
   }
 
-
-  /* IMPORTANT:
-     No underline anywhere inside the cards,
-     including when hovering.
-  */
-
-  .volunteer-card,
-  .volunteer-card:hover,
-  .volunteer-card:focus,
-  .volunteer-card:active,
   .volunteer-card * {
     text-decoration: none !important;
   }
-
 
   .volunteer-logo {
     width: 150px;
@@ -386,18 +346,15 @@ const title = "Volunteer";
     margin-bottom: 20px;
   }
 
-
   .volunteer-logo img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
 
-
   .dosomegood-logo {
     width: 180px;
   }
-
 
   .volunteer-card h3 {
     color: #171717;
@@ -407,7 +364,6 @@ const title = "Volunteer";
     font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
   }
 
-
   .volunteer-card p {
     color: #454545;
     font-size: 18px;
@@ -415,11 +371,6 @@ const title = "Volunteer";
     margin: 0 0 20px;
     max-width: 430px;
   }
-
-
-  /* =========================
-     LEARN MORE BUTTON
-     ========================= */
 
   .learn-more {
     margin-top: auto;
@@ -429,11 +380,8 @@ const title = "Volunteer";
     color: #f47b20;
     font-weight: 700;
     font-size: 16px;
-    transition:
-      background 0.2s ease,
-      color 0.2s ease;
+    transition: all 0.2s ease;
   }
-
 
   .volunteer-card:hover .learn-more {
     background: #f47b20;
@@ -441,9 +389,9 @@ const title = "Volunteer";
   }
 
 
-  /* =========================
-     TAKE 10 AUCKLAND
-     ========================= */
+  /* ========================================
+     AUCKLAND NOTE
+     ======================================== */
 
   .take10-auckland-note {
     max-width: 760px;
@@ -454,21 +402,19 @@ const title = "Volunteer";
     line-height: 1.5;
   }
 
-
   .take10-auckland-note strong {
     color: #171717;
   }
 
 
-  /* =========================
+  /* ========================================
      APPLY BUTTON
-     ========================= */
+     ======================================== */
 
   .apply-wrapper {
     text-align: center;
     margin-top: 38px;
   }
-
 
   .apply-button {
     background: #f47b20 !important;
@@ -477,7 +423,6 @@ const title = "Volunteer";
     border-radius: 30px !important;
   }
 
-
   .apply-wrapper p {
     margin-top: 12px;
     color: #454545;
@@ -485,19 +430,9 @@ const title = "Volunteer";
   }
 
 
-  /* =========================
-     VOLUNTEER PAGE HEADER
-     BLACK LOGO
-     ========================= */
-
-  :global(#site-header img[alt*="Vulnerable Support"]) {
-    filter: brightness(0);
-  }
-
-
-  /* =========================
+  /* ========================================
      MOBILE
-     ========================= */
+     ======================================== */
 
   @media (max-width: 768px) {
 
@@ -505,32 +440,26 @@ const title = "Volunteer";
       min-height: 450px;
     }
 
-
     .volunteer-hero-content {
       padding: 70px 25px;
     }
-
 
     .volunteer-hero-text {
       margin: 0;
     }
 
-
     .volunteer-intro {
       font-size: 18px;
     }
-
 
     .volunteer-cards {
       grid-template-columns: 1fr;
       max-width: 500px;
     }
 
-
     .volunteer-card {
       min-height: 460px;
     }
 
   }
-
 </style>
