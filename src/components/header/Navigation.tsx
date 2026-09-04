@@ -16,6 +16,7 @@ import { type LucideIcon } from "lucide-react";
 import { type Icon } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { menuLinks } from "@/lib/links.tsx";
+
 export function Navigation({ pathname }: { pathname: string }) {
   return (
     <NavigationMenu>
@@ -25,8 +26,8 @@ export function Navigation({ pathname }: { pathname: string }) {
             href="/"
             className={cn(
               navigationMenuTriggerStyle(),
-             "hover:bg-white/10 focus:bg-white/10",
-pathname === "/" && "bg-white/10",
+              "hover:bg-white/10 focus:bg-white/10",
+              pathname === "/" && "bg-white/10",
             )}
           >
             Home
@@ -74,35 +75,38 @@ pathname === "/" && "bg-white/10",
     </NavigationMenu>
   );
 }
-const ListItem = forwardRef
-  ElementRef<"a">,
-  ComponentPropsWithoutRef<"a"> & {
-    Icon: LucideIcon | Icon | (() => JSX.Element);
-    pathname: string;
-  }
->(({ className, title, children, href, pathname, Icon, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        
-          ref={ref}
-          href={href}
-          className={cn(
-            "group flex select-none items-center gap-3 space-y-1 rounded-md px-3 py-1.5 no-underline outline-none transition-colors hover:bg-stone-100 focus:bg-stone-100",
-            className,
-            href && pathname.startsWith(href) && "bg-stone-100",
-          )}
-          rel="prefetch"
-          {...props}
-        >
-          <Icon className={"size-6"} />
-          <div>
-            <div className="font-semibold leading-none">{title}</div>
-            <span className="text-base">{children}</span>
-          </div>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
+
+interface ListItemProps extends ComponentPropsWithoutRef<"a"> {
+  Icon: LucideIcon | Icon | (() => JSX.Element);
+  pathname: string;
+  title: string;
+}
+
+const ListItem = forwardRef<ElementRef<"a">, ListItemProps>(
+  ({ className, title, children, href, pathname, Icon, ...props }, ref) => {
+    return (
+      <li>
+        <NavigationMenuLink asChild>
+          
+            ref={ref}
+            href={href}
+            className={cn(
+              "group flex select-none items-center gap-3 space-y-1 rounded-md px-3 py-1.5 no-underline outline-none transition-colors hover:bg-stone-100 focus:bg-stone-100",
+              className,
+              href && pathname.startsWith(href) && "bg-stone-100",
+            )}
+            rel="prefetch"
+            {...props}
+          >
+            <Icon className={"size-6"} />
+            <div>
+              <div className="font-semibold leading-none">{title}</div>
+              <span className="text-base">{children}</span>
+            </div>
+          </a>
+        </NavigationMenuLink>
+      </li>
+    );
+  },
+);
 ListItem.displayName = "ListItem";
