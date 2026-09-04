@@ -3,9 +3,6 @@ import { Image } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
-import AnchorButton from "@/components/layouts/anchor-button.astro";
-
-import Banner from "@/components/Banner.astro";
 import ProgrammeGrid from "@/components/programmes/ProgrammeGrid.astro";
 import ProgrammeCard from "@/components/programmes/ProgrammeCard.astro";
 import Form from "@/components/Form.astro";
@@ -18,63 +15,140 @@ const title = "Volunteer";
 ---
 
 <Layout title={title}>
-  <Banner title={title} programme="volunteer" />
 
-  <Section>
-    <Image
-      src={import("@/assets/img/home/volunteer.png")}
-      width="77"
-      height="77"
-      alt="volunteer image"
-      fetchpriority="high"
-      loading="eager"
-      class="mx-auto"
-      transition:name="volunteer"
-    /></Section
-  >
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-gray-50">
+    <div class="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 lg:grid-cols-2 lg:px-8 lg:py-24">
 
-  <Section>
-    <ProgrammeGrid>
-      <ProgrammeCard programme="dosomegood">
-        <p>
-          Help influence positive change for tamariki living in hardship here in
-          Wellington.
+      <!-- Text -->
+      <div class="max-w-xl">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-orange-500">
+          Get involved
         </p>
-        <p class="mb-0">
-          We're looking for volunteers to come out with us to schools, and have
-          a great day with tamariki in need.
+
+        <h1 class="text-5xl font-bold leading-tight text-gray-900 sm:text-6xl">
+          Make a difference.
+        </h1>
+
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          Give your time, meet amazing people and make a real difference
+          in your community.
         </p>
-      </ProgrammeCard>
 
-      <ProgrammeCard programme="take10">
-        <p>Help provide a safe zone on Courtenay Place.</p>
-        <p>
-          We’re looking for volunteers on Friday or Saturday nights from 10pm to
-          3am.
-        </p>
-      </ProgrammeCard>
+        <a
+          href="#volunteer-programmes"
+          class="mt-8 inline-flex items-center rounded-full bg-orange-500 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-orange-600"
+        >
+          Find your programme
+          <span class="ml-2">↓</span>
+        </a>
+      </div>
 
-      <ProgrammeCard programme="take10-auckland">
-        <p>Take 10 Auckland Help provide a safe zone on Auckland Central.</p>
+      <!-- Image -->
+      <div class="relative">
+        <div class="overflow-hidden rounded-3xl">
+          <Image
+            src={import("@/assets/img/home/volunteer.png")}
+            width="900"
+            height="650"
+            alt="Volunteers making a difference"
+            class="h-[420px] w-full object-cover"
+          />
+        </div>
+      </div>
 
-        <p>
-          We’re looking for volunteers on Friday or Saturday nights from 10pm to
-          3am.
-        </p>
-      </ProgrammeCard>
-    </ProgrammeGrid>
-
-    <div class="mt-6 flex justify-center">
-      <AnchorButton href="/take10/volunteer.pdf" class="bg-gray-600 text-sm"
-        >Take 10 Role Description</AnchorButton
-      >
     </div>
-  </Section>
+  </section>
 
+
+  <!-- PROGRAMMES -->
+  <section id="volunteer-programmes" class="bg-white py-20 lg:py-28">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-orange-500">
+          Choose where you want to make a difference
+        </p>
+
+        <h2 class="text-4xl font-bold text-gray-900 sm:text-5xl">
+          Where would you like to volunteer?
+        </h2>
+
+        <p class="mt-5 text-lg leading-8 text-gray-600">
+          Choose the programme that feels right for you and join us in
+          making a positive impact in the community.
+        </p>
+      </div>
+
+
+      <ProgrammeGrid>
+
+        <ProgrammeCard programme="take10-auckland">
+          <p>
+            Join Take 10 Auckland and help create a safe and welcoming space
+            in Auckland Central.
+          </p>
+
+          <p class="mb-0">
+            Volunteers are needed on Friday and Saturday nights from 10pm to 3am.
+          </p>
+        </ProgrammeCard>
+
+
+        <ProgrammeCard programme="take10">
+          <p>
+            Join Take 10 Wellington and help provide a safe zone on
+            Courtenay Place.
+          </p>
+
+          <p class="mb-0">
+            Volunteers are needed on Friday and Saturday nights from 10pm to 3am.
+          </p>
+        </ProgrammeCard>
+
+
+        <ProgrammeCard programme="dosomegood">
+          <p>
+            Help create positive experiences for tamariki living in hardship
+            here in Wellington.
+          </p>
+
+          <p class="mb-0">
+            Come along to schools, support our team and spend a meaningful
+            day with tamariki.
+          </p>
+        </ProgrammeCard>
+
+      </ProgrammeGrid>
+
+    </div>
+  </section>
+
+
+  <!-- CALL TO ACTION -->
+  <section class="bg-gray-50 py-20">
+    <div class="mx-auto max-w-3xl px-6 text-center lg:px-8">
+
+      <h2 class="text-4xl font-bold text-gray-900">
+        Ready to get involved?
+      </h2>
+
+      <p class="mt-5 text-lg leading-8 text-gray-600">
+        Fill out the form below and tell us a little about yourself.
+        We’ll be in touch with you soon.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- FORM -->
   <Section>
     <Form name="volunteer">
+
       <div>
         <Label htmlFor="name" className="required">Name</Label>
+
         <Input
           className="shadow-border"
           type="text"
@@ -84,8 +158,10 @@ const title = "Volunteer";
         />
       </div>
 
+
       <div>
         <Label htmlFor="email" className="required">Email</Label>
+
         <Input
           className="shadow-border"
           type="email"
@@ -95,21 +171,31 @@ const title = "Volunteer";
         />
       </div>
 
+
       <div class="sm:col-span-2">
-        <Label htmlFor="role" className="required">Role</Label>
+        <Label htmlFor="role" className="required">
+          Which programme would you like to volunteer with?
+        </Label>
+
         <RoleSelect client:load />
       </div>
 
+
       <div class="sm:col-span-2">
-        <Label htmlFor="message" className="required">Message</Label>
+        <Label htmlFor="message" className="required">
+          Message
+        </Label>
+
         <Textarea
           className="shadow-border"
           id="message"
           name="message"
-          rows={4}
+          rows={5}
           required
         />
       </div>
+
     </Form>
   </Section>
+
 </Layout>
