@@ -5,7 +5,6 @@ import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
 import AnchorButton from "@/components/layouts/anchor-button.astro";
 
-import Banner from "@/components/Banner.astro";
 import Form from "@/components/Form.astro";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -16,21 +15,30 @@ const title = "Volunteer";
 ---
 
 <Layout title={title}>
-  <Banner title={title} programme="volunteer" />
 
-  <Section>
-    <Image
-      src={import("@/assets/img/home/volunteer.png")}
-      width="77"
-      height="77"
-      alt="volunteer image"
-      fetchpriority="high"
-      loading="eager"
-      class="mx-auto"
-      transition:name="volunteer"
-    />
-  </Section>
+  <!-- Volunteer Hero -->
+  <section class="bg-black text-white">
+    <div class="mx-auto flex min-h-[460px] max-w-7xl items-center justify-end px-8 py-20 lg:px-16">
+      <div class="w-full max-w-2xl lg:mr-8">
+        <h1 class="text-5xl font-bold leading-tight lg:text-6xl">
+          Make a difference.
+        </h1>
 
+        <p class="mt-2 text-4xl font-normal italic text-orange-500 lg:text-5xl">
+          Be a volunteer.
+        </p>
+
+        <div class="mt-6 h-1 w-20 bg-orange-500"></div>
+
+        <p class="mt-8 max-w-xl text-xl leading-relaxed text-white">
+          Join our community of volunteers and help us support people
+          experiencing vulnerability across Aotearoa.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Where would you like to help? -->
   <Section>
     <div class="mb-10 text-center">
       <h2 class="text-4xl font-normal">Where would you like to help?</h2>
@@ -44,13 +52,13 @@ const title = "Volunteer";
         href="/take10/"
         class="group flex flex-col rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
       >
-        <div class="mb-6 flex justify-center">
+        <div class="mb-6 flex h-32 items-center justify-center">
           <Image
             src={import("@/assets/img/logo/take10.png")}
             width="120"
             height="120"
             alt="Take 10 logo"
-            class="size-28 object-contain"
+            class="max-h-28 max-w-28 object-contain"
           />
         </div>
 
@@ -77,13 +85,13 @@ const title = "Volunteer";
         href="/take10-auckland/"
         class="group flex flex-col rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
       >
-        <div class="mb-6 flex justify-center">
+        <div class="mb-6 flex h-32 items-center justify-center">
           <Image
             src={import("@/assets/img/logo/take10-auckland.png")}
             width="120"
             height="120"
             alt="Take 10 Auckland logo"
-            class="size-28 object-contain"
+            class="max-h-28 max-w-28 object-contain"
           />
         </div>
 
@@ -110,13 +118,13 @@ const title = "Volunteer";
         href="/dosomegood/"
         class="group flex flex-col rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
       >
-        <div class="mb-6 flex justify-center">
+        <div class="mb-6 flex h-32 items-center justify-center">
           <Image
             src={import("@/assets/img/logo/dosomegood.png")}
             width="120"
             height="120"
             alt="Do Some Good logo"
-            class="size-28 object-contain"
+            class="max-h-28 max-w-36 object-contain"
           />
         </div>
 
@@ -142,7 +150,7 @@ const title = "Volunteer";
     </div>
 
     <div class="mt-8 text-center">
-      <AnchorButton href="/take10/volunteer.pdf" class="bg-orange-500 text-sm">
+      <AnchorButton href="#volunteer-form" class="bg-orange-500 text-sm">
         Apply to Volunteer →
       </AnchorButton>
 
@@ -152,45 +160,49 @@ const title = "Volunteer";
     </div>
   </Section>
 
-  <Section>
-    <Form name="volunteer">
-      <div>
-        <Label htmlFor="name" className="required">Name</Label>
-        <Input
-          className="shadow-border"
-          type="text"
-          id="name"
-          name="name"
-          required
-        />
-      </div>
+  <!-- Volunteer Form -->
+  <div id="volunteer-form">
+    <Section>
+      <Form name="volunteer">
+        <div>
+          <Label htmlFor="name" className="required">Name</Label>
+          <Input
+            className="shadow-border"
+            type="text"
+            id="name"
+            name="name"
+            required
+          />
+        </div>
 
-      <div>
-        <Label htmlFor="email" className="required">Email</Label>
-        <Input
-          className="shadow-border"
-          type="email"
-          id="email"
-          name="email"
-          required
-        />
-      </div>
+        <div>
+          <Label htmlFor="email" className="required">Email</Label>
+          <Input
+            className="shadow-border"
+            type="email"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
 
-      <div class="sm:col-span-2">
-        <Label htmlFor="role" className="required">Role</Label>
-        <RoleSelect client:load />
-      </div>
+        <div class="sm:col-span-2">
+          <Label htmlFor="role" className="required">Role</Label>
+          <RoleSelect client:load />
+        </div>
 
-      <div class="sm:col-span-2">
-        <Label htmlFor="message" className="required">Message</Label>
-        <Textarea
-          className="shadow-border"
-          id="message"
-          name="message"
-          rows={4}
-          required
-        />
-      </div>
-    </Form>
-  </Section>
+        <div class="sm:col-span-2">
+          <Label htmlFor="message" className="required">Message</Label>
+          <Textarea
+            className="shadow-border"
+            id="message"
+            name="message"
+            rows={4}
+            required
+          />
+        </div>
+      </Form>
+    </Section>
+  </div>
+
 </Layout>
