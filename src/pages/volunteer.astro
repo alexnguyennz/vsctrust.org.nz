@@ -1,156 +1,180 @@
 ---
-import { Image } from "astro:assets";
-
 import Layout from "@/components/layouts/Layout.astro";
-import Section from "@/components/layouts/section.astro";
-import ProgrammeGrid from "@/components/programmes/ProgrammeGrid.astro";
-import ProgrammeCard from "@/components/programmes/ProgrammeCard.astro";
-import Form from "@/components/Form.astro";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { RoleSelect } from "@/components/pages/volunteer/RoleSelect";
-import { Textarea } from "@/components/ui/textarea";
-
-const title = "Volunteer";
 ---
 
-<Layout title={title}>
+<Layout title="Volunteer">
 
   <!-- HERO -->
-  <section class="relative overflow-hidden bg-gray-50">
-    <div class="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 lg:grid-cols-2 lg:px-8 lg:py-24">
+  <section class="volunteer-hero">
+    <div class="volunteer-hero-image"></div>
 
-      <!-- Text -->
-      <div class="max-w-xl">
-        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-orange-500">
-          Get involved
-        </p>
+    <div class="volunteer-hero-content">
+      <h1>
+        Make a difference.
+        <span>Be a volunteer.</span>
+      </h1>
 
-        <h1 class="text-5xl font-bold leading-tight text-gray-900 sm:text-6xl">
-          Make a difference.
-        </h1>
+      <div class="hero-line"></div>
 
-        <p class="mt-6 text-lg leading-8 text-gray-600">
-          Give your time, meet amazing people and make a real difference
-          in your community.
-        </p>
-
-        <a
-          href="#volunteer-programmes"
-          class="mt-8 inline-flex items-center rounded-full bg-orange-500 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-orange-600"
-        >
-          Find your programme
-          <span class="ml-2">↓</span>
-        </a>
-      </div>
-
-      <!-- Image -->
-      <div class="relative">
-        <div class="overflow-hidden rounded-3xl">
-          <Image
-            src={import("@/assets/img/home/volunteer.png")}
-            width="900"
-            height="650"
-            alt="Volunteers making a difference"
-            class="h-[420px] w-full object-cover"
-          />
-        </div>
-      </div>
-
+      <p>
+        Join our community of volunteers<br />
+        and help us support people experiencing<br />
+        vulnerability across Aotearoa.
+      </p>
     </div>
   </section>
 
 
-  <!-- PROGRAMMES -->
-  <section id="volunteer-programmes" class="bg-white py-20 lg:py-28">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+  <!-- WHERE WOULD YOU LIKE TO HELP? -->
+  <section class="volunteer-programmes">
+    <div class="section-heading">
+      <h2>Where would you like to help?</h2>
 
-      <div class="mx-auto mb-12 max-w-2xl text-center">
-        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-orange-500">
-          Choose where you want to make a difference
-        </p>
-
-        <h2 class="text-4xl font-bold text-gray-900 sm:text-5xl">
-          Where would you like to volunteer?
-        </h2>
-
-        <p class="mt-5 text-lg leading-8 text-gray-600">
-          Choose the programme that feels right for you and join us in
-          making a positive impact in the community.
-        </p>
-      </div>
-
-
-      <ProgrammeGrid>
-
-        <ProgrammeCard programme="take10-auckland">
-          <p>
-            Join Take 10 Auckland and help create a safe and welcoming space
-            in Auckland Central.
-          </p>
-
-          <p class="mb-0">
-            Volunteers are needed on Friday and Saturday nights from 10pm to 3am.
-          </p>
-        </ProgrammeCard>
-
-
-        <ProgrammeCard programme="take10">
-          <p>
-            Join Take 10 Wellington and help provide a safe zone on
-            Courtenay Place.
-          </p>
-
-          <p class="mb-0">
-            Volunteers are needed on Friday and Saturday nights from 10pm to 3am.
-          </p>
-        </ProgrammeCard>
-
-
-        <ProgrammeCard programme="dosomegood">
-          <p>
-            Help create positive experiences for tamariki living in hardship
-            here in Wellington.
-          </p>
-
-          <p class="mb-0">
-            Come along to schools, support our team and spend a meaningful
-            day with tamariki.
-          </p>
-        </ProgrammeCard>
-
-      </ProgrammeGrid>
-
-    </div>
-  </section>
-
-
-  <!-- CALL TO ACTION -->
-  <section class="bg-gray-50 py-20">
-    <div class="mx-auto max-w-3xl px-6 text-center lg:px-8">
-
-      <h2 class="text-4xl font-bold text-gray-900">
-        Ready to get involved?
-      </h2>
-
-      <p class="mt-5 text-lg leading-8 text-gray-600">
-        Fill out the form below and tell us a little about yourself.
-        We’ll be in touch with you soon.
+      <p>
+        Choose an area you're passionate about and make an impact
       </p>
 
+      <div class="heading-line"></div>
     </div>
+
+
+    <div class="programme-cards">
+
+      <!-- TAKE 10 -->
+      <article class="programme-card">
+        <div class="card-image take10-image"></div>
+
+        <div class="card-icon">☕</div>
+
+        <div class="card-content">
+          <h3>Take 10</h3>
+
+          <p>
+            Help us on the streets by providing hot drinks,
+            food and support.
+          </p>
+
+          <a href="/take10/" class="learn-more">
+            Learn more
+          </a>
+        </div>
+      </article>
+
+
+      <!-- MENTORING -->
+      <article class="programme-card">
+        <div class="card-image mentoring-image"></div>
+
+        <div class="card-icon">👥</div>
+
+        <div class="card-content">
+          <h3>Mentoring &amp; Support</h3>
+
+          <p>
+            Support and mentor individuals on their journey
+            towards a better future.
+          </p>
+
+          <a href="/dosomegood/" class="learn-more">
+            Learn more
+          </a>
+        </div>
+      </article>
+
+
+      <!-- DONATIONS -->
+      <article class="programme-card">
+        <div class="card-image donations-image"></div>
+
+        <div class="card-icon">👕</div>
+
+        <div class="card-content">
+          <h3>Donations &amp; Goods</h3>
+
+          <p>
+            Help sort, organise and distribute clothing and
+            essential items.
+          </p>
+
+          <a href="/donate/" class="learn-more">
+            Learn more
+          </a>
+        </div>
+      </article>
+
+
+      <!-- EVENTS -->
+      <article class="programme-card">
+        <div class="card-image events-image"></div>
+
+        <div class="card-icon">📅</div>
+
+        <div class="card-content">
+          <h3>Events &amp; Fundraising</h3>
+
+          <p>
+            Be part of our events and fundraising activities
+            that create change.
+          </p>
+
+          <a href="/events/" class="learn-more">
+            Learn more
+          </a>
+        </div>
+      </article>
+
+
+      <!-- ADMIN -->
+      <article class="programme-card">
+        <div class="card-image admin-image"></div>
+
+        <div class="card-icon">♥</div>
+
+        <div class="card-content">
+          <h3>Admin &amp; Other</h3>
+
+          <p>
+            Help behind the scenes with admin,
+            communications and other essential tasks.
+          </p>
+
+          <a href="/contact/" class="learn-more">
+            Learn more
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+
+    <!-- APPLY BUTTON -->
+    <div class="apply-wrapper">
+      <a href="#volunteer-form" class="apply-button">
+        Apply to Volunteer
+        <span>→</span>
+      </a>
+
+      <p>We’d love to hear from you!</p>
+    </div>
+
   </section>
 
 
-  <!-- FORM -->
-  <Section>
-    <Form name="volunteer">
+  <!-- VOLUNTEER FORM -->
+  <section id="volunteer-form" class="volunteer-form-section">
 
-      <div>
-        <Label htmlFor="name" className="required">Name</Label>
+    <div class="form-heading">
+      <h2>Become a volunteer</h2>
+      <p>
+        We'd love to have you join our community.
+      </p>
+    </div>
 
-        <Input
-          className="shadow-border"
+    <form class="volunteer-form">
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
           type="text"
           id="name"
           name="name"
@@ -158,12 +182,9 @@ const title = "Volunteer";
         />
       </div>
 
-
-      <div>
-        <Label htmlFor="email" className="required">Email</Label>
-
-        <Input
-          className="shadow-border"
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
           type="email"
           id="email"
           name="email"
@@ -171,31 +192,428 @@ const title = "Volunteer";
         />
       </div>
 
+      <div class="form-group full-width">
+        <label for="role">Role</label>
 
-      <div class="sm:col-span-2">
-        <Label htmlFor="role" className="required">
-          Which programme would you like to volunteer with?
-        </Label>
-
-        <RoleSelect client:load />
+        <select id="role" name="role" required>
+          <option value="">Select a role</option>
+          <option value="take10">Take 10</option>
+          <option value="dosomegood">Do Some Good</option>
+          <option value="take10-auckland">Take 10 Auckland</option>
+          <option value="other">Other</option>
+        </select>
       </div>
 
+      <div class="form-group full-width">
+        <label for="message">Message</label>
 
-      <div class="sm:col-span-2">
-        <Label htmlFor="message" className="required">
-          Message
-        </Label>
-
-        <Textarea
-          className="shadow-border"
+        <textarea
           id="message"
           name="message"
-          rows={5}
+          rows="5"
           required
-        />
+        ></textarea>
       </div>
 
-    </Form>
-  </Section>
+      <button type="submit" class="submit-button">
+        Submit application
+      </button>
+
+    </form>
+
+  </section>
 
 </Layout>
+
+
+<style>
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .volunteer-hero {
+    position: relative;
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #111;
+  }
+
+  .volunteer-hero-image {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(0,0,0,0) 35%,
+        rgba(0,0,0,0.78) 68%,
+        rgba(0,0,0,0.88) 100%
+      ),
+      url("/images/volunteer-hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+  }
+
+  .volunteer-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 1200px;
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: left;
+  }
+
+  .volunteer-hero h1 {
+    color: white;
+    font-size: clamp(40px, 4vw, 58px);
+    line-height: 1.05;
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .volunteer-hero h1 span {
+    display: block;
+    color: #f58220;
+    font-family: cursive;
+    font-weight: 400;
+    font-size: 0.95em;
+    margin-top: 4px;
+  }
+
+  .hero-line {
+    width: 80px;
+    height: 4px;
+    background: #f58220;
+    margin: 22px 0;
+    align-self: flex-start;
+    margin-left: calc(50% + 100px);
+  }
+
+  .volunteer-hero p {
+    color: white;
+    font-size: 20px;
+    line-height: 1.55;
+    margin: 0;
+    align-self: flex-start;
+    margin-left: calc(50% + 100px);
+  }
+
+
+  /* =========================
+     PROGRAMMES
+  ========================= */
+
+  .volunteer-programmes {
+    background: #fffaf5;
+    padding: 55px 40px 70px;
+  }
+
+  .section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  .section-heading h2 {
+    font-size: 38px;
+    margin: 0 0 5px;
+    color: #171717;
+  }
+
+  .section-heading p {
+    font-size: 18px;
+    color: #555;
+    margin: 0;
+  }
+
+  .heading-line {
+    width: 52px;
+    height: 3px;
+    background: #f58220;
+    margin: 15px auto 0;
+  }
+
+
+  /* =========================
+     CARDS
+  ========================= */
+
+  .programme-cards {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 28px;
+  }
+
+  .programme-card {
+    position: relative;
+    background: white;
+    border: 1px solid #e8e2dc;
+    border-radius: 14px;
+    overflow: visible;
+    text-align: center;
+    padding-bottom: 20px;
+    transition: transform 0.2s ease;
+  }
+
+  .programme-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .card-image {
+    height: 125px;
+    border-radius: 14px 14px 0 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .take10-image {
+    background-image: url("/images/volunteer-take10.jpg");
+  }
+
+  .mentoring-image {
+    background-image: url("/images/volunteer-mentoring.jpg");
+  }
+
+  .donations-image {
+    background-image: url("/images/volunteer-donations.jpg");
+  }
+
+  .events-image {
+    background-image: url("/images/volunteer-events.jpg");
+  }
+
+  .admin-image {
+    background-image: url("/images/volunteer-admin.jpg");
+  }
+
+  .card-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #f58220;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin: -29px auto 8px;
+    position: relative;
+    border: 4px solid #fffaf5;
+  }
+
+  .card-content {
+    padding: 0 20px;
+  }
+
+  .card-content h3 {
+    font-size: 18px;
+    margin: 5px 0 8px;
+    color: #171717;
+  }
+
+  .card-content p {
+    color: #444;
+    font-size: 14px;
+    line-height: 1.45;
+    min-height: 62px;
+    margin: 0 0 15px;
+  }
+
+  .learn-more {
+    display: inline-block;
+    border: 1px solid #f58220;
+    color: #f58220;
+    padding: 8px 22px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .learn-more:hover {
+    background: #f58220;
+    color: white;
+  }
+
+
+  /* =========================
+     APPLY
+  ========================= */
+
+  .apply-wrapper {
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  .apply-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    background: #f58220;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 13px 30px;
+    border-radius: 30px;
+    min-width: 255px;
+  }
+
+  .apply-button span {
+    font-size: 25px;
+  }
+
+  .apply-wrapper p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+
+
+  /* =========================
+     FORM
+  ========================= */
+
+  .volunteer-form-section {
+    padding: 70px 30px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .form-heading {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  .form-heading h2 {
+    font-size: 34px;
+    margin-bottom: 8px;
+  }
+
+  .form-heading p {
+    color: #555;
+  }
+
+  .volunteer-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .full-width {
+    grid-column: 1 / -1;
+  }
+
+  .form-group label {
+    font-weight: 600;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    padding: 12px;
+    font-size: 16px;
+    font-family: inherit;
+  }
+
+  .submit-button {
+    grid-column: 1 / -1;
+    justify-self: center;
+    border: 0;
+    background: #f58220;
+    color: white;
+    padding: 13px 35px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+
+  /* =========================
+     MOBILE
+  ========================= */
+
+  @media (max-width: 1000px) {
+
+    .programme-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .volunteer-hero-content {
+      align-items: flex-start;
+    }
+
+    .hero-line,
+    .volunteer-hero p {
+      margin-left: 0;
+    }
+
+  }
+
+  @media (max-width: 600px) {
+
+    .volunteer-hero {
+      min-height: 500px;
+    }
+
+    .volunteer-hero-image {
+      background-image:
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,0.15),
+          rgba(0,0,0,0.85)
+        ),
+        url("/images/volunteer-hero.jpg");
+    }
+
+    .volunteer-hero-content {
+      max-width: 85%;
+    }
+
+    .volunteer-hero h1 {
+      font-size: 40px;
+    }
+
+    .volunteer-hero p {
+      font-size: 17px;
+    }
+
+    .programme-cards {
+      grid-template-columns: 1fr;
+      max-width: 360px;
+    }
+
+    .volunteer-programmes {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .volunteer-form {
+      grid-template-columns: 1fr;
+    }
+
+    .full-width,
+    .submit-button {
+      grid-column: auto;
+    }
+
+  }
+
+</style>
