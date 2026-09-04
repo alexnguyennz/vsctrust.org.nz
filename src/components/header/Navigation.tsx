@@ -82,31 +82,19 @@ interface ListItemProps extends ComponentPropsWithoutRef<"a"> {
   title: string;
 }
 
-const ListItem = forwardRef<ElementRef<"a">, ListItemProps>(
-  ({ className, title, children, href, pathname, Icon, ...props }, ref) => {
-    return (
-      <li>
-        <NavigationMenuLink asChild>
-          
-            ref={ref}
-            href={href}
-            className={cn(
-              "group flex select-none items-center gap-3 space-y-1 rounded-md px-3 py-1.5 no-underline outline-none transition-colors hover:bg-stone-100 focus:bg-stone-100",
-              className,
-              href && pathname.startsWith(href) && "bg-stone-100",
-            )}
-            rel="prefetch"
-            {...props}
-          >
-            <Icon className={"size-6"} />
-            <div>
-              <div className="font-semibold leading-none">{title}</div>
-              <span className="text-base">{children}</span>
-            </div>
-          </a>
-        </NavigationMenuLink>
-      </li>
-    );
-  },
-);
+const ListItem = forwardRef<ElementRef<"a">, ListItemProps>(({ className, title, children, href, pathname, Icon, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a ref={ref} href={href} className={cn("group flex select-none items-center gap-3 space-y-1 rounded-md px-3 py-1.5 no-underline outline-none transition-colors hover:bg-stone-100 focus:bg-stone-100", className, href && pathname.startsWith(href) && "bg-stone-100")} rel="prefetch" {...props}>
+          <Icon className={"size-6"} />
+          <div>
+            <div className="font-semibold leading-none">{title}</div>
+            <span className="text-base">{children}</span>
+          </div>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  );
+});
 ListItem.displayName = "ListItem";
