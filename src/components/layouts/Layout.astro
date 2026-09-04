@@ -11,6 +11,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const isVolunteerPage = title === "Volunteer";
 ---
 
 <!doctype html>
@@ -46,7 +48,7 @@ const { title } = Astro.props;
   <body
     class:list={[
       "flex min-h-screen flex-col",
-      title === "Volunteer" && "volunteer-page",
+      isVolunteerPage && "volunteer-page",
     ]}
   >
     <Header />
