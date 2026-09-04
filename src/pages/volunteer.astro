@@ -27,22 +27,16 @@ import Layout from "@/components/layouts/Layout.astro";
 
   <!-- WHERE WOULD YOU LIKE TO HELP? -->
   <section class="volunteer-programmes">
+
     <div class="section-heading">
       <h2>Where would you like to help?</h2>
-
-      <p>
-        Choose an area you're passionate about and make an impact
-      </p>
-
       <div class="heading-line"></div>
     </div>
-
 
     <div class="programme-cards">
 
       <!-- TAKE 10 -->
       <article class="programme-card">
-        <div class="card-image take10-image"></div>
 
         <div class="card-icon">☕</div>
 
@@ -50,98 +44,70 @@ import Layout from "@/components/layouts/Layout.astro";
           <h3>Take 10</h3>
 
           <p>
-            Help us on the streets by providing hot drinks,
-            food and support.
+            Help provide a safe zone on Courtenay Place.
+          </p>
+
+          <p>
+            We’re looking for volunteers on Friday or Saturday
+            nights from 10pm to 3am.
           </p>
 
           <a href="/take10/" class="learn-more">
             Learn more
           </a>
         </div>
+
       </article>
 
 
-      <!-- MENTORING -->
+      <!-- TAKE 10 AUCKLAND -->
       <article class="programme-card">
-        <div class="card-image mentoring-image"></div>
 
-        <div class="card-icon">👥</div>
+        <div class="card-icon">☕</div>
 
         <div class="card-content">
-          <h3>Mentoring &amp; Support</h3>
+          <h3>Take 10 Auckland</h3>
 
           <p>
-            Support and mentor individuals on their journey
-            towards a better future.
+            Help provide a safe zone on Auckland Central.
+          </p>
+
+          <p>
+            We’re looking for volunteers on Friday or Saturday
+            nights from 10pm to 3am.
+          </p>
+
+          <a href="/take10-auckland/" class="learn-more">
+            Learn more
+          </a>
+        </div>
+
+      </article>
+
+
+      <!-- DO SOME GOOD -->
+      <article class="programme-card">
+
+        <div class="card-icon">♥</div>
+
+        <div class="card-content">
+          <h3>Do Some Good</h3>
+
+          <p>
+            Help influence positive change for tamariki living
+            in hardship here in Wellington.
+          </p>
+
+          <p>
+            We're looking for volunteers to come out with us
+            to schools, and have a great day with tamariki in need.
           </p>
 
           <a href="/dosomegood/" class="learn-more">
             Learn more
           </a>
         </div>
-      </article>
 
-
-      <!-- DONATIONS -->
-      <article class="programme-card">
-        <div class="card-image donations-image"></div>
-
-        <div class="card-icon">👕</div>
-
-        <div class="card-content">
-          <h3>Donations &amp; Goods</h3>
-
-          <p>
-            Help sort, organise and distribute clothing and
-            essential items.
-          </p>
-
-          <a href="/donate/" class="learn-more">
-            Learn more
-          </a>
-        </div>
-      </article>
-
-
-      <!-- EVENTS -->
-      <article class="programme-card">
-        <div class="card-image events-image"></div>
-
-        <div class="card-icon">📅</div>
-
-        <div class="card-content">
-          <h3>Events &amp; Fundraising</h3>
-
-          <p>
-            Be part of our events and fundraising activities
-            that create change.
-          </p>
-
-          <a href="/events/" class="learn-more">
-            Learn more
-          </a>
-        </div>
-      </article>
-
-
-      <!-- ADMIN -->
-      <article class="programme-card">
-        <div class="card-image admin-image"></div>
-
-        <div class="card-icon">♥</div>
-
-        <div class="card-content">
-          <h3>Admin &amp; Other</h3>
-
-          <p>
-            Help behind the scenes with admin,
-            communications and other essential tasks.
-          </p>
-
-          <a href="/contact/" class="learn-more">
-            Learn more
-          </a>
-        </div>
       </article>
 
     </div>
@@ -165,31 +131,19 @@ import Layout from "@/components/layouts/Layout.astro";
 
     <div class="form-heading">
       <h2>Become a volunteer</h2>
-      <p>
-        We'd love to have you join our community.
-      </p>
+      <p>We'd love to have you join our community.</p>
     </div>
 
     <form class="volunteer-form">
 
       <div class="form-group">
         <label for="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-        />
+        <input type="text" id="name" name="name" required />
       </div>
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-        />
+        <input type="email" id="email" name="email" required />
       </div>
 
       <div class="form-group full-width">
@@ -198,9 +152,8 @@ import Layout from "@/components/layouts/Layout.astro";
         <select id="role" name="role" required>
           <option value="">Select a role</option>
           <option value="take10">Take 10</option>
-          <option value="dosomegood">Do Some Good</option>
           <option value="take10-auckland">Take 10 Auckland</option>
-          <option value="other">Other</option>
+          <option value="dosomegood">Do Some Good</option>
         </select>
       </div>
 
@@ -228,9 +181,7 @@ import Layout from "@/components/layouts/Layout.astro";
 
 <style>
 
-  /* =========================
-     HERO
-  ========================= */
+  /* HERO */
 
   .volunteer-hero {
     position: relative;
@@ -244,6 +195,7 @@ import Layout from "@/components/layouts/Layout.astro";
   .volunteer-hero-image {
     position: absolute;
     inset: 0;
+
     background-image:
       linear-gradient(
         90deg,
@@ -262,7 +214,7 @@ import Layout from "@/components/layouts/Layout.astro";
     z-index: 2;
     width: 1200px;
     max-width: 90%;
-    margin: 0 auto;
+    margin: 70px auto 0;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -305,9 +257,7 @@ import Layout from "@/components/layouts/Layout.astro";
   }
 
 
-  /* =========================
-     PROGRAMMES
-  ========================= */
+  /* PROGRAMMES */
 
   .volunteer-programmes {
     background: #fffaf5;
@@ -321,14 +271,8 @@ import Layout from "@/components/layouts/Layout.astro";
 
   .section-heading h2 {
     font-size: 38px;
-    margin: 0 0 5px;
-    color: #171717;
-  }
-
-  .section-heading p {
-    font-size: 18px;
-    color: #555;
     margin: 0;
+    color: #171717;
   }
 
   .heading-line {
@@ -339,58 +283,27 @@ import Layout from "@/components/layouts/Layout.astro";
   }
 
 
-  /* =========================
-     CARDS
-  ========================= */
+  /* CARDS */
 
   .programme-cards {
-    max-width: 1240px;
+    max-width: 1050px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 28px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
 
   .programme-card {
-    position: relative;
     background: white;
     border: 1px solid #e8e2dc;
     border-radius: 14px;
-    overflow: visible;
     text-align: center;
-    padding-bottom: 20px;
+    padding: 35px 25px 25px;
     transition: transform 0.2s ease;
   }
 
   .programme-card:hover {
     transform: translateY(-4px);
-  }
-
-  .card-image {
-    height: 125px;
-    border-radius: 14px 14px 0 0;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .take10-image {
-    background-image: url("/images/volunteer-take10.jpg");
-  }
-
-  .mentoring-image {
-    background-image: url("/images/volunteer-mentoring.jpg");
-  }
-
-  .donations-image {
-    background-image: url("/images/volunteer-donations.jpg");
-  }
-
-  .events-image {
-    background-image: url("/images/volunteer-events.jpg");
-  }
-
-  .admin-image {
-    background-image: url("/images/volunteer-admin.jpg");
   }
 
   .card-icon {
@@ -403,38 +316,32 @@ import Layout from "@/components/layouts/Layout.astro";
     align-items: center;
     justify-content: center;
     font-size: 25px;
-    margin: -29px auto 8px;
-    position: relative;
-    border: 4px solid #fffaf5;
-  }
-
-  .card-content {
-    padding: 0 20px;
+    margin: 0 auto 18px;
   }
 
   .card-content h3 {
-    font-size: 18px;
-    margin: 5px 0 8px;
+    font-size: 20px;
+    margin: 0 0 15px;
     color: #171717;
   }
 
   .card-content p {
     color: #444;
-    font-size: 14px;
-    line-height: 1.45;
-    min-height: 62px;
-    margin: 0 0 15px;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0 0 12px;
   }
 
   .learn-more {
     display: inline-block;
     border: 1px solid #f58220;
     color: #f58220;
-    padding: 8px 22px;
+    padding: 9px 24px;
     border-radius: 7px;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
+    margin-top: 8px;
   }
 
   .learn-more:hover {
@@ -443,13 +350,11 @@ import Layout from "@/components/layouts/Layout.astro";
   }
 
 
-  /* =========================
-     APPLY
-  ========================= */
+  /* APPLY */
 
   .apply-wrapper {
     text-align: center;
-    margin-top: 25px;
+    margin-top: 30px;
   }
 
   .apply-button {
@@ -478,9 +383,7 @@ import Layout from "@/components/layouts/Layout.astro";
   }
 
 
-  /* =========================
-     FORM
-  ========================= */
+  /* FORM */
 
   .volunteer-form-section {
     padding: 70px 30px;
@@ -546,18 +449,18 @@ import Layout from "@/components/layouts/Layout.astro";
   }
 
 
-  /* =========================
-     MOBILE
-  ========================= */
+  /* MOBILE */
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
 
     .programme-cards {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
+      max-width: 400px;
     }
 
     .volunteer-hero-content {
       align-items: flex-start;
+      margin-top: 40px;
     }
 
     .hero-line,
@@ -573,16 +476,6 @@ import Layout from "@/components/layouts/Layout.astro";
       min-height: 500px;
     }
 
-    .volunteer-hero-image {
-      background-image:
-        linear-gradient(
-          180deg,
-          rgba(0,0,0,0.15),
-          rgba(0,0,0,0.85)
-        ),
-        url("/images/volunteer-hero.jpg");
-    }
-
     .volunteer-hero-content {
       max-width: 85%;
     }
@@ -593,11 +486,6 @@ import Layout from "@/components/layouts/Layout.astro";
 
     .volunteer-hero p {
       font-size: 17px;
-    }
-
-    .programme-cards {
-      grid-template-columns: 1fr;
-      max-width: 360px;
     }
 
     .volunteer-programmes {
