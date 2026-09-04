@@ -15,22 +15,19 @@ const title = "Volunteer";
 ---
 
 <Layout title={title}>
+  <!-- HERO -->
+  <section class="volunteer-hero">
+    <div class="volunteer-hero-content">
+      <div class="volunteer-hero-text">
+        <p class="volunteer-eyebrow">GET INVOLVED</p>
 
-  <!-- Volunteer Hero -->
-  <section class="bg-black text-white">
-    <div class="mx-auto flex min-h-[460px] max-w-7xl items-center justify-end px-8 py-20 lg:px-16">
-      <div class="w-full max-w-2xl lg:mr-8">
-        <h1 class="text-5xl font-bold leading-tight lg:text-6xl">
-          Make a difference.
-        </h1>
+        <h1>Make a difference.</h1>
 
-        <p class="mt-2 text-4xl font-normal italic text-orange-500 lg:text-5xl">
-          Be a volunteer.
-        </p>
+        <h2>Be a volunteer.</h2>
 
-        <div class="mt-6 h-1 w-20 bg-orange-500"></div>
+        <div class="orange-line"></div>
 
-        <p class="mt-8 max-w-xl text-xl leading-relaxed text-white">
+        <p class="volunteer-intro">
           Join our community of volunteers and help us support people
           experiencing vulnerability across Aotearoa.
         </p>
@@ -38,131 +35,91 @@ const title = "Volunteer";
     </div>
   </section>
 
-  <!-- Where would you like to help? -->
+  <!-- PROGRAMMES -->
   <Section>
-    <div class="mb-10 text-center">
-      <h2 class="text-4xl font-normal">Where would you like to help?</h2>
-      <div class="mx-auto mt-4 h-1 w-14 bg-orange-500"></div>
-    </div>
+    <div class="volunteer-programmes">
 
-    <div class="grid gap-8 md:grid-cols-3">
+      <div class="volunteer-heading">
+        <h2>Where would you like to help?</h2>
+        <div class="orange-line"></div>
+      </div>
 
-      <!-- Take 10 -->
-      <a
-        href="/take10/"
-        class="group flex flex-col rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-      >
-        <div class="mb-6 flex h-32 items-center justify-center">
-          <Image
-            src={import("@/assets/img/logo/take10.png")}
-            width="120"
-            height="120"
-            alt="Take 10 logo"
-            class="max-h-28 max-w-28 object-contain"
-          />
-        </div>
+      <div class="volunteer-cards">
 
-        <h3 class="text-2xl font-semibold">Take 10</h3>
+        <!-- TAKE 10 -->
+        <a href="/take10/" class="volunteer-card">
+          <div class="volunteer-logo">
+            <Image
+              src={import("@/assets/img/logo/take10.png")}
+              width={256}
+              height={256}
+              alt="Take 10 logo"
+            />
+          </div>
 
-        <p class="mt-4">
-          Help provide a safe zone on Courtenay Place.
-        </p>
+          <h3>Take 10</h3>
 
-        <p class="mt-4">
-          We’re looking for volunteers on Friday or Saturday nights from 10pm
-          to 3am.
-        </p>
+          <p>
+            Help provide a safe zone on Courtenay Place.
+          </p>
 
-        <span
-          class="mx-auto mt-6 rounded-lg border border-orange-500 px-6 py-2 font-semibold text-orange-500 transition group-hover:bg-orange-500 group-hover:text-white"
-        >
-          Learn more
-        </span>
-      </a>
+          <p>
+            We’re looking for volunteers on Friday or Saturday nights from
+            10pm to 3am.
+          </p>
 
-      <!-- Take 10 Auckland -->
-      <a
-        href="/take10-auckland/"
-        class="group flex flex-col rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-      >
-        <div class="mb-6 flex h-32 items-center justify-center">
-          <Image
-            src={import("@/assets/img/logo/take10-auckland.png")}
-            width="120"
-            height="120"
-            alt="Take 10 Auckland logo"
-            class="max-h-28 max-w-28 object-contain"
-          />
-        </div>
+          <span class="learn-more">Learn more</span>
+        </a>
 
-        <h3 class="text-2xl font-semibold">Take 10 Auckland</h3>
+        <!-- DO SOME GOOD -->
+        <a href="/dosomegood/" class="volunteer-card">
+          <div class="volunteer-logo dosomegood-logo">
+            <Image
+              src={import("@/assets/img/logo/dosomegood.png")}
+              width={256}
+              height={256}
+              alt="Do Some Good logo"
+            />
+          </div>
 
-        <p class="mt-4">
-          Help provide a safe zone on Auckland Central.
-        </p>
+          <h3>Do Some Good</h3>
 
-        <p class="mt-4">
-          We’re looking for volunteers on Friday or Saturday nights from 10pm
-          to 3am.
-        </p>
+          <p>
+            Help influence positive change for tamariki living in hardship
+            here in Wellington.
+          </p>
 
-        <span
-          class="mx-auto mt-6 rounded-lg border border-orange-500 px-6 py-2 font-semibold text-orange-500 transition group-hover:bg-orange-500 group-hover:text-white"
-        >
-          Learn more
-        </span>
-      </a>
+          <p>
+            We’re looking for volunteers to come out with us to schools,
+            and have a great day with tamariki in need.
+          </p>
 
-      <!-- Do Some Good -->
-      <a
-        href="/dosomegood/"
-        class="group flex flex-col rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-      >
-        <div class="mb-6 flex h-32 items-center justify-center">
-          <Image
-            src={import("@/assets/img/logo/dosomegood.png")}
-            width="120"
-            height="120"
-            alt="Do Some Good logo"
-            class="max-h-28 max-w-36 object-contain"
-          />
-        </div>
+          <span class="learn-more">Learn more</span>
+        </a>
 
-        <h3 class="text-2xl font-semibold">Do Some Good</h3>
+      </div>
 
-        <p class="mt-4">
-          Help influence positive change for tamariki living in hardship here
-          in Wellington.
-        </p>
+      <!-- TAKE 10 AUCKLAND INFORMATION -->
+      <div class="take10-auckland-note">
+        <strong>Take 10</strong> also operates in Auckland Central.
+        Volunteers are needed on Friday or Saturday nights from 10pm to 3am.
+      </div>
 
-        <p class="mt-4">
-          We’re looking for volunteers to come out with us to schools, and have
-          a great day with tamariki in need.
-        </p>
+      <!-- APPLY BUTTON -->
+      <div class="apply-wrapper">
+        <AnchorButton href="#volunteer-form" class="apply-button">
+          Apply to Volunteer →
+        </AnchorButton>
 
-        <span
-          class="mx-auto mt-6 rounded-lg border border-orange-500 px-6 py-2 font-semibold text-orange-500 transition group-hover:bg-orange-500 group-hover:text-white"
-        >
-          Learn more
-        </span>
-      </a>
+        <p>We’d love to hear from you!</p>
+      </div>
 
-    </div>
-
-    <div class="mt-8 text-center">
-      <AnchorButton href="#volunteer-form" class="bg-orange-500 text-sm">
-        Apply to Volunteer →
-      </AnchorButton>
-
-      <p class="mt-3">
-        We’d love to hear from you!
-      </p>
     </div>
   </Section>
 
-  <!-- Volunteer Form -->
-  <div id="volunteer-form">
-    <Section>
+  <!-- FORM -->
+  <Section>
+    <div id="volunteer-form">
       <Form name="volunteer">
         <div>
           <Label htmlFor="name" className="required">Name</Label>
@@ -202,7 +159,250 @@ const title = "Volunteer";
           />
         </div>
       </Form>
-    </Section>
-  </div>
-
+    </div>
+  </Section>
 </Layout>
+
+<style>
+  .volunteer-hero {
+    background: #fffaf0;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .volunteer-hero::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -180px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: #fff3c9;
+    opacity: 0.55;
+  }
+
+  .volunteer-hero-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 90px 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .volunteer-hero-text {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: 40px;
+  }
+
+  .volunteer-eyebrow {
+    color: #f47b20;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  .volunteer-hero h1 {
+    color: #171717;
+    font-size: clamp(48px, 6vw, 76px);
+    line-height: 1;
+    font-weight: 800;
+    margin: 0 0 8px;
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  }
+
+  .volunteer-hero h2 {
+    color: #f47b20;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1;
+    font-weight: 600;
+    font-style: italic;
+    margin: 0;
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  }
+
+  .orange-line {
+    width: 70px;
+    height: 4px;
+    background: #f47b20;
+    margin: 28px 0;
+  }
+
+  .volunteer-intro {
+    color: #3f4650;
+    font-size: 21px;
+    line-height: 1.6;
+    max-width: 590px;
+    margin: 0;
+  }
+
+  .volunteer-programmes {
+    padding: 35px 0 20px;
+  }
+
+  .volunteer-heading {
+    text-align: center;
+    margin-bottom: 42px;
+  }
+
+  .volunteer-heading h2 {
+    color: #171717;
+    font-size: clamp(34px, 4vw, 48px);
+    line-height: 1.15;
+    font-weight: 700;
+    margin: 0;
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  }
+
+  .volunteer-heading .orange-line {
+    margin: 18px auto 0;
+  }
+
+  .volunteer-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .volunteer-card {
+    min-height: 500px;
+    padding: 42px 38px 36px;
+    border: 1px solid #e8e1d8;
+    border-radius: 24px;
+    background: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-decoration: none !important;
+  }
+
+  .volunteer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.09);
+    text-decoration: none !important;
+  }
+
+  .volunteer-card * {
+    text-decoration: none !important;
+  }
+
+  .volunteer-logo {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .volunteer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .dosomegood-logo {
+    width: 180px;
+  }
+
+  .volunteer-card h3 {
+    color: #171717;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 5px 0 20px;
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  }
+
+  .volunteer-card p {
+    color: #454545;
+    font-size: 18px;
+    line-height: 1.55;
+    margin: 0 0 20px;
+    max-width: 430px;
+  }
+
+  .learn-more {
+    margin-top: auto;
+    padding: 11px 28px;
+    border: 2px solid #f47b20;
+    border-radius: 8px;
+    color: #f47b20;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.2s ease;
+  }
+
+  .volunteer-card:hover .learn-more {
+    background: #f47b20;
+    color: white;
+  }
+
+  .take10-auckland-note {
+    max-width: 760px;
+    margin: 28px auto 0;
+    text-align: center;
+    color: #454545;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .take10-auckland-note strong {
+    color: #171717;
+  }
+
+  .apply-wrapper {
+    text-align: center;
+    margin-top: 38px;
+  }
+
+  .apply-button {
+    background: #f47b20 !important;
+    font-size: 18px !important;
+    padding: 15px 34px !important;
+    border-radius: 30px !important;
+  }
+
+  .apply-wrapper p {
+    margin-top: 12px;
+    color: #454545;
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .volunteer-hero {
+      min-height: 450px;
+    }
+
+    .volunteer-hero-content {
+      padding: 70px 25px;
+    }
+
+    .volunteer-hero-text {
+      margin: 0;
+    }
+
+    .volunteer-intro {
+      font-size: 18px;
+    }
+
+    .volunteer-cards {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+    }
+
+    .volunteer-card {
+      min-height: 460px;
+    }
+  }
+</style>
