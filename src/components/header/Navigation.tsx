@@ -66,10 +66,10 @@ export function Navigation({ pathname }: { pathname: string }) {
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <a href="/volunteer/" className={cn(navigationMenuTriggerStyle(), "relative inline-block rounded-full border border-orange-500 bg-white px-4 py-2 font-semibold tracking-wide text-orange-500 no-underline transition-all hover:bg-orange-50 hover:no-underline focus:text-orange-500")}>Volunteer</a>
+          <a href="/volunteer/" className="flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 px-2 text-center text-xs font-bold uppercase leading-tight text-white no-underline transition-all hover:scale-105 hover:bg-orange-600">Become a Volunteer</a>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <a href="/support-us/" className={cn(navigationMenuTriggerStyle(), "relative inline-block rounded-full bg-orange-500 px-4 py-2 font-semibold tracking-wide text-white no-underline transition-all hover:bg-orange-600 hover:no-underline focus:text-white")}>Donate</a>
+          <a href="/support-us/" className="flex h-20 w-20 items-center justify-center rounded-full bg-stone-900 px-2 text-center text-xs font-bold uppercase leading-tight text-white no-underline transition-all hover:scale-105 hover:bg-stone-800">Make a Donation</a>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
