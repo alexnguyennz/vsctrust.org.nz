@@ -24,7 +24,7 @@ const { title } = Astro.props;
     />
     <meta
       name="keywords"
-      content="charity, wellington, auckland, trust, take10,  nz, new zealand"
+      content="charity, wellington, auckland, trust, take10, nz, new zealand"
     />
     <meta name="viewport" content="width=device-width" />
 
@@ -42,7 +42,13 @@ const { title } = Astro.props;
 
     <slot name="head" />
   </head>
-  <body class="flex min-h-screen flex-col">
+
+  <body
+    class:list={[
+      "flex min-h-screen flex-col",
+      title === "Volunteer" && "volunteer-page",
+    ]}
+  >
     <Header />
 
     <main class="mb-12">
