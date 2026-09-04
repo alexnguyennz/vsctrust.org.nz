@@ -121,8 +121,10 @@ const title = "Volunteer";
   <Section>
     <div id="volunteer-form">
       <Form name="volunteer">
+
         <div>
           <Label htmlFor="name" className="required">Name</Label>
+
           <Input
             className="shadow-border"
             type="text"
@@ -134,6 +136,7 @@ const title = "Volunteer";
 
         <div>
           <Label htmlFor="email" className="required">Email</Label>
+
           <Input
             className="shadow-border"
             type="email"
@@ -145,11 +148,13 @@ const title = "Volunteer";
 
         <div class="sm:col-span-2">
           <Label htmlFor="role" className="required">Role</Label>
+
           <RoleSelect client:load />
         </div>
 
         <div class="sm:col-span-2">
           <Label htmlFor="message" className="required">Message</Label>
+
           <Textarea
             className="shadow-border"
             id="message"
@@ -158,15 +163,16 @@ const title = "Volunteer";
             required
           />
         </div>
+
       </Form>
     </div>
   </Section>
 </Layout>
 
 <style>
-  /* ================================
-     VOLUNTEER HERO
-     ================================ */
+  /* ========================================
+     HERO
+     ======================================== */
 
   .volunteer-hero {
     background: #fffaf0;
@@ -253,9 +259,9 @@ const title = "Volunteer";
   }
 
 
-  /* ================================
+  /* ========================================
      PROGRAMMES
-     ================================ */
+     ======================================== */
 
   .volunteer-programmes {
     padding: 35px 0 20px;
@@ -283,9 +289,9 @@ const title = "Volunteer";
   }
 
 
-  /* ================================
+  /* ========================================
      CARDS
-     ================================ */
+     ======================================== */
 
   .volunteer-cards {
     display: grid;
@@ -377,9 +383,9 @@ const title = "Volunteer";
   }
 
 
-  /* ================================
+  /* ========================================
      AUCKLAND NOTE
-     ================================ */
+     ======================================== */
 
   .take10-auckland-note {
     max-width: 760px;
@@ -395,9 +401,9 @@ const title = "Volunteer";
   }
 
 
-  /* ================================
+  /* ========================================
      APPLY
-     ================================ */
+     ======================================== */
 
   .apply-wrapper {
     text-align: center;
@@ -418,25 +424,52 @@ const title = "Volunteer";
   }
 
 
-  /* ================================
-     VOLUNTEER PAGE HEADER
-     BLACK MENU ONLY ON THIS PAGE
-     ================================ */
+  /* ========================================
+     HEADER - VOLUNTEER PAGE ONLY
+     ======================================== */
 
-  :global(body.volunteer-page nav a) {
+  /*
+   * Menu principal en noir
+   * Les boutons ronds restent blancs
+   */
+
+  :global(body.volunteer-page nav a:not([class*="rounded-full"])) {
     color: #171717 !important;
     text-decoration: none !important;
   }
 
-  :global(body.volunteer-page nav a:hover) {
+  :global(body.volunteer-page nav button) {
+    color: #171717 !important;
+  }
+
+  :global(body.volunteer-page nav a:not([class*="rounded-full"]):hover) {
     color: #f47b20 !important;
     text-decoration: none !important;
   }
 
+  :global(body.volunteer-page nav button:hover) {
+    color: #f47b20 !important;
+  }
 
-  /* ================================
+  /*
+   * Texte des boutons ronds :
+   * TOUJOURS BLANC
+   */
+
+  :global(body.volunteer-page nav a[class*="rounded-full"]) {
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+
+  :global(body.volunteer-page nav a[class*="rounded-full"]:hover) {
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+
+
+  /* ========================================
      MOBILE
-     ================================ */
+     ======================================== */
 
   @media (max-width: 768px) {
     .volunteer-hero {
