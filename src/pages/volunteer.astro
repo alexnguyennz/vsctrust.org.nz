@@ -164,6 +164,10 @@ const title = "Volunteer";
 </Layout>
 
 <style>
+  /* ================================
+     VOLUNTEER HERO
+     ================================ */
+
   .volunteer-hero {
     background: #fffaf0;
     min-height: 500px;
@@ -214,7 +218,10 @@ const title = "Volunteer";
     line-height: 1;
     font-weight: 800;
     margin: 0 0 8px;
-    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+    font-family:
+      "Arial Rounded MT Bold",
+      "Trebuchet MS",
+      sans-serif;
   }
 
   .volunteer-hero h2 {
@@ -224,7 +231,10 @@ const title = "Volunteer";
     font-weight: 600;
     font-style: italic;
     margin: 0;
-    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+    font-family:
+      "Arial Rounded MT Bold",
+      "Trebuchet MS",
+      sans-serif;
   }
 
   .orange-line {
@@ -242,6 +252,11 @@ const title = "Volunteer";
     margin: 0;
   }
 
+
+  /* ================================
+     PROGRAMMES
+     ================================ */
+
   .volunteer-programmes {
     padding: 35px 0 20px;
   }
@@ -257,12 +272,20 @@ const title = "Volunteer";
     line-height: 1.15;
     font-weight: 700;
     margin: 0;
-    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+    font-family:
+      "Arial Rounded MT Bold",
+      "Trebuchet MS",
+      sans-serif;
   }
 
   .volunteer-heading .orange-line {
     margin: 18px auto 0;
   }
+
+
+  /* ================================
+     CARDS
+     ================================ */
 
   .volunteer-cards {
     display: grid;
@@ -283,7 +306,9 @@ const title = "Volunteer";
     flex-direction: column;
     align-items: center;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
     text-decoration: none !important;
   }
 
@@ -321,7 +346,10 @@ const title = "Volunteer";
     font-size: 30px;
     font-weight: 700;
     margin: 5px 0 20px;
-    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+    font-family:
+      "Arial Rounded MT Bold",
+      "Trebuchet MS",
+      sans-serif;
   }
 
   .volunteer-card p {
@@ -348,6 +376,11 @@ const title = "Volunteer";
     color: white;
   }
 
+
+  /* ================================
+     AUCKLAND NOTE
+     ================================ */
+
   .take10-auckland-note {
     max-width: 760px;
     margin: 28px auto 0;
@@ -360,6 +393,11 @@ const title = "Volunteer";
   .take10-auckland-note strong {
     color: #171717;
   }
+
+
+  /* ================================
+     APPLY
+     ================================ */
 
   .apply-wrapper {
     text-align: center;
@@ -378,6 +416,27 @@ const title = "Volunteer";
     color: #454545;
     font-size: 16px;
   }
+
+
+  /* ================================
+     VOLUNTEER PAGE HEADER
+     BLACK MENU ONLY ON THIS PAGE
+     ================================ */
+
+  :global(body.volunteer-page nav a) {
+    color: #171717 !important;
+    text-decoration: none !important;
+  }
+
+  :global(body.volunteer-page nav a:hover) {
+    color: #f47b20 !important;
+    text-decoration: none !important;
+  }
+
+
+  /* ================================
+     MOBILE
+     ================================ */
 
   @media (max-width: 768px) {
     .volunteer-hero {
