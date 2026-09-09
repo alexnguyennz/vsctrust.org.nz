@@ -4,10 +4,11 @@ import { Navigation } from "./Navigation";
 import { MobileSheet } from "./MobileSheet";
 import logo from "@/assets/img/logo/vsct-logo-new.png";
 const pathname = new URL(Astro.request.url).pathname;
+const isTake10 = pathname === "/take10/";
 ---
 <header
   id="site-header"
-  class="absolute top-0 left-0 z-20 w-full bg-transparent transition"
+  class:list={["absolute top-0 left-0 z-20 w-full transition", isTake10 ? "site-header--light bg-white/10" : "bg-transparent"]}
   transition:animate="none"
 >
   <div
@@ -74,6 +75,41 @@ const pathname = new URL(Astro.request.url).pathname;
     }
     #site-header .header-logo {
       filter: brightness(0);
+    }
+  }
+
+  /* ========================================
+     TAKE 10 PAGE ONLY — light header
+     ======================================== */
+  #site-header.site-header--light {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(2px);
+  }
+  #site-header.site-header--light .header-logo {
+    filter: brightness(0) invert(1);
+  }
+  #site-header.site-header--light nav a,
+  #site-header.site-header--light nav button {
+    color: #ffffff !important;
+  }
+  #site-header.site-header--light nav a:hover,
+  #site-header.site-header--light nav button:hover {
+    color: #ffffff !important;
+  }
+  #site-header.site-header--light nav a[href="/volunteer/"] {
+    background-color: #f47b20 !important;
+    color: #ffffff !important;
+  }
+  #site-header.site-header--light nav a[href="/support-us/"] {
+    background-color: #171717 !important;
+    color: #ffffff !important;
+  }
+  @media (max-width: 1023px) {
+    #site-header.site-header--light {
+      background: rgba(255, 255, 255, 0.12) !important;
+    }
+    #site-header.site-header--light .header-logo {
+      filter: brightness(0) invert(1);
     }
   }
 </style>
