@@ -48,9 +48,72 @@ for await (const image of images) {
   <Section>
     <Gallery imageData={images} thumbnails={thumbnails} client:visible />
   </Section>
+
+  <!-- WHAT DO WE DO -->
   <Section>
-    <Content />
+    <div class="grid gap-10 md:grid-cols-2 items-center">
+      <img
+        src={thumbnails["1"]?.src}
+        alt="Do Some Good delivery"
+        class="rounded-2xl w-full h-80 object-cover"
+      />
+      <div>
+        <p class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-2">
+          What do we do?
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          We deliver fresh and tasty kai to kindergartens and primary schools across Wellington, Porirua, and Hutt Valley — fruit, veggies, dairy, bread, cold cuts, popcorn and other snacks.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          A well-fed child is better able to engage, focus and connect with those around them. Kai is also taken home by whānau to make meals through the week, acting as an equaliser so every tamariki has the chance to thrive.
+        </p>
+      </div>
+    </div>
   </Section>
+
+  <!-- HOW DO WE DO IT -->
+  <Section>
+    <div class="grid gap-10 md:grid-cols-2 items-center">
+      <div class="md:order-2">
+        <img
+          src={thumbnails["4"]?.src}
+          alt="Do Some Good volunteers"
+          class="rounded-2xl w-full h-80 object-cover"
+        />
+      </div>
+      <div class="md:order-1">
+        <p class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-2">
+          How do we do it?
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          We work with corporate partners and donors to deliver our programme, giving the business community the chance to be part of a concerted effort to build well-connected communities.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          Our partners also volunteer their time at our schools — a real highlight for both teams and tamariki, who often get to muck in and help with the fun jobs on the day.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- WE NEED YOUR HELP -->
+  <Section class="text-center">
+    <div class="max-w-2xl mx-auto">
+      <p class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-2">
+        We need your help!
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Our food support programme has felt the impact of the cost-of-living crisis, with less funding available and increased need in the community.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        If you are, or know of, a business or individual able to give back and make a difference for our tamariki and their whānau, please get in touch.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        You can reach our Operations Manager, Leigh Keown, at
+        <a href="mailto:hello@vsctrust.org.nz" class="underline hover:text-orange-500">hello@vsctrust.org.nz</a>.
+      </p>
+    </div>
+  </Section>
+
   <Section>
     <video
       poster={poster.src}
