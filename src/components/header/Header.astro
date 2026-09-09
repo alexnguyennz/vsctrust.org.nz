@@ -1,11 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import { Navigation } from "./Navigation";
-import MobileSheet from "./MobileSheet";
-
+import { MobileSheet } from "./MobileSheet";
+import logo from "@/assets/img/logo/vsct-logo-new.png";
 const pathname = new URL(Astro.request.url).pathname;
 ---
-
 <header
   id="site-header"
   class="absolute top-0 left-0 z-50 w-full bg-white"
@@ -13,16 +12,15 @@ const pathname = new URL(Astro.request.url).pathname;
   <div
     class="mx-auto flex min-h-[100px] items-center justify-between gap-6 px-6 lg:container lg:max-w-7xl"
   >
-
     <!-- LOGO -->
-    <a
+    
       href="/"
       aria-label="Home page"
       rel="prefetch"
       class="shrink-0"
     >
       <Image
-        src={import("@/assets/img/logo-new.png")}
+        src={logo}
         width="370"
         height="70"
         alt="Vulnerable Support Charitable Trust logo"
@@ -31,35 +29,13 @@ const pathname = new URL(Astro.request.url).pathname;
         loading="eager"
       />
     </a>
-
     <!-- DESKTOP NAVIGATION -->
     <div class="hidden lg:flex items-center">
       <Navigation pathname={pathname} client:visible />
     </div>
-
-    <!-- ACTION BUTTONS -->
-    <div class="hidden lg:flex items-center gap-3">
-
-      <a
-        href="/volunteer/"
-        class="inline-flex items-center justify-center rounded-xl bg-orange-500 px-5 py-4 text-sm font-bold text-white transition hover:bg-orange-600"
-      >
-        BECOME A VOLUNTEER
-      </a>
-
-      <a
-        href="/donate/"
-        class="inline-flex items-center justify-center rounded-xl bg-black px-5 py-4 text-sm font-bold text-white transition hover:bg-gray-800"
-      >
-        MAKE A DONATION
-      </a>
-
-    </div>
-
     <!-- MOBILE MENU -->
     <div class="lg:hidden">
       <MobileSheet client:visible />
     </div>
-
   </div>
 </header>
