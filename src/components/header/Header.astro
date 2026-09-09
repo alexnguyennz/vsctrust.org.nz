@@ -2,25 +2,16 @@
 import { Image } from "astro:assets";
 import { Navigation } from "./Navigation";
 import MobileSheet from "./MobileSheet";
-
 const pathname = new URL(Astro.request.url).pathname;
 ---
 
 <header
   id="site-header"
-  class="absolute top-0 left-0 z-20 w-full bg-white transition"
+  class="absolute top-0 left-0 z-20 w-full bg-transparent transition"
   transition:animate="none"
 >
-  <div
-    class="mx-auto my-1 flex items-center justify-between gap-6 px-5 lg:container lg:max-w-7xl"
-  >
-
-    <!-- LOGO -->
-    <a
-      href="/"
-      aria-label="Home page"
-      rel="prefetch"
-    >
+  <div class="mx-auto my-1 flex items-center justify-between gap-6 px-5 lg:container lg:max-w-7xl">
+    <a href="/" rel="prefetch">
       <Image
         src={import("@/assets/img/logo-new.png")}
         width="370"
@@ -32,31 +23,24 @@ const pathname = new URL(Astro.request.url).pathname;
       />
     </a>
 
-    <!-- DESKTOP NAVIGATION -->
     <div class="hidden lg:block">
       <Navigation pathname={pathname} client:visible />
     </div>
 
-    <!-- MOBILE MENU -->
     <div class="lg:hidden">
       <MobileSheet client:visible />
     </div>
-
   </div>
 </header>
 
 <script>
   function applyHeader() {
     const header = document.getElementById("site-header");
-
-    if (!header) return;
-
     window.addEventListener("scroll", () => {
-      header.classList.add("bg-white");
+      header?.classList.add("bg-white");
     });
   }
 
   document.addEventListener("astro:after-swap", applyHeader);
-
   applyHeader();
 </script>
