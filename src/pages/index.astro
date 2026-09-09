@@ -8,6 +8,7 @@ import { Quotes } from "@/components/pages/home/Quotes";
 import NewsCard from "@/components/pages/news/NewsCard.astro";
 import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
 import { Picture, Image } from "astro:assets";
+
 import take10Logo from "@/assets/img/logo/take10.png";
 import doSomeGoodLogo from "@/assets/img/logo/dosomegood-new.png";
 import doSomeGoodPhoto from "@/assets/img/programmes/dosomegood.jpg";
@@ -18,6 +19,7 @@ const posts = (await getCollection("posts", ({ data }) => data.published)).sort(
 );
 
 const entry = await getEntry("pages", "index");
+
 if (!entry) throw new Error("Could not find page");
 
 const { Content } = await render(entry);
@@ -25,148 +27,274 @@ const { Content } = await render(entry);
 
 <Layout title={entry.data.title}>
 
-  <!-- HERO -->
-  <div class="relative w-full overflow-hidden bg-white">
+  <!-- =====================================================
+       HOME HERO
+       ===================================================== -->
 
-    <Picture
-      src={import("@/assets/img/banner/home/home.png")}
-      width={2200}
-      height={900}
-      formats={["avif", "webp"]}
-      alt="Home banner"
-      class="h-[520px] md:h-[600px] w-full object-cover"
-      priority={true}
-      fetchpriority="high"
-    />
+  <section
+    class="home-hero relative w-full overflow-hidden bg-white"
+  >
 
-    <!-- Dark gradient overlay for white text readability -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/50"></div>
+    <!-- HERO IMAGE -->
+    <div
+      class="home-hero-image absolute inset-x-0 bottom-0 top-[100px]"
+    >
+
+      <Picture
+        src={import("@/assets/img/banner/home/home.png")}
+        width={2200}
+        height={1200}
+        formats={["avif", "webp"]}
+        alt="Vulnerable Support Charitable Trust community outreach"
+        class="absolute inset-0 h-full w-full object-cover"
+        priority={true}
+        fetchpriority="high"
+      />
+
+      <!-- WHITE FADE ON SIDES -->
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white opacity-90"
+      ></div>
+
+      <!-- SUBTLE DARK OVERLAY -->
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent"
+      ></div>
+
+    </div>
+
 
     <!-- HERO CONTENT -->
-    <div class="absolute inset-0 flex items-center justify-center">
-      <div class="mx-auto w-full max-w-4xl px-5 text-center lg:px-8">
+    <div
+      class="relative z-10 mx-auto flex min-h-[850px] max-w-7xl items-center px-6 pt-[100px] lg:px-10"
+    >
 
-        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
-          Supporting people,<br class="hidden md:block" /> strengthening communities
+      <div
+        class="home-hero-content w-full max-w-[600px]"
+      >
+
+        <!-- MAIN TITLE -->
+        <h1
+          class="text-4xl font-bold leading-[1.08] tracking-tight text-white drop-shadow-lg sm:text-5xl lg:text-6xl"
+        >
+          Supporting people,<br />
+          strengthening communities
         </h1>
 
-        <p class="mt-4 text-base md:text-xl text-white/90 font-medium">
+        <!-- SUBTITLE -->
+        <p
+          class="mt-5 text-xl font-medium text-white drop-shadow-md sm:text-2xl"
+        >
           Working together for a better tomorrow
         </p>
 
-        <div class="mt-6 flex items-center justify-center gap-4">
 
-          <a href="/take10/" class="hover:opacity-80 transition">
+        <!-- PROGRAMME LOGOS -->
+        <div
+          class="mt-8 flex items-center gap-5"
+        >
+
+          <a
+            href="/take10/"
+            class="group transition duration-300 hover:scale-105"
+          >
             <Image
               src={take10Logo}
-              width={64}
-              height={64}
+              width={115}
+              height={115}
               alt="Take 10"
-              class="rounded-full object-contain"
+              class="h-[110px] w-[110px] rounded-full object-contain shadow-lg"
             />
           </a>
 
-          <a href="/dosomegood/" class="hover:opacity-80 transition">
+          <a
+            href="/dosomegood/"
+            class="group transition duration-300 hover:scale-105"
+          >
             <Image
               src={doSomeGoodLogo}
-              width={64}
-              height={64}
+              width={115}
+              height={115}
               alt="Do Some Good"
-              class="rounded-full object-contain"
+              class="h-[110px] w-[110px] rounded-full object-contain shadow-lg"
             />
           </a>
 
         </div>
 
-        <div class="mt-6">
-          <a href="#our-programmes" class="inline-flex items-center gap-2 text-sm font-semibold text-white underline underline-offset-4 hover:text-orange-300 transition">
-            <span>Learn more about our work</span>
-            <span aria-hidden="true">→</span>
+
+        <!-- LEARN MORE -->
+        <div class="mt-8">
+
+          <a
+            href="#our-programmes"
+            class="inline-flex items-center gap-4 border-b-2 border-white pb-2 text-base font-semibold text-white transition hover:gap-6"
+          >
+            Learn more about our work
+            <span class="text-xl">→</span>
           </a>
+
         </div>
 
       </div>
+
     </div>
 
-    <!-- Wavy white bottom edge -->
-    <div class="absolute inset-x-0 bottom-0 leading-none">
+
+    <!-- =====================================================
+         WHITE WAVE
+         ===================================================== -->
+
+    <div
+      class="home-wave absolute bottom-[-1px] left-0 z-20 w-full"
+    >
+
       <svg
-        viewBox="0 0 1440 100"
-        xmlns="http://www.w3.org/2000/svg"
-        class="block w-full h-12 md:h-20"
+        viewBox="0 0 1440 180"
         preserveAspectRatio="none"
+        class="block h-[130px] w-full lg:h-[160px]"
+        xmlns="http://www.w3.org/2000/svg"
       >
+
         <path
-          fill="#ffffff"
-          d="M0,40 C480,80 960,10 1440,45 L1440,100 L0,100 Z"
-        ></path>
+          d="M0,95
+             C180,155 310,150 480,105
+             C650,60 790,65 960,105
+             C1130,145 1260,150 1440,85
+             L1440,180
+             L0,180
+             Z"
+          fill="white"
+        />
+
       </svg>
+
     </div>
 
-  </div>
+  </section>
 
 
-  <!-- OUR PROGRAMMES -->
+  <!-- =====================================================
+       OUR PROGRAMMES
+       ===================================================== -->
+
   <Section id="our-programmes">
 
     <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-gray-900">Our Programmes</h2>
-      <div class="mx-auto mt-4 h-1 w-20 bg-orange-500"></div>
+
+      <h2 class="text-4xl font-bold text-gray-900">
+        Our Programmes
+      </h2>
+
+      <div
+        class="mx-auto mt-4 h-1 w-20 bg-orange-500"
+      ></div>
+
     </div>
+
 
     <div class="grid gap-6 md:grid-cols-3">
 
-      <a href="/dosomegood/" class="group relative block h-80 overflow-hidden rounded-2xl">
+
+      <!-- DO SOME GOOD -->
+
+      <a
+        href="/dosomegood/"
+        class="group relative block h-80 overflow-hidden rounded-2xl"
+      >
+
         <img
           src={doSomeGoodPhoto.src}
           alt="Do Some Good"
           class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
 
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"
+        ></div>
 
-        <div class="absolute bottom-0 left-0 right-0 p-6">
-          <p class="text-white text-xl font-bold">Do Some Good</p>
+        <div
+          class="absolute bottom-0 left-0 right-0 p-6"
+        >
+
+          <p class="text-white text-xl font-bold">
+            Do Some Good
+          </p>
+
           <p class="mt-1 text-sm text-white/80">
             Wellington, Porirua &amp; Hutt Valley
           </p>
+
         </div>
+
       </a>
 
 
-      <a href="/take10/" class="group relative block h-80 overflow-hidden rounded-2xl">
+      <!-- TAKE 10 WELLINGTON -->
+
+      <a
+        href="/take10/"
+        class="group relative block h-80 overflow-hidden rounded-2xl"
+      >
+
         <img
           src={take10Photo.src}
           alt="Take 10 Wellington"
           class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
 
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"
+        ></div>
 
-        <div class="absolute bottom-0 left-0 right-0 p-6">
-          <p class="text-white text-xl font-bold">Take 10 Wellington</p>
+        <div
+          class="absolute bottom-0 left-0 right-0 p-6"
+        >
+
+          <p class="text-white text-xl font-bold">
+            Take 10 Wellington
+          </p>
+
           <p class="mt-1 text-sm text-white/80">
             Fri &amp; Sat, 10pm–3am
           </p>
+
         </div>
+
       </a>
 
 
-      <a href="/take10-auckland/" class="group relative block h-80 overflow-hidden rounded-2xl">
+      <!-- TAKE 10 AUCKLAND -->
+
+      <a
+        href="/take10-auckland/"
+        class="group relative block h-80 overflow-hidden rounded-2xl"
+      >
+
         <img
           src="/img/news/take10/take10-auckland.jpg"
           alt="Take 10 Auckland"
           class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
 
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"
+        ></div>
 
-        <div class="absolute bottom-0 left-0 right-0 p-6">
-          <p class="text-white text-xl font-bold">Take 10 Auckland</p>
+        <div
+          class="absolute bottom-0 left-0 right-0 p-6"
+        >
+
+          <p class="text-white text-xl font-bold">
+            Take 10 Auckland
+          </p>
+
           <p class="mt-1 text-sm text-white/80">
             Fri &amp; Sat, 10pm–3am
           </p>
+
         </div>
+
       </a>
 
     </div>
@@ -174,18 +302,29 @@ const { Content } = await render(entry);
   </Section>
 
 
-  <!-- WHO WE ARE -->
+  <!-- =====================================================
+       WHO WE ARE
+       ===================================================== -->
+
   <Section>
 
-    <div class="text-center max-w-3xl mx-auto mb-16">
+    <div
+      class="text-center max-w-3xl mx-auto mb-16"
+    >
 
-      <p class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-3">
+      <p
+        class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-3"
+      >
         Who we are
       </p>
 
-      <H2>Working together for a better tomorrow</H2>
+      <H2>
+        Working together for a better tomorrow
+      </H2>
 
-      <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+      <p
+        class="mt-6 text-lg text-gray-600 leading-relaxed"
+      >
         Vulnerable Support Charitable Trust is a leading provider of support to those who are at risk of harm across Wellington, Porirua, and Hutt Valley. At the heart of our holistic practice model is a firm basis of reducing harm, promoting respect, and working towards an equitable future.
       </p>
 
@@ -194,7 +333,12 @@ const { Content } = await render(entry);
 
     <div class="grid gap-16">
 
-      <div class="grid md:grid-cols-2 gap-8 items-center">
+
+      <!-- DO SOME GOOD -->
+
+      <div
+        class="grid md:grid-cols-2 gap-8 items-center"
+      >
 
         <img
           src={doSomeGoodPhoto.src}
@@ -204,22 +348,35 @@ const { Content } = await render(entry);
 
         <div>
 
-          <p class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-2">
+          <p
+            class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-2"
+          >
             Do Some Good
           </p>
 
-          <p class="text-gray-700 leading-relaxed">
+          <p
+            class="text-gray-700 leading-relaxed"
+          >
             A food support programme connecting local businesses wanting to do good, providing fresh and tasty kai for tamariki and their whānau in schools and kindergartens across Wellington, Porirua, and Hutt Valley. We also undertake regular volunteer days at the schools and kindergartens we support.
           </p>
 
-          <a href="/dosomegood/" class="inline-block mt-4 text-sm font-semibold underline underline-offset-4 hover:text-orange-500 transition">Explore Do Some Good →</a>
+          <a
+            href="/dosomegood/"
+            class="inline-block mt-4 text-sm font-semibold underline underline-offset-4 hover:text-orange-500 transition"
+          >
+            Explore Do Some Good →
+          </a>
 
         </div>
 
       </div>
 
 
-      <div class="grid md:grid-cols-2 gap-8 items-center">
+      <!-- TAKE 10 -->
+
+      <div
+        class="grid md:grid-cols-2 gap-8 items-center"
+      >
 
         <div class="md:order-2">
 
@@ -233,15 +390,24 @@ const { Content } = await render(entry);
 
         <div class="md:order-1">
 
-          <p class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-2">
+          <p
+            class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-2"
+          >
             Take 10
           </p>
 
-          <p class="text-gray-700 leading-relaxed">
+          <p
+            class="text-gray-700 leading-relaxed"
+          >
             A late night safe space operating from 10pm to 3am on Friday and Saturday nights, promoting safe nights out for students and others in the city. Take 10 runs in both Wellington, on the corner of Courtenay Place and Taranaki St, and in Tāmaki Makaurau, Auckland.
           </p>
 
-          <a href="/take10/" class="inline-block mt-4 text-sm font-semibold underline underline-offset-4 hover:text-orange-500 transition">Explore Take 10 →</a>
+          <a
+            href="/take10/"
+            class="inline-block mt-4 text-sm font-semibold underline underline-offset-4 hover:text-orange-500 transition"
+          >
+            Explore Take 10 →
+          </a>
 
         </div>
 
@@ -250,9 +416,15 @@ const { Content } = await render(entry);
     </div>
 
 
-    <div class="mt-16 bg-gray-50 rounded-2xl p-10 text-center max-w-3xl mx-auto">
+    <!-- VISION -->
 
-      <p class="text-lg text-gray-700 leading-relaxed">
+    <div
+      class="mt-16 bg-gray-50 rounded-2xl p-10 text-center max-w-3xl mx-auto"
+    >
+
+      <p
+        class="text-lg text-gray-700 leading-relaxed"
+      >
         Our vision is for inclusive local communities where all people are prospering, able to achieve their goals, valued, and protected from harm. We respect all communities and provide support in a non-judgemental and inclusive manner.
       </p>
 
@@ -261,24 +433,46 @@ const { Content } = await render(entry);
   </Section>
 
 
+  <!-- =====================================================
+       HOW YOU CAN HELP
+       ===================================================== -->
+
   <HowYouCanHelp />
 
 
+  <!-- =====================================================
+       TESTIMONIALS
+       ===================================================== -->
+
   <FullSection>
 
-    <H2>What people are saying</H2>
+    <H2>
+      What people are saying
+    </H2>
 
     <Quotes />
 
   </FullSection>
 
 
+  <!-- =====================================================
+       LATEST NEWS
+       ===================================================== -->
+
   <Section>
 
-    <H2>Latest news</H2>
+    <H2>
+      Latest news
+    </H2>
 
-    <div class="mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-9">
-      {posts.slice(0, 3).map((post) => <NewsCard post={post} />)}
+    <div
+      class="mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-9"
+    >
+
+      {posts.slice(0, 3).map((post) => (
+        <NewsCard post={post} />
+      ))}
+
     </div>
 
   </Section>
@@ -286,8 +480,70 @@ const { Content } = await render(entry);
 </Layout>
 
 
+<!-- =====================================================
+     STYLES
+     ===================================================== -->
+
 <style is:global>
+
   html {
     scroll-behavior: smooth;
   }
+
+
+  /* HERO */
+
+  .home-hero {
+    min-height: 900px;
+  }
+
+
+  .home-hero-image {
+    overflow: hidden;
+  }
+
+
+  .home-hero-image img {
+    object-position: center center;
+  }
+
+
+  .home-hero-content {
+    transform: translateY(20px);
+  }
+
+
+  /* TABLET */
+
+  @media (max-width: 1024px) {
+
+    .home-hero {
+      min-height: 800px;
+    }
+
+    .home-hero-content {
+      max-width: 520px;
+    }
+
+  }
+
+
+  /* MOBILE */
+
+  @media (max-width: 768px) {
+
+    .home-hero {
+      min-height: 760px;
+    }
+
+    .home-hero-image {
+      top: 85px;
+    }
+
+    .home-hero-content {
+      transform: translateY(0);
+    }
+
+  }
+
 </style>
