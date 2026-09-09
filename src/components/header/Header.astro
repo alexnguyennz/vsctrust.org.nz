@@ -56,21 +56,21 @@ const pathname = new URL(Astro.request.url).pathname;
     color: #171717 !important;
   }
   /* BOUTON VOLUNTEER — reste orange, texte blanc */
-  #site-header nav a[class*="rounded-full"]:nth-of-type(1) {
-    background: #f47b20 !important;
+  #site-header nav a[href="/volunteer/"] {
+    background-color: #f47b20 !important;
     color: #ffffff !important;
   }
-  #site-header nav a[class*="rounded-full"]:nth-of-type(1):hover {
-    background: #f47b20 !important;
+  #site-header nav a[href="/volunteer/"]:hover {
+    background-color: #f47b20 !important;
     color: #ffffff !important;
   }
   /* BOUTON DONATION — reste noir, texte blanc */
-  #site-header nav a[class*="rounded-full"]:nth-of-type(2) {
-    background: #171717 !important;
+  #site-header nav a[href="/support-us/"] {
+    background-color: #171717 !important;
     color: #ffffff !important;
   }
-  #site-header nav a[class*="rounded-full"]:nth-of-type(2):hover {
-    background: #171717 !important;
+  #site-header nav a[href="/support-us/"]:hover {
+    background-color: #171717 !important;
     color: #ffffff !important;
   }
   @media (max-width: 1023px) {
