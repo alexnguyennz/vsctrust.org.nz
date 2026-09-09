@@ -26,65 +26,68 @@ const { Content } = await render(entry);
 <Layout title={entry.data.title}>
 
   <!-- HERO -->
-  <div class="relative w-full overflow-hidden bg-white pt-28 pb-20">
+  <div class="relative w-full overflow-hidden bg-white">
 
-    <div class="mx-auto grid max-w-7xl items-center gap-10 px-5 lg:grid-cols-2 lg:px-8">
+    <Picture
+      src={import("@/assets/img/banner/home/home.png")}
+      width={2200}
+      height={900}
+      formats={["avif", "webp"]}
+      alt="Home banner"
+      class="h-[520px] md:h-[600px] w-full object-cover"
+      priority={true}
+      fetchpriority="high"
+    />
 
-      <!-- LEFT: TEXT CONTENT -->
-      <div class="relative z-10">
+    <!-- White fade on the left for text readability -->
+    <div class="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent"></div>
 
-        <h1 class="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
-          Supporting people, strengthening communities
-        </h1>
+    <!-- HERO CONTENT -->
+    <div class="absolute inset-0 flex items-center">
+      <div class="mx-auto w-full max-w-7xl px-5 lg:px-8">
+        <div class="max-w-md">
 
-        <p class="mt-4 text-lg md:text-xl text-gray-500">
-          Working together for a better tomorrow
-        </p>
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+            Supporting people, strengthening communities
+          </h1>
 
-        <div class="mt-6 flex items-center gap-4">
+          <p class="mt-3 text-base md:text-lg text-gray-500">
+            Working together for a better tomorrow
+          </p>
 
-          <a href="/take10/" class="hover:opacity-80 transition">
-            <Image
-              src={take10Logo}
-              width={80}
-              height={80}
-              alt="Take 10"
-              class="rounded-full object-contain"
-            />
-          </a>
+          <div class="mt-5 flex items-center gap-3">
 
-          <a href="/dosomegood/" class="hover:opacity-80 transition">
-            <Image
-              src={doSomeGoodLogo}
-              width={80}
-              height={80}
-              alt="Do Some Good"
-              class="rounded-full object-contain"
-            />
-          </a>
+            <a href="/take10/" class="hover:opacity-80 transition">
+              <Image
+                src={take10Logo}
+                width={60}
+                height={60}
+                alt="Take 10"
+                class="rounded-full object-contain"
+              />
+            </a>
+
+            <a href="/dosomegood/" class="hover:opacity-80 transition">
+              <Image
+                src={doSomeGoodLogo}
+                width={60}
+                height={60}
+                alt="Do Some Good"
+                class="rounded-full object-contain"
+              />
+            </a>
+
+          </div>
+
+          <div class="mt-5">
+            <a href="#our-programmes" class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 underline underline-offset-4 hover:text-orange-500 transition">
+              <span>Learn more about our work</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
 
         </div>
-
-        <div class="mt-6">
-          <a href="#our-programmes" class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 underline underline-offset-4 hover:text-orange-500 transition">Learn more about our work<span aria-hidden="true">→</span></a>
-        </div>
-
       </div>
-
-      <!-- RIGHT: IMAGE -->
-      <div class="relative h-[300px] md:h-[420px] lg:h-[480px] overflow-hidden rounded-3xl">
-        <Picture
-          src={import("@/assets/img/banner/home/home.png")}
-          width={1200}
-          height={900}
-          formats={["avif", "webp"]}
-          alt="Home banner"
-          class="absolute inset-0 h-full w-full object-cover"
-          priority={true}
-          fetchpriority="high"
-        />
-      </div>
-
     </div>
 
     <!-- Wavy white bottom edge -->
