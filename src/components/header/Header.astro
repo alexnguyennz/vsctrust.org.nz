@@ -7,7 +7,7 @@ const pathname = new URL(Astro.request.url).pathname;
 ---
 <header
   id="site-header"
-  class="absolute top-0 left-0 z-20 w-full bg-transparent transition"
+  class="absolute top-0 left-0 z-20 w-full bg-white transition"
   transition:animate="none"
 >
   <div
@@ -36,17 +36,12 @@ const pathname = new URL(Astro.request.url).pathname;
   </div>
 </header>
 <style is:global>
-  /* ========================================
-     HEADER
-     ======================================== */
   #site-header {
-    background: transparent !important;
+    background: #ffffff !important;
   }
-  /* LOGO */
   #site-header .header-logo {
     filter: brightness(0);
   }
-  /* NAVIGATION PRINCIPALE */
   #site-header nav a,
   #site-header nav button {
     color: #171717 !important;
@@ -55,19 +50,33 @@ const pathname = new URL(Astro.request.url).pathname;
   #site-header nav button:hover {
     color: #171717 !important;
   }
-  /* BOUTON VOLUNTEER — reste orange, texte blanc */
+  /* BOUTON VOLUNTEER — ovale, orange, texte blanc */
   #site-header nav a[href="/volunteer/"] {
     background-color: #f47b20 !important;
     color: #ffffff !important;
+    border-radius: 9999px !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0.6rem 1.25rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
   }
   #site-header nav a[href="/volunteer/"]:hover {
     background-color: #f47b20 !important;
     color: #ffffff !important;
   }
-  /* BOUTON DONATION — reste noir, texte blanc */
+  /* BOUTON DONATION — ovale, noir, texte blanc */
   #site-header nav a[href="/support-us/"] {
     background-color: #171717 !important;
     color: #ffffff !important;
+    border-radius: 9999px !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0.6rem 1.25rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
   }
   #site-header nav a[href="/support-us/"]:hover {
     background-color: #171717 !important;
@@ -75,7 +84,7 @@ const pathname = new URL(Astro.request.url).pathname;
   }
   @media (max-width: 1023px) {
     #site-header {
-      background: transparent !important;
+      background: #ffffff !important;
     }
     #site-header .header-logo {
       filter: brightness(0);
