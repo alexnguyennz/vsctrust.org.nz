@@ -45,8 +45,13 @@ for await (const image of images) {
     </p>
   </div>
 
+  <!-- SINGLE INTRO PHOTO -->
   <Section>
-    <Gallery imageData={images} thumbnails={thumbnails} client:visible />
+    <img
+      src={thumbnails["9"]?.src}
+      alt="Do Some Good in action"
+      class="rounded-3xl w-full h-[420px] md:h-[520px] object-cover"
+    />
   </Section>
 
   <!-- WHAT DO WE DO -->
@@ -62,10 +67,10 @@ for await (const image of images) {
           What do we do?
         </p>
         <p class="text-gray-700 leading-relaxed mb-4">
-          We deliver fresh and tasty kai to kindergartens and primary schools across Wellington, Porirua, and Hutt Valley — fruit, veggies, dairy, bread, cold cuts, popcorn and other snacks.
+          We deliver fresh and tasty kai to kindergartens and primary schools across Wellington, Porirua, and Hutt Valley. This includes fruit, veggies, dairy, bread, cold cuts, popcorn and other snacks.
         </p>
         <p class="text-gray-700 leading-relaxed">
-          A well-fed child is better able to engage, focus and connect with those around them. Kai is also taken home by whānau to make meals through the week, acting as an equaliser so every tamariki has the chance to thrive.
+          A well fed child is better able to engage, focus and connect with those around them. Kai is also taken home by whānau to make meals through the week, acting as an equaliser so every tamariki has the chance to thrive.
         </p>
       </div>
     </div>
@@ -86,10 +91,10 @@ for await (const image of images) {
           How do we do it?
         </p>
         <p class="text-gray-700 leading-relaxed mb-4">
-          We work with corporate partners and donors to deliver our programme, giving the business community the chance to be part of a concerted effort to build well-connected communities.
+          We work with corporate partners and donors to deliver our programme, giving the business community the chance to be part of a concerted effort to build well connected communities.
         </p>
         <p class="text-gray-700 leading-relaxed">
-          Our partners also volunteer their time at our schools — a real highlight for both teams and tamariki, who often get to muck in and help with the fun jobs on the day.
+          Our partners also volunteer their time at our schools, a real highlight for both teams and tamariki, who often get to muck in and help with the fun jobs on the day.
         </p>
       </div>
     </div>
@@ -102,7 +107,7 @@ for await (const image of images) {
         We need your help!
       </p>
       <p class="text-gray-700 leading-relaxed mb-4">
-        Our food support programme has felt the impact of the cost-of-living crisis, with less funding available and increased need in the community.
+        Our food support programme has felt the impact of the cost of living crisis, with less funding available and increased need in the community.
       </p>
       <p class="text-gray-700 leading-relaxed mb-4">
         If you are, or know of, a business or individual able to give back and make a difference for our tamariki and their whānau, please get in touch.
@@ -112,6 +117,17 @@ for await (const image of images) {
         <a href="mailto:hello@vsctrust.org.nz" class="underline hover:text-orange-500">hello@vsctrust.org.nz</a>.
       </p>
     </div>
+  </Section>
+
+  <!-- PHOTO ALBUM -->
+  <Section>
+    <div class="text-center mb-10">
+      <p class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-2">
+        Gallery
+      </p>
+      <h2 class="text-3xl font-bold text-gray-900">See more of our work</h2>
+    </div>
+    <Gallery imageData={images} thumbnails={thumbnails} client:visible />
   </Section>
 
   <Section>
@@ -127,35 +143,45 @@ for await (const image of images) {
       Your browser does not support the video tag.
     </video>
   </Section>
-  <Section class="text-center">
-    <H2>Want to help?</H2>
-    <div class="grid gap-6 lg:grid-cols-2 lg:gap-12">
-      <div class="flex flex-col">
-        <p>
+
+  <!-- WANT TO HELP -->
+  <Section>
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-900">Want to help?</h2>
+      <div class="mx-auto mt-4 h-1 w-20 bg-orange-500"></div>
+    </div>
+    <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
+      <div class="flex flex-col bg-gray-50 rounded-2xl p-8 text-center">
+        <p class="text-gray-700 leading-relaxed mb-6">
           {entry.data.sponsorASchoolDescription}
         </p>
         <div class="mx-auto mt-auto">
           <AnchorButton
             href="/sponsor-a-school/"
-            class="bg-red-600"
+            class="bg-orange-500 hover:bg-orange-600"
             rel="prefetch">Sponsor a school</AnchorButton
           >
         </div>
       </div>
-      <div class="flex flex-col">
-        <p>
+      <div class="flex flex-col bg-gray-50 rounded-2xl p-8 text-center">
+        <p class="text-gray-700 leading-relaxed mb-6">
           {entry.data.volunteerDescription}
         </p>
         <div class="mx-auto mt-auto">
-          <AnchorButton href="/volunteer/" class="bg-red-600" rel="prefetch"
+          <AnchorButton href="/volunteer/" class="bg-gray-900 hover:bg-gray-800" rel="prefetch"
             >Volunteer</AnchorButton
           >
         </div>
       </div>
     </div>
   </Section>
-  <FullSection>
-    <H2>Sponsors</H2>
+
+  <!-- SPONSORS & SUPPORTERS -->
+  <FullSection class="bg-gray-50 py-16">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold text-gray-900">Sponsors</h2>
+      <div class="mx-auto mt-3 h-1 w-16 bg-orange-500"></div>
+    </div>
     <Marquee
       pauseOnHover
       className="gap-10 [--duration:55s] [--gap:4rem]"
@@ -188,8 +214,12 @@ for await (const image of images) {
       }
     </Marquee>
   </FullSection>
-  <FullSection>
-    <H2>Supporters</H2>
+
+  <FullSection class="bg-gray-50 pb-16">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold text-gray-900">Supporters</h2>
+      <div class="mx-auto mt-3 h-1 w-16 bg-orange-500"></div>
+    </div>
     <Marquee
       reverse
       pauseOnHover
@@ -223,4 +253,5 @@ for await (const image of images) {
       }
     </Marquee>
   </FullSection>
+
 </Layout>
