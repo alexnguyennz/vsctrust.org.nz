@@ -1,30 +1,63 @@
 ---
 import { Image } from "astro:assets";
 import { Navigation } from "./Navigation";
-import { MobileSheet } from "./MobileSheet";
+import MobileSheet from "./MobileSheet";
+
 const pathname = new URL(Astro.request.url).pathname;
 ---
+
 <header
   id="site-header"
-  class="absolute top-0 left-0 z-20 w-full bg-transparent transition"
+  class="absolute top-0 left-0 z-20 w-full bg-white transition"
   transition:animate="none"
 >
-  <div class="mx-auto my-1 flex items-center justify-between gap-6 px-5 lg:container lg:max-w-7xl">
-    <a href="/" aria-label="home page" rel="prefetch"><Image src={import("@/assets/img/logo/vsct-logo-new.png")} width="370" height="70" alt="Vulnerable Support Charitable Trust logo" class="h-auto" fetchpriority="high" loading="eager" /></a>
+  <div
+    class="mx-auto my-1 flex items-center justify-between gap-6 px-5 lg:container lg:max-w-7xl"
+  >
+
+    <!-- LOGO -->
+    <a
+      href="/"
+      aria-label="Home page"
+      rel="prefetch"
+    >
+      <Image
+        src={import("@/assets/img/logo-new.png")}
+        width="370"
+        height="70"
+        alt="Vulnerable Support Charitable Trust logo"
+        class="h-auto"
+        fetchpriority="high"
+        loading="eager"
+      />
+    </a>
+
+    <!-- DESKTOP NAVIGATION -->
     <div class="hidden lg:block">
-      <Navigation pathname={pathname} client:visible />
+      <Navigation pathname={pathname} Client:visible />
     </div>
+
+    <!-- MOBILE MENU -->
     <div class="lg:hidden">
-      <MobileSheet client:visible />
+      <MobileSheet Client:visible />
     </div>
+
   </div>
 </header>
+
 <script>
   function applyHeader() {
     const header = document.getElementById("site-header");
+
+    if (!header) return;
+
     window.addEventListener("scroll", () => {
+      // Keep the header white while scrolling
+      header.classList.add("bg-white");
     });
   }
+
   document.addEventListener("astro:after-swap", applyHeader);
+
   applyHeader();
 </script>
