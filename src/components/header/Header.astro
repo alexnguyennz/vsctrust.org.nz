@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import { Navigation } from "./Navigation";
 import { MobileSheet } from "./MobileSheet";
 import logo from "@/assets/img/logo/vsct-logo-new.png";
-
 const pathname = new URL(Astro.request.url).pathname;
 ---
 <header
@@ -36,7 +35,6 @@ const pathname = new URL(Astro.request.url).pathname;
     </div>
   </div>
 </header>
-
 <style is:global>
   /* ========================================
      HEADER
@@ -44,12 +42,10 @@ const pathname = new URL(Astro.request.url).pathname;
   #site-header {
     background: transparent !important;
   }
-
   /* LOGO */
   #site-header .header-logo {
     filter: brightness(0);
   }
-
   /* NAVIGATION PRINCIPALE */
   #site-header nav a,
   #site-header nav button {
@@ -59,27 +55,24 @@ const pathname = new URL(Astro.request.url).pathname;
   #site-header nav button:hover {
     color: #171717 !important;
   }
-
   /* BOUTON VOLUNTEER — reste orange, texte blanc */
-  #site-header nav a[class*="rounded-full"]:first-of-type {
+  #site-header nav a[class*="rounded-full"]:nth-of-type(1) {
     background: #f47b20 !important;
     color: #ffffff !important;
   }
-  #site-header nav a[class*="rounded-full"]:first-of-type:hover {
+  #site-header nav a[class*="rounded-full"]:nth-of-type(1):hover {
     background: #f47b20 !important;
     color: #ffffff !important;
   }
-
   /* BOUTON DONATION — reste noir, texte blanc */
-  #site-header nav a[class*="rounded-full"]:last-of-type {
+  #site-header nav a[class*="rounded-full"]:nth-of-type(2) {
     background: #171717 !important;
     color: #ffffff !important;
   }
-  #site-header nav a[class*="rounded-full"]:last-of-type:hover {
+  #site-header nav a[class*="rounded-full"]:nth-of-type(2):hover {
     background: #171717 !important;
     color: #ffffff !important;
   }
-
   @media (max-width: 1023px) {
     #site-header {
       background: transparent !important;
