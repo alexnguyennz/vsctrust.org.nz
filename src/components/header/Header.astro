@@ -7,11 +7,11 @@ const pathname = new URL(Astro.request.url).pathname;
 ---
 <header
   id="site-header"
-  class="absolute top-0 left-0 z-20 w-full bg-white transition"
+  class="absolute top-0 left-0 z-20 w-full bg-transparent transition"
   transition:animate="none"
 >
   <div
-    class="mx-auto my-1 flex items-center justify-between gap-6 px-5 lg:container lg:max-w-7xl"
+    class="mx-auto flex items-center justify-between gap-6 px-5 py-2 lg:container lg:max-w-7xl"
   >
     <!-- LOGO -->
     <a href="/" aria-label="Home page" rel="prefetch" class="shrink-0">
@@ -36,12 +36,17 @@ const pathname = new URL(Astro.request.url).pathname;
   </div>
 </header>
 <style is:global>
+  /* ========================================
+     HEADER
+     ======================================== */
   #site-header {
     background: #ffffff !important;
   }
+  /* LOGO */
   #site-header .header-logo {
     filter: brightness(0);
   }
+  /* NAVIGATION PRINCIPALE */
   #site-header nav a,
   #site-header nav button {
     color: #171717 !important;
@@ -50,7 +55,7 @@ const pathname = new URL(Astro.request.url).pathname;
   #site-header nav button:hover {
     color: #171717 !important;
   }
-  /* BOUTON VOLUNTEER — ovale, orange, texte blanc */
+  /* BOUTON VOLUNTEER — reste orange, texte blanc */
   #site-header nav a[href="/volunteer/"] {
     background-color: #f47b20 !important;
     color: #ffffff !important;
@@ -66,7 +71,7 @@ const pathname = new URL(Astro.request.url).pathname;
     background-color: #f47b20 !important;
     color: #ffffff !important;
   }
-  /* BOUTON DONATION — ovale, noir, texte blanc */
+  /* BOUTON DONATION — reste noir, texte blanc */
   #site-header nav a[href="/support-us/"] {
     background-color: #171717 !important;
     color: #ffffff !important;
