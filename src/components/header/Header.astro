@@ -2,45 +2,129 @@
 import { Image } from "astro:assets";
 import { Navigation } from "./Navigation";
 import MobileSheet from "./MobileSheet";
+
 const pathname = new URL(Astro.request.url).pathname;
 ---
 
 <header
   id="site-header"
-  class="absolute top-0 left-0 z-20 w-full bg-transparent transition"
+  class="absolute top-0 left-0 z-50 w-full bg-white transition"
   transition:animate="none"
 >
-  <div class="mx-auto my-1 flex items-center justify-between gap-6 px-5 lg:container lg:max-w-7xl">
-    <a href="/" rel="prefetch">
+  <div
+    class="mx-auto my-1 flex items-center justify-between gap-6 px-5 lg:container lg:max-w-7xl"
+  >
+
+    <!-- LOGO -->
+    <a
+      href="/"
+      aria-label="Home page"
+      rel="prefetch"
+      class="shrink-0"
+    >
       <Image
         src={import("@/assets/img/logo-new.png")}
         width="370"
         height="70"
         alt="Vulnerable Support Charitable Trust logo"
-        class="h-auto"
+        class="header-logo h-auto"
         fetchpriority="high"
         loading="eager"
       />
     </a>
 
+    <!-- DESKTOP NAVIGATION -->
     <div class="hidden lg:block">
-      <Navigation pathname={pathname} client:visible />
+      <Navigation pathname={pathname} Client:visible />
     </div>
 
+    <!-- MOBILE MENU -->
     <div class="lg:hidden">
       <MobileSheet client:visible />
     </div>
+
   </div>
 </header>
 
-<script>
-  function applyHeader() {
-    const header = document.getElementById("site-header");
-    window.addEventListener("scroll", () => {
-      header?.classList.add("bg-white");
-    });
+<style is:global>
+
+  /* ========================================
+     HEADER
+     ======================================== */
+
+  #site-header {
+    background: #ffffff !important;
   }
 
-  document.addEventListener("astro:after-swap", applyHeader);
-  applyHeader();
-</script>
+
+  /* ========================================
+     LOGO
+     ======================================== */
+
+  #site-header .header-logo {
+    filter: brightness(0);
+  }
+
+
+  /* ========================================
+     MAIN NAVIGATION
+     ======================================== */
+
+  #site-header nav a,
+  #site-header nav button {
+    color: #171717 !important;
+  }
+
+  #site-header nav a:hover,
+  #site-header nav button:hover {
+    color: #171717 !important;
+  }
+
+
+  /* ========================================
+     KEEP VOLUNTEER BUTTON ORANGE
+     ======================================== */
+
+  #site-header nav a[class*="rounded-full"]:first-of-type {
+    background: #f47b20 !important;
+    color: #ffffff !important;
+  }
+
+  #site-header nav a[class*="rounded-full"]:first-of-type:hover {
+    background: #f47b20 !important;
+    color: #ffffff !important;
+  }
+
+
+  /* ========================================
+     KEEP DONATION BUTTON BLACK
+     ======================================== */
+
+  #site-header nav a[class*="rounded-full"]:last-of-type {
+    background: #171717 !important;
+    color: #ffffff !important;
+  }
+
+  #site-header nav a[class*="rounded-full"]:last-of-type:hover {
+    background: #171717 !important;
+    color: #ffffff !important;
+  }
+
+
+  /* ========================================
+     MOBILE
+     ======================================== */
+
+  @media (max-width: 1023px) {
+
+    #site-header {
+      background: #ffffff !important;
+    }
+
+    #site-header .header-logo {
+      filter: brightness(0);
+    }
+
+  }
+
+</style>
