@@ -7,30 +7,26 @@ const pathname = new URL(Astro.request.url).pathname;
 ---
 <header
   id="site-header"
-  class="absolute top-0 left-0 z-50 w-full bg-white"
+  class="absolute top-0 left-0 z-20 w-full bg-transparent transition"
+  transition:animate="none"
 >
   <div
-    class="mx-auto flex min-h-[100px] items-center justify-between gap-6 px-6 lg:container lg:max-w-7xl"
+    class="mx-auto flex items-center justify-between gap-6 px-5 py-2 lg:container lg:max-w-7xl"
   >
     <!-- LOGO -->
-    
-      href="/"
-      aria-label="Home page"
-      rel="prefetch"
-      class="shrink-0"
-    >
+    <a href="/" aria-label="Home page" rel="prefetch" class="shrink-0">
       <Image
         src={logo}
         width="370"
         height="70"
         alt="Vulnerable Support Charitable Trust logo"
-        class="h-auto w-[250px] lg:w-[310px]"
+        class="header-logo h-auto"
         fetchpriority="high"
         loading="eager"
       />
     </a>
     <!-- DESKTOP NAVIGATION -->
-    <div class="hidden lg:flex items-center">
+    <div class="hidden lg:block">
       <Navigation pathname={pathname} client:visible />
     </div>
     <!-- MOBILE MENU -->
@@ -39,3 +35,45 @@ const pathname = new URL(Astro.request.url).pathname;
     </div>
   </div>
 </header>
+<style is:global>
+  #site-header {
+    background: transparent !important;
+  }
+  #site-header .header-logo {
+    filter: brightness(0);
+  }
+  #site-header nav a,
+  #site-header nav button {
+    color: #171717 !important;
+  }
+  #site-header nav a:hover,
+  #site-header nav button:hover {
+    color: #171717 !important;
+  }
+  /* BOUTON VOLUNTEER — orange, texte blanc */
+  #site-header nav a[href="/volunteer/"] {
+    background-color: #f47b20 !important;
+    color: #ffffff !important;
+  }
+  #site-header nav a[href="/volunteer/"]:hover {
+    background-color: #f47b20 !important;
+    color: #ffffff !important;
+  }
+  /* BOUTON DONATION — noir, texte blanc */
+  #site-header nav a[href="/support-us/"] {
+    background-color: #171717 !important;
+    color: #ffffff !important;
+  }
+  #site-header nav a[href="/support-us/"]:hover {
+    background-color: #171717 !important;
+    color: #ffffff !important;
+  }
+  @media (max-width: 1023px) {
+    #site-header {
+      background: transparent !important;
+    }
+    #site-header .header-logo {
+      filter: brightness(0);
+    }
+  }
+</style>
