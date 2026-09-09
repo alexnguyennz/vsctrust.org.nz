@@ -34,12 +34,12 @@ const pathname = new URL(Astro.request.url).pathname;
 
     <!-- DESKTOP NAVIGATION -->
     <div class="hidden lg:block">
-      <Navigation pathname={pathname} Client:visible />
+      <Navigation pathname={pathname} client:visible />
     </div>
 
     <!-- MOBILE MENU -->
     <div class="lg:hidden">
-      <MobileSheet Client:visible />
+      <MobileSheet client:visible />
     </div>
 
   </div>
@@ -52,7 +52,6 @@ const pathname = new URL(Astro.request.url).pathname;
     if (!header) return;
 
     window.addEventListener("scroll", () => {
-      // Keep the header white while scrolling
       header.classList.add("bg-white");
     });
   }
