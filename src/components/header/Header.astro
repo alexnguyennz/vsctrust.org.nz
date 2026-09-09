@@ -8,7 +8,7 @@ const pathname = new URL(Astro.request.url).pathname;
 
 <header
   id="site-header"
-  class="absolute top-0 left-0 z-50 w-full bg-white transition"
+ class="absolute top-0 left-0 z-20 w-full bg-transparent transition"
   transition:animate="none"
 >
   <div
@@ -35,12 +35,12 @@ const pathname = new URL(Astro.request.url).pathname;
 
     <!-- DESKTOP NAVIGATION -->
     <div class="hidden lg:block">
-      <Navigation pathname={pathname} Client:visible />
+     <Navigation pathname={pathname} client:visible />
     </div>
 
     <!-- MOBILE MENU -->
     <div class="lg:hidden">
-      <MobileSheet client:visible />
+     <MobileSheet client:visible />
     </div>
 
   </div>
@@ -127,4 +127,25 @@ const pathname = new URL(Astro.request.url).pathname;
 
   }
 
+</style><style is:global>
+  /* Logo en noir */
+  #site-header img {
+    filter: brightness(0);
+  }
+
+  /* Menu principal en noir */
+  #site-header nav a,
+  #site-header nav button {
+    color: #171717 !important;
+  }
+
+  /* Bouton Become a Volunteer : texte blanc */
+  #site-header nav a[class*="rounded-full"]:first-of-type {
+    color: #ffffff !important;
+  }
+
+  /* Bouton Make a Donation : texte blanc */
+  #site-header nav a[class*="rounded-full"]:last-of-type {
+    color: #ffffff !important;
+  }
 </style>
