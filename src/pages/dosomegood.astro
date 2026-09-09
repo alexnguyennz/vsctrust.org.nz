@@ -101,11 +101,7 @@ for await (const image of images) {
       {
         sponsors.map(({ data: sponsor }) =>
           sponsor.website ? (
-            
-              href={sponsor.website}
-              target="_blank"
-              rel="noopener nofollow noreferrer"
-            >
+            <a href={sponsor.website} target="_blank" rel="noopener nofollow noreferrer">
               <Image
                 src={sponsor.image as ImageMetadata}
                 height="64"
@@ -140,11 +136,7 @@ for await (const image of images) {
       {
         supporters.map(({ data }) =>
           data.website ? (
-            
-              href={data.website}
-              target="_blank"
-              rel="noopener nofollow noreferrer"
-            >
+            <a href={data.website} target="_blank" rel="noopener nofollow noreferrer">
               <Image
                 src={data.image as ImageMetadata}
                 height="64"
