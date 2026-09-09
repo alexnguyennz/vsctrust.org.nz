@@ -82,7 +82,7 @@ const { Content } = await render(entry);
         </div>
 
         <div class="mt-8">
-          <a
+          
             href="#our-programmes"
             class="text-white text-sm font-semibold underline underline-offset-4 hover:text-orange-300 transition"
           >
@@ -93,8 +93,20 @@ const { Content } = await render(entry);
       </div>
     </div>
 
-    <!-- White fade at bottom -->
-    <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white via-white/70 to-transparent"></div>
+    <!-- Wavy white bottom edge -->
+    <div class="absolute inset-x-0 bottom-0 leading-none">
+      <svg
+        viewBox="0 0 1440 120"
+        xmlns="http://www.w3.org/2000/svg"
+        class="block w-full h-24 md:h-32"
+        preserveAspectRatio="none"
+      >
+        <path
+          fill="#ffffff"
+          d="M0,64 C240,120 480,0 720,32 C960,64 1200,120 1440,64 L1440,120 L0,120 Z"
+        ></path>
+      </svg>
+    </div>
 
   </div>
 
@@ -109,7 +121,7 @@ const { Content } = await render(entry);
 
     <div class="grid gap-6 md:grid-cols-3">
 
-      <a
+      
         href="/dosomegood/"
         class="group relative block h-80 overflow-hidden rounded-2xl"
       >
@@ -130,7 +142,7 @@ const { Content } = await render(entry);
       </a>
 
 
-      <a
+      
         href="/take10/"
         class="group relative block h-80 overflow-hidden rounded-2xl"
       >
@@ -151,7 +163,7 @@ const { Content } = await render(entry);
       </a>
 
 
-      <a
+      
         href="/take10-auckland/"
         class="group relative block h-80 overflow-hidden rounded-2xl"
       >
@@ -214,7 +226,7 @@ const { Content } = await render(entry);
             A food support programme connecting local businesses wanting to do good, providing fresh and tasty kai for tamariki and their whānau in schools and kindergartens across Wellington, Porirua, and Hutt Valley. We also undertake regular volunteer days at the schools and kindergartens we support.
           </p>
 
-          <a
+          
             href="/dosomegood/"
             class="inline-block mt-4 text-sm font-semibold underline underline-offset-4 hover:text-orange-500 transition"
           >
@@ -248,7 +260,7 @@ const { Content } = await render(entry);
             A late night safe space operating from 10pm to 3am on Friday and Saturday nights, promoting safe nights out for students and others in the city. Take 10 runs in both Wellington, on the corner of Courtenay Place and Taranaki St, and in Tāmaki Makaurau, Auckland.
           </p>
 
-          <a
+          
             href="/take10/"
             class="inline-block mt-4 text-sm font-semibold underline underline-offset-4 hover:text-orange-500 transition"
           >
