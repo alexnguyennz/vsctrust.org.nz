@@ -2,32 +2,23 @@
 import type { GetImageResult, ImageMetadata } from "astro";
 import { getCollection, getEntry, render } from "astro:content";
 import { Image, getImage } from "astro:assets";
-
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
 import FullSection from "@/components/layouts/full-section.astro";
 import H2 from "@/components/headings/h2.astro";
 import AnchorButton from "@/components/layouts/anchor-button.astro";
-
-import Banner from "@/components/Banner.astro";
 import poster from "@/assets/img/dosomegood/poster.png";
 import Marquee from "@/components/ui/marquee";
 import { Gallery } from "@/components/Gallery";
-
 const sponsors = await getCollection("dosomegoodSponsors");
 const supporters = await getCollection("dosomegoodSupporters");
-
 const entry = await getEntry("pages", "dosomegood");
 if (!entry) throw new Error("Could not find page");
-
 const { Content } = await render(entry);
-
 // Generate thumbnails
 const images = await getCollection("dosomegoodImages");
 const importedImages = import.meta.glob("../content/dosomegoodImages/*");
-
 const thumbnails: { [key: string]: GetImageResult } = {};
-
 for await (const image of images) {
   thumbnails[image.id] = await getImage({
     src: importedImages[
@@ -38,18 +29,28 @@ for await (const image of images) {
   });
 }
 ---
-
 <Layout title={entry.data.title}>
-  <Banner title={entry.data.title} programme="dosomegood" />
+
+  <!-- SIMPLE PAGE HEADER -->
+  <div class="bg-white pt-32 pb-10 text-center">
+    <p class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-3">
+      Our Programmes
+    </p>
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900">
+      Do Some Good
+    </h1>
+    <div class="mx-auto mt-4 h-1 w-20 bg-orange-500"></div>
+    <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto px-5">
+      Feeding tamariki. Supporting communities.
+    </p>
+  </div>
 
   <Section>
     <Gallery imageData={images} thumbnails={thumbnails} client:visible />
   </Section>
-
   <Section>
     <Content />
   </Section>
-
   <Section>
     <video
       poster={poster.src}
@@ -63,7 +64,6 @@ for await (const image of images) {
       Your browser does not support the video tag.
     </video>
   </Section>
-
   <Section class="text-center">
     <H2>Want to help?</H2>
     <div class="grid gap-6 lg:grid-cols-2 lg:gap-12">
@@ -71,7 +71,6 @@ for await (const image of images) {
         <p>
           {entry.data.sponsorASchoolDescription}
         </p>
-
         <div class="mx-auto mt-auto">
           <AnchorButton
             href="/sponsor-a-school/"
@@ -84,7 +83,6 @@ for await (const image of images) {
         <p>
           {entry.data.volunteerDescription}
         </p>
-
         <div class="mx-auto mt-auto">
           <AnchorButton href="/volunteer/" class="bg-red-600" rel="prefetch"
             >Volunteer</AnchorButton
@@ -93,16 +91,8 @@ for await (const image of images) {
       </div>
     </div>
   </Section>
-
-  <!--<Section>
-    <H2>Our {schools.length} Schools</H2>
-
-    <SchoolsTable schools={schools} />
-  </Section>-->
-
   <FullSection>
     <H2>Sponsors</H2>
-
     <Marquee
       pauseOnHover
       className="gap-10 [--duration:55s] [--gap:4rem]"
@@ -111,7 +101,7 @@ for await (const image of images) {
       {
         sponsors.map(({ data: sponsor }) =>
           sponsor.website ? (
-            <a
+            
               href={sponsor.website}
               target="_blank"
               rel="noopener nofollow noreferrer"
@@ -139,10 +129,8 @@ for await (const image of images) {
       }
     </Marquee>
   </FullSection>
-
   <FullSection>
     <H2>Supporters</H2>
-
     <Marquee
       reverse
       pauseOnHover
@@ -152,7 +140,7 @@ for await (const image of images) {
       {
         supporters.map(({ data }) =>
           data.website ? (
-            <a
+            
               href={data.website}
               target="_blank"
               rel="noopener nofollow noreferrer"
