@@ -15,7 +15,7 @@ const title = "The Team";
 
 <Layout title={title}>
   <Section>
-    <div class="grid gap-6 md:grid-cols-2 md:gap-9 lg:grid-cols-3">
+    <div class="mx-auto max-w-4xl">
       {
         trustMembers.map((trust) => (
           <TeamMember trust={trust} category="team" />
