@@ -10,42 +10,104 @@ interface Props {
 const { trust, category } = Astro.props;
 
 const entry = await getEntry(category, trust.id);
+
 if (!entry) throw new Error("Could not find team member");
 
 const { Content } = await render(entry);
 ---
 
-<div class="flex flex-col gap-6 border-b border-stone-100 py-10 last:border-b-0 md:flex-row md:gap-10">
+<article
+  class="team-member group border-b border-stone-100 py-16 last:border-b-0 lg:py-20"
+>
 
-  <div class="flex flex-shrink-0 justify-center md:justify-start">
-    <Image
-      src={trust.data.image}
-      width="128"
-      height="128"
-      alt={`${trust.data.name} profile image`}
-      class="size-32 rounded-full object-cover"
-    />
-  </div>
+  <div
+    class="grid items-start gap-10 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-16"
+  >
 
-  <div class="text-center md:text-left">
-    <h2 class="m-0 text-lg font-semibold">
-      {trust.data.name}
+    <!-- =====================================================
+         PHOTO
+         ===================================================== -->
 
-      {
-        trust.id === "leigh-keown" && (
-          <a href="mailto:hello@vsctrust.org.nz" class="ml-1 text-orange-500">
-            ✉
-          </a>
-        )
-      }
-    </h2>
-    <h3 class="mb-4 text-sm font-medium uppercase tracking-wide text-orange-500">
-      {trust.data.position}
-    </h3>
+    <div class="flex justify-center lg:justify-start">
 
-    <div class="max-w-2xl text-sm leading-relaxed text-stone-600">
-      <Content />
+      <Image
+        src={trust.data.image}
+        width="170"
+        height="170"
+        alt={`${trust.data.name} profile image`}
+        class="team-member-photo size-[170px] rounded-full object-cover"
+      />
+
     </div>
+
+
+    <!-- =====================================================
+         CONTENT
+         ===================================================== -->
+
+    <div class="max-w-3xl">
+
+      <!-- NAME -->
+
+      <div class="flex flex-wrap items-center gap-2">
+
+        <h2
+          class="m-0 text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl"
+        >
+          {trust.data.name}
+        </h2>
+
+        {
+          trust.id === "leigh-keown" && (
+            <a
+              href="mailto:hello@vsctrust.org.nz"
+              aria-label="Email Leigh Keown"
+              class="text-lg text-orange-500 transition hover:text-orange-600"
+            >
+              ✉
+            </a>
+          )
+        }
+
+      </div>
+
+
+      <!-- POSITION -->
+
+      <h3
+        class="mt-2 mb-6 text-sm font-bold uppercase tracking-[0.08em] text-orange-500"
+      >
+        {trust.data.position}
+      </h3>
+
+
+      <!-- BIO -->
+
+      <div
+        class="team-member-content max-w-3xl text-base leading-7 text-stone-600 sm:text-lg sm:leading-8"
+      >
+
+        <Content />
+
+      </div>
+
+    </div>
+
   </div>
 
-</div>
+</article>
+
+
+<style>
+
+  .team-member-photo {
+    transition:
+      transform 300ms ease,
+      box-shadow 300ms ease;
+  }
+
+  .team-member:hover .team-member-photo {
+    transform: scale(1.025);
+  }
+
+</style>

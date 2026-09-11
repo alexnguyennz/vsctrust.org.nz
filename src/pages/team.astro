@@ -2,9 +2,8 @@
 import { getCollection } from "astro:content";
 
 import Layout from "@/components/layouts/Layout.astro";
-import Section from "@/components/layouts/section.astro";
-
 import TeamMember from "@/components/pages/team/TeamMember.astro";
+import { Picture } from "astro:assets";
 
 const trustMembers = (await getCollection("team")).sort(
   (a, b) => a.data.order - b.data.order,
@@ -14,13 +13,190 @@ const title = "The Team";
 ---
 
 <Layout title={title}>
-  <Section>
-    <div class="mx-auto max-w-4xl">
+
+  <!-- =====================================================
+       TEAM HERO
+       ===================================================== -->
+
+  <section class="team-hero relative w-full overflow-hidden bg-white">
+
+    <!-- Background image -->
+    <div class="team-hero-image absolute inset-x-0 bottom-0 top-0">
+
+      <Picture
+        src={import("@/assets/img/banner/home/home.png")}
+        width={2200}
+        height={1200}
+        formats={["avif", "webp"]}
+        alt="Vulnerable Support Charitable Trust community"
+        class="absolute inset-0 h-full w-full object-cover"
+        priority={true}
+      />
+
+      <!-- White fade around the image -->
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white"
+      ></div>
+
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-white/20"
+      ></div>
+
+    </div>
+
+
+    <!-- Hero content -->
+    <div
+      class="relative z-10 mx-auto flex min-h-[560px] max-w-7xl items-center px-6 lg:px-10"
+    >
+
+      <div class="max-w-xl">
+
+        <div class="mb-5 flex items-center gap-4">
+
+          <span
+            class="text-sm font-bold uppercase tracking-[0.18em] text-orange-500"
+          >
+            Our Team
+          </span>
+
+          <span class="h-px w-12 bg-orange-500"></span>
+
+        </div>
+
+
+        <h1
+          class="text-5xl font-bold leading-[1.05] tracking-tight text-gray-950 sm:text-6xl"
+        >
+          The people<br />
+          behind the work
+        </h1>
+
+
+        <p
+          class="mt-6 max-w-md text-lg leading-relaxed text-gray-700 sm:text-xl"
+        >
+          The people behind Vulnerable Support Charitable Trust, working
+          together to strengthen our communities.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         WHITE WAVE
+         ===================================================== -->
+
+    <div
+      class="absolute bottom-[-1px] left-0 z-20 w-full"
+    >
+
+      <svg
+        viewBox="0 0 1440 180"
+        preserveAspectRatio="none"
+        class="block h-[120px] w-full sm:h-[145px] lg:h-[165px]"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+        <path
+          d="
+            M0,90
+            C180,150 320,150 500,105
+            C680,60 790,65 960,105
+            C1140,150 1270,150 1440,85
+            L1440,180
+            L0,180
+            Z
+          "
+          fill="white"
+        />
+
+      </svg>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       TEAM MEMBERS
+       ===================================================== -->
+
+  <section class="bg-white">
+
+    <div class="mx-auto max-w-6xl px-6 pb-20 pt-8 lg:px-10 lg:pt-12">
+
       {
         trustMembers.map((trust) => (
-          <TeamMember trust={trust} category="team" />
+          <TeamMember
+            trust={trust}
+            category="team"
+          />
         ))
       }
+
     </div>
-  </Section>
+
+  </section>
+
 </Layout>
+
+
+<style is:global>
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+
+  /* =====================================================
+     HERO
+     ===================================================== */
+
+  .team-hero {
+    min-height: 560px;
+  }
+
+
+  .team-hero-image {
+    overflow: hidden;
+  }
+
+
+  .team-hero-image img {
+    object-position: center 42%;
+  }
+
+
+  /* =====================================================
+     TABLET
+     ===================================================== */
+
+  @media (max-width: 1024px) {
+
+    .team-hero {
+      min-height: 520px;
+    }
+
+  }
+
+
+  /* =====================================================
+     MOBILE
+     ===================================================== */
+
+  @media (max-width: 768px) {
+
+    .team-hero {
+      min-height: 600px;
+    }
+
+    .team-hero-image img {
+      object-position: 58% center;
+    }
+
+  }
+
+</style>
