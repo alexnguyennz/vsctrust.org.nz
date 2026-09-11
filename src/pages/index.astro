@@ -26,7 +26,7 @@ const { Content } = await render(entry);
 <Layout title={entry.data.title}>
 
   <!-- HERO -->
-  <section class="relative h-screen min-h-[700px] w-full overflow-hidden bg-white">
+  <section class="relative h-screen min-h-[760px] w-full overflow-hidden bg-white">
 
     <!-- MAIN IMAGE -->
     <Picture
@@ -40,55 +40,27 @@ const { Content } = await render(entry);
       fetchpriority="high"
     />
 
-    <!-- WHITE SOFT EDGES -->
+    <!-- DARK GRADIENT FOR TEXT LEGIBILITY -->
     <div
       class="absolute inset-0 z-10 pointer-events-none"
       style="
-        background:
-          radial-gradient(
-            ellipse at center,
-            transparent 42%,
-            rgba(255,255,255,0.18) 62%,
-            rgba(255,255,255,0.72) 84%,
-            #ffffff 100%
-          );
+        background: linear-gradient(
+          to right,
+          rgba(0,0,0,0.55) 0%,
+          rgba(0,0,0,0.25) 45%,
+          rgba(0,0,0,0.1) 70%,
+          rgba(0,0,0,0.35) 100%
+        );
       "
     ></div>
 
-    <!-- TOP WHITE FADE -->
+    <!-- TOP WHITE FADE (sits under the site nav) -->
     <div
-      class="absolute inset-x-0 top-0 z-10 h-40 pointer-events-none"
+      class="absolute inset-x-0 top-0 z-10 h-32 pointer-events-none"
       style="
         background: linear-gradient(
           to bottom,
-          rgba(255,255,255,0.96),
-          rgba(255,255,255,0.55),
-          transparent
-        );
-      "
-    ></div>
-
-    <!-- LEFT WHITE FADE -->
-    <div
-      class="absolute inset-y-0 left-0 z-10 w-24 md:w-40 pointer-events-none"
-      style="
-        background: linear-gradient(
-          to right,
-          #ffffff,
-          rgba(255,255,255,0.65),
-          transparent
-        );
-      "
-    ></div>
-
-    <!-- RIGHT WHITE FADE -->
-    <div
-      class="absolute inset-y-0 right-0 z-10 w-24 md:w-40 pointer-events-none"
-      style="
-        background: linear-gradient(
-          to left,
-          #ffffff,
-          rgba(255,255,255,0.65),
+          rgba(0,0,0,0.45),
           transparent
         );
       "
@@ -96,146 +68,115 @@ const { Content } = await render(entry);
 
 
     <!-- HERO CONTENT -->
-    <div class="absolute inset-0 z-20">
+    <div class="absolute inset-0 z-20 flex flex-col">
 
-      <div class="mx-auto flex h-full max-w-7xl items-center px-8 lg:px-12">
+      <div class="mx-auto flex w-full max-w-7xl flex-1 items-center px-6 pt-20 lg:px-12">
 
-        <div class="grid w-full items-center gap-10 lg:grid-cols-2">
+        <div class="max-w-2xl">
 
-          <!-- LEFT SIDE -->
-          <div class="max-w-2xl pt-16 lg:pt-0">
+          <!-- EYEBROW -->
+          <p class="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-white/90">
+            People &middot; Communities &middot; Brighter tomorrows
+          </p>
 
-            <!-- SMALL EDITORIAL TEXT -->
-            <div class="mb-5 flex items-center gap-3">
-              <span class="h-px w-12 bg-white"></span>
+          <!-- MAIN TITLE -->
+          <h1
+            class="text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+          >
+            Supporting people,
+            <br />
+            strengthening
+            <br />
+            communities
+          </h1>
 
-              <span
-                class="text-xs font-semibold uppercase tracking-[0.25em] text-white"
-              >
-                Safer nights
-              </span>
-            </div>
+          <!-- SUBTITLE -->
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl">
+            Working together for a better tomorrow
+          </p>
 
-            <!-- MAIN TITLE -->
-            <h1
-              class="max-w-2xl text-4xl font-bold leading-[1.05] tracking-tight text-white drop-shadow-md sm:text-5xl md:text-6xl lg:text-7xl"
+          <!-- PROGRAMME BADGES -->
+          <div class="mt-8 flex items-center gap-5">
+
+            <a href="/take10/" class="group flex items-center gap-3">
+              <Image
+                src={take10Logo}
+                width={80}
+                height={80}
+                alt="Take 10"
+                class="size-14 rounded-full bg-white object-contain p-1 shadow-md transition group-hover:scale-105 sm:size-16"
+              />
+            </a>
+
+            <a href="/dosomegood/" class="group flex items-center gap-3">
+              <Image
+                src={doSomeGoodLogo}
+                width={80}
+                height={80}
+                alt="Do Some Good"
+                class="size-14 rounded-full bg-white object-contain p-1 shadow-md transition group-hover:scale-105 sm:size-16"
+              />
+            </a>
+
+            <a
+              href="#our-programmes"
+              class="group ml-1 inline-flex items-center gap-3 text-sm font-semibold text-white"
             >
-              Supporting people,
-              <br />
-              strengthening
-              <br />
-              communities
-            </h1>
-
-            <!-- SUBTITLE -->
-            <p
-              class="mt-6 max-w-xl text-lg leading-relaxed text-white drop-shadow-md sm:text-xl md:text-2xl"
-            >
-              Working together for a better tomorrow
-            </p>
-
-
-            <!-- SMALL PHRASES -->
-            <div class="mt-8 flex flex-wrap gap-x-6 gap-y-2">
-
-              <span class="text-sm font-medium text-white">
-                Stronger communities
+              <span class="border-b border-white pb-1 transition group-hover:border-orange-400 group-hover:text-orange-300">
+                Learn more about our work
               </span>
-
-              <span class="text-white/70">•</span>
-
-              <span class="text-sm font-medium text-white">
-                Brighter tomorrows
+              <span class="text-lg transition-transform duration-300 group-hover:translate-x-2">
+                &rarr;
               </span>
-
-            </div>
-
-
-            <!-- CTA -->
-            <div class="mt-10">
-
-              <a
-                href="#our-programmes"
-                class="group inline-flex items-center gap-4 text-sm font-semibold text-white transition"
-              >
-                <span
-                  class="border-b border-white pb-1 transition group-hover:border-orange-400 group-hover:text-orange-300"
-                >
-                  Learn more about our work
-                </span>
-
-                <span
-                  class="text-xl transition-transform duration-300 group-hover:translate-x-2"
-                >
-                  →
-                </span>
-              </a>
-
-            </div>
+            </a>
 
           </div>
 
+          <!-- QUICK FACTS -->
+          <div class="mt-14 grid max-w-xl grid-cols-3 gap-6">
 
-          <!-- RIGHT SIDE -->
-          <div class="flex justify-center lg:justify-end">
+            <div class="flex flex-col items-start gap-2">
+              <svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.7M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+              </svg>
+              <p class="text-sm font-semibold leading-snug text-white">
+                Stronger communities
+              </p>
+            </div>
 
-            <div class="flex flex-col items-center gap-5 sm:flex-row">
+            <div class="flex flex-col items-start gap-2">
+              <svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+              </svg>
+              <p class="text-sm font-semibold leading-snug text-white">
+                Real people, real impact
+              </p>
+            </div>
 
-              <!-- TAKE 10 -->
-              <a
-                href="/take10/"
-                class="group relative"
-              >
-                <div
-                  class="rounded-full bg-white/20 p-3 backdrop-blur-sm transition duration-300 group-hover:scale-105"
-                >
-                  <Image
-                    src={take10Logo}
-                    width={125}
-                    height={125}
-                    alt="Take 10"
-                    class="size-24 rounded-full object-contain sm:size-28 md:size-32"
-                  />
-                </div>
-
-                <div
-                  class="mt-3 text-center text-xs font-semibold uppercase tracking-widest text-white opacity-0 transition group-hover:opacity-100"
-                >
-                  Take 10
-                </div>
-              </a>
-
-
-              <!-- DO SOME GOOD -->
-              <a
-                href="/dosomegood/"
-                class="group relative"
-              >
-                <div
-                  class="rounded-full bg-white/20 p-3 backdrop-blur-sm transition duration-300 group-hover:scale-105"
-                >
-                  <Image
-                    src={doSomeGoodLogo}
-                    width={125}
-                    height={125}
-                    alt="Do Some Good"
-                    class="size-24 rounded-full object-contain sm:size-28 md:size-32"
-                  />
-                </div>
-
-                <div
-                  class="mt-3 text-center text-xs font-semibold uppercase tracking-widest text-white opacity-0 transition group-hover:opacity-100"
-                >
-                  Do Some Good
-                </div>
-              </a>
-
+            <div class="flex flex-col items-start gap-2">
+              <svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+              </svg>
+              <p class="text-sm font-semibold leading-snug text-white">
+                A fairer, brighter tomorrow
+              </p>
             </div>
 
           </div>
 
         </div>
 
+      </div>
+
+      <!-- SCROLL INDICATOR -->
+      <div class="mb-24 flex flex-col items-center gap-2 text-white/90">
+        <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <rect x="8" y="3" width="8" height="14" rx="4" />
+          <circle cx="12" cy="8" r="1.2" fill="currentColor" stroke="none" />
+        </svg>
+        <span class="text-[10px] font-semibold uppercase tracking-[0.3em]">
+          Scroll
+        </span>
       </div>
 
     </div>
@@ -247,7 +188,7 @@ const { Content } = await render(entry);
       <svg
         viewBox="0 0 1440 180"
         xmlns="http://www.w3.org/2000/svg"
-        class="block h-28 w-full md:h-36 lg:h-40"
+        class="block h-24 w-full md:h-32 lg:h-36"
         preserveAspectRatio="none"
       >
         <path
@@ -274,11 +215,13 @@ const { Content } = await render(entry);
 
     <div class="mb-12 text-center">
 
-      <h2 class="text-4xl font-bold text-gray-900">
-        Our Programmes
-      </h2>
+      <p class="mb-3 text-sm font-semibold uppercase tracking-wide text-orange-500">
+        Our programmes
+      </p>
 
-      <div class="mx-auto mt-4 h-1 w-20 bg-orange-500"></div>
+      <h2 class="text-4xl font-bold text-gray-900">
+        Making a difference through action
+      </h2>
 
     </div>
 
@@ -337,7 +280,7 @@ const { Content } = await render(entry);
           </p>
 
           <p class="mt-1 text-sm text-white/80">
-            Fri &amp; Sat, 10pm–3am
+            Fri &amp; Sat, 10pm&ndash;3am
           </p>
 
         </div>
@@ -367,7 +310,7 @@ const { Content } = await render(entry);
           </p>
 
           <p class="mt-1 text-sm text-white/80">
-            Fri &amp; Sat, 10pm–3am
+            Fri &amp; Sat, 10pm&ndash;3am
           </p>
 
         </div>
