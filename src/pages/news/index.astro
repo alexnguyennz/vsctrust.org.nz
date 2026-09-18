@@ -16,11 +16,17 @@ const title = "News";
 ---
 
 <Layout title={title}>
-  <Section class="space-y-6">
-    <NewsGrid>
-      {posts.slice(0, 8).map((post) => <NewsCard post={post} />)}
-    </NewsGrid>
 
-    <Pagination nextUrl="/news/2/" />
-  </Section>
+  <div class="bg-white pt-28 sm:pt-32 lg:pt-36">
+
+    <Section class="space-y-6">
+      <NewsGrid>
+        {posts.slice(0, 8).map((post) => <NewsCard post={post} />)}
+      </NewsGrid>
+
+      <Pagination nextUrl="/news/2/" />
+    </Section>
+
+  </div>
+
 </Layout>
