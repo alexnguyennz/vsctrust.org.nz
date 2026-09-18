@@ -2,7 +2,6 @@
 import { getCollection, getEntry, render } from "astro:content";
 import type { GetImageResult, ImageMetadata } from "astro";
 import { Image, getImage } from "astro:assets";
-import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
@@ -10,9 +9,9 @@ import FullSection from "@/components/layouts/full-section.astro";
 import H2 from "@/components/headings/h2.astro";
 import AnchorButton from "@/components/layouts/anchor-button.astro";
 
+import Banner from "@/components/Banner.astro";
 import poster from "@/assets/img/take10/poster.png";
 import map from "@/assets/img/take10-auckland/map.png";
-import take10Logo from "@/assets/img/logo/take10.png";
 import Marquee from "@/components/ui/marquee";
 import { Gallery } from "@/components/Gallery";
 
@@ -38,151 +37,18 @@ for await (const image of images) {
     width: 500,
   });
 }
-
-const heroImage = images[0] ? thumbnails[images[0].id] : null;
 ---
 
 <Layout title={entry.data.title}>
+  <Banner title={entry.data.title} programme="take10-auckland" />
 
-  <!-- =====================================================
-       HERO
-       ===================================================== -->
-
-  <section class="w-full bg-white pb-14 pt-28 sm:pt-32 lg:pb-16 lg:pt-36">
-
-    <div
-      class="mx-auto grid max-w-7xl items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16 lg:px-10"
-    >
-
-      <!-- LEFT: TEXT -->
-      <div>
-
-        <div class="mb-4 flex items-center gap-4">
-          <span
-            class="text-sm font-bold uppercase tracking-[0.18em] text-orange-500"
-          >
-            Take 10
-          </span>
-          <span class="h-px w-12 bg-orange-500"></span>
-        </div>
-
-        <h1
-          class="text-4xl font-bold leading-[1.05] tracking-tight text-gray-950 sm:text-5xl"
-        >
-          {entry.data.title}
-        </h1>
-
-        <p class="mt-5 max-w-md text-lg leading-relaxed text-gray-700">
-          Creating safer nights, one connection at a time.
-        </p>
-
-        <div class="mt-8">
-          <AnchorButton href="/take10/" rel="prefetch" class="bg-orange-500">
-            Learn more about Take 10 →
-          </AnchorButton>
-        </div>
-
-      </div>
-
-
-      <!-- RIGHT: IMAGE -->
-      <div class="relative">
-
-        {
-          heroImage && (
-            <img
-              src={heroImage.src}
-              alt="Take 10 Auckland"
-              class="h-80 w-full rounded-3xl object-cover shadow-lg sm:h-96"
-            />
-          )
-        }
-
-        <div
-          class="absolute -bottom-6 -right-6 flex h-24 w-24 items-center justify-center rounded-full bg-white p-2 shadow-lg sm:h-28 sm:w-28"
-        >
-          <Image
-            src={take10Logo}
-            width={110}
-            height={110}
-            alt="Take 10"
-            class="h-full w-full object-contain"
-          />
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- INFO CARDS -->
-    <div class="mx-auto mt-12 max-w-7xl px-6 lg:px-10">
-
-      <div class="grid gap-4 sm:grid-cols-3">
-
-        <div class="flex items-center gap-4 rounded-2xl bg-orange-50 p-5">
-          <Icon name="tabler:calendar" class="size-8 text-orange-500" />
-          <div>
-            <p class="text-xs font-bold uppercase tracking-wide text-gray-500">
-              When?
-            </p>
-            <p class="font-semibold text-gray-900">Friday &amp; Saturday nights</p>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-4 rounded-2xl bg-orange-50 p-5">
-          <Icon name="tabler:clock" class="size-8 text-orange-500" />
-          <div>
-            <p class="text-xs font-bold uppercase tracking-wide text-gray-500">
-              Time
-            </p>
-            <p class="font-semibold text-gray-900">10PM – 3AM</p>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-4 rounded-2xl bg-orange-50 p-5">
-          <Icon name="tabler:map-pin" class="size-8 text-orange-500" />
-          <div>
-            <p class="text-xs font-bold uppercase tracking-wide text-gray-500">
-              Where?
-            </p>
-            <p class="font-semibold text-gray-900">Auckland, various locations</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       ABOUT / MAIN CONTENT
-       ===================================================== -->
+  <Section>
+    <Gallery imageData={images} thumbnails={thumbnails} client:visible />
+  </Section>
 
   <Section>
     <Content />
   </Section>
-
-
-  <!-- =====================================================
-       A LOOK AT TAKE 10 AUCKLAND
-       ===================================================== -->
-
-  <Section>
-
-    <div class="mb-8">
-      <p class="mb-2 text-sm font-bold uppercase tracking-wide text-orange-500">
-        A look at
-      </p>
-      <H2>Take 10 Auckland</H2>
-    </div>
-
-    <Gallery imageData={images} thumbnails={thumbnails} client:visible />
-
-  </Section>
-
 
   <Section>
     <Image
@@ -231,49 +97,19 @@ const heroImage = images[0] ? thumbnails[images[0].id] : null;
     </div>
   </Section>
 
+  <Section class="text-center">
+    <H2>Want to help?</H2>
 
-  <!-- =====================================================
-       GET INVOLVED / BE PART OF TAKE 10
-       ===================================================== -->
+    {
+      entry.data.wantToHelpDescription.map((description: string) => (
+        <p>{description}</p>
+      ))
+    }
 
-  <Section>
-
-    <div
-      class="mx-auto flex max-w-5xl flex-col items-center gap-6 rounded-3xl bg-orange-50 p-8 text-center sm:flex-row sm:text-left lg:p-12"
+    <AnchorButton href="/volunteer/" class="bg-orange-400" rel="prefetch"
+      >Volunteer</AnchorButton
     >
-
-      <div class="flex size-16 shrink-0 items-center justify-center rounded-full bg-white shadow">
-        <Icon name="lucide:users" class="size-8 text-orange-500" />
-      </div>
-
-      <div class="flex-1">
-
-        <p class="mb-1 text-sm font-bold uppercase tracking-wide text-orange-500">
-          Get Involved
-        </p>
-
-        <h2 class="text-2xl font-bold text-gray-950 sm:text-3xl">
-          Be part of Take 10
-        </h2>
-
-        <div class="mt-3 space-y-2 text-gray-700">
-          {
-            entry.data.wantToHelpDescription.map((description: string) => (
-              <p>{description}</p>
-            ))
-          }
-        </div>
-
-      </div>
-
-      <AnchorButton href="/volunteer/" class="bg-orange-500" rel="prefetch">
-        Become a Volunteer
-      </AnchorButton>
-
-    </div>
-
   </Section>
-
 
   <FullSection>
     <H2>Sponsors</H2>
@@ -314,5 +150,4 @@ const heroImage = images[0] ? thumbnails[images[0].id] : null;
       }
     </Marquee>
   </FullSection>
-
 </Layout>
