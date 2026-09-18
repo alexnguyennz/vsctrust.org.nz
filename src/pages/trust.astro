@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 
 import Layout from "@/components/layouts/Layout.astro";
 import TeamMember from "@/components/pages/team/TeamMember.astro";
+import { Image } from "astro:assets";
+import trustIllustration from "@/assets/img/trust-illustration.png";
 
 const trustMembers = (await getCollection("trust")).sort(
   (a, b) => a.data.order - b.data.order,
@@ -13,9 +15,111 @@ const title = "The Trust";
 
 <Layout title={title}>
 
+  <!-- =====================================================
+       TRUST HERO
+       ===================================================== -->
+
+  <section class="trust-hero relative w-full overflow-hidden bg-[#FDF4EA]">
+
+    <div
+      class="relative z-10 mx-auto grid min-h-[560px] max-w-7xl items-center gap-10 px-6 py-16 lg:grid-cols-2 lg:px-10"
+    >
+
+      <!-- LEFT: TEXT -->
+      <div class="max-w-xl">
+
+        <div class="mb-5 flex items-center gap-4">
+
+          <span
+            class="text-sm font-bold uppercase tracking-[0.18em] text-orange-500"
+          >
+            Our Trustees
+          </span>
+
+          <span class="h-px w-12 bg-orange-500"></span>
+
+        </div>
+
+
+        <h1
+          class="text-5xl font-bold leading-[1.05] tracking-tight text-gray-950 sm:text-6xl"
+        >
+          The people who
+          <br />
+          stand behind our work
+        </h1>
+
+
+        <p
+          class="mt-6 max-w-md text-lg leading-relaxed text-gray-700 sm:text-xl"
+        >
+          Meet the trustees who support the vision and direction of
+          Vulnerable Support Charitable Trust.
+        </p>
+
+      </div>
+
+
+      <!-- RIGHT: ILLUSTRATION -->
+      <div class="flex flex-col items-center justify-center">
+
+        <Image
+          src={trustIllustration}
+          alt="Vulnerable Support Charitable Trust trustees"
+          width={700}
+          height={480}
+          class="w-full max-w-lg object-contain"
+        />
+
+        <p class="trust-note mt-2 text-center text-base text-gray-800 sm:text-lg">
+          Stronger communities together
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         WHITE WAVE
+         ===================================================== -->
+
+    <div class="absolute bottom-[-1px] left-0 z-20 w-full">
+
+      <svg
+        viewBox="0 0 1440 180"
+        preserveAspectRatio="none"
+        class="block h-[120px] w-full sm:h-[145px] lg:h-[165px]"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+        <path
+          d="
+            M0,90
+            C180,150 320,150 500,105
+            C680,60 790,65 960,105
+            C1140,150 1270,150 1440,85
+            L1440,180
+            L0,180
+            Z
+          "
+          fill="white"
+        />
+
+      </svg>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       TRUST MEMBERS
+       ===================================================== -->
+
   <section class="bg-white">
 
-    <div class="mx-auto max-w-6xl px-6 pb-20 pt-16 lg:px-10 lg:pt-20">
+    <div class="mx-auto max-w-6xl px-6 pb-20 pt-8 lg:px-10 lg:pt-12">
 
       {
         trustMembers.map((trust) => (
@@ -31,3 +135,25 @@ const title = "The Trust";
   </section>
 
 </Layout>
+
+
+<style is:global>
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .trust-note {
+    font-family: 'Dancing Script', cursive;
+  }
+
+
+  @media (max-width: 1024px) {
+
+    .trust-hero {
+      min-height: 520px;
+    }
+
+  }
+
+</style>
