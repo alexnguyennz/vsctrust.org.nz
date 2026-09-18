@@ -16,13 +16,21 @@ import {
   Take10Auckland,
 } from "@/components/ProgrammeLogos.tsx";
 
-interface MenuLinks {
-  [key: string]: {
+interface MenuLink {
+  title: string;
+  href: string;
+  description: string;
+  icon: LucideIcon | Icon | (() => JSX.Element);
+  children?: {
     title: string;
     href: string;
     description: string;
     icon: LucideIcon | Icon | (() => JSX.Element);
   }[];
+}
+
+interface MenuLinks {
+  [key: string]: MenuLink[];
 }
 
 export const menuLinks: MenuLinks = {
@@ -58,12 +66,20 @@ export const menuLinks: MenuLinks = {
       href: "/take10/",
       description: "Late-night safe zone",
       icon: Take10,
-    },
-    {
-      title: "Take 10 Auckland",
-      href: "/take10-auckland/",
-      description: "Late-night safe zone",
-      icon: Take10Auckland,
+      children: [
+        {
+          title: "Take 10 Wellington",
+          href: "/take10-wellington/",
+          description: "Late-night safe zone",
+          icon: Take10,
+        },
+        {
+          title: "Take 10 Auckland",
+          href: "/take10-auckland/",
+          description: "Late-night safe zone",
+          icon: Take10Auckland,
+        },
+      ],
     },
   ],
   "Get Involved": [

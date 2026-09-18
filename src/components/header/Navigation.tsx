@@ -1,4 +1,5 @@
 import {
+  Fragment,
   forwardRef,
   type ElementRef,
   type ComponentPropsWithoutRef,
@@ -39,15 +40,28 @@ export function Navigation({ pathname }: { pathname: string }) {
             <NavigationMenuContent>
               <ul className={cn("w-max space-y-1.5 p-3")}>
                 {menuLinks[menu].map((link) => (
-                  <ListItem
-                    key={link.title}
-                    title={link.title}
-                    href={link.href}
-                    pathname={pathname}
-                    Icon={link.icon}
-                  >
-                    {link.description}
-                  </ListItem>
+                  <Fragment key={link.title}>
+                    <ListItem
+                      title={link.title}
+                      href={link.href}
+                      pathname={pathname}
+                      Icon={link.icon}
+                    >
+                      {link.description}
+                    </ListItem>
+                    {link.children?.map((child) => (
+                      <ListItem
+                        key={child.title}
+                        title={child.title}
+                        href={child.href}
+                        pathname={pathname}
+                        Icon={child.icon}
+                        className="ml-9 border-l border-stone-200 py-1 pl-3"
+                      >
+                        {child.description}
+                      </ListItem>
+                    ))}
+                  </Fragment>
                 ))}
               </ul>
             </NavigationMenuContent>
