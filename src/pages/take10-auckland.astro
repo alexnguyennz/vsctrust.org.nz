@@ -2,7 +2,6 @@
 import { getCollection, getEntry, render } from "astro:content";
 import type { GetImageResult, ImageMetadata } from "astro";
 import { Image, getImage } from "astro:assets";
-import { Icon } from "astro-icon/components";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
@@ -121,7 +120,12 @@ const heroImage = images[0] ? thumbnails[images[0].id] : null;
       <div class="grid gap-4 sm:grid-cols-3">
 
         <div class="flex items-center gap-4 rounded-2xl bg-orange-50 p-5">
-          <Icon name="lucide:calendar" class="size-8 text-orange-500" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-8 shrink-0 text-orange-500">
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
           <div>
             <p class="text-xs font-bold uppercase tracking-wide text-gray-500">
               When?
@@ -131,7 +135,10 @@ const heroImage = images[0] ? thumbnails[images[0].id] : null;
         </div>
 
         <div class="flex items-center gap-4 rounded-2xl bg-orange-50 p-5">
-          <Icon name="lucide:clock" class="size-8 text-orange-500" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-8 shrink-0 text-orange-500">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
           <div>
             <p class="text-xs font-bold uppercase tracking-wide text-gray-500">
               Time
@@ -141,7 +148,10 @@ const heroImage = images[0] ? thumbnails[images[0].id] : null;
         </div>
 
         <div class="flex items-center gap-4 rounded-2xl bg-orange-50 p-5">
-          <Icon name="lucide:map-pin" class="size-8 text-orange-500" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-8 shrink-0 text-orange-500">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
           <div>
             <p class="text-xs font-bold uppercase tracking-wide text-gray-500">
               Where?
@@ -243,7 +253,12 @@ const heroImage = images[0] ? thumbnails[images[0].id] : null;
     >
 
       <div class="flex size-16 shrink-0 items-center justify-center rounded-full bg-white shadow">
-        <Icon name="lucide:users" class="size-8 text-orange-500" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-8 text-orange-500">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
       </div>
 
       <div class="flex-1">
