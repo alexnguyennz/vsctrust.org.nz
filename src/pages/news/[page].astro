@@ -27,11 +27,57 @@ const title = "News";
 ---
 
 <Layout title={title}>
-  <Section class="space-y-6">
-    <NewsGrid>
-      {page.data.map((post) => <NewsCard post={post} />)}
-    </NewsGrid>
 
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-  </Section>
+  <!-- =====================================================
+       NEWS HERO
+       ===================================================== -->
+
+  <section class="w-full bg-[#FDF4EA] pb-14 pt-28 sm:pt-32 lg:pb-16 lg:pt-36">
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-10">
+
+      <div class="mb-5 flex items-center gap-4">
+
+        <span
+          class="text-sm font-bold uppercase tracking-[0.18em] text-orange-500"
+        >
+          Our News
+        </span>
+
+        <span class="h-px w-12 bg-orange-500"></span>
+
+      </div>
+
+      <h1
+        class="text-4xl font-bold leading-[1.05] tracking-tight text-gray-950 sm:text-5xl"
+      >
+        Latest News &amp; Updates
+      </h1>
+
+      <p class="mt-4 max-w-xl text-lg leading-relaxed text-gray-700">
+        Stay up to date with what's happening at Vulnerable Support
+        Charitable Trust.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       NEWS GRID
+       ===================================================== -->
+
+  <div class="bg-white">
+
+    <Section class="space-y-6">
+      <NewsGrid>
+        {page.data.map((post) => <NewsCard post={post} />)}
+      </NewsGrid>
+
+      <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+    </Section>
+
+  </div>
+
 </Layout>
