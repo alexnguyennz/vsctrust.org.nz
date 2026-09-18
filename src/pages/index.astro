@@ -7,8 +7,7 @@ import H2 from "@/components/headings/h2.astro";
 import { Quotes } from "@/components/pages/home/Quotes";
 import NewsCard from "@/components/pages/news/NewsCard.astro";
 import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
-import { Picture, Image } from "astro:assets";
-import take10Logo from "@/assets/img/logo/take10.png";
+import { Image } from "astro:assets";
 import doSomeGoodLogo from "@/assets/img/logo/dosomegood-new.png";
 import doSomeGoodPhoto from "@/assets/img/programmes/dosomegood.jpg";
 import take10Photo from "@/assets/img/programmes/take10.jpg";
@@ -26,211 +25,82 @@ const { Content } = await render(entry);
 <Layout title={entry.data.title}>
 
   <!-- HERO -->
-  <section class="relative h-screen min-h-[700px] w-full overflow-hidden bg-white">
+  <section class="relative w-full bg-white px-3 pb-3 pt-3 sm:px-5 sm:pb-5 sm:pt-4 lg:px-8 lg:pb-8">
 
-    <!-- MAIN IMAGE -->
-    <Picture
-      src={import("@/assets/img/banner/home/home.png")}
-      width={2200}
-      height={300}
-      formats={["avif", "webp"]}
-      alt="Home banner"
-      class="absolute inset-0 h-full w-full object-cover"
-      priority={true}
-      fetchpriority="high"
-    />
+    <div class="relative mx-auto max-w-[1500px] overflow-hidden rounded-[28px]">
 
-    <!-- WHITE SOFT EDGES -->
-    <div
-      class="absolute inset-0 z-10 pointer-events-none"
-      style="
-        background:
-          radial-gradient(
-            ellipse at center,
-            transparent 42%,
-            rgba(255,255,255,0.18) 62%,
-            rgba(255,255,255,0.72) 84%,
-            #ffffff 100%
-          );
-      "
-    ></div>
+      <!-- MAIN IMAGE -->
+      <img
+        src={take10Photo.src}
+        alt="Home banner"
+        class="h-[78vh] min-h-[560px] w-full object-cover"
+      />
 
-    <!-- TOP WHITE FADE -->
-    <div
-      class="absolute inset-x-0 top-0 z-10 h-40 pointer-events-none"
-      style="
-        background: linear-gradient(
-          to bottom,
-          rgba(255,255,255,0.96),
-          rgba(255,255,255,0.55),
-          transparent
-        );
-      "
-    ></div>
+      <!-- SUBTLE DARK OVERLAY FOR TEXT CONTRAST -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent"></div>
 
-    <!-- LEFT WHITE FADE -->
-    <div
-      class="absolute inset-y-0 left-0 z-10 w-24 md:w-40 pointer-events-none"
-      style="
-        background: linear-gradient(
-          to right,
-          #ffffff,
-          rgba(255,255,255,0.65),
-          transparent
-        );
-      "
-    ></div>
+      <!-- TOP RIGHT SCRIPT TEXT -->
+      <div class="hero-script absolute right-8 top-8 text-right leading-snug text-white sm:right-12 sm:top-10">
+        <p class="text-lg sm:text-xl">Safer nights</p>
+        <p class="text-lg sm:text-xl">Stronger communities</p>
+        <p class="relative inline-block text-lg sm:text-xl">
+          Brighter tomorrows
+          <span class="absolute -bottom-1 left-0 h-px w-full bg-white/80"></span>
+        </p>
+      </div>
 
-    <!-- RIGHT WHITE FADE -->
-    <div
-      class="absolute inset-y-0 right-0 z-10 w-24 md:w-40 pointer-events-none"
-      style="
-        background: linear-gradient(
-          to left,
-          #ffffff,
-          rgba(255,255,255,0.65),
-          transparent
-        );
-      "
-    ></div>
+      <!-- BOTTOM RIGHT QUOTE -->
+      <div class="hero-script absolute bottom-8 right-8 text-right leading-snug text-white sm:bottom-10 sm:right-12">
+        <p class="text-lg sm:text-xl">&ldquo;Small actions,</p>
+        <p class="relative inline-block text-lg sm:text-xl">
+          big change.&rdquo;
+          <span class="absolute -bottom-1 left-0 h-px w-full bg-white/80"></span>
+        </p>
+      </div>
 
+      <!-- MAIN CONTENT -->
+      <div class="absolute inset-0 flex items-center">
 
-    <!-- HERO CONTENT -->
-    <div class="absolute inset-0 z-20">
+        <div class="max-w-xl px-8 sm:px-12 lg:px-16">
 
-      <div class="mx-auto flex h-full max-w-7xl items-center px-8 lg:px-12">
-
-        <div class="grid w-full items-center gap-10 lg:grid-cols-2">
-
-          <!-- LEFT SIDE -->
-          <div class="max-w-2xl pt-16 lg:pt-0">
-
-            <!-- SMALL EDITORIAL TEXT -->
-            <div class="mb-5 flex items-center gap-3">
-              <span class="h-px w-12 bg-white"></span>
-
-              <span
-                class="text-xs font-semibold uppercase tracking-[0.25em] text-white"
-              >
-                Safer nights
-              </span>
-            </div>
-
-            <!-- MAIN TITLE -->
-            <h1
-              class="max-w-2xl text-4xl font-bold leading-[1.05] tracking-tight text-white drop-shadow-md sm:text-5xl md:text-6xl lg:text-7xl"
-            >
-              Supporting people,
-              <br />
-              strengthening
-              <br />
-              communities
-            </h1>
-
-            <!-- SUBTITLE -->
-            <p
-              class="mt-6 max-w-xl text-lg leading-relaxed text-white drop-shadow-md sm:text-xl md:text-2xl"
-            >
-              Working together for a better tomorrow
-            </p>
-
-
-            <!-- SMALL PHRASES -->
-            <div class="mt-8 flex flex-wrap gap-x-6 gap-y-2">
-
-              <span class="text-sm font-medium text-white">
-                Stronger communities
-              </span>
-
-              <span class="text-white/70">•</span>
-
-              <span class="text-sm font-medium text-white">
-                Brighter tomorrows
-              </span>
-
-            </div>
-
-
-            <!-- CTA -->
-            <div class="mt-10">
-
-              <a
-                href="#our-programmes"
-                class="group inline-flex items-center gap-4 text-sm font-semibold text-white transition"
-              >
-                <span
-                  class="border-b border-white pb-1 transition group-hover:border-orange-400 group-hover:text-orange-300"
-                >
-                  Learn more about our work
-                </span>
-
-                <span
-                  class="text-xl transition-transform duration-300 group-hover:translate-x-2"
-                >
-                  →
-                </span>
-              </a>
-
-            </div>
-
+          <div class="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-white">
+            <span class="h-px w-8 bg-white"></span>
+            People &middot; Communities &middot; Brighter Tomorrows
           </div>
 
+          <h1 class="hero-heading text-4xl leading-[1.15] text-white sm:text-5xl lg:text-6xl">
+            Supporting people,
+            <br />
+            <span class="italic">strengthening communities</span>
+          </h1>
 
-          <!-- RIGHT SIDE -->
-          <div class="flex justify-center lg:justify-end">
+          <p class="mt-5 text-lg text-white/90 sm:text-xl">
+            Working together for a better tomorrow
+          </p>
 
-            <div class="flex flex-col items-center gap-5 sm:flex-row">
+          <div class="mt-8 flex flex-wrap items-center gap-4">
 
-              <!-- TAKE 10 -->
-              <a
-                href="/take10/"
-                class="group relative"
-              >
-                <div
-                  class="rounded-full bg-white/20 p-3 backdrop-blur-sm transition duration-300 group-hover:scale-105"
-                >
-                  <Image
-                    src={take10Logo}
-                    width={125}
-                    height={125}
-                    alt="Take 10"
-                    class="size-24 rounded-full object-contain sm:size-28 md:size-32"
-                  />
-                </div>
+            <a
+              href="/take10/"
+              class="group inline-flex items-center gap-2 rounded-full bg-orange-500 px-7 py-3.5 text-base font-semibold text-white transition hover:bg-orange-600"
+            >
+              Take 10
+              <span class="transition-transform group-hover:translate-x-1">&rsaquo;</span>
+            </a>
 
-                <div
-                  class="mt-3 text-center text-xs font-semibold uppercase tracking-widest text-white opacity-0 transition group-hover:opacity-100"
-                >
-                  Take 10
-                </div>
-              </a>
-
-
-              <!-- DO SOME GOOD -->
-              <a
-                href="/dosomegood/"
-                class="group relative"
-              >
-                <div
-                  class="rounded-full bg-white/20 p-3 backdrop-blur-sm transition duration-300 group-hover:scale-105"
-                >
-                  <Image
-                    src={doSomeGoodLogo}
-                    width={125}
-                    height={125}
-                    alt="Do Some Good"
-                    class="size-24 rounded-full object-contain sm:size-28 md:size-32"
-                  />
-                </div>
-
-                <div
-                  class="mt-3 text-center text-xs font-semibold uppercase tracking-widest text-white opacity-0 transition group-hover:opacity-100"
-                >
-                  Do Some Good
-                </div>
-              </a>
-
-            </div>
+            <a
+              href="/dosomegood/"
+              class="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-2.5 transition hover:bg-gray-100"
+            >
+              <Image
+                src={doSomeGoodLogo}
+                width={110}
+                height={36}
+                alt="Do Some Good"
+                class="h-7 w-auto object-contain"
+              />
+              <span class="text-base font-semibold text-gray-800 transition-transform group-hover:translate-x-1">&rsaquo;</span>
+            </a>
 
           </div>
 
@@ -240,33 +110,20 @@ const { Content } = await render(entry);
 
     </div>
 
-
-    <!-- WHITE WAVE -->
-    <div class="absolute inset-x-0 bottom-0 z-30 leading-none">
-
-      <svg
-        viewBox="0 0 1440 180"
-        xmlns="http://www.w3.org/2000/svg"
-        class="block h-28 w-full md:h-36 lg:h-40"
-        preserveAspectRatio="none"
-      >
-        <path
-          fill="#ffffff"
-          d="
-            M0,105
-            C180,155 350,170 520,125
-            C700,78 790,70 960,110
-            C1130,150 1260,165 1440,105
-            L1440,180
-            L0,180
-            Z
-          "
-        ></path>
-      </svg>
-
-    </div>
-
   </section>
+
+  <style>
+    /* Assumption fonts — replace with your brand fonts if different */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Dancing+Script:wght@500&display=swap');
+
+    .hero-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    .hero-script {
+      font-family: 'Dancing Script', cursive;
+    }
+  </style>
 
 
   <!-- OUR PROGRAMMES -->
