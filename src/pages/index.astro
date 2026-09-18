@@ -25,7 +25,7 @@ const { Content } = await render(entry);
 <Layout title={entry.data.title}>
 
   <!-- HERO -->
-  <section class="relative w-full bg-white px-3 pb-3 pt-3 sm:px-5 sm:pb-5 sm:pt-4 lg:px-8 lg:pb-8">
+  <section class="relative w-full bg-white px-3 pb-3 pt-28 sm:px-5 sm:pb-5 sm:pt-32 lg:px-8 lg:pb-8 lg:pt-36">
 
     <div class="relative mx-auto max-w-[1500px] overflow-hidden rounded-[28px]">
 
@@ -33,7 +33,7 @@ const { Content } = await render(entry);
       <img
         src={take10Photo.src}
         alt="Home banner"
-        class="h-[78vh] min-h-[560px] w-full object-cover"
+        class="h-[70vh] min-h-[500px] w-full object-cover"
       />
 
       <!-- SUBTLE DARK OVERLAY FOR TEXT CONTRAST -->
@@ -62,11 +62,6 @@ const { Content } = await render(entry);
       <div class="absolute inset-0 flex items-center">
 
         <div class="max-w-xl px-8 sm:px-12 lg:px-16">
-
-          <div class="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-white">
-            <span class="h-px w-8 bg-white"></span>
-            People &middot; Communities &middot; Brighter Tomorrows
-          </div>
 
           <h1 class="hero-heading text-4xl leading-[1.15] text-white sm:text-5xl lg:text-6xl">
             Supporting people,
