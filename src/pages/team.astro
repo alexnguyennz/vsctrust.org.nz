@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 
 import Layout from "@/components/layouts/Layout.astro";
 import TeamMember from "@/components/pages/team/TeamMember.astro";
+import { Image } from "astro:assets";
+import teamIllustration from "@/assets/img/team-illustration.png";
 
 const trustMembers = (await getCollection("team")).sort(
   (a, b) => a.data.order - b.data.order,
@@ -58,89 +60,19 @@ const title = "The Team";
 
 
       <!-- RIGHT: ILLUSTRATION -->
-      <div class="relative flex items-center justify-center">
+      <div class="flex flex-col items-center justify-center">
 
-        <svg
-          viewBox="0 0 560 460"
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-full max-w-lg"
-        >
+        <Image
+          src={teamIllustration}
+          alt="The Vulnerable Support Charitable Trust team"
+          width={700}
+          height={480}
+          class="w-full max-w-lg object-contain"
+        />
 
-          <!-- soft background blob -->
-          <ellipse cx="290" cy="250" rx="240" ry="200" fill="#FCE3C7" />
-
-          <!-- ===== PEOPLE GROUP ===== -->
-
-          <!-- back-left person -->
-          <g>
-            <circle cx="145" cy="185" r="46" fill="#171717" />
-            <path d="M75 400 C75 300 115 250 145 250 C175 250 215 300 215 400 Z" fill="#171717" />
-          </g>
-
-          <!-- back-right person -->
-          <g>
-            <circle cx="430" cy="190" r="44" fill="#F47B20" />
-            <path d="M365 400 C365 305 400 258 430 258 C460 258 495 305 495 400 Z" fill="#F47B20" />
-          </g>
-
-          <!-- center-left person -->
-          <g>
-            <circle cx="215" cy="150" r="52" fill="#E7B27C" />
-            <path d="M135 410 C135 295 178 240 215 240 C252 240 295 295 295 410 Z" fill="#E7B27C" />
-            <circle cx="215" cy="150" r="52" fill="none" />
-            <path d="M170 118 Q215 90 260 118 Q262 150 215 155 Q168 150 170 118 Z" fill="#171717" />
-          </g>
-
-          <!-- center-right person (tallest, front) -->
-          <g>
-            <circle cx="325" cy="145" r="54" fill="#F6C89A" />
-            <path d="M242 415 C242 292 288 235 325 235 C362 235 408 292 408 415 Z" fill="#171717" />
-            <path d="M270 112 Q325 78 380 112 Q382 150 325 158 Q268 150 270 112 Z" fill="#3A2A1A" />
-          </g>
-
-          <!-- small front person -->
-          <g>
-            <circle cx="255" cy="230" r="34" fill="#F6C89A" />
-            <path d="M205 405 C205 320 232 285 255 285 C278 285 305 320 305 405 Z" fill="#F47B20" />
-          </g>
-
-          <!-- little heart badge on center figure's chest -->
-          <path
-            d="M325 300 c-6 -8 -20 -8 -20 4 c0 10 20 22 20 22 s20 -12 20 -22 c0 -12 -14 -12 -20 -4 Z"
-            fill="#FDF4EA"
-          />
-
-          <!-- ===== HAND-DRAWN DOODLES ===== -->
-
-          <!-- sparkle top-left -->
-          <g stroke="#F47B20" stroke-width="4" stroke-linecap="round">
-            <line x1="60" y1="70" x2="60" y2="100" />
-            <line x1="45" y1="85" x2="75" y2="85" />
-          </g>
-
-          <!-- heart top-right -->
-          <path
-            d="M470 70 c-4 -6 -14 -6 -14 3 c0 7 14 15 14 15 s14 -8 14 -15 c0 -9 -10 -9 -14 -3 Z"
-            fill="#F47B20"
-          />
-
-          <!-- squiggle underline near heart -->
-          <path
-            d="M430 45 q10 -10 20 0 q10 10 20 0"
-            stroke="#171717"
-            stroke-width="3"
-            fill="none"
-            stroke-linecap="round"
-          />
-
-        </svg>
-
-        <!-- handwritten note -->
-        <div class="team-note absolute -right-2 top-4 rotate-[-4deg] text-right text-lg text-gray-900 sm:top-2 sm:text-xl">
-          A stronger
-          <br />
-          tomorrow together
-        </div>
+        <p class="team-note mt-2 text-center text-base text-gray-800 sm:text-lg">
+          A stronger tomorrow together
+        </p>
 
       </div>
 
