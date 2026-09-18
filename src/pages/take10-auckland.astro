@@ -99,11 +99,11 @@ for await (const image of images) {
               {entry.data.title}
             </h1>
 
-            <p class="mt-5 max-w-md text-lg leading-relaxed text-gray-700">
+            <p class="mt-5 max-w-md text-lg leading-relaxed text-white drop-shadow-md">
               Creating safer nights, one connection at a time.
             </p>
 
-            <p class="mt-3 max-w-md text-gray-600">
+            <p class="mt-3 max-w-md text-white drop-shadow-md">
               Take 10 is on the streets of Auckland every Friday and Saturday
               night, offering a safe and welcoming space for anyone who needs
               a break, a chat, or a little support.
@@ -208,7 +208,41 @@ for await (const image of images) {
        ===================================================== -->
 
   <Section>
-    <Content />
+
+    <div class="grid gap-10 lg:grid-cols-[1fr_320px] lg:items-start lg:gap-14">
+
+      <div
+        class="max-w-2xl space-y-4 text-lg leading-relaxed text-gray-700 [&_h2]:mb-4 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:leading-tight [&_h2]:text-gray-950 [&_li]:mb-2 [&_strong]:text-gray-900 [&_ul]:mt-2 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5"
+      >
+        <Content />
+      </div>
+
+      <div class="flex flex-row gap-4 lg:sticky lg:top-28 lg:flex-col">
+
+        {
+          images[1] && (
+            <img
+              src={thumbnails[images[1].id].src}
+              alt="Take 10 Auckland"
+              class="h-40 w-1/2 rounded-2xl object-cover shadow-lg lg:h-48 lg:w-full"
+            />
+          )
+        }
+
+        {
+          images[2] && (
+            <img
+              src={thumbnails[images[2].id].src}
+              alt="Take 10 Auckland"
+              class="h-40 w-1/2 rounded-2xl object-cover shadow-lg lg:h-48 lg:w-full"
+            />
+          )
+        }
+
+      </div>
+
+    </div>
+
   </Section>
 
 
