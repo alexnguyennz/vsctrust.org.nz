@@ -112,4 +112,18 @@ const isTake10 = pathname === "/take10/";
       filter: brightness(0) invert(1);
     }
   }
+
+  /* ========================================
+     DROPDOWN PANEL — always dark text,
+     even when the header itself is light,
+     because the panel background is white.
+     ======================================== */
+  #site-header .dropdown-panel a,
+  #site-header .dropdown-panel a * {
+    color: #171717 !important;
+  }
+  #site-header.site-header--light .dropdown-panel a,
+  #site-header.site-header--light .dropdown-panel a * {
+    color: #171717 !important;
+  }
 </style>

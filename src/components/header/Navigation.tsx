@@ -38,7 +38,7 @@ export function Navigation({ pathname }: { pathname: string }) {
           <NavigationMenuItem key={menu}>
             <NavigationMenuTrigger>{menu}</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className={cn("w-max space-y-1.5 p-3")}>
+              <ul className={cn("dropdown-panel w-max space-y-1.5 p-3")}>
                 {menuLinks[menu].map((link) => (
                   <Fragment key={link.title}>
                     <ListItem
