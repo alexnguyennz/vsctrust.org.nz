@@ -50,9 +50,9 @@ for await (const image of images) {
       <div class="relative min-h-[480px] overflow-hidden rounded-[28px] sm:min-h-[420px]">
 
         {
-          images[0] && (
+          images[1] && (
             <img
-              src={thumbnails[images[0].id].src}
+              src={thumbnails[images[1].id].src}
               alt={entry.data.title}
               class="absolute inset-0 h-full w-full object-cover"
             />
@@ -222,9 +222,9 @@ for await (const image of images) {
       <div class="flex flex-row gap-4 lg:sticky lg:top-28 lg:flex-col">
 
         {
-          images[1] && (
+          images[2] && (
             <img
-              src={thumbnails[images[1].id].src}
+              src={thumbnails[images[2].id].src}
               alt={entry.data.title}
               class="h-40 w-1/2 rounded-2xl object-cover shadow-lg lg:h-48 lg:w-full"
             />
@@ -232,9 +232,9 @@ for await (const image of images) {
         }
 
         {
-          images[2] && (
+          images[3] && (
             <img
-              src={thumbnails[images[2].id].src}
+              src={thumbnails[images[3].id].src}
               alt={entry.data.title}
               class="h-40 w-1/2 rounded-2xl object-cover shadow-lg lg:h-48 lg:w-full"
             />
