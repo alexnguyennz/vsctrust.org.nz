@@ -80,10 +80,10 @@ export function Navigation({ pathname }: { pathname: string }) {
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <a href="/volunteer/" className="flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 px-2 text-center text-xs font-bold uppercase leading-tight text-white no-underline transition-all hover:scale-105 hover:bg-orange-600">Become a Volunteer</a>
+          <a href="/volunteer/" className="site-header-cta flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 px-2 text-center text-xs font-bold uppercase leading-tight text-white no-underline transition-all hover:scale-105 hover:bg-orange-600">Become a Volunteer</a>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <a href="/support-us/" className="flex h-20 w-20 items-center justify-center rounded-full bg-stone-900 px-2 text-center text-xs font-bold uppercase leading-tight text-white no-underline transition-all hover:scale-105 hover:bg-stone-800">Make a Donation</a>
+          <a href="/support-us/" className="site-header-cta flex h-20 w-20 items-center justify-center rounded-full bg-stone-900 px-2 text-center text-xs font-bold uppercase leading-tight text-white no-underline transition-all hover:scale-105 hover:bg-stone-800">Make a Donation</a>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
