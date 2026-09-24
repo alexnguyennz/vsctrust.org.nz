@@ -22,40 +22,29 @@ const { Content } = await render(entry);
 
   <main class="bg-white">
 
-    <!-- HERO / INTRO -->
     <section class="mx-auto max-w-7xl px-6 pb-12 pt-16 lg:px-10 lg:pt-20">
 
-      <div class="grid items-start gap-8 lg:grid-cols-[1fr_300px]">
+      <!-- ================================================= -->
+      <!-- HERO : label + titre + icône sur une même ligne -->
+      <!-- ================================================= -->
+      <div class="flex items-start justify-between gap-6">
 
-        <!-- LEFT -->
         <div>
-
           <div class="mb-4 flex items-center gap-4">
-            <span
-              class="text-sm font-bold uppercase tracking-[0.22em] text-orange-500"
-            >
+            <span class="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">
               Get involved
             </span>
-
             <span class="h-px w-16 bg-orange-500"></span>
           </div>
 
-          <h1
-            class="max-w-3xl text-5xl font-bold leading-[0.95] tracking-[-0.04em] text-slate-950 sm:text-6xl lg:text-7xl"
-          >
+          <h1 class="max-w-3xl text-5xl font-bold leading-[0.95] tracking-[-0.04em] text-slate-950 sm:text-6xl lg:text-7xl">
             Sponsor a School
           </h1>
-
         </div>
 
-
         <!-- SCHOOL ILLUSTRATION -->
-        <div class="flex justify-start lg:justify-center">
-
-          <div
-            class="relative flex h-36 w-36 items-center justify-center rounded-full bg-orange-50"
-          >
-
+        <div class="hidden shrink-0 sm:block">
+          <div class="relative flex h-28 w-28 items-center justify-center rounded-full bg-orange-50 lg:h-36 lg:w-36">
             <Image
               src={import("@/assets/img/home/sponsor.png")}
               width="77"
@@ -63,28 +52,21 @@ const { Content } = await render(entry);
               alt="Sponsor a school"
               fetchpriority="high"
               loading="eager"
-              class="h-24 w-24 object-contain"
+              class="h-20 w-20 object-contain lg:h-24 lg:w-24"
             />
 
-            <!-- Decorative lines -->
-            <span
-              class="absolute -right-2 top-1 h-7 w-1.5 rotate-[25deg] rounded-full bg-orange-500"
-            ></span>
-
-            <span
-              class="absolute -right-7 top-8 h-1.5 w-6 rotate-[-25deg] rounded-full bg-orange-500"
-            ></span>
-
-            <span
-              class="absolute -right-5 top-20 h-1.5 w-5 rotate-[-12deg] rounded-full bg-orange-500"
-            ></span>
-
+            <span class="absolute -right-2 top-1 h-7 w-1.5 rotate-[25deg] rounded-full bg-orange-500"></span>
+            <span class="absolute -right-7 top-8 h-1.5 w-6 rotate-[-25deg] rounded-full bg-orange-500"></span>
+            <span class="absolute -right-5 top-20 h-1.5 w-5 rotate-[-12deg] rounded-full bg-orange-500"></span>
           </div>
-
         </div>
 
       </div>
 
+      <!-- INTRO PARAGRAPH (contenu existant, déplacé sous le titre) -->
+      <div class="mt-5 max-w-2xl text-base leading-relaxed text-stone-600 sm:text-lg">
+        <Content />
+      </div>
 
       <!-- MAIN CONTENT -->
       <div class="mt-10 grid items-start gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-14">
@@ -96,7 +78,6 @@ const { Content } = await render(entry);
 
           <!-- PHOTO -->
           <div class="relative">
-
             <Image
               src={import("@/assets/img/banner/sponsor-a-school.jpg")}
               width="900"
@@ -107,51 +88,20 @@ const { Content } = await render(entry);
               class="h-[420px] w-full rounded-[2rem] object-cover shadow-sm sm:h-[480px] lg:h-[470px]"
             />
 
-            <!-- little orange decoration -->
             <div class="absolute -bottom-5 -left-6 hidden lg:block">
               <span class="block h-2 w-2 rounded-full bg-orange-500"></span>
               <span class="ml-3 mt-2 block h-2 w-8 rotate-[-15deg] rounded-full bg-orange-500"></span>
               <span class="ml-1 mt-1 block h-2 w-5 rotate-[20deg] rounded-full bg-orange-500"></span>
             </div>
-
           </div>
 
-
-          <!-- EXISTING REAL CONTENT -->
-          <div
-            class="mt-10 max-w-2xl text-base leading-relaxed text-stone-600 sm:text-lg"
-          >
-            <Content />
-          </div>
-
-
-          <!-- BROCHURE -->
-          <div class="mt-6">
-            <a
-              href="/dosomegood/brochure.pdf"
-              class="inline-flex items-center rounded-full bg-gray-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-gray-800"
-            >
-              Brochure
-            </a>
-          </div>
-
-
-          <!-- IMPACT POINTS -->
-          <div class="mt-12 grid gap-6 border-t border-stone-200 pt-8 sm:grid-cols-3">
+          <!-- IMPACT POINTS (juste après la photo, comme sur la maquette) -->
+          <div class="mt-8 grid gap-6 border-t border-stone-200 pt-8 sm:grid-cols-3">
 
             <!-- Stronger communities -->
             <div class="flex items-start gap-4">
-
-              <div
-                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-orange-50"
-              >
-                <svg
-                  viewBox="0 0 64 64"
-                  class="h-7 w-7 text-orange-500"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                >
+              <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-orange-50">
+                <svg viewBox="0 0 64 64" class="h-7 w-7 text-orange-500" fill="none" stroke="currentColor" stroke-width="3">
                   <circle cx="32" cy="18" r="7"></circle>
                   <circle cx="14" cy="25" r="6"></circle>
                   <circle cx="50" cy="25" r="6"></circle>
@@ -160,29 +110,16 @@ const { Content } = await render(entry);
                   <path d="M61 47c0-7-4-12-10-12-4 0-7 2-9 6"></path>
                 </svg>
               </div>
-
               <div>
-                <p class="font-bold leading-tight text-slate-950">
-                  Stronger<br />communities
-                </p>
+                <p class="font-bold leading-tight text-slate-950">Stronger<br />communities</p>
+                <p class="mt-1 text-sm text-stone-500">Helping tamariki and families thrive.</p>
               </div>
-
             </div>
-
 
             <!-- Brighter opportunities -->
             <div class="flex items-start gap-4">
-
-              <div
-                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-orange-50"
-              >
-                <svg
-                  viewBox="0 0 64 64"
-                  class="h-7 w-7 text-orange-500"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                >
+              <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-orange-50">
+                <svg viewBox="0 0 64 64" class="h-7 w-7 text-orange-500" fill="none" stroke="currentColor" stroke-width="3">
                   <path d="M10 22h44L32 10 10 22Z"></path>
                   <path d="M14 25h36"></path>
                   <path d="M18 25v22"></path>
@@ -191,80 +128,53 @@ const { Content } = await render(entry);
                   <path d="M27 49V34h10v15"></path>
                 </svg>
               </div>
-
               <div>
-                <p class="font-bold leading-tight text-slate-950">
-                  Brighter<br />opportunities
-                </p>
+                <p class="font-bold leading-tight text-slate-950">Brighter<br />opportunities</p>
+                <p class="mt-1 text-sm text-stone-500">Supporting education and wellbeing.</p>
               </div>
-
             </div>
-
 
             <!-- Lasting impact -->
             <div class="flex items-start gap-4">
-
-              <div
-                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-orange-50"
-              >
-                <svg
-                  viewBox="0 0 64 64"
-                  class="h-7 w-7 text-orange-500"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                >
-                  <path
-                    d="M32 53S10 40 10 24c0-8 5-13 12-13 5 0 9 3 10 7 1-4 5-7 10-7 7 0 12 5 12 13 0 16-22 29-22 29Z"
-                  ></path>
+              <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-orange-50">
+                <svg viewBox="0 0 64 64" class="h-7 w-7 text-orange-500" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M32 53S10 40 10 24c0-8 5-13 12-13 5 0 9 3 10 7 1-4 5-7 10-7 7 0 12 5 12 13 0 16-22 29-22 29Z"></path>
                 </svg>
               </div>
-
               <div>
-                <p class="font-bold leading-tight text-slate-950">
-                  A lasting<br />impact
-                </p>
+                <p class="font-bold leading-tight text-slate-950">A lasting<br />impact</p>
+                <p class="mt-1 text-sm text-stone-500">Creating positive change together.</p>
               </div>
-
             </div>
 
+          </div>
+
+          <!-- BROCHURE (info existante conservée, discrète, absente de la maquette) -->
+          <div class="mt-8">
+            <a
+              href="/dosomegood/brochure.pdf"
+              class="inline-flex items-center rounded-full bg-gray-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-gray-800"
+            >
+              Brochure
+            </a>
           </div>
 
         </div>
 
-
         <!-- ================================================= -->
         <!-- RIGHT COLUMN / FORM -->
         <!-- ================================================= -->
-        <div
-          class="rounded-[2rem] bg-orange-50/70 p-7 sm:p-9 lg:p-10"
-        >
+        <div class="rounded-[2rem] bg-orange-50/70 p-7 sm:p-9 lg:p-10">
 
-          <!-- HEART -->
           <div class="mb-3 flex justify-end">
-
-            <svg
-              viewBox="0 0 64 64"
-              class="h-12 w-12 text-orange-500"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-            >
-              <path
-                d="M32 53S10 40 10 24c0-8 5-13 12-13 5 0 9 3 10 7 1-4 5-7 10-7 7 0 12 5 12 13 0 16-22 29-22 29Z"
-              ></path>
+            <svg viewBox="0 0 64 64" class="h-12 w-12 text-orange-500" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M32 53S10 40 10 24c0-8 5-13 12-13 5 0 9 3 10 7 1-4 5-7 10-7 7 0 12 5 12 13 0 16-22 29-22 29Z"></path>
             </svg>
-
           </div>
 
-
-          <!-- FORM TITLE -->
           <div class="mb-8">
-
-            <h2
-              class="max-w-md text-4xl font-bold leading-[0.98] tracking-[-0.035em] text-slate-950 sm:text-5xl"
-            >
-              Let’s do some<br />
+            <h2 class="max-w-md text-4xl font-bold leading-[0.98] tracking-[-0.035em] text-slate-950 sm:text-5xl">
+              Let's do some<br />
               good together.
             </h2>
 
@@ -272,107 +182,71 @@ const { Content } = await render(entry);
               Interested in sponsoring a school? Fill out the form below and our
               team will be in touch.
             </p>
-
           </div>
 
-
-          <!-- FORM -->
           <Form name="sponsor">
 
             <div class="grid gap-5 sm:grid-cols-2">
 
               <div>
-                <Label
-                  htmlFor="name"
-                  className="required mb-2 block text-sm font-semibold text-slate-950"
-                >
+                <Label htmlFor="name" className="required mb-2 block text-sm font-semibold text-slate-950">
                   Name
                 </Label>
-
                 <Input
                   className="h-14 rounded-xl border-stone-200 bg-white px-4 text-base shadow-none"
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Your name"
-                  required
+                  type="text" id="name" name="name" placeholder="Your name" required
                 />
               </div>
 
-
               <div>
-                <Label
-                  htmlFor="email"
-                  className="required mb-2 block text-sm font-semibold text-slate-950"
-                >
+                <Label htmlFor="email" className="required mb-2 block text-sm font-semibold text-slate-950">
                   Email
                 </Label>
-
                 <Input
                   className="h-14 rounded-xl border-stone-200 bg-white px-4 text-base shadow-none"
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Your email address"
-                  required
+                  type="email" id="email" name="email" placeholder="Your email address" required
                 />
               </div>
 
-
               <div>
-                <Label
-                  htmlFor="phone"
-                  className="mb-2 block text-sm font-semibold text-slate-950"
-                >
+                <Label htmlFor="phone" className="mb-2 block text-sm font-semibold text-slate-950">
                   Phone Number
                 </Label>
-
                 <Input
                   className="h-14 rounded-xl border-stone-200 bg-white px-4 text-base shadow-none"
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="Your phone number"
+                  type="tel" id="phone" name="phone" placeholder="Your phone number"
                 />
               </div>
-
 
               <div>
-                <Label
-                  htmlFor="website"
-                  className="mb-2 block text-sm font-semibold text-slate-950"
-                >
+                <Label htmlFor="website" className="mb-2 block text-sm font-semibold text-slate-950">
                   Website
                 </Label>
-
                 <Input
                   className="h-14 rounded-xl border-stone-200 bg-white px-4 text-base shadow-none"
-                  type="url"
-                  id="website"
-                  name="website"
-                  placeholder="Your website (optional)"
+                  type="url" id="website" name="website" placeholder="Your website (optional)"
                 />
               </div>
 
-
               <div class="sm:col-span-2">
-
-                <Label
-                  htmlFor="message"
-                  className="required mb-2 block text-sm font-semibold text-slate-950"
-                >
+                <Label htmlFor="message" className="required mb-2 block text-sm font-semibold text-slate-950">
                   Message
                 </Label>
-
                 <Textarea
                   className="min-h-[140px] rounded-xl border-stone-200 bg-white px-4 py-4 text-base shadow-none"
-                  id="message"
-                  name="message"
-                  rows={5}
-                  placeholder="Tell us more about your interest in sponsoring a school..."
-                  required
+                  id="message" name="message" rows={5}
+                  placeholder="Tell us more about your interest in sponsoring a school..." required
                 />
+              </div>
 
+              <div class="sm:col-span-2">
+                <button
+                  type="submit"
+                  class="flex w-full items-center justify-center gap-2 rounded-full bg-orange-500 px-8 py-4 text-base font-bold text-white transition hover:bg-orange-600"
+                >
+                  Send Enquiry
+                  <span aria-hidden="true">→</span>
+                </button>
               </div>
 
             </div>
