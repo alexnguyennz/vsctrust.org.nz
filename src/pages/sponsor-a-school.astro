@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
 import AnchorButton from "@/components/layouts/anchor-button.astro";
+
 import Form from "@/components/Form.astro";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -20,15 +21,15 @@ const { Content } = await render(entry);
   <main class="bg-white">
 
     <!-- ========================================= -->
-    <!-- TOP / INTRO -->
+    <!-- INTRO -->
     <!-- ========================================= -->
 
-    <section class="mx-auto max-w-6xl px-6 pt-16 md:px-10 md:pt-20">
+    <section class="mx-auto max-w-6xl px-6 pb-8 pt-12 md:px-10 md:pt-16">
 
       <div class="relative">
 
         <!-- GET INVOLVED -->
-        <div class="mb-5 flex items-center gap-4">
+        <div class="mb-4 flex items-center gap-4">
 
           <span
             class="text-xs font-bold uppercase tracking-[0.22em] text-orange-500"
@@ -41,23 +42,23 @@ const { Content } = await render(entry);
         </div>
 
 
-        <!-- TITLE + SCHOOL ILLUSTRATION -->
-        <div class="relative max-w-5xl">
+        <!-- TITLE AREA -->
+        <div class="relative">
 
           <h1
-            class="max-w-3xl text-5xl font-bold leading-[0.95] tracking-[-0.04em] text-gray-950 md:text-6xl lg:text-7xl"
+            class="max-w-3xl text-5xl font-bold leading-[0.95] tracking-[-0.04em] text-gray-950 md:text-6xl"
           >
             {entry.data.title}
           </h1>
 
 
-          <!-- SCHOOL ICON -->
+          <!-- SCHOOL ILLUSTRATION -->
           <div
-            class="absolute right-[8%] top-1/2 hidden -translate-y-1/2 md:flex"
+            class="absolute right-[13%] top-1/2 hidden -translate-y-1/2 md:block"
           >
 
             <div
-              class="flex h-32 w-32 items-center justify-center rounded-full bg-orange-50"
+              class="flex h-28 w-28 items-center justify-center rounded-full bg-orange-50"
             >
 
               <Image
@@ -67,7 +68,7 @@ const { Content } = await render(entry);
                 alt="Sponsor image"
                 fetchpriority="high"
                 loading="eager"
-                class="h-20 w-20 object-contain"
+                class="h-[72px] w-[72px] object-contain"
                 transition:name="sponsor"
               />
 
@@ -86,20 +87,21 @@ const { Content } = await render(entry);
     <!-- MAIN CONTENT -->
     <!-- ========================================= -->
 
-    <section class="mx-auto max-w-6xl px-6 pb-20 pt-12 md:px-10 md:pt-14">
+    <section class="mx-auto max-w-6xl px-6 pb-16 md:px-10">
 
       <div
-        class="grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12"
+        class="grid items-start gap-8 lg:grid-cols-[1.08fr_0.92fr]"
       >
 
 
         <!-- ===================================== -->
-        <!-- LEFT -->
+        <!-- LEFT SIDE -->
         <!-- ===================================== -->
 
         <div>
 
           <!-- PHOTO -->
+
           <div class="relative">
 
             <div class="overflow-hidden rounded-[2rem]">
@@ -107,19 +109,20 @@ const { Content } = await render(entry);
               <Image
                 src={import("@/assets/img/banner/sponsor-a-school.jpg")}
                 width="900"
-                height="700"
+                height="650"
                 alt="Do Some Good"
                 fetchpriority="high"
                 loading="eager"
-                class="h-[430px] w-full object-cover md:h-[500px]"
+                class="h-[390px] w-full object-cover md:h-[430px]"
               />
 
             </div>
 
 
-            <!-- SMALL DECORATION -->
+            <!-- LITTLE ORANGE DECORATION -->
+
             <div
-              class="absolute -bottom-5 -left-4 text-4xl font-light leading-none text-orange-500"
+              class="absolute -bottom-6 -left-5 text-4xl leading-none text-orange-500"
             >
               〰
             </div>
@@ -127,21 +130,18 @@ const { Content } = await render(entry);
           </div>
 
 
-          <!-- REAL PAGE CONTENT -->
+          <!-- REAL CONTENT FROM THE PAGE -->
+
           <div
-            class="prose prose-lg mt-10 max-w-none text-stone-600
-                   prose-headings:font-bold
-                   prose-headings:text-gray-950
-                   prose-p:leading-relaxed
-                   prose-a:text-orange-500
-                   prose-strong:text-gray-950"
+            class="mt-8 max-w-xl text-base leading-relaxed text-stone-600"
           >
             <Content />
           </div>
 
 
           <!-- BROCHURE -->
-          <div class="mt-8">
+
+          <div class="mt-6">
 
             <AnchorButton
               href="/dosomegood/brochure.pdf"
@@ -156,26 +156,28 @@ const { Content } = await render(entry);
 
 
         <!-- ===================================== -->
-        <!-- RIGHT / FORM -->
+        <!-- RIGHT SIDE / FORM -->
         <!-- ===================================== -->
 
         <div
-          class="relative rounded-[2rem] bg-orange-50/70 px-7 py-8 md:px-9 md:py-9"
+          class="relative rounded-[2rem] bg-orange-50 px-7 py-8 md:px-9 md:py-9"
         >
 
-          <!-- HEART DECORATION -->
+          <!-- HEART -->
+
           <div
-            class="absolute right-7 top-6 hidden text-5xl font-light leading-none text-orange-500 md:block"
+            class="absolute right-7 top-5 text-5xl font-light leading-none text-orange-500"
           >
             ♡
           </div>
 
 
-          <!-- FORM HEADER -->
-          <div class="max-w-md pr-10">
+          <!-- FORM TITLE -->
+
+          <div class="max-w-md pr-12">
 
             <h2
-              class="text-3xl font-bold leading-[1] tracking-[-0.035em] text-gray-950 md:text-4xl"
+              class="text-3xl font-bold leading-[0.98] tracking-[-0.04em] text-gray-950 md:text-4xl"
             >
               Let’s do some<br />
               good together.
@@ -190,11 +192,13 @@ const { Content } = await render(entry);
 
 
           <!-- FORM -->
+
           <div class="mt-7">
 
             <Form name="sponsor">
 
               <!-- NAME -->
+
               <div>
 
                 <Label
@@ -217,6 +221,7 @@ const { Content } = await render(entry);
 
 
               <!-- EMAIL -->
+
               <div>
 
                 <Label
@@ -239,6 +244,7 @@ const { Content } = await render(entry);
 
 
               <!-- PHONE -->
+
               <div>
 
                 <Label htmlFor="phone">
@@ -257,6 +263,7 @@ const { Content } = await render(entry);
 
 
               <!-- WEBSITE -->
+
               <div>
 
                 <Label htmlFor="website">
@@ -275,6 +282,7 @@ const { Content } = await render(entry);
 
 
               <!-- MESSAGE -->
+
               <div class="sm:col-span-2">
 
                 <Label
@@ -285,7 +293,7 @@ const { Content } = await render(entry);
                 </Label>
 
                 <Textarea
-                  className="mt-2 min-h-32 rounded-xl border border-stone-300 bg-white shadow-none"
+                  className="mt-2 min-h-28 rounded-xl border border-stone-300 bg-white shadow-none"
                   id="message"
                   name="message"
                   rows={4}
@@ -312,9 +320,10 @@ const { Content } = await render(entry);
         class="mt-8 grid overflow-hidden rounded-[2rem] bg-stone-50 md:grid-cols-3"
       >
 
-        <!-- ITEM 1 -->
+        <!-- STRONGER COMMUNITIES -->
+
         <div
-          class="flex items-center gap-5 border-b border-stone-200 px-7 py-7 md:border-b-0 md:border-r"
+          class="flex items-center gap-4 border-b border-stone-200 px-7 py-6 md:border-b-0 md:border-r"
         >
 
           <div
@@ -325,7 +334,7 @@ const { Content } = await render(entry);
 
           <div>
 
-            <h3 class="text-base font-bold text-gray-950">
+            <h3 class="text-sm font-bold text-gray-950">
               Stronger communities
             </h3>
 
@@ -338,9 +347,10 @@ const { Content } = await render(entry);
         </div>
 
 
-        <!-- ITEM 2 -->
+        <!-- BRIGHTER OPPORTUNITIES -->
+
         <div
-          class="flex items-center gap-5 border-b border-stone-200 px-7 py-7 md:border-b-0 md:border-r"
+          class="flex items-center gap-4 border-b border-stone-200 px-7 py-6 md:border-b-0 md:border-r"
         >
 
           <div
@@ -351,7 +361,7 @@ const { Content } = await render(entry);
 
           <div>
 
-            <h3 class="text-base font-bold text-gray-950">
+            <h3 class="text-sm font-bold text-gray-950">
               Brighter opportunities
             </h3>
 
@@ -364,9 +374,10 @@ const { Content } = await render(entry);
         </div>
 
 
-        <!-- ITEM 3 -->
+        <!-- LASTING IMPACT -->
+
         <div
-          class="flex items-center gap-5 px-7 py-7"
+          class="flex items-center gap-4 px-7 py-6"
         >
 
           <div
@@ -377,7 +388,7 @@ const { Content } = await render(entry);
 
           <div>
 
-            <h3 class="text-base font-bold text-gray-950">
+            <h3 class="text-sm font-bold text-gray-950">
               A lasting impact
             </h3>
 
