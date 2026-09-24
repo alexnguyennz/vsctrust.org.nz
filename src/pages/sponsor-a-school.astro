@@ -3,8 +3,6 @@ import { getEntry, render } from "astro:content";
 import { Image } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
-import AnchorButton from "@/components/layouts/anchor-button.astro";
-
 import Form from "@/components/Form.astro";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -18,94 +16,68 @@ const { Content } = await render(entry);
 
 <Layout title={entry.data.title}>
 
+  <!-- ===================================================== -->
+  <!-- SPONSOR A SCHOOL -->
+  <!-- ===================================================== -->
+
   <main class="bg-white">
 
-    <!-- ========================================= -->
     <!-- HERO / INTRO -->
-    <!-- ========================================= -->
+    <section class="mx-auto max-w-7xl px-6 pb-12 pt-16 lg:px-10 lg:pt-20">
 
-    <section class="mx-auto max-w-7xl px-8 pb-8 pt-16 lg:px-12">
+      <div class="grid items-start gap-8 lg:grid-cols-[1fr_300px]">
 
-      <div class="relative">
+        <!-- LEFT -->
+        <div>
 
-        <!-- GET INVOLVED -->
+          <div class="mb-4 flex items-center gap-4">
+            <span
+              class="text-sm font-bold uppercase tracking-[0.22em] text-orange-500"
+            >
+              Get involved
+            </span>
 
-        <div class="mb-5 flex items-center gap-4">
+            <span class="h-px w-16 bg-orange-500"></span>
+          </div>
 
-          <span
-            class="text-sm font-bold uppercase tracking-[0.16em] text-orange-500"
+          <h1
+            class="max-w-3xl text-5xl font-bold leading-[0.95] tracking-[-0.04em] text-slate-950 sm:text-6xl lg:text-7xl"
           >
-            Get involved
-          </span>
-
-          <span class="h-px w-12 bg-orange-500"></span>
+            Sponsor a School
+          </h1>
 
         </div>
 
 
-        <!-- TITLE + SCHOOL -->
-
-        <div class="relative">
-
-          <h1
-            class="max-w-2xl text-5xl font-bold leading-[0.95] tracking-[-0.045em] text-gray-950 md:text-6xl lg:text-[4.5rem]"
-          >
-            {entry.data.title}
-          </h1>
-
-
-          <!-- SUBTITLE -->
-
-          <p
-            class="mt-4 max-w-xl text-lg leading-relaxed text-stone-500 md:text-xl"
-          >
-            Support Do Some Good and help provide meaningful support to
-            schools and kindergartens across our communities.
-          </p>
-
-
-          <!-- SCHOOL ILLUSTRATION -->
+        <!-- SCHOOL ILLUSTRATION -->
+        <div class="flex justify-start lg:justify-center">
 
           <div
-            class="absolute right-[17%] top-1/2 hidden -translate-y-[45%] md:block"
+            class="relative flex h-36 w-36 items-center justify-center rounded-full bg-orange-50"
           >
 
-            <div class="relative">
+            <Image
+              src={import("@/assets/img/home/sponsor.png")}
+              width="77"
+              height="77"
+              alt="Sponsor a school"
+              fetchpriority="high"
+              loading="eager"
+              class="h-24 w-24 object-contain"
+            />
 
-              <!-- CIRCLE -->
+            <!-- Decorative lines -->
+            <span
+              class="absolute -right-2 top-1 h-7 w-1.5 rotate-[25deg] rounded-full bg-orange-500"
+            ></span>
 
-              <div
-                class="flex h-36 w-36 items-center justify-center rounded-full bg-orange-50"
-              >
+            <span
+              class="absolute -right-7 top-8 h-1.5 w-6 rotate-[-25deg] rounded-full bg-orange-500"
+            ></span>
 
-                <Image
-                  src={import("@/assets/img/home/sponsor.png")}
-                  width="77"
-                  height="77"
-                  alt="Sponsor a school"
-                  fetchpriority="high"
-                  loading="eager"
-                  class="h-24 w-24 object-contain"
-                />
-
-              </div>
-
-
-              <!-- ORANGE DECORATION -->
-
-              <span
-                class="absolute -right-5 -top-5 h-7 w-1 rotate-[25deg] rounded-full bg-orange-500"
-              ></span>
-
-              <span
-                class="absolute -right-10 top-2 h-5 w-1 rotate-[55deg] rounded-full bg-orange-500"
-              ></span>
-
-              <span
-                class="absolute -right-7 top-10 h-6 w-1 rotate-[75deg] rounded-full bg-orange-500"
-              ></span>
-
-            </div>
+            <span
+              class="absolute -right-5 top-20 h-1.5 w-5 rotate-[-12deg] rounded-full bg-orange-500"
+            ></span>
 
           </div>
 
@@ -113,369 +85,299 @@ const { Content } = await render(entry);
 
       </div>
 
-    </section>
 
+      <!-- MAIN CONTENT -->
+      <div class="mt-10 grid items-start gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-14">
 
-    <!-- ========================================= -->
-    <!-- PHOTO + FORM -->
-    <!-- ========================================= -->
-
-    <section class="mx-auto max-w-7xl px-8 pb-10 lg:px-12">
-
-      <div
-        class="grid items-start gap-8 lg:grid-cols-[1.12fr_0.88fr]"
-      >
-
-
-        <!-- ===================================== -->
-        <!-- LEFT -->
-        <!-- ===================================== -->
-
+        <!-- ================================================= -->
+        <!-- LEFT COLUMN -->
+        <!-- ================================================= -->
         <div>
 
           <!-- PHOTO -->
-
           <div class="relative">
 
-            <div class="overflow-hidden rounded-[2rem]">
+            <Image
+              src={import("@/assets/img/banner/sponsor-a-school.jpg")}
+              width="900"
+              height="650"
+              alt="Do Some Good"
+              fetchpriority="high"
+              loading="eager"
+              class="h-[420px] w-full rounded-[2rem] object-cover shadow-sm sm:h-[480px] lg:h-[470px]"
+            />
 
-              <Image
-                src={import("@/assets/img/banner/sponsor-a-school.jpg")}
-                width="900"
-                height="650"
-                alt="Do Some Good"
-                fetchpriority="high"
-                loading="eager"
-                class="h-[365px] w-full object-cover md:h-[390px]"
-              />
-
-            </div>
-
-
-            <!-- ORANGE DECORATION -->
-
-            <div class="absolute -bottom-5 -left-7">
-
-              <span
-                class="absolute left-0 top-0 h-7 w-1 rotate-[35deg] rounded-full bg-orange-500"
-              ></span>
-
-              <span
-                class="absolute left-5 -top-5 h-5 w-1 rotate-[65deg] rounded-full bg-orange-500"
-              ></span>
-
-              <span
-                class="absolute left-7 top-3 h-6 w-1 rotate-[90deg] rounded-full bg-orange-500"
-              ></span>
-
+            <!-- little orange decoration -->
+            <div class="absolute -bottom-5 -left-6 hidden lg:block">
+              <span class="block h-2 w-2 rounded-full bg-orange-500"></span>
+              <span class="ml-3 mt-2 block h-2 w-8 rotate-[-15deg] rounded-full bg-orange-500"></span>
+              <span class="ml-1 mt-1 block h-2 w-5 rotate-[20deg] rounded-full bg-orange-500"></span>
             </div>
 
           </div>
 
 
-          <!-- THREE IMPACT ITEMS -->
-
-          <div class="mt-7 grid grid-cols-3">
-
-            <!-- ITEM 1 -->
-
-            <div
-              class="flex items-center gap-3 border-r border-stone-300 pr-5"
-            >
-
-              <div
-                class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-orange-50 text-2xl text-orange-500"
-              >
-                ♧
-              </div>
-
-              <div>
-
-                <h3
-                  class="text-sm font-bold leading-tight text-gray-950"
-                >
-                  Stronger<br />communities
-                </h3>
-
-                <p
-                  class="mt-1 text-xs leading-tight text-stone-500"
-                >
-                  Helping tamariki<br />
-                  and families thrive.
-                </p>
-
-              </div>
-
-            </div>
-
-
-            <!-- ITEM 2 -->
-
-            <div
-              class="flex items-center gap-3 border-r border-stone-300 px-5"
-            >
-
-              <div
-                class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-orange-50 text-2xl text-orange-500"
-              >
-                🎓
-              </div>
-
-              <div>
-
-                <h3
-                  class="text-sm font-bold leading-tight text-gray-950"
-                >
-                  Brighter<br />opportunities
-                </h3>
-
-                <p
-                  class="mt-1 text-xs leading-tight text-stone-500"
-                >
-                  Supporting education<br />
-                  and wellbeing.
-                </p>
-
-              </div>
-
-            </div>
-
-
-            <!-- ITEM 3 -->
-
-            <div
-              class="flex items-center gap-3 pl-5"
-            >
-
-              <div
-                class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-orange-50 text-3xl font-light text-orange-500"
-              >
-                ♡
-              </div>
-
-              <div>
-
-                <h3
-                  class="text-sm font-bold leading-tight text-gray-950"
-                >
-                  A lasting<br />impact
-                </h3>
-
-                <p
-                  class="mt-1 text-xs leading-tight text-stone-500"
-                >
-                  Creating positive<br />
-                  change together.
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- KEEP THE REAL CONTENT -->
-          <!-- It remains below the redesigned section -->
-
+          <!-- EXISTING REAL CONTENT -->
           <div
-            class="mt-10 max-w-2xl text-base leading-relaxed text-stone-600"
+            class="mt-10 max-w-2xl text-base leading-relaxed text-stone-600 sm:text-lg"
           >
             <Content />
           </div>
 
 
           <!-- BROCHURE -->
-
           <div class="mt-6">
-
-            <AnchorButton
+            <a
               href="/dosomegood/brochure.pdf"
-              class="rounded-full bg-gray-950 px-7 py-3 text-sm font-semibold text-white transition hover:bg-orange-500"
+              class="inline-flex items-center rounded-full bg-gray-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-gray-800"
             >
               Brochure
-            </AnchorButton>
+            </a>
+          </div>
+
+
+          <!-- IMPACT POINTS -->
+          <div class="mt-12 grid gap-6 border-t border-stone-200 pt-8 sm:grid-cols-3">
+
+            <!-- Stronger communities -->
+            <div class="flex items-start gap-4">
+
+              <div
+                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-orange-50"
+              >
+                <svg
+                  viewBox="0 0 64 64"
+                  class="h-7 w-7 text-orange-500"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                >
+                  <circle cx="32" cy="18" r="7"></circle>
+                  <circle cx="14" cy="25" r="6"></circle>
+                  <circle cx="50" cy="25" r="6"></circle>
+                  <path d="M19 49c0-10 6-16 13-16s13 6 13 16"></path>
+                  <path d="M3 47c0-7 4-12 10-12 4 0 7 2 9 6"></path>
+                  <path d="M61 47c0-7-4-12-10-12-4 0-7 2-9 6"></path>
+                </svg>
+              </div>
+
+              <div>
+                <p class="font-bold leading-tight text-slate-950">
+                  Stronger<br />communities
+                </p>
+              </div>
+
+            </div>
+
+
+            <!-- Brighter opportunities -->
+            <div class="flex items-start gap-4">
+
+              <div
+                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-orange-50"
+              >
+                <svg
+                  viewBox="0 0 64 64"
+                  class="h-7 w-7 text-orange-500"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                >
+                  <path d="M10 22h44L32 10 10 22Z"></path>
+                  <path d="M14 25h36"></path>
+                  <path d="M18 25v22"></path>
+                  <path d="M46 25v22"></path>
+                  <path d="M10 49h44"></path>
+                  <path d="M27 49V34h10v15"></path>
+                </svg>
+              </div>
+
+              <div>
+                <p class="font-bold leading-tight text-slate-950">
+                  Brighter<br />opportunities
+                </p>
+              </div>
+
+            </div>
+
+
+            <!-- Lasting impact -->
+            <div class="flex items-start gap-4">
+
+              <div
+                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-orange-50"
+              >
+                <svg
+                  viewBox="0 0 64 64"
+                  class="h-7 w-7 text-orange-500"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                >
+                  <path
+                    d="M32 53S10 40 10 24c0-8 5-13 12-13 5 0 9 3 10 7 1-4 5-7 10-7 7 0 12 5 12 13 0 16-22 29-22 29Z"
+                  ></path>
+                </svg>
+              </div>
+
+              <div>
+                <p class="font-bold leading-tight text-slate-950">
+                  A lasting<br />impact
+                </p>
+              </div>
+
+            </div>
 
           </div>
 
         </div>
 
 
-        <!-- ===================================== -->
-        <!-- RIGHT / FORM -->
-        <!-- ===================================== -->
-
+        <!-- ================================================= -->
+        <!-- RIGHT COLUMN / FORM -->
+        <!-- ================================================= -->
         <div
-          class="relative rounded-[2rem] bg-orange-50/70 px-7 py-8 md:px-8 md:py-9"
+          class="rounded-[2rem] bg-orange-50/70 p-7 sm:p-9 lg:p-10"
         >
 
           <!-- HEART -->
+          <div class="mb-3 flex justify-end">
 
-          <div class="absolute right-7 top-5">
-
-            <span
-              class="text-6xl font-light leading-none text-orange-500"
+            <svg
+              viewBox="0 0 64 64"
+              class="h-12 w-12 text-orange-500"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
             >
-              ♡
-            </span>
-
-            <span
-              class="absolute -right-3 -top-1 text-2xl text-orange-500"
-            >
-              ˙
-            </span>
+              <path
+                d="M32 53S10 40 10 24c0-8 5-13 12-13 5 0 9 3 10 7 1-4 5-7 10-7 7 0 12 5 12 13 0 16-22 29-22 29Z"
+              ></path>
+            </svg>
 
           </div>
 
 
           <!-- FORM TITLE -->
-
-          <div class="pr-14">
+          <div class="mb-8">
 
             <h2
-              class="text-3xl font-bold leading-[0.98] tracking-[-0.04em] text-gray-950 md:text-4xl"
+              class="max-w-md text-4xl font-bold leading-[0.98] tracking-[-0.035em] text-slate-950 sm:text-5xl"
             >
               Let’s do some<br />
               good together.
             </h2>
 
-            <p
-              class="mt-4 text-sm leading-relaxed text-stone-600"
-            >
-              Interested in sponsoring a school?<br />
-              Fill out the form below and our team will be in touch.
+            <p class="mt-5 max-w-lg text-base leading-relaxed text-stone-600">
+              Interested in sponsoring a school? Fill out the form below and our
+              team will be in touch.
             </p>
 
           </div>
 
 
           <!-- FORM -->
+          <Form name="sponsor">
 
-          <div class="mt-7">
-
-            <Form name="sponsor">
-
-              <!-- NAME -->
+            <div class="grid gap-5 sm:grid-cols-2">
 
               <div>
-
                 <Label
                   htmlFor="name"
-                  className="required"
+                  className="required mb-2 block text-sm font-semibold text-slate-950"
                 >
                   Name
                 </Label>
 
                 <Input
-                  className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
+                  className="h-14 rounded-xl border-stone-200 bg-white px-4 text-base shadow-none"
                   type="text"
                   id="name"
                   name="name"
-                  required
                   placeholder="Your name"
+                  required
                 />
-
               </div>
 
 
-              <!-- EMAIL -->
-
               <div>
-
                 <Label
                   htmlFor="email"
-                  className="required"
+                  className="required mb-2 block text-sm font-semibold text-slate-950"
                 >
                   Email
                 </Label>
 
                 <Input
-                  className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
+                  className="h-14 rounded-xl border-stone-200 bg-white px-4 text-base shadow-none"
                   type="email"
                   id="email"
                   name="email"
-                  required
                   placeholder="Your email address"
+                  required
                 />
-
               </div>
 
 
-              <!-- PHONE -->
-
               <div>
-
-                <Label htmlFor="phone">
+                <Label
+                  htmlFor="phone"
+                  className="mb-2 block text-sm font-semibold text-slate-950"
+                >
                   Phone Number
                 </Label>
 
                 <Input
-                  className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
+                  className="h-14 rounded-xl border-stone-200 bg-white px-4 text-base shadow-none"
                   type="tel"
                   id="phone"
                   name="phone"
                   placeholder="Your phone number"
                 />
-
               </div>
 
 
-              <!-- WEBSITE -->
-
               <div>
-
-                <Label htmlFor="website">
+                <Label
+                  htmlFor="website"
+                  className="mb-2 block text-sm font-semibold text-slate-950"
+                >
                   Website
                 </Label>
 
                 <Input
-                  className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
+                  className="h-14 rounded-xl border-stone-200 bg-white px-4 text-base shadow-none"
                   type="url"
                   id="website"
                   name="website"
                   placeholder="Your website (optional)"
                 />
-
               </div>
 
-
-              <!-- MESSAGE -->
 
               <div class="sm:col-span-2">
 
                 <Label
                   htmlFor="message"
-                  className="required"
+                  className="required mb-2 block text-sm font-semibold text-slate-950"
                 >
                   Message
                 </Label>
 
                 <Textarea
-                  className="mt-2 min-h-24 rounded-xl border border-stone-300 bg-white shadow-none"
+                  className="min-h-[140px] rounded-xl border-stone-200 bg-white px-4 py-4 text-base shadow-none"
                   id="message"
                   name="message"
-                  rows={4}
-                  required
+                  rows={5}
                   placeholder="Tell us more about your interest in sponsoring a school..."
+                  required
                 />
 
               </div>
 
-            </Form>
+            </div>
 
-          </div>
-
-
-          <!-- SUBMIT BUTTON -->
-
-          <button
-            type="submit"
-            form="sponsor"
-            class="mt-5 flex w-full items-center justify-center gap-3 rounded-full bg-orange-500 px-6 py-4 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-orange-600"
-          >
-            Send enquiry
-            <span class="text-lg">→</span>
-          </button>
+          </Form>
 
         </div>
 
@@ -486,42 +388,3 @@ const { Content } = await render(entry);
   </main>
 
 </Layout>
-
-
-<style>
-  :global(html) {
-    scroll-behavior: smooth;
-  }
-
-
-  :global(form[name="sponsor"]) {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.9rem;
-  }
-
-
-  @media (min-width: 640px) {
-    :global(form[name="sponsor"]) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-
-  :global(form[name="sponsor"] > div:nth-child(5)) {
-    grid-column: 1 / -1;
-  }
-
-
-  :global(form[name="sponsor"] input),
-  :global(form[name="sponsor"] textarea) {
-    width: 100%;
-  }
-
-
-  :global(form[name="sponsor"] input::placeholder),
-  :global(form[name="sponsor"] textarea::placeholder) {
-    color: #a8a29e;
-    opacity: 1;
-  }
-</style>
