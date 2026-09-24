@@ -4,7 +4,6 @@ import { Image } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
 import AnchorButton from "@/components/layouts/anchor-button.astro";
-
 import Form from "@/components/Form.astro";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -20,47 +19,62 @@ const { Content } = await render(entry);
 
   <main class="bg-white">
 
-    <!-- HERO / INTRO -->
-    <section class="mx-auto max-w-7xl px-6 pb-12 pt-16 lg:px-10 lg:pb-16 lg:pt-20">
+    <!-- ========================================= -->
+    <!-- TOP / INTRO -->
+    <!-- ========================================= -->
 
-      <div class="grid items-end gap-10 lg:grid-cols-[1fr_auto]">
+    <section class="mx-auto max-w-6xl px-6 pt-16 md:px-10 md:pt-20">
 
-        <div>
+      <div class="relative">
 
-          <div class="mb-5 flex items-center gap-4">
-            <span
-              class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-500"
-            >
-              Get involved
-            </span>
+        <!-- GET INVOLVED -->
+        <div class="mb-5 flex items-center gap-4">
 
-            <span class="h-px w-14 bg-orange-500"></span>
-          </div>
+          <span
+            class="text-xs font-bold uppercase tracking-[0.22em] text-orange-500"
+          >
+            Get involved
+          </span>
+
+          <span class="h-px w-10 bg-orange-500"></span>
+
+        </div>
+
+
+        <!-- TITLE + SCHOOL ILLUSTRATION -->
+        <div class="relative max-w-5xl">
 
           <h1
-            class="max-w-4xl text-5xl font-bold leading-[0.95] tracking-tight text-gray-950 md:text-6xl lg:text-7xl"
+            class="max-w-3xl text-5xl font-bold leading-[0.95] tracking-[-0.04em] text-gray-950 md:text-6xl lg:text-7xl"
           >
             {entry.data.title}
           </h1>
 
-        </div>
 
-        <!-- Small school illustration -->
-        <div class="hidden justify-end lg:flex">
+          <!-- SCHOOL ICON -->
           <div
-            class="flex h-36 w-36 items-center justify-center rounded-full bg-orange-50"
+            class="absolute right-[8%] top-1/2 hidden -translate-y-1/2 md:flex"
           >
-            <Image
-              src={import("@/assets/img/home/sponsor.png")}
-              width="77"
-              height="77"
-              alt="Sponsor image"
-              fetchpriority="high"
-              loading="eager"
-              class="h-20 w-20 object-contain"
-              transition:name="sponsor"
-            />
+
+            <div
+              class="flex h-32 w-32 items-center justify-center rounded-full bg-orange-50"
+            >
+
+              <Image
+                src={import("@/assets/img/home/sponsor.png")}
+                width="77"
+                height="77"
+                alt="Sponsor image"
+                fetchpriority="high"
+                loading="eager"
+                class="h-20 w-20 object-contain"
+                transition:name="sponsor"
+              />
+
+            </div>
+
           </div>
+
         </div>
 
       </div>
@@ -68,32 +82,56 @@ const { Content } = await render(entry);
     </section>
 
 
+    <!-- ========================================= -->
     <!-- MAIN CONTENT -->
-    <section class="mx-auto max-w-7xl px-6 pb-20 lg:px-10">
+    <!-- ========================================= -->
 
-      <div class="grid items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+    <section class="mx-auto max-w-6xl px-6 pb-20 pt-12 md:px-10 md:pt-14">
 
-        <!-- LEFT COLUMN -->
+      <div
+        class="grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12"
+      >
+
+
+        <!-- ===================================== -->
+        <!-- LEFT -->
+        <!-- ===================================== -->
+
         <div>
 
-          <!-- Main image -->
-          <div class="overflow-hidden rounded-[2rem]">
-            <Image
-              src={import("@/assets/img/banner/sponsor-a-school.jpg")}
-              width="900"
-              height="700"
-              alt="Do Some Good"
-              fetchpriority="high"
-              loading="eager"
-              class="h-full min-h-[420px] w-full object-cover"
-            />
+          <!-- PHOTO -->
+          <div class="relative">
+
+            <div class="overflow-hidden rounded-[2rem]">
+
+              <Image
+                src={import("@/assets/img/banner/sponsor-a-school.jpg")}
+                width="900"
+                height="700"
+                alt="Do Some Good"
+                fetchpriority="high"
+                loading="eager"
+                class="h-[430px] w-full object-cover md:h-[500px]"
+              />
+
+            </div>
+
+
+            <!-- SMALL DECORATION -->
+            <div
+              class="absolute -bottom-5 -left-4 text-4xl font-light leading-none text-orange-500"
+            >
+              〰
+            </div>
+
           </div>
 
 
-          <!-- Existing page content -->
+          <!-- REAL PAGE CONTENT -->
           <div
             class="prose prose-lg mt-10 max-w-none text-stone-600
-                   prose-headings:font-bold prose-headings:text-gray-950
+                   prose-headings:font-bold
+                   prose-headings:text-gray-950
                    prose-p:leading-relaxed
                    prose-a:text-orange-500
                    prose-strong:text-gray-950"
@@ -102,166 +140,253 @@ const { Content } = await render(entry);
           </div>
 
 
-          <!-- Existing brochure link -->
+          <!-- BROCHURE -->
           <div class="mt-8">
+
             <AnchorButton
               href="/dosomegood/brochure.pdf"
               class="rounded-full bg-gray-950 px-7 py-3 text-sm font-semibold text-white transition hover:bg-orange-500"
             >
               Brochure
             </AnchorButton>
+
           </div>
 
         </div>
 
 
-        <!-- RIGHT COLUMN / FORM -->
+        <!-- ===================================== -->
+        <!-- RIGHT / FORM -->
+        <!-- ===================================== -->
+
         <div
-          class="rounded-[2rem] bg-orange-50/70 p-7 md:p-9 lg:sticky lg:top-8"
+          class="relative rounded-[2rem] bg-orange-50/70 px-7 py-8 md:px-9 md:py-9"
         >
 
-          <div class="mb-8">
+          <!-- HEART DECORATION -->
+          <div
+            class="absolute right-7 top-6 hidden text-5xl font-light leading-none text-orange-500 md:block"
+          >
+            ♡
+          </div>
 
-            <div class="mb-4 flex items-center gap-3">
-              <span class="h-px w-10 bg-orange-500"></span>
 
-              <span
-                class="text-xs font-semibold uppercase tracking-[0.18em] text-orange-500"
-              >
-                Get in touch
-              </span>
-            </div>
+          <!-- FORM HEADER -->
+          <div class="max-w-md pr-10">
 
             <h2
-              class="max-w-md text-3xl font-bold leading-tight tracking-tight text-gray-950 md:text-4xl"
+              class="text-3xl font-bold leading-[1] tracking-[-0.035em] text-gray-950 md:text-4xl"
             >
-              Let’s do some good together.
+              Let’s do some<br />
+              good together.
             </h2>
+
+            <p class="mt-4 text-sm leading-relaxed text-stone-600">
+              Interested in sponsoring a school?
+              Fill out the form below and our team will be in touch.
+            </p>
 
           </div>
 
 
-          <Form name="sponsor">
+          <!-- FORM -->
+          <div class="mt-7">
 
-            <div>
-              <Label
-                htmlFor="name"
-                className="required"
-              >
-                Name
-              </Label>
+            <Form name="sponsor">
 
-              <Input
-                className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
-                type="text"
-                id="name"
-                name="name"
-                required
-              />
-            </div>
+              <!-- NAME -->
+              <div>
 
+                <Label
+                  htmlFor="name"
+                  className="required"
+                >
+                  Name
+                </Label>
 
-            <div>
-              <Label
-                htmlFor="email"
-                className="required"
-              >
-                Email
-              </Label>
+                <Input
+                  className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Your name"
+                />
 
-              <Input
-                className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
-                type="email"
-                id="email"
-                name="email"
-                required
-              />
-            </div>
+              </div>
 
 
-            <div>
-              <Label htmlFor="phone">
-                Phone Number
-              </Label>
+              <!-- EMAIL -->
+              <div>
 
-              <Input
-                className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
-                type="tel"
-                id="phone"
-                name="phone"
-              />
-            </div>
+                <Label
+                  htmlFor="email"
+                  className="required"
+                >
+                  Email
+                </Label>
 
+                <Input
+                  className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="Your email address"
+                />
 
-            <div>
-              <Label htmlFor="website">
-                Website
-              </Label>
-
-              <Input
-                className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
-                type="url"
-                id="website"
-                name="website"
-              />
-            </div>
+              </div>
 
 
-            <div class="sm:col-span-2">
-              <Label
-                htmlFor="message"
-                className="required"
-              >
-                Message
-              </Label>
+              <!-- PHONE -->
+              <div>
 
-              <Textarea
-                className="mt-2 min-h-36 rounded-xl border border-stone-300 bg-white shadow-none"
-                id="message"
-                name="message"
-                rows={4}
-                required
-              />
-            </div>
+                <Label htmlFor="phone">
+                  Phone Number
+                </Label>
 
-          </Form>
+                <Input
+                  className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Your phone number"
+                />
+
+              </div>
+
+
+              <!-- WEBSITE -->
+              <div>
+
+                <Label htmlFor="website">
+                  Website
+                </Label>
+
+                <Input
+                  className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
+                  type="url"
+                  id="website"
+                  name="website"
+                  placeholder="Your website (optional)"
+                />
+
+              </div>
+
+
+              <!-- MESSAGE -->
+              <div class="sm:col-span-2">
+
+                <Label
+                  htmlFor="message"
+                  className="required"
+                >
+                  Message
+                </Label>
+
+                <Textarea
+                  className="mt-2 min-h-32 rounded-xl border border-stone-300 bg-white shadow-none"
+                  id="message"
+                  name="message"
+                  rows={4}
+                  required
+                  placeholder="Tell us more about your interest in sponsoring a school..."
+                />
+
+              </div>
+
+            </Form>
+
+          </div>
 
         </div>
 
       </div>
 
-    </section>
 
+      <!-- ========================================= -->
+      <!-- IMPACT STRIP -->
+      <!-- ========================================= -->
 
-    <!-- SMALL IMPACT STRIP -->
-    <section class="mx-auto max-w-7xl px-6 pb-20 lg:px-10">
+      <div
+        class="mt-8 grid overflow-hidden rounded-[2rem] bg-stone-50 md:grid-cols-3"
+      >
 
-      <div class="grid gap-0 overflow-hidden rounded-[2rem] border border-stone-100 bg-white md:grid-cols-3">
+        <!-- ITEM 1 -->
+        <div
+          class="flex items-center gap-5 border-b border-stone-200 px-7 py-7 md:border-b-0 md:border-r"
+        >
 
-        <div class="p-8 md:border-r md:border-stone-200">
-          <div class="mb-4 text-3xl text-orange-500">○</div>
+          <div
+            class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-orange-100 text-2xl text-orange-500"
+          >
+            ♡
+          </div>
 
-          <h3 class="text-lg font-bold text-gray-950">
-            Stronger communities
-          </h3>
+          <div>
+
+            <h3 class="text-base font-bold text-gray-950">
+              Stronger communities
+            </h3>
+
+            <p class="mt-1 text-xs leading-relaxed text-stone-500">
+              Supporting our local communities.
+            </p>
+
+          </div>
+
         </div>
 
 
-        <div class="p-8 md:border-r md:border-stone-200">
-          <div class="mb-4 text-3xl text-orange-500">♡</div>
+        <!-- ITEM 2 -->
+        <div
+          class="flex items-center gap-5 border-b border-stone-200 px-7 py-7 md:border-b-0 md:border-r"
+        >
 
-          <h3 class="text-lg font-bold text-gray-950">
-            Supporting our communities
-          </h3>
+          <div
+            class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-orange-100 text-2xl text-orange-500"
+          >
+            🎓
+          </div>
+
+          <div>
+
+            <h3 class="text-base font-bold text-gray-950">
+              Brighter opportunities
+            </h3>
+
+            <p class="mt-1 text-xs leading-relaxed text-stone-500">
+              Supporting education and wellbeing.
+            </p>
+
+          </div>
+
         </div>
 
 
-        <div class="p-8">
-          <div class="mb-4 text-3xl text-orange-500">✦</div>
+        <!-- ITEM 3 -->
+        <div
+          class="flex items-center gap-5 px-7 py-7"
+        >
 
-          <h3 class="text-lg font-bold text-gray-950">
-            Making a difference
-          </h3>
+          <div
+            class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-orange-100 text-2xl text-orange-500"
+          >
+            ♡
+          </div>
+
+          <div>
+
+            <h3 class="text-base font-bold text-gray-950">
+              A lasting impact
+            </h3>
+
+            <p class="mt-1 text-xs leading-relaxed text-stone-500">
+              Creating positive change together.
+            </p>
+
+          </div>
+
         </div>
 
       </div>
@@ -278,11 +403,13 @@ const { Content } = await render(entry);
     scroll-behavior: smooth;
   }
 
+
   :global(form[name="sponsor"]) {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 1rem;
   }
+
 
   @media (min-width: 640px) {
     :global(form[name="sponsor"]) {
@@ -290,23 +417,36 @@ const { Content } = await render(entry);
     }
   }
 
-  :global(form[name="sponsor"] > div:last-child) {
+
+  :global(form[name="sponsor"] > div:nth-child(5)) {
     grid-column: 1 / -1;
   }
+
 
   :global(form[name="sponsor"] button[type="submit"]) {
     grid-column: 1 / -1;
     width: 100%;
+    border: 0;
     border-radius: 9999px;
     background: #f97316;
     padding: 0.9rem 1.5rem;
     font-weight: 700;
     color: white;
-    transition: all 0.2s ease;
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
   }
+
 
   :global(form[name="sponsor"] button[type="submit"]:hover) {
     background: #ea580c;
     transform: translateY(-1px);
+  }
+
+
+  :global(form[name="sponsor"] input::placeholder),
+  :global(form[name="sponsor"] textarea::placeholder) {
+    color: #a8a29e;
+    opacity: 1;
   }
 </style>
