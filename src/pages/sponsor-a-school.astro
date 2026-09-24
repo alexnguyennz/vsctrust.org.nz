@@ -63,11 +63,6 @@ const { Content } = await render(entry);
 
       </div>
 
-      <!-- INTRO PARAGRAPH (contenu existant, déplacé sous le titre) -->
-      <div class="mt-5 max-w-2xl text-base leading-relaxed text-stone-600 sm:text-lg">
-        <Content />
-      </div>
-
       <!-- MAIN CONTENT -->
       <div class="mt-10 grid items-start gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-14">
 
@@ -95,8 +90,13 @@ const { Content } = await render(entry);
             </div>
           </div>
 
-          <!-- IMPACT POINTS (juste après la photo, comme sur la maquette) -->
-          <div class="mt-8 grid gap-6 border-t border-stone-200 pt-8 sm:grid-cols-3">
+          <!-- CONTENU EXISTANT (texte complet du CMS, remis sous la photo) -->
+          <div class="mt-10 max-w-2xl text-base leading-relaxed text-stone-600 sm:text-lg">
+            <Content />
+          </div>
+
+          <!-- IMPACT POINTS -->
+          <div class="mt-10 grid gap-6 border-t border-stone-200 pt-8 sm:grid-cols-3">
 
             <!-- Stronger communities -->
             <div class="flex items-start gap-4">
