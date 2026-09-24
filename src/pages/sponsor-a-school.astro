@@ -21,56 +21,89 @@ const { Content } = await render(entry);
   <main class="bg-white">
 
     <!-- ========================================= -->
-    <!-- INTRO -->
+    <!-- HERO / INTRO -->
     <!-- ========================================= -->
 
-    <section class="mx-auto max-w-6xl px-6 pb-8 pt-12 md:px-10 md:pt-16">
+    <section class="mx-auto max-w-7xl px-8 pb-8 pt-16 lg:px-12">
 
       <div class="relative">
 
         <!-- GET INVOLVED -->
-        <div class="mb-4 flex items-center gap-4">
+
+        <div class="mb-5 flex items-center gap-4">
 
           <span
-            class="text-xs font-bold uppercase tracking-[0.22em] text-orange-500"
+            class="text-sm font-bold uppercase tracking-[0.16em] text-orange-500"
           >
             Get involved
           </span>
 
-          <span class="h-px w-10 bg-orange-500"></span>
+          <span class="h-px w-12 bg-orange-500"></span>
 
         </div>
 
 
-        <!-- TITLE AREA -->
+        <!-- TITLE + SCHOOL -->
+
         <div class="relative">
 
           <h1
-            class="max-w-3xl text-5xl font-bold leading-[0.95] tracking-[-0.04em] text-gray-950 md:text-6xl"
+            class="max-w-2xl text-5xl font-bold leading-[0.95] tracking-[-0.045em] text-gray-950 md:text-6xl lg:text-[4.5rem]"
           >
             {entry.data.title}
           </h1>
 
 
+          <!-- SUBTITLE -->
+
+          <p
+            class="mt-4 max-w-xl text-lg leading-relaxed text-stone-500 md:text-xl"
+          >
+            Support Do Some Good and help provide meaningful support to
+            schools and kindergartens across our communities.
+          </p>
+
+
           <!-- SCHOOL ILLUSTRATION -->
+
           <div
-            class="absolute right-[13%] top-1/2 hidden -translate-y-1/2 md:block"
+            class="absolute right-[17%] top-1/2 hidden -translate-y-[45%] md:block"
           >
 
-            <div
-              class="flex h-28 w-28 items-center justify-center rounded-full bg-orange-50"
-            >
+            <div class="relative">
 
-              <Image
-                src={import("@/assets/img/home/sponsor.png")}
-                width="77"
-                height="77"
-                alt="Sponsor image"
-                fetchpriority="high"
-                loading="eager"
-                class="h-[72px] w-[72px] object-contain"
-                transition:name="sponsor"
-              />
+              <!-- CIRCLE -->
+
+              <div
+                class="flex h-36 w-36 items-center justify-center rounded-full bg-orange-50"
+              >
+
+                <Image
+                  src={import("@/assets/img/home/sponsor.png")}
+                  width="77"
+                  height="77"
+                  alt="Sponsor a school"
+                  fetchpriority="high"
+                  loading="eager"
+                  class="h-24 w-24 object-contain"
+                />
+
+              </div>
+
+
+              <!-- ORANGE DECORATION -->
+
+              <span
+                class="absolute -right-5 -top-5 h-7 w-1 rotate-[25deg] rounded-full bg-orange-500"
+              ></span>
+
+              <span
+                class="absolute -right-10 top-2 h-5 w-1 rotate-[55deg] rounded-full bg-orange-500"
+              ></span>
+
+              <span
+                class="absolute -right-7 top-10 h-6 w-1 rotate-[75deg] rounded-full bg-orange-500"
+              ></span>
 
             </div>
 
@@ -84,18 +117,18 @@ const { Content } = await render(entry);
 
 
     <!-- ========================================= -->
-    <!-- MAIN CONTENT -->
+    <!-- PHOTO + FORM -->
     <!-- ========================================= -->
 
-    <section class="mx-auto max-w-6xl px-6 pb-16 md:px-10">
+    <section class="mx-auto max-w-7xl px-8 pb-10 lg:px-12">
 
       <div
-        class="grid items-start gap-8 lg:grid-cols-[1.08fr_0.92fr]"
+        class="grid items-start gap-8 lg:grid-cols-[1.12fr_0.88fr]"
       >
 
 
         <!-- ===================================== -->
-        <!-- LEFT SIDE -->
+        <!-- LEFT -->
         <!-- ===================================== -->
 
         <div>
@@ -113,27 +146,140 @@ const { Content } = await render(entry);
                 alt="Do Some Good"
                 fetchpriority="high"
                 loading="eager"
-                class="h-[390px] w-full object-cover md:h-[430px]"
+                class="h-[365px] w-full object-cover md:h-[390px]"
               />
 
             </div>
 
 
-            <!-- LITTLE ORANGE DECORATION -->
+            <!-- ORANGE DECORATION -->
 
-            <div
-              class="absolute -bottom-6 -left-5 text-4xl leading-none text-orange-500"
-            >
-              〰
+            <div class="absolute -bottom-5 -left-7">
+
+              <span
+                class="absolute left-0 top-0 h-7 w-1 rotate-[35deg] rounded-full bg-orange-500"
+              ></span>
+
+              <span
+                class="absolute left-5 -top-5 h-5 w-1 rotate-[65deg] rounded-full bg-orange-500"
+              ></span>
+
+              <span
+                class="absolute left-7 top-3 h-6 w-1 rotate-[90deg] rounded-full bg-orange-500"
+              ></span>
+
             </div>
 
           </div>
 
 
-          <!-- REAL CONTENT FROM THE PAGE -->
+          <!-- THREE IMPACT ITEMS -->
+
+          <div class="mt-7 grid grid-cols-3">
+
+            <!-- ITEM 1 -->
+
+            <div
+              class="flex items-center gap-3 border-r border-stone-300 pr-5"
+            >
+
+              <div
+                class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-orange-50 text-2xl text-orange-500"
+              >
+                ♧
+              </div>
+
+              <div>
+
+                <h3
+                  class="text-sm font-bold leading-tight text-gray-950"
+                >
+                  Stronger<br />communities
+                </h3>
+
+                <p
+                  class="mt-1 text-xs leading-tight text-stone-500"
+                >
+                  Helping tamariki<br />
+                  and families thrive.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <!-- ITEM 2 -->
+
+            <div
+              class="flex items-center gap-3 border-r border-stone-300 px-5"
+            >
+
+              <div
+                class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-orange-50 text-2xl text-orange-500"
+              >
+                🎓
+              </div>
+
+              <div>
+
+                <h3
+                  class="text-sm font-bold leading-tight text-gray-950"
+                >
+                  Brighter<br />opportunities
+                </h3>
+
+                <p
+                  class="mt-1 text-xs leading-tight text-stone-500"
+                >
+                  Supporting education<br />
+                  and wellbeing.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <!-- ITEM 3 -->
+
+            <div
+              class="flex items-center gap-3 pl-5"
+            >
+
+              <div
+                class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-orange-50 text-3xl font-light text-orange-500"
+              >
+                ♡
+              </div>
+
+              <div>
+
+                <h3
+                  class="text-sm font-bold leading-tight text-gray-950"
+                >
+                  A lasting<br />impact
+                </h3>
+
+                <p
+                  class="mt-1 text-xs leading-tight text-stone-500"
+                >
+                  Creating positive<br />
+                  change together.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- KEEP THE REAL CONTENT -->
+          <!-- It remains below the redesigned section -->
 
           <div
-            class="mt-8 max-w-xl text-base leading-relaxed text-stone-600"
+            class="mt-10 max-w-2xl text-base leading-relaxed text-stone-600"
           >
             <Content />
           </div>
@@ -156,25 +302,35 @@ const { Content } = await render(entry);
 
 
         <!-- ===================================== -->
-        <!-- RIGHT SIDE / FORM -->
+        <!-- RIGHT / FORM -->
         <!-- ===================================== -->
 
         <div
-          class="relative rounded-[2rem] bg-orange-50 px-7 py-8 md:px-9 md:py-9"
+          class="relative rounded-[2rem] bg-orange-50/70 px-7 py-8 md:px-8 md:py-9"
         >
 
           <!-- HEART -->
 
-          <div
-            class="absolute right-7 top-5 text-5xl font-light leading-none text-orange-500"
-          >
-            ♡
+          <div class="absolute right-7 top-5">
+
+            <span
+              class="text-6xl font-light leading-none text-orange-500"
+            >
+              ♡
+            </span>
+
+            <span
+              class="absolute -right-3 -top-1 text-2xl text-orange-500"
+            >
+              ˙
+            </span>
+
           </div>
 
 
           <!-- FORM TITLE -->
 
-          <div class="max-w-md pr-12">
+          <div class="pr-14">
 
             <h2
               class="text-3xl font-bold leading-[0.98] tracking-[-0.04em] text-gray-950 md:text-4xl"
@@ -183,8 +339,10 @@ const { Content } = await render(entry);
               good together.
             </h2>
 
-            <p class="mt-4 text-sm leading-relaxed text-stone-600">
-              Interested in sponsoring a school?
+            <p
+              class="mt-4 text-sm leading-relaxed text-stone-600"
+            >
+              Interested in sponsoring a school?<br />
               Fill out the form below and our team will be in touch.
             </p>
 
@@ -293,7 +451,7 @@ const { Content } = await render(entry);
                 </Label>
 
                 <Textarea
-                  className="mt-2 min-h-28 rounded-xl border border-stone-300 bg-white shadow-none"
+                  className="mt-2 min-h-24 rounded-xl border border-stone-300 bg-white shadow-none"
                   id="message"
                   name="message"
                   rows={4}
@@ -307,96 +465,17 @@ const { Content } = await render(entry);
 
           </div>
 
-        </div>
 
-      </div>
+          <!-- SUBMIT BUTTON -->
 
-
-      <!-- ========================================= -->
-      <!-- IMPACT STRIP -->
-      <!-- ========================================= -->
-
-      <div
-        class="mt-8 grid overflow-hidden rounded-[2rem] bg-stone-50 md:grid-cols-3"
-      >
-
-        <!-- STRONGER COMMUNITIES -->
-
-        <div
-          class="flex items-center gap-4 border-b border-stone-200 px-7 py-6 md:border-b-0 md:border-r"
-        >
-
-          <div
-            class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-orange-100 text-2xl text-orange-500"
+          <button
+            type="submit"
+            form="sponsor"
+            class="mt-5 flex w-full items-center justify-center gap-3 rounded-full bg-orange-500 px-6 py-4 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-orange-600"
           >
-            ♡
-          </div>
-
-          <div>
-
-            <h3 class="text-sm font-bold text-gray-950">
-              Stronger communities
-            </h3>
-
-            <p class="mt-1 text-xs leading-relaxed text-stone-500">
-              Supporting our local communities.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- BRIGHTER OPPORTUNITIES -->
-
-        <div
-          class="flex items-center gap-4 border-b border-stone-200 px-7 py-6 md:border-b-0 md:border-r"
-        >
-
-          <div
-            class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-orange-100 text-2xl text-orange-500"
-          >
-            🎓
-          </div>
-
-          <div>
-
-            <h3 class="text-sm font-bold text-gray-950">
-              Brighter opportunities
-            </h3>
-
-            <p class="mt-1 text-xs leading-relaxed text-stone-500">
-              Supporting education and wellbeing.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- LASTING IMPACT -->
-
-        <div
-          class="flex items-center gap-4 px-7 py-6"
-        >
-
-          <div
-            class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-orange-100 text-2xl text-orange-500"
-          >
-            ♡
-          </div>
-
-          <div>
-
-            <h3 class="text-sm font-bold text-gray-950">
-              A lasting impact
-            </h3>
-
-            <p class="mt-1 text-xs leading-relaxed text-stone-500">
-              Creating positive change together.
-            </p>
-
-          </div>
+            Send enquiry
+            <span class="text-lg">→</span>
+          </button>
 
         </div>
 
@@ -418,7 +497,7 @@ const { Content } = await render(entry);
   :global(form[name="sponsor"]) {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.9rem;
   }
 
 
@@ -434,24 +513,9 @@ const { Content } = await render(entry);
   }
 
 
-  :global(form[name="sponsor"] button[type="submit"]) {
-    grid-column: 1 / -1;
+  :global(form[name="sponsor"] input),
+  :global(form[name="sponsor"] textarea) {
     width: 100%;
-    border: 0;
-    border-radius: 9999px;
-    background: #f97316;
-    padding: 0.9rem 1.5rem;
-    font-weight: 700;
-    color: white;
-    transition:
-      background 0.2s ease,
-      transform 0.2s ease;
-  }
-
-
-  :global(form[name="sponsor"] button[type="submit"]:hover) {
-    background: #ea580c;
-    transform: translateY(-1px);
   }
 
 
