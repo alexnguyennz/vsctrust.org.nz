@@ -3,10 +3,8 @@ import { getEntry, render } from "astro:content";
 import { Image } from "astro:assets";
 
 import Layout from "@/components/layouts/Layout.astro";
-import Section from "@/components/layouts/section.astro";
 import AnchorButton from "@/components/layouts/anchor-button.astro";
 
-import Banner from "@/components/Banner.astro";
 import Form from "@/components/Form.astro";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -19,90 +17,296 @@ const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title}>
-  <Banner title={entry.data.title} programme="sponsor-a-school" />
 
-  <Section>
-    <Image
-      src={import("@/assets/img/home/sponsor.png")}
-      width="77"
-      height="77"
-      alt="sponsor image"
-      fetchpriority="high"
-      loading="eager"
-      class="mx-auto"
-      transition:name="sponsor"
-    /></Section
-  >
+  <main class="bg-white">
 
-  <Section class="grid gap-6 lg:grid-cols-2 lg:gap-9">
-    <div>
-      <Image
-        src={import("@/assets/img/banner/sponsor-a-school.jpg")}
-        width="512"
-        height="512"
-        alt="Do Some Good logo"
-        fetchpriority="high"
-        loading="eager"
-        class="mx-auto mb-6 max-h-96 w-full rounded-3xl object-cover shadow-lg"
-      />
+    <!-- HERO / INTRO -->
+    <section class="mx-auto max-w-7xl px-6 pb-12 pt-16 lg:px-10 lg:pb-16 lg:pt-20">
 
-      <Content />
-
-      <AnchorButton href="/dosomegood/brochure.pdf" class="bg-gray-600 text-sm"
-        >Brochure</AnchorButton
-      >
-    </div>
-
-    <div>
-      <Form name="sponsor">
-        <div>
-          <Label htmlFor="name" className="required">Name</Label>
-          <Input
-            className="shadow-border"
-            type="text"
-            id="name"
-            name="name"
-            required
-          />
-        </div>
+      <div class="grid items-end gap-10 lg:grid-cols-[1fr_auto]">
 
         <div>
-          <Label htmlFor="email" className="required">Email</Label>
-          <Input
-            className="shadow-border"
-            type="email"
-            id="email"
-            name="email"
-            required
-          />
+
+          <div class="mb-5 flex items-center gap-4">
+            <span
+              class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-500"
+            >
+              Get involved
+            </span>
+
+            <span class="h-px w-14 bg-orange-500"></span>
+          </div>
+
+          <h1
+            class="max-w-4xl text-5xl font-bold leading-[0.95] tracking-tight text-gray-950 md:text-6xl lg:text-7xl"
+          >
+            {entry.data.title}
+          </h1>
+
         </div>
 
+        <!-- Small school illustration -->
+        <div class="hidden justify-end lg:flex">
+          <div
+            class="flex h-36 w-36 items-center justify-center rounded-full bg-orange-50"
+          >
+            <Image
+              src={import("@/assets/img/home/sponsor.png")}
+              width="77"
+              height="77"
+              alt="Sponsor image"
+              fetchpriority="high"
+              loading="eager"
+              class="h-20 w-20 object-contain"
+              transition:name="sponsor"
+            />
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MAIN CONTENT -->
+    <section class="mx-auto max-w-7xl px-6 pb-20 lg:px-10">
+
+      <div class="grid items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+
+        <!-- LEFT COLUMN -->
         <div>
-          <Label htmlFor="phone">Phone Number</Label>
-          <Input className="shadow-border" type="tel" id="phone" name="phone" />
+
+          <!-- Main image -->
+          <div class="overflow-hidden rounded-[2rem]">
+            <Image
+              src={import("@/assets/img/banner/sponsor-a-school.jpg")}
+              width="900"
+              height="700"
+              alt="Do Some Good"
+              fetchpriority="high"
+              loading="eager"
+              class="h-full min-h-[420px] w-full object-cover"
+            />
+          </div>
+
+
+          <!-- Existing page content -->
+          <div
+            class="prose prose-lg mt-10 max-w-none text-stone-600
+                   prose-headings:font-bold prose-headings:text-gray-950
+                   prose-p:leading-relaxed
+                   prose-a:text-orange-500
+                   prose-strong:text-gray-950"
+          >
+            <Content />
+          </div>
+
+
+          <!-- Existing brochure link -->
+          <div class="mt-8">
+            <AnchorButton
+              href="/dosomegood/brochure.pdf"
+              class="rounded-full bg-gray-950 px-7 py-3 text-sm font-semibold text-white transition hover:bg-orange-500"
+            >
+              Brochure
+            </AnchorButton>
+          </div>
+
         </div>
 
-        <div>
-          <Label htmlFor="website">Website</Label>
-          <Input
-            className="shadow-border"
-            type="url"
-            id="website"
-            name="website"
-          />
+
+        <!-- RIGHT COLUMN / FORM -->
+        <div
+          class="rounded-[2rem] bg-orange-50/70 p-7 md:p-9 lg:sticky lg:top-8"
+        >
+
+          <div class="mb-8">
+
+            <div class="mb-4 flex items-center gap-3">
+              <span class="h-px w-10 bg-orange-500"></span>
+
+              <span
+                class="text-xs font-semibold uppercase tracking-[0.18em] text-orange-500"
+              >
+                Get in touch
+              </span>
+            </div>
+
+            <h2
+              class="max-w-md text-3xl font-bold leading-tight tracking-tight text-gray-950 md:text-4xl"
+            >
+              Let’s do some good together.
+            </h2>
+
+          </div>
+
+
+          <Form name="sponsor">
+
+            <div>
+              <Label
+                htmlFor="name"
+                className="required"
+              >
+                Name
+              </Label>
+
+              <Input
+                className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
+                type="text"
+                id="name"
+                name="name"
+                required
+              />
+            </div>
+
+
+            <div>
+              <Label
+                htmlFor="email"
+                className="required"
+              >
+                Email
+              </Label>
+
+              <Input
+                className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
+            </div>
+
+
+            <div>
+              <Label htmlFor="phone">
+                Phone Number
+              </Label>
+
+              <Input
+                className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
+                type="tel"
+                id="phone"
+                name="phone"
+              />
+            </div>
+
+
+            <div>
+              <Label htmlFor="website">
+                Website
+              </Label>
+
+              <Input
+                className="mt-2 rounded-xl border border-stone-300 bg-white shadow-none"
+                type="url"
+                id="website"
+                name="website"
+              />
+            </div>
+
+
+            <div class="sm:col-span-2">
+              <Label
+                htmlFor="message"
+                className="required"
+              >
+                Message
+              </Label>
+
+              <Textarea
+                className="mt-2 min-h-36 rounded-xl border border-stone-300 bg-white shadow-none"
+                id="message"
+                name="message"
+                rows={4}
+                required
+              />
+            </div>
+
+          </Form>
+
         </div>
 
-        <div class="sm:col-span-2">
-          <Label htmlFor="message" className="required">Message</Label>
-          <Textarea
-            className="shadow-border"
-            id="message"
-            name="message"
-            rows={4}
-            required
-          />
+      </div>
+
+    </section>
+
+
+    <!-- SMALL IMPACT STRIP -->
+    <section class="mx-auto max-w-7xl px-6 pb-20 lg:px-10">
+
+      <div class="grid gap-0 overflow-hidden rounded-[2rem] border border-stone-100 bg-white md:grid-cols-3">
+
+        <div class="p-8 md:border-r md:border-stone-200">
+          <div class="mb-4 text-3xl text-orange-500">○</div>
+
+          <h3 class="text-lg font-bold text-gray-950">
+            Stronger communities
+          </h3>
         </div>
-      </Form>
-    </div>
-  </Section>
+
+
+        <div class="p-8 md:border-r md:border-stone-200">
+          <div class="mb-4 text-3xl text-orange-500">♡</div>
+
+          <h3 class="text-lg font-bold text-gray-950">
+            Supporting our communities
+          </h3>
+        </div>
+
+
+        <div class="p-8">
+          <div class="mb-4 text-3xl text-orange-500">✦</div>
+
+          <h3 class="text-lg font-bold text-gray-950">
+            Making a difference
+          </h3>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
 </Layout>
+
+
+<style>
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  :global(form[name="sponsor"]) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    :global(form[name="sponsor"]) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  :global(form[name="sponsor"] > div:last-child) {
+    grid-column: 1 / -1;
+  }
+
+  :global(form[name="sponsor"] button[type="submit"]) {
+    grid-column: 1 / -1;
+    width: 100%;
+    border-radius: 9999px;
+    background: #f97316;
+    padding: 0.9rem 1.5rem;
+    font-weight: 700;
+    color: white;
+    transition: all 0.2s ease;
+  }
+
+  :global(form[name="sponsor"] button[type="submit"]:hover) {
+    background: #ea580c;
+    transform: translateY(-1px);
+  }
+</style>
