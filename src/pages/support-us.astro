@@ -1,4 +1,4 @@
- ---
+---
 import { getEntry, render } from "astro:content";
 import { Image } from "astro:assets";
 
@@ -8,77 +8,167 @@ import { marked } from "marked";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
-import Banner from "@/components/Banner.astro";
 
 const entry = await getEntry("pages", "support-us");
 if (!entry) throw new Error("Could not find page");
 
 const { Content } = await render(entry);
+
+const items = [
+  { icon: "tabler:bottle", label: entry.data.items[0] },
+  { icon: "lucide:person-standing", label: entry.data.items[1] },
+  { icon: "lucide:shirt", label: entry.data.items[2] },
+  { icon: "tabler:blender", label: entry.data.items[3] },
+];
 ---
 
 <Layout title={entry.data.title}>
-  <Banner title={entry.data.title} programme="donate" />
-
-  <Section>
-    <Image
-      src={import("@/assets/img/home/donate.png")}
-      width="77"
-      height="77"
-      alt="donate image"
-      fetchpriority="high"
-      loading="eager"
-      class="mx-auto"
-      transition:name="donate"
-    /></Section
+  <Section
+    class="grid items-start gap-10 lg:grid-cols-[minmax(0,1.65fr)_minmax(0,1fr)] lg:gap-8"
   >
-
-  <Section class="grid gap-6 lg:grid-cols-2 lg:gap-9">
+    <!-- ================= COLONNE GAUCHE ================= -->
     <div>
-      <Image
-        src={import("@/assets/img/banner/support-us.jpg")}
-        width="512"
-        height="512"
-        alt="Do Some Good logo"
-        fetchpriority="high"
-        loading="eager"
-        class="mx-auto mb-6 max-h-96 w-full rounded-3xl object-cover shadow-lg"
-      />
+      <!-- En-tête : titre + icône -->
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div class="max-w-xl">
+          <p
+            class="mb-3 flex items-center gap-4 text-sm font-bold uppercase tracking-[0.15em] text-[#F47B20]"
+          >
+            Get Involved
+            <span class="h-[2px] w-28 bg-[#F47B20]" aria-hidden="true"></span>
+          </p>
 
-      <Fragment set:html={marked.parse(entry.data.topContent)} />
+          <h1
+            class="mb-4 text-5xl font-extrabold leading-none tracking-tight text-[#111827] sm:text-6xl lg:text-7xl"
+          >
+            {entry.data.title}
+          </h1>
 
-      <div>
-        <p>Your donation will go towards:</p>
-        <ul class="ml-0 space-y-3 [&>li]:flex [&>li]:items-center [&>li]:gap-2">
-          <li>
-            <Icon name="tabler:bottle" class="size-6" />
-            {entry.data.items[0]}
-          </li>
-          <li>
-            <Icon name="lucide:person-standing" class="size-6" />
-            {entry.data.items[1]}
-          </li>
-          <li>
-            <Icon name="lucide:shirt" class="size-6" />
-            {entry.data.items[2]}
-          </li>
-          <li>
-            <Icon name="tabler:blender" class="size-6" />
-            {entry.data.items[3]}
-          </li>
+          <div
+            class="text-base leading-relaxed text-gray-500 sm:text-lg [&_p]:m-0"
+          >
+            <Fragment set:html={marked.parse(entry.data.topContent)} />
+          </div>
+        </div>
+
+        <!-- Icône dans un cercle pêche + traits orange -->
+        <div class="relative mx-auto shrink-0 sm:mx-0">
+          <div
+            class="flex size-40 items-center justify-center rounded-full bg-[#FFF1E6] lg:size-48"
+          >
+            <Image
+              src={import("@/assets/img/home/donate.png")}
+              width="110"
+              height="110"
+              alt="donate image"
+              fetchpriority="high"
+              loading="eager"
+              class="size-24 lg:size-28"
+              transition:name="donate"
+            />
+          </div>
+          <svg
+            class="absolute -right-5 top-8 h-20 w-12 text-[#F47B20]"
+            viewBox="0 0 48 80"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <line x1="10" y1="22" x2="22" y2="6"></line>
+            <line x1="14" y1="40" x2="40" y2="36"></line>
+            <line x1="10" y1="56" x2="30" y2="70"></line>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Photo avec traits orange en bas à gauche -->
+      <div class="relative mt-8">
+        <Image
+          src={import("@/assets/img/banner/support-us.jpg")}
+          width="1200"
+          height="560"
+          alt="Do Some Good logo"
+          fetchpriority="high"
+          loading="eager"
+          class="aspect-[2.2/1] w-full rounded-3xl object-cover"
+        />
+        <svg
+          class="absolute -bottom-4 -left-8 h-14 w-14 text-[#F47B20]"
+          viewBox="0 0 56 56"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="4"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <line x1="4" y1="8" x2="24" y2="12"></line>
+          <line x1="12" y1="24" x2="28" y2="38"></line>
+          <line x1="34" y1="30" x2="36" y2="50"></line>
+        </svg>
+      </div>
+
+      <!-- Où va le don -->
+      <div class="mt-10">
+        <h2 class="mb-5 text-2xl font-extrabold text-[#111827] sm:text-3xl">
+          Your donation will go towards:
+        </h2>
+
+        <ul class="m-0 grid list-none grid-cols-2 gap-3 p-0 lg:grid-cols-4">
+          {
+            items.map((item) => (
+              <li class="m-0 flex items-center gap-3 rounded-2xl bg-[#FFF7F0] p-3">
+                <span class="flex size-16 shrink-0 items-center justify-center rounded-full bg-[#FFE8D6] text-[#F47B20]">
+                  <Icon name={item.icon} class="size-9" />
+                </span>
+                <span class="text-sm leading-snug text-gray-800">
+                  {item.label}
+                </span>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>
 
-    <div class="space-y-6" transition:animate="none">
+    <!-- ================= COLONNE DROITE ================= -->
+    <aside
+      class="relative rounded-3xl bg-gradient-to-br from-[#FFF7F0] to-[#FFFBF8] p-6 sm:p-9 lg:mt-20"
+      transition:animate="none"
+    >
+      <Icon
+        name="lucide:heart"
+        class="absolute right-10 top-7 size-16 -rotate-6 text-[#F47B20]"
+        aria-hidden="true"
+      />
+
+      <p
+        class="mb-3 flex items-center gap-4 text-xs font-bold uppercase tracking-[0.15em] text-[#F47B20]"
+      >
+        <span class="h-[2px] w-9 bg-[#F47B20]" aria-hidden="true"></span>
+        Make a difference
+      </p>
+
+      <h2 class="mb-3 text-3xl font-extrabold leading-tight text-[#111827] sm:text-4xl">
+        Every little bit helps.
+      </h2>
+
+      <p class="mb-7 max-w-xs text-gray-500">
+        Your support helps us continue our work in the community.
+      </p>
+
       <iframe
         title="Donorbox"
         name="donorbox"
         src="https://donorbox.org/embed/vulnerable-support-charitable-trust"
         loading="lazy"
-        class="mx-auto h-[620px] w-[300px] rounded-2xl shadow-lg sm:h-[612px] sm:w-[400px]"
+        class="block h-[620px] w-full max-w-[400px] rounded-2xl bg-white shadow-lg sm:h-[612px]"
       ></iframe>
 
-      <div class="mx-auto text-sm"><Content /></div>
-    </div>
+      <div class="mt-6 text-sm leading-relaxed text-gray-500 [&_p]:m-0">
+        <Content />
+      </div>
+    </aside>
   </Section>
 </Layout>
