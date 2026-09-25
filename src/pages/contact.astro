@@ -6,53 +6,138 @@ import { Icon } from "astro-icon/components";
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
 
-import Banner from "@/components/Banner.astro";
 import Form from "@/components/Form.astro";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 const title = "Contact Us";
+
+const fieldClass =
+  "h-14 rounded-lg border border-gray-200 bg-white shadow-none focus-visible:border-[#F47B20] focus-visible:ring-2 focus-visible:ring-[#F47B20]/30";
 ---
 
 <Layout title={title}>
-  <Banner title={title} programme="contact" />
+  <!-- Espace pour que le contenu ne passe pas sous le menu -->
+  <div class="h-28 lg:h-36" aria-hidden="true"></div>
 
-  <Section class="grid gap-6 lg:grid-cols-2 lg:gap-9">
-    <Image
-      src={import("@/assets/img/banner/contact.jpg")}
-      width="512"
-      height="512"
-      alt="Do Some Good logo"
-      fetchpriority="high"
-      loading="eager"
-      class="mx-auto mb-6 max-h-96 w-full rounded-3xl object-cover shadow-lg"
-    />
+  <!-- ================= BANDEAU TITRE ================= -->
+  <Section>
+    <div
+      class="relative overflow-hidden rounded-3xl bg-[#FFF7F0] px-6 py-8 sm:px-12 sm:py-10"
+    >
+      <p
+        class="mb-3 flex items-center gap-4 text-sm font-bold uppercase tracking-[0.15em] text-[#F47B20]"
+      >
+        Get Involved
+        <span class="h-[2px] w-28 bg-[#F47B20]" aria-hidden="true"></span>
+      </p>
 
-    <div class="space-y-6">
-      <div>
-        <p class="text-center">
-          We’d love to hear from you. Please get in touch!
-        </p>
+      <h1
+        class="m-0 text-5xl font-extrabold leading-none tracking-tight text-[#111827] sm:text-6xl lg:text-7xl"
+      >
+        {title}
+      </h1>
 
-        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
-          <div>
-            <Icon name="tabler:at" class="mx-auto h-5 w-5" />
-            <a href="mailto:hello@vsctrust.org.nz">hello@vsctrust.org.nz</a>
-          </div>
+      <svg
+        class="absolute right-8 top-1/2 hidden h-28 w-20 -translate-y-1/2 text-[#F47B20] sm:block"
+        viewBox="0 0 80 112"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="7"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
+        <line x1="12" y1="42" x2="40" y2="8"></line>
+        <line x1="30" y1="64" x2="72" y2="50"></line>
+        <line x1="30" y1="92" x2="60" y2="100"></line>
+      </svg>
+    </div>
+  </Section>
 
-          <div>
-            <Icon name="tabler:phone" class="mx-auto h-5 w-5" />
-            <a href="tel:+64274448672">+64 27 444 8672</a>
-          </div>
-        </div>
+  <!-- ================= CONTENU ================= -->
+  <Section class="grid items-start gap-10 lg:grid-cols-2 lg:gap-8">
+    <!-- COLONNE GAUCHE -->
+    <div>
+      <Image
+        src={import("@/assets/img/banner/contact.jpg")}
+        width="1000"
+        height="560"
+        alt="Do Some Good logo"
+        fetchpriority="high"
+        loading="eager"
+        class="aspect-[1.8/1] w-full rounded-3xl object-cover"
+      />
+
+      <h2
+        class="mb-6 mt-8 text-2xl font-extrabold leading-tight text-[#111827] lg:text-3xl"
+      >
+        We’d love to hear from you. Please get in touch!
+      </h2>
+
+      <div class="flex flex-wrap items-center gap-x-12 gap-y-4">
+        <a
+          href="mailto:hello@vsctrust.org.nz"
+          class="flex items-center gap-5 text-lg text-gray-800 no-underline hover:text-[#F47B20]"
+        >
+          <span
+            class="flex size-16 shrink-0 items-center justify-center rounded-full bg-[#FFE8D6] text-[#F47B20]"
+          >
+            <Icon name="tabler:at" class="size-8" />
+          </span>
+          hello@vsctrust.org.nz
+        </a>
+
+        <a
+          href="tel:+64274448672"
+          class="flex items-center gap-5 text-lg text-gray-800 no-underline hover:text-[#F47B20]"
+        >
+          <span
+            class="flex size-16 shrink-0 items-center justify-center rounded-full bg-[#FFE8D6] text-[#F47B20]"
+          >
+            <Icon name="tabler:phone" class="size-8" />
+          </span>
+          +64 27 444 8672
+        </a>
       </div>
+    </div>
+
+    <!-- COLONNE DROITE : FORMULAIRE -->
+    <div
+      class="relative rounded-3xl bg-[#FFF7F0] p-6 sm:p-10
+        [&_label]:text-base [&_label]:font-semibold [&_label]:text-[#111827]
+        [&_button]:mt-2 [&_button]:h-14 [&_button]:w-full [&_button]:rounded-lg
+        [&_button]:border-0 [&_button]:bg-[#F47B20] [&_button]:text-base
+        [&_button]:font-bold [&_button]:uppercase [&_button]:tracking-[0.12em]
+        [&_button]:text-white [&_button]:shadow-none [&_button:hover]:bg-[#E06A12]"
+    >
+      <svg
+        class="absolute right-8 top-7 size-16 -rotate-6 text-[#F47B20]"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path
+          d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+        ></path>
+      </svg>
+
+      <p
+        class="mb-8 mt-4 flex items-center gap-4 text-sm font-bold uppercase tracking-[0.15em] text-[#F47B20]"
+      >
+        <span class="h-[2px] w-12 bg-[#F47B20]" aria-hidden="true"></span>
+        Send us a message
+      </p>
 
       <Form name="contact">
         <div>
           <Label htmlFor="name" className="required">Name</Label>
           <Input
-            className="shadow-border"
+            className={fieldClass}
             type="text"
             id="name"
             name="name"
@@ -62,7 +147,7 @@ const title = "Contact Us";
         <div>
           <Label htmlFor="email" className="required">Email</Label>
           <Input
-            className="shadow-border"
+            className={fieldClass}
             type="email"
             id="email"
             name="email"
@@ -72,7 +157,7 @@ const title = "Contact Us";
         <div class="sm:col-span-2">
           <Label htmlFor="message" className="required">Message</Label>
           <Textarea
-            className="shadow-border"
+            className={`${fieldClass} h-auto min-h-32`}
             id="message"
             name="message"
             rows={4}
