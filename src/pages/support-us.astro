@@ -23,13 +23,16 @@ const items = [
 ---
 
 <Layout title={entry.data.title}>
+  <!-- Espace pour que le contenu ne passe pas sous le menu -->
+  <div class="h-32 lg:h-40" aria-hidden="true"></div>
+
   <Section
-    class="grid items-start gap-10 lg:grid-cols-[minmax(0,1.65fr)_minmax(0,1fr)] lg:gap-8"
+    class="grid items-start gap-10 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:gap-8"
   >
     <!-- ================= COLONNE GAUCHE ================= -->
     <div>
       <!-- En-tête : titre + icône -->
-      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <div class="flex items-center justify-between gap-6">
         <div class="max-w-xl">
           <p
             class="mb-3 flex items-center gap-4 text-sm font-bold uppercase tracking-[0.15em] text-[#F47B20]"
@@ -44,17 +47,16 @@ const items = [
             {entry.data.title}
           </h1>
 
-          <div
-            class="text-base leading-relaxed text-gray-500 sm:text-lg [&_p]:m-0"
-          >
-            <Fragment set:html={marked.parse(entry.data.topContent)} />
-          </div>
+          <p class="m-0 text-base leading-relaxed text-gray-500 lg:text-lg">
+            Your support helps us continue our work in the community, providing
+            essential items and support to those who need it most.
+          </p>
         </div>
 
         <!-- Icône dans un cercle pêche + traits orange -->
-        <div class="relative mx-auto shrink-0 sm:mx-0">
+        <div class="relative hidden shrink-0 sm:block">
           <div
-            class="flex size-40 items-center justify-center rounded-full bg-[#FFF1E6] lg:size-48"
+            class="flex size-36 items-center justify-center rounded-full bg-[#FFF1E6] lg:size-44"
           >
             <Image
               src={import("@/assets/img/home/donate.png")}
@@ -63,12 +65,12 @@ const items = [
               alt="donate image"
               fetchpriority="high"
               loading="eager"
-              class="size-24 lg:size-28"
+              class="size-20 lg:size-24"
               transition:name="donate"
             />
           </div>
           <svg
-            class="absolute -right-5 top-8 h-20 w-12 text-[#F47B20]"
+            class="absolute -right-6 top-6 h-20 w-12 text-[#F47B20]"
             viewBox="0 0 48 80"
             fill="none"
             stroke="currentColor"
@@ -111,7 +113,7 @@ const items = [
 
       <!-- Où va le don -->
       <div class="mt-10">
-        <h2 class="mb-5 text-2xl font-extrabold text-[#111827] sm:text-3xl">
+        <h2 class="mb-5 text-2xl font-extrabold text-[#111827] lg:text-3xl">
           Your donation will go towards:
         </h2>
 
@@ -119,8 +121,8 @@ const items = [
           {
             items.map((item) => (
               <li class="m-0 flex items-center gap-3 rounded-2xl bg-[#FFF7F0] p-3">
-                <span class="flex size-16 shrink-0 items-center justify-center rounded-full bg-[#FFE8D6] text-[#F47B20]">
-                  <Icon name={item.icon} class="size-9" />
+                <span class="flex size-14 shrink-0 items-center justify-center rounded-full bg-[#FFE8D6] text-[#F47B20]">
+                  <Icon name={item.icon} class="size-8" />
                 </span>
                 <span class="text-sm leading-snug text-gray-800">
                   {item.label}
@@ -130,15 +132,22 @@ const items = [
           }
         </ul>
       </div>
+
+      <!-- Texte existant (topContent), placé sous la section principale -->
+      <div
+        class="mt-12 max-w-2xl space-y-4 text-base leading-relaxed text-gray-600 [&_p]:m-0"
+      >
+        <Fragment set:html={marked.parse(entry.data.topContent)} />
+      </div>
     </div>
 
     <!-- ================= COLONNE DROITE ================= -->
     <aside
-      class="relative rounded-3xl bg-gradient-to-br from-[#FFF7F0] to-[#FFFBF8] p-6 sm:p-9 lg:mt-20"
+      class="relative rounded-3xl bg-gradient-to-br from-[#FFF7F0] to-[#FFFBF8] p-6 sm:p-9 lg:mt-12"
       transition:animate="none"
     >
       <svg
-        class="absolute right-10 top-7 size-16 -rotate-6 text-[#F47B20]"
+        class="absolute right-8 top-7 size-14 -rotate-6 text-[#F47B20]"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -159,11 +168,13 @@ const items = [
         Make a difference
       </p>
 
-      <h2 class="mb-3 text-3xl font-extrabold leading-tight text-[#111827] sm:text-4xl">
+      <h2
+        class="mb-3 pr-16 text-3xl font-extrabold leading-tight text-[#111827]"
+      >
         Every little bit helps.
       </h2>
 
-      <p class="mb-7 max-w-xs text-gray-500">
+      <p class="mb-7 max-w-xs text-base leading-relaxed text-gray-500">
         Your support helps us continue our work in the community.
       </p>
 
@@ -172,7 +183,7 @@ const items = [
         name="donorbox"
         src="https://donorbox.org/embed/vulnerable-support-charitable-trust"
         loading="lazy"
-        class="block h-[620px] w-full max-w-[400px] rounded-2xl bg-white shadow-lg sm:h-[612px]"
+        class="block h-[620px] w-full rounded-2xl bg-white shadow-lg sm:h-[612px]"
       ></iframe>
 
       <div class="mt-6 text-sm leading-relaxed text-gray-500 [&_p]:m-0">
