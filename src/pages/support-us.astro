@@ -1,14 +1,12 @@
+
 ---
 import { getEntry, render } from "astro:content";
 import { Image } from "astro:assets";
-
 import { Icon } from "astro-icon/components";
-
 import { marked } from "marked";
 
 import Layout from "@/components/layouts/Layout.astro";
 import Section from "@/components/layouts/section.astro";
-import Banner from "@/components/Banner.astro";
 
 const entry = await getEntry("pages", "support-us");
 if (!entry) throw new Error("Could not find page");
@@ -17,68 +15,178 @@ const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title}>
-  <Banner title={entry.data.title} programme="donate" />
+  <main class="mx-auto max-w-7xl px-6 pb-16 pt-12 lg:px-10 lg:pt-16">
 
-  <Section>
-    <Image
-      src={import("@/assets/img/home/donate.png")}
-      width="77"
-      height="77"
-      alt="donate image"
-      fetchpriority="high"
-      loading="eager"
-      class="mx-auto"
-      transition:name="donate"
-    /></Section
-  >
+    <!-- HERO -->
+    <section class="relative mb-12 lg:mb-16">
 
-  <Section class="grid gap-6 lg:grid-cols-2 lg:gap-9">
-    <div>
-      <Image
-        src={import("@/assets/img/banner/support-us.jpg")}
-        width="512"
-        height="512"
-        alt="Do Some Good logo"
-        fetchpriority="high"
-        loading="eager"
-        class="mx-auto mb-6 max-h-96 w-full rounded-3xl object-cover shadow-lg"
-      />
+      <div class="grid items-center gap-8 lg:grid-cols-[1fr_220px]">
 
-      <Fragment set:html={marked.parse(entry.data.topContent)} />
+        <div>
+          <div class="mb-4 flex items-center gap-3">
+            <span class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600">
+              Get Involved
+            </span>
+            <span class="h-px w-14 bg-orange-500"></span>
+          </div>
 
-      <div>
-        <p>Your donation will go towards:</p>
-        <ul class="ml-0 space-y-3 [&>li]:flex [&>li]:items-center [&>li]:gap-2">
-          <li>
-            <Icon name="tabler:bottle" class="size-6" />
-            {entry.data.items[0]}
-          </li>
-          <li>
-            <Icon name="lucide:person-standing" class="size-6" />
-            {entry.data.items[1]}
-          </li>
-          <li>
-            <Icon name="lucide:shirt" class="size-6" />
-            {entry.data.items[2]}
-          </li>
-          <li>
-            <Icon name="tabler:blender" class="size-6" />
-            {entry.data.items[3]}
-          </li>
-        </ul>
+          <h1 class="text-5xl font-extrabold tracking-tight text-gray-950 sm:text-6xl lg:text-7xl">
+            {entry.data.title}
+          </h1>
+
+          <div class="mt-5 max-w-2xl text-lg leading-relaxed text-gray-500">
+            <Fragment set:html={marked.parse(entry.data.topContent)} />
+          </div>
+        </div>
+
+        <div class="mx-auto flex size-40 items-center justify-center rounded-full bg-orange-50 lg:size-48">
+          <Image
+            src={import("@/assets/img/home/donate.png")}
+            width={100}
+            height={100}
+            alt="Donation"
+            fetchpriority="high"
+            loading="eager"
+            class="size-24 object-contain lg:size-28"
+            transition:name="donate"
+          />
+        </div>
+
       </div>
-    </div>
+    </section>
 
-    <div class="space-y-6" transition:animate="none">
-      <iframe
-        title="Donorbox"
-        name="donorbox"
-        src="https://donorbox.org/embed/vulnerable-support-charitable-trust"
-        loading="lazy"
-        class="mx-auto h-[620px] w-[300px] rounded-2xl shadow-lg sm:h-[612px] sm:w-[400px]"
-      ></iframe>
 
-      <div class="mx-auto text-sm"><Content /></div>
-    </div>
-  </Section>
+    <!-- MAIN CONTENT -->
+    <section class="grid items-start gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+
+      <!-- LEFT COLUMN -->
+      <div class="min-w-0">
+
+        <div class="relative">
+          <Image
+            src={import("@/assets/img/banner/support-us.jpg")}
+            width={900}
+            height={650}
+            alt="Do Some Good team supporting the community"
+            fetchpriority="high"
+            loading="eager"
+            class="aspect-[4/3] w-full rounded-3xl object-cover shadow-sm"
+          />
+
+          <span class="absolute -bottom-3 -left-3 text-4xl font-light text-orange-500">
+            ~
+          </span>
+        </div>
+
+        <!-- DONATION INFORMATION -->
+        <div class="mt-10">
+
+          <div class="mb-6 flex items-center gap-3">
+            <span class="h-px w-10 bg-orange-500"></span>
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-600">
+              Your donation
+            </p>
+          </div>
+
+          <h2 class="mb-7 text-2xl font-bold text-gray-950 sm:text-3xl">
+            Your donation will go towards:
+          </h2>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+
+            <div class="flex items-center gap-4 rounded-2xl bg-orange-50/70 p-4">
+              <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-600">
+                <Icon name="tabler:bottle" class="size-6" />
+              </div>
+              <p class="text-sm font-medium leading-relaxed text-gray-700">
+                {entry.data.items[0]}
+              </p>
+            </div>
+
+            <div class="flex items-center gap-4 rounded-2xl bg-orange-50/70 p-4">
+              <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-600">
+                <Icon name="lucide:person-standing" class="size-6" />
+              </div>
+              <p class="text-sm font-medium leading-relaxed text-gray-700">
+                {entry.data.items[1]}
+              </p>
+            </div>
+
+            <div class="flex items-center gap-4 rounded-2xl bg-orange-50/70 p-4">
+              <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-600">
+                <Icon name="lucide:shirt" class="size-6" />
+              </div>
+              <p class="text-sm font-medium leading-relaxed text-gray-700">
+                {entry.data.items[2]}
+              </p>
+            </div>
+
+            <div class="flex items-center gap-4 rounded-2xl bg-orange-50/70 p-4">
+              <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-600">
+                <Icon name="tabler:blender" class="size-6" />
+              </div>
+              <p class="text-sm font-medium leading-relaxed text-gray-700">
+                {entry.data.items[3]}
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT COLUMN: DONATION FORM -->
+      <div class="relative min-w-0 lg:pt-2" transition:animate="none">
+
+        <div class="relative rounded-3xl bg-orange-50/70 p-6 sm:p-8 lg:p-9">
+
+          <!-- DECORATIVE HEART -->
+          <div class="absolute right-6 top-6 text-orange-600 sm:right-8 sm:top-8">
+            <Icon name="lucide:heart" class="size-10 stroke-[1.5]" />
+          </div>
+
+          <div class="mb-6 pr-12">
+
+            <div class="mb-4 flex items-center gap-3">
+              <span class="h-px w-10 bg-orange-500"></span>
+              <span class="text-xs font-semibold uppercase tracking-[0.18em] text-orange-600">
+                Make a difference
+              </span>
+            </div>
+
+            <h2 class="text-3xl font-bold leading-tight tracking-tight text-gray-950 sm:text-4xl">
+              Every little bit helps.
+            </h2>
+
+            <p class="mt-3 text-base leading-relaxed text-gray-500">
+              Your support helps us continue our work in the community.
+            </p>
+
+          </div>
+
+          <!-- DONORBOX: ORIGINAL DONATION FORM -->
+          <div class="overflow-hidden rounded-2xl bg-white p-2 sm:p-4">
+
+            <iframe
+              title="Donorbox"
+              name="donorbox"
+              src="https://donorbox.org/embed/vulnerable-support-charitable-trust"
+              loading="lazy"
+              class="mx-auto block h-[620px] w-full max-w-[400px] rounded-xl sm:h-[612px]"
+            ></iframe>
+
+          </div>
+
+          <div class="mx-auto mt-6 max-w-prose text-sm leading-relaxed text-gray-600">
+            <Content />
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
 </Layout>
