@@ -12,7 +12,7 @@ const isTake10 = pathname === "/take10/";
   transition:animate="none"
 >
   <div
-    class="mx-auto flex items-center justify-between gap-6 px-5 py-2 lg:container lg:max-w-7xl"
+    class="mx-auto flex items-center justify-between gap-4 px-5 py-2 lg:container lg:max-w-7xl"
   >
     <!-- LOGO -->
     <a href="/" aria-label="Home page" rel="prefetch" class="shrink-0">
@@ -21,17 +21,25 @@ const isTake10 = pathname === "/take10/";
         width="370"
         height="70"
         alt="Vulnerable Support Charitable Trust logo"
-        class="header-logo h-auto"
+        class="header-logo h-auto w-[220px] sm:w-[260px] 2xl:w-[330px]"
         fetchpriority="high"
         loading="eager"
       />
     </a>
-    <!-- DESKTOP NAVIGATION -->
-    <div class="hidden lg:block">
+
+    <!-- DESKTOP NAVIGATION (grands écrans seulement) -->
+    <div class="hidden min-w-0 xl:block">
       <Navigation pathname={pathname} client:visible />
     </div>
-    <!-- MOBILE MENU -->
-    <div class="lg:hidden">
+
+    <!-- MOBILE / TABLETTE / PETITS PORTABLES : bouton don toujours visible + menu -->
+    <div class="flex items-center gap-3 xl:hidden">
+      <a
+        href="/support-us/"
+        class="header-donate-mobile rounded-full px-5 py-2.5 text-sm font-bold uppercase tracking-wide no-underline"
+      >
+        Donate
+      </a>
       <MobileSheet client:visible />
     </div>
   </div>
@@ -69,6 +77,35 @@ const isTake10 = pathname === "/take10/";
     background-color: #171717 !important;
     color: #ffffff !important;
   }
+
+  /* BOUTON DONATE sur mobile / tablette / petits portables */
+  #site-header .header-donate-mobile {
+    background-color: #171717;
+    color: #ffffff !important;
+  }
+  #site-header .header-donate-mobile:hover {
+    background-color: #f47b20;
+  }
+
+  /* ========================================
+     PORTABLES MOYENS (1280px à 1535px)
+     Menu un peu plus compact pour que
+     les deux ronds tiennent toujours à l'écran
+     ======================================== */
+  @media (min-width: 1280px) and (max-width: 1535px) {
+    #site-header nav a:not(.site-header-cta),
+    #site-header nav button {
+      font-size: 15px !important;
+    }
+    #site-header nav a.site-header-cta {
+      width: 76px !important;
+      height: 76px !important;
+      min-width: 76px !important;
+      font-size: 11px !important;
+      line-height: 1.15 !important;
+    }
+  }
+
   @media (max-width: 1023px) {
     #site-header {
       background: transparent !important;
