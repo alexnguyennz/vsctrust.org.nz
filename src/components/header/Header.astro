@@ -21,19 +21,19 @@ const isTake10 = pathname === "/take10/";
         width="370"
         height="70"
         alt="Vulnerable Support Charitable Trust logo"
-        class="header-logo h-auto w-[220px] sm:w-[260px] 2xl:w-[330px]"
+        class="header-logo h-auto w-[220px] sm:w-[260px] lg:w-[210px] xl:w-[270px] 2xl:w-[330px]"
         fetchpriority="high"
         loading="eager"
       />
     </a>
 
-    <!-- DESKTOP NAVIGATION (grands écrans seulement) -->
-    <div class="hidden min-w-0 xl:block">
+    <!-- DESKTOP NAVIGATION -->
+    <div class="hidden min-w-0 lg:block">
       <Navigation pathname={pathname} client:visible />
     </div>
 
-    <!-- MOBILE / TABLETTE / PETITS PORTABLES : bouton don toujours visible + menu -->
-    <div class="flex items-center gap-3 xl:hidden">
+    <!-- MOBILE / TABLETTE : bouton don toujours visible + menu -->
+    <div class="flex items-center gap-3 lg:hidden">
       <a
         href="/support-us/"
         class="header-donate-mobile rounded-full px-5 py-2.5 text-sm font-bold uppercase tracking-wide no-underline"
@@ -78,7 +78,7 @@ const isTake10 = pathname === "/take10/";
     color: #ffffff !important;
   }
 
-  /* BOUTON DONATE sur mobile / tablette / petits portables */
+  /* BOUTON DONATE sur mobile / tablette */
   #site-header .header-donate-mobile {
     background-color: #171717;
     color: #ffffff !important;
@@ -88,9 +88,28 @@ const isTake10 = pathname === "/take10/";
   }
 
   /* ========================================
+     PETITS PORTABLES (1024px à 1279px)
+     Menu compact pour que les deux ronds
+     tiennent toujours à l'écran
+     ======================================== */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    #site-header nav a:not(.site-header-cta),
+    #site-header nav button {
+      font-size: 14px !important;
+      padding-left: 8px !important;
+      padding-right: 8px !important;
+    }
+    #site-header nav a.site-header-cta {
+      width: 68px !important;
+      height: 68px !important;
+      min-width: 68px !important;
+      font-size: 10px !important;
+      line-height: 1.15 !important;
+    }
+  }
+
+  /* ========================================
      PORTABLES MOYENS (1280px à 1535px)
-     Menu un peu plus compact pour que
-     les deux ronds tiennent toujours à l'écran
      ======================================== */
   @media (min-width: 1280px) and (max-width: 1535px) {
     #site-header nav a:not(.site-header-cta),
@@ -98,9 +117,9 @@ const isTake10 = pathname === "/take10/";
       font-size: 15px !important;
     }
     #site-header nav a.site-header-cta {
-      width: 76px !important;
-      height: 76px !important;
-      min-width: 76px !important;
+      width: 78px !important;
+      height: 78px !important;
+      min-width: 78px !important;
       font-size: 11px !important;
       line-height: 1.15 !important;
     }
