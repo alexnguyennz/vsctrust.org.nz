@@ -2,6 +2,7 @@ import {
   PersonStanding,
   HeartHandshake,
   HandCoins,
+  Megaphone,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -100,6 +101,12 @@ export const menuLinks: MenuLinks = {
       href: "/sponsor-a-school/",
       description: "Help a school or kindergarten",
       icon: IconBackpack,
+    },
+    {
+      title: "Become a Sponsor",
+      href: "/sponsor/",
+      description: "Put your brand on Take 10",
+      icon: Megaphone,
     },
   ],
 };
