@@ -1,0 +1,401 @@
+---
+import { Icon } from "astro-icon/components";
+
+import Layout from "@/components/layouts/Layout.astro";
+import Section from "@/components/layouts/section.astro";
+
+import Form from "@/components/Form.astro";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+
+const title = "Sponsor Take 10";
+
+const fieldClass =
+  "h-14 rounded-lg border border-gray-200 bg-white shadow-none focus-visible:border-[#F47B20] focus-visible:ring-2 focus-visible:ring-[#F47B20]/30";
+
+const placements = [
+  {
+    title: "The van",
+    text: "Our mobile unit, parked in the busiest streets every weekend and seen on every trip.",
+    svg: `<rect x="20" y="36" width="190" height="86" rx="12"/><path d="M210 56 h34 l22 30 v36 h-56 z"/><path d="M218 64 h22 l14 20 h-36 z"/><circle cx="72" cy="126" r="16" fill="#fff"/><circle cx="226" cy="126" r="16" fill="#fff"/><rect x="46" y="54" width="130" height="46" rx="6" stroke="#F47B20" stroke-dasharray="7 6"/><text x="111" y="83" text-anchor="middle" font-size="15" font-weight="700" fill="#F47B20" stroke="none">YOUR LOGO</text>`,
+  },
+  {
+    title: "The bean bags",
+    text: "Where people sit, rest and recharge. Your brand right where they take ten.",
+    svg: `<path d="M50 138 C26 110 40 48 96 34 C130 26 168 30 196 44 C246 70 250 120 226 138 Z"/><path d="M70 138 C84 118 120 110 150 112"/><rect x="100" y="58" width="96" height="42" rx="6" stroke="#F47B20" stroke-dasharray="7 6"/><text x="148" y="85" text-anchor="middle" font-size="14" font-weight="700" fill="#F47B20" stroke="none">YOUR LOGO</text>`,
+  },
+  {
+    title: "The table",
+    text: "A printed banner on the front of our table, where people come for water, snacks and help.",
+    svg: `<rect x="24" y="36" width="232" height="12" rx="3"/><rect x="36" y="48" width="208" height="76" rx="4"/><path d="M44 124 v22 M236 124 v22"/><rect x="80" y="62" width="120" height="48" rx="6" stroke="#F47B20" stroke-dasharray="7 6"/><text x="140" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#F47B20" stroke="none">YOUR LOGO</text>`,
+  },
+  {
+    title: "The cups",
+    text: "Every cup of water we hand out carries your logo home with it.",
+    svg: `<rect x="92" y="18" width="96" height="14" rx="5"/><path d="M98 32 h84 l-12 116 h-60 z"/><rect x="108" y="66" width="64" height="40" rx="6" stroke="#F47B20" stroke-dasharray="6 5"/><text x="140" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#F47B20" stroke="none">YOUR</text><text x="140" y="99" text-anchor="middle" font-size="12" font-weight="700" fill="#F47B20" stroke="none">LOGO</text>`,
+  },
+];
+
+const packages = [
+  {
+    name: "Supporter",
+    featured: false,
+    items: [
+      "Your logo on our cups",
+      "Your name on our sponsors page",
+      "A thank-you post on our socials",
+    ],
+  },
+  {
+    name: "Partner",
+    featured: true,
+    items: [
+      "Everything in Supporter",
+      "Your logo on the bean bags",
+      "Your logo on the table banner",
+      "Your logo and link on our website",
+    ],
+  },
+  {
+    name: "Principal Partner",
+    featured: false,
+    items: [
+      "Everything in Partner",
+      "Your logo on the van",
+      "Mention in our newsletter and news posts",
+      "A night out with the team for your staff",
+    ],
+  },
+];
+---
+
+<Layout title={title}>
+  <!-- Espace pour que le contenu ne passe pas sous le menu -->
+  <div class="h-28 lg:h-36" aria-hidden="true"></div>
+
+  <!-- ================= HERO ================= -->
+  <Section>
+    <div
+      class="grid items-center gap-10 rounded-3xl bg-[#FFF7F0] px-6 py-10 sm:px-12 sm:py-14 lg:grid-cols-2"
+    >
+      <div>
+        <p
+          class="mb-4 flex items-center gap-4 text-sm font-bold uppercase tracking-[0.15em] text-[#F47B20]"
+        >
+          Partner with Take 10
+          <span class="h-[2px] w-24 bg-[#F47B20]" aria-hidden="true"></span>
+        </p>
+        <h1
+          class="mb-5 text-5xl font-extrabold leading-none tracking-tight text-[#111827] sm:text-6xl"
+        >
+          Put your brand on the street.
+        </h1>
+        <p class="mb-8 max-w-lg text-lg leading-relaxed text-gray-600">
+          Sponsor Take 10 and your logo travels with us every weekend: on the
+          van, the bean bags, the table and the cups handed to people on a
+          night out.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="#contact"
+            class="inline-flex h-14 items-center rounded-xl bg-[#F47B20] px-7 font-bold uppercase tracking-wider text-white no-underline hover:bg-[#E06A12]"
+          >
+            Become a sponsor
+          </a>
+          <a
+            href="#packages"
+            class="inline-flex h-14 items-center rounded-xl border-2 border-[#111827] px-7 font-bold text-[#111827] no-underline hover:bg-white"
+          >
+            See the packages
+          </a>
+        </div>
+      </div>
+
+      <div class="flex justify-center rounded-3xl bg-white p-8">
+        <svg
+          viewBox="0 0 280 160"
+          class="w-full max-w-md"
+          fill="none"
+          stroke="#111827"
+          stroke-width="3"
+          stroke-linejoin="round"
+          font-family="inherit"
+          role="img"
+          aria-label="The Take 10 van with space for your logo"
+          set:html={placements[0].svg}
+        />
+      </div>
+    </div>
+  </Section>
+
+  <!-- ================= WHAT IS TAKE 10 ================= -->
+  <Section class="grid items-center gap-10 lg:grid-cols-2">
+    <div>
+      <p
+        class="mb-4 flex items-center gap-4 text-sm font-bold uppercase tracking-[0.15em] text-[#F47B20]"
+      >
+        What is Take 10?
+        <span class="h-[2px] w-24 bg-[#F47B20]" aria-hidden="true"></span>
+      </p>
+      <h2
+        class="mb-4 text-3xl font-extrabold leading-tight text-[#111827] lg:text-4xl"
+      >
+        Safe, great nights out in the city.
+      </h2>
+      <p class="text-lg leading-relaxed text-gray-600">
+        Take 10 supports students and others who are out at night, alongside
+        security staff and council. We’re on Courtenay Place, in Johnsonville
+        and now in Tāmaki Makaurau.
+      </p>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-3">
+      <div class="rounded-2xl bg-[#FFF7F0] p-6">
+        <p class="mb-1 text-2xl font-extrabold text-[#F47B20]">Every weekend</p>
+        <p class="m-0 text-gray-700">on the street, where people need us</p>
+      </div>
+      <div class="rounded-2xl bg-[#FFF7F0] p-6">
+        <p class="mb-1 text-2xl font-extrabold text-[#F47B20]">3 locations</p>
+        <p class="m-0 text-gray-700">Wellington, Johnsonville and Auckland</p>
+      </div>
+      <div class="rounded-2xl bg-[#FFF7F0] p-6">
+        <p class="mb-1 text-2xl font-extrabold text-[#F47B20]">Volunteers</p>
+        <p class="m-0 text-gray-700">working with security and council</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- ================= WHERE YOUR LOGO GOES ================= -->
+  <Section>
+    <div class="mb-10 text-center">
+      <p
+        class="mb-4 flex items-center justify-center gap-4 text-sm font-bold uppercase tracking-[0.15em] text-[#F47B20]"
+      >
+        <span class="h-[2px] w-12 bg-[#F47B20]" aria-hidden="true"></span>
+        Where your logo goes
+        <span class="h-[2px] w-12 bg-[#F47B20]" aria-hidden="true"></span>
+      </p>
+      <h2
+        class="m-0 text-3xl font-extrabold leading-tight text-[#111827] lg:text-4xl"
+      >
+        Four places people will see you.
+      </h2>
+    </div>
+
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        placements.map((p) => (
+          <div class="flex flex-col gap-4 rounded-3xl bg-[#FFF7F0] p-6">
+            <div class="flex h-40 items-center justify-center rounded-2xl bg-white">
+              <svg
+                viewBox="0 0 280 160"
+                class="w-56"
+                fill="none"
+                stroke="#111827"
+                stroke-width="3"
+                stroke-linejoin="round"
+                font-family="inherit"
+                aria-hidden="true"
+                set:html={p.svg}
+              />
+            </div>
+            <h3 class="m-0 text-xl font-bold text-[#111827]">{p.title}</h3>
+            <p class="m-0 leading-relaxed text-gray-600">{p.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <!-- ================= PACKAGES ================= -->
+  <div id="packages" class="scroll-mt-32" aria-hidden="true"></div>
+  <Section>
+    <div class="mb-10 text-center">
+      <p
+        class="mb-4 flex items-center justify-center gap-4 text-sm font-bold uppercase tracking-[0.15em] text-[#F47B20]"
+      >
+        <span class="h-[2px] w-12 bg-[#F47B20]" aria-hidden="true"></span>
+        Sponsorship packages
+        <span class="h-[2px] w-12 bg-[#F47B20]" aria-hidden="true"></span>
+      </p>
+      <h2
+        class="mb-3 text-3xl font-extrabold leading-tight text-[#111827] lg:text-4xl"
+      >
+        Choose how visible you want to be.
+      </h2>
+      <p class="mx-auto max-w-xl text-lg text-gray-600">
+        Every partnership is a little different. Get in touch and we’ll send
+        you a quote tailored to your business.
+      </p>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-3">
+      {
+        packages.map((pkg) => (
+          <div
+            class:list={[
+              "relative flex flex-col gap-5 rounded-3xl p-8",
+              pkg.featured
+                ? "border-2 border-[#F47B20] bg-[#FFF7F0]"
+                : "border-2 border-[#F1E4D8] bg-white",
+            ]}
+          >
+            {pkg.featured && (
+              <span class="absolute -top-4 left-8 rounded-full bg-[#F47B20] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
+                Recommended
+              </span>
+            )}
+            <h3 class="m-0 text-2xl font-bold text-[#111827]">{pkg.name}</h3>
+            <p class="m-0 font-semibold text-gray-500">Price on request</p>
+            <div class="h-px bg-[#F1E4D8]" />
+            <ul class="m-0 flex list-none flex-col gap-3 p-0">
+              {pkg.items.map((item) => (
+                <li class="m-0 flex items-start gap-3 text-gray-700">
+                  <svg
+                    class="mt-0.5 size-5 shrink-0 text-[#F47B20]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12l5 5L20 7" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a
+              href="#contact"
+              class:list={[
+                "mt-auto flex h-14 items-center justify-center rounded-xl font-bold no-underline",
+                pkg.featured
+                  ? "bg-[#F47B20] text-white hover:bg-[#E06A12]"
+                  : "border-2 border-[#111827] text-[#111827] hover:bg-[#FFF7F0]",
+              ]}
+            >
+              Request a quote
+            </a>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Bandeau devis -->
+    <div
+      class="mt-10 flex flex-col items-start justify-between gap-6 rounded-3xl bg-[#111827] p-8 text-white sm:flex-row sm:items-center sm:p-10"
+    >
+      <div>
+        <h3 class="mb-2 text-2xl font-extrabold text-white">
+          Want to know more about pricing?
+        </h3>
+        <p class="m-0 text-gray-300">
+          Contact us for a quote. We’re happy to build a package that suits
+          your business and budget.
+        </p>
+      </div>
+      <a
+        href="#contact"
+        class="inline-flex h-14 shrink-0 items-center rounded-xl bg-[#F47B20] px-7 font-bold uppercase tracking-wider text-white no-underline hover:bg-[#E06A12]"
+      >
+        Get a quote
+      </a>
+    </div>
+  </Section>
+
+  <!-- ================= CONTACT ================= -->
+  <div id="contact" class="scroll-mt-32" aria-hidden="true"></div>
+  <Section class="grid items-start gap-10 lg:grid-cols-2 lg:gap-8">
+    <div class="lg:pt-6">
+      <p
+        class="mb-4 flex items-center gap-4 text-sm font-bold uppercase tracking-[0.15em] text-[#F47B20]"
+      >
+        Let’s talk
+        <span class="h-[2px] w-24 bg-[#F47B20]" aria-hidden="true"></span>
+      </p>
+      <h2
+        class="mb-4 text-4xl font-extrabold leading-tight text-[#111827] lg:text-5xl"
+      >
+        Ready to back safer nights out?
+      </h2>
+      <p class="mb-8 max-w-md text-lg leading-relaxed text-gray-600">
+        Tell us a bit about your business and we’ll get back to you with a
+        quote and more information.
+      </p>
+
+      <div class="flex flex-col gap-4">
+        <a
+          href="mailto:hello@vsctrust.org.nz"
+          class="flex items-center gap-5 text-lg text-gray-800 no-underline hover:text-[#F47B20]"
+        >
+          <span
+            class="flex size-14 shrink-0 items-center justify-center rounded-full bg-[#FFE8D6] text-[#F47B20]"
+          >
+            <Icon name="tabler:at" class="size-7" />
+          </span>
+          hello@vsctrust.org.nz
+        </a>
+        <a
+          href="tel:+64274448672"
+          class="flex items-center gap-5 text-lg text-gray-800 no-underline hover:text-[#F47B20]"
+        >
+          <span
+            class="flex size-14 shrink-0 items-center justify-center rounded-full bg-[#FFE8D6] text-[#F47B20]"
+          >
+            <Icon name="tabler:phone" class="size-7" />
+          </span>
+          +64 27 444 8672
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="rounded-3xl bg-[#FFF7F0] p-6 sm:p-10
+        [&_label]:text-base [&_label]:font-semibold [&_label]:text-[#111827]
+        [&_button]:mt-2 [&_button]:h-14 [&_button]:w-full [&_button]:rounded-lg
+        [&_button]:border-0 [&_button]:bg-[#F47B20] [&_button]:text-base
+        [&_button]:font-bold [&_button]:uppercase [&_button]:tracking-[0.12em]
+        [&_button]:text-white [&_button]:shadow-none [&_button:hover]:bg-[#E06A12]"
+    >
+      <Form name="sponsor">
+        <div>
+          <Label htmlFor="name" className="required">Name</Label>
+          <Input className={fieldClass} type="text" id="name" name="name" required />
+        </div>
+        <div>
+          <Label htmlFor="company" className="required">Company</Label>
+          <Input className={fieldClass} type="text" id="company" name="company" required />
+        </div>
+        <div>
+          <Label htmlFor="email" className="required">Email</Label>
+          <Input className={fieldClass} type="email" id="email" name="email" required />
+        </div>
+        <div>
+          <Label htmlFor="package">Package</Label>
+          <select
+            id="package"
+            name="package"
+            class="h-14 w-full rounded-lg border border-gray-200 bg-white px-3 text-base"
+          >
+            <option>Not sure yet</option>
+            <option>Supporter</option>
+            <option>Partner</option>
+            <option>Principal Partner</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <Label htmlFor="message">Message</Label>
+          <Textarea
+            className={`${fieldClass} h-auto min-h-32`}
+            id="message"
+            name="message"
+            rows={4}
+          />
+        </div>
+      </Form>
+    </div>
+  </Section>
+</Layout>
