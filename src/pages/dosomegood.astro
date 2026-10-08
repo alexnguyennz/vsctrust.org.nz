@@ -28,6 +28,12 @@ for await (const image of images) {
     width: 500,
   });
 }
+// Large, sharp version of the intro photo (8.jpg)
+const heroImage = await getImage({
+  src: importedImages[`../content/dosomegoodImages/8.jpg`]() as unknown as string,
+  format: "webp",
+  width: 1600,
+});
 ---
 <Layout title={entry.data.title}>
 
@@ -48,7 +54,7 @@ for await (const image of images) {
   <!-- SINGLE INTRO PHOTO -->
   <Section>
     <img
-      src={thumbnails["9"]?.src}
+      src={heroImage.src}
       alt="Do Some Good in action"
       class="rounded-3xl w-full h-[420px] md:h-[520px] object-cover"
     />
