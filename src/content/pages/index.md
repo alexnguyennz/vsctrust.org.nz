@@ -1,29 +1,24 @@
 ---
 title: Home
-dosomegood: >-
-  A food support programme that connects local businesses wanting to do good
-  with schools and kindergartens across the region. We undertake volunteer days
-  completing needed mahi and also provide fresh and tasty kai for tamariki and
-  their whānau, so that all are able to have the opportunity to thrive and
-  flourish. 
-take10: >-
-  An inclusive and non-judgemental late-night safe space on Courtenay Place,
-  offering water, phone charging, games, first-aid medical help, transport
-  advice, help to get home safely, and support and meaningful kōrero from
-  trained volunteers. 
-take10auckland: >-
-  An inclusive and non-judgemental late-night safe space in the Quay Street
-  District, offering water, phone charging, games, first-aid medical help,
+dosomegood: 'A food support programme that connects local businesses wanting to
+  do good with schools and kindergartens across the region. We undertake
+  volunteer days completing needed mahi and also provide fresh and tasty kai for
+  tamariki and their whānau, so that all are able to have the opportunity to
+  thrive and flourish. '
+take10: 'An inclusive and non-judgemental late-night safe space on Courtenay
+  Place, offering water, phone charging, games, first-aid medical help,
   transport advice, help to get home safely, and support and meaningful kōrero
-  from trained volunteers. 
-take10arvos: >-
-  Assisting rangatahi in our communities by providing a safe place to hang out,
-  do homework or play some games.
-genlink: >-
-  Aiming to lessen the generation gap by connecting younger people with older
-  folk within our local communities.
-schools: 23
-take10Visitors: 46521
+  from trained volunteers. '
+take10auckland: 'An inclusive and non-judgemental late-night safe space in the
+  Quay Street District, offering water, phone charging, games, first-aid medical
+  help, transport advice, help to get home safely, and support and meaningful
+  kōrero from trained volunteers. '
+take10arvos: Assisting rangatahi in our communities by providing a safe place to
+  hang out, do homework or play some games.
+genlink: Aiming to lessen the generation gap by connecting younger people with
+  older folk within our local communities.
+schools: 13
+take10Visitors: 46525
 waterGiven: 26841
 mealsForTamariki: 29587
 ---
