@@ -1,14 +1,13 @@
 ---
 title: Home
-dosomegood: 'A food support programme that connects local businesses wanting to
-  do good with schools and kindergartens across the region. We undertake
-  volunteer days completing needed mahi and also provide fresh and tasty kai for
-  tamariki and their whānau, so that all are able to have the opportunity to
-  thrive and flourish. '
-take10: 'An inclusive and non-judgemental late-night safe space on Courtenay
-  Place, offering water, phone charging, games, first-aid medical help,
-  transport advice, help to get home safely, and support and meaningful kōrero
-  from trained volunteers. '
+dosomegood: Do Some Good is a food support programme that supports schools, and
+  kindergartens, across Wellington, Porirua, and Hutt Valley. Through the
+  provision of fresh, nutritious food and regular volunteer days, the programme
+  helps reduce food insecurity, supports tamariki and whānau, and strengthens
+  connections and local communities.
+take10: 'An inclusive and non-judgemental late-night safe space offering water,
+  phone charging, games, first-aid medical help, transport advice, help to get
+  home safely, and support and meaningful kōrero from trained volunteers. '
 take10auckland: 'An inclusive and non-judgemental late-night safe space in the
   Quay Street District, offering water, phone charging, games, first-aid medical
   help, transport advice, help to get home safely, and support and meaningful
