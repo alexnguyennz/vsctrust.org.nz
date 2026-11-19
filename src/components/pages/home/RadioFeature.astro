@@ -1,0 +1,249 @@
+---
+// "As heard on" radio feature for Take 10.
+// Replace episodeUrl with the direct link to the Take 10 episode when you have it.
+interface Props {
+  compact?: boolean;
+}
+const { compact = false } = Astro.props;
+
+const episodeUrl = "https://accessradio.org.nz/shows-podcasts/b-side-stories/";
+---
+
+<section class:list={["radio-wrap", compact && "is-compact"]}>
+  <div class="radio-card">
+    <div class="radio-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="9" y="2.5" width="6" height="11.5" rx="3" />
+        <path d="M5.5 11a6.5 6.5 0 0 0 13 0" />
+        <path d="M12 17.5V21.5" />
+        <path d="M8.5 21.5h7" />
+      </svg>
+    </div>
+
+    <div class="radio-text">
+      <p class="radio-eyebrow">As heard on Wellington Access Radio</p>
+      <h2 class="radio-title">
+        Take 10 on <span>B-Side Stories</span>
+      </h2>
+      <p class="radio-desc">
+        Tune in to hear the story behind Take 10: how it started, what a night
+        out looks like for our volunteers, and why keeping Wellington's nights
+        safe matters.
+      </p>
+    </div>
+
+    <div class="radio-action">
+      <div class="radio-wave" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <a
+        href={episodeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="radio-button"
+      >
+        <span class="radio-play" aria-hidden="true">&#9654;</span>
+        Listen now
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+
+  .radio-wrap {
+    padding: 8px 12px 0;
+  }
+
+  @media (min-width: 640px) {
+    .radio-wrap {
+      padding: 8px 20px 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .radio-wrap {
+      padding: 8px 32px 0;
+    }
+  }
+
+  .radio-card {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 32px;
+    padding: 32px 44px;
+    border-radius: 28px;
+    background: #141a3c;
+    color: #fff;
+  }
+
+  .radio-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    border: 1px solid rgba(201, 168, 106, 0.6);
+    color: #c9a86a;
+  }
+
+  .radio-eyebrow {
+    margin: 0 0 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c9a86a;
+  }
+
+  .radio-title {
+    margin: 0;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+
+  .radio-title span {
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .radio-desc {
+    margin: 10px 0 0;
+    max-width: 620px;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .radio-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .radio-wave {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 28px;
+  }
+
+  .radio-wave span {
+    display: block;
+    width: 3px;
+    height: 30%;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.55);
+    animation: radio-bounce 1.2s ease-in-out infinite;
+  }
+
+  .radio-wave span:nth-child(2) { animation-delay: 0.1s; }
+  .radio-wave span:nth-child(3) { animation-delay: 0.25s; }
+  .radio-wave span:nth-child(4) { animation-delay: 0.4s; }
+  .radio-wave span:nth-child(5) { animation-delay: 0.15s; }
+  .radio-wave span:nth-child(6) { animation-delay: 0.35s; }
+  .radio-wave span:nth-child(7) { animation-delay: 0.05s; }
+  .radio-wave span:nth-child(8) { animation-delay: 0.3s; }
+  .radio-wave span:nth-child(9) { animation-delay: 0.2s; }
+  .radio-wave span:nth-child(10) { animation-delay: 0.45s; }
+
+  @keyframes radio-bounce {
+    0%, 100% { height: 25%; }
+    50% { height: 100%; }
+  }
+
+  .radio-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    border-radius: 999px;
+    background: #f97316;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .radio-button:hover {
+    background: #ea580c;
+    transform: translateY(-1px);
+  }
+
+  .radio-play {
+    font-size: 0.8rem;
+  }
+
+  /* Smaller version (for the Take 10 page) */
+  .is-compact .radio-card {
+    padding: 24px 32px;
+    border-radius: 20px;
+  }
+
+  .is-compact .radio-title {
+    font-size: 1.6rem;
+  }
+
+  /* Tablet & mobile */
+  @media (max-width: 900px) {
+    .radio-card {
+      grid-template-columns: auto 1fr;
+      gap: 20px 24px;
+      padding: 28px;
+    }
+
+    .radio-action {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .radio-card {
+      grid-template-columns: 1fr;
+      border-radius: 20px;
+      padding: 26px 22px;
+    }
+
+    .radio-icon {
+      width: 52px;
+      height: 52px;
+    }
+
+    .radio-title {
+      font-size: 1.7rem;
+    }
+
+    .radio-action {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .radio-wave {
+      display: none;
+    }
+
+    .radio-button {
+      justify-content: center;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .radio-wave span {
+      animation: none;
+      height: 60%;
+    }
+  }
+</style>
