@@ -1,0 +1,270 @@
+---
+// Small floating "Listen" notification shown on every page.
+// Change episodeUrl when you have the direct link to the Take 10 episode
+// (also change it in RadioFeature.astro).
+const episodeUrl = "https://accessradio.org.nz/shows-podcasts/b-side-stories/";
+---
+
+<div id="radio-pill" class="rp" hidden>
+  <a
+    href={episodeUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="rp-link"
+    aria-label="Listen to Take 10 on B-Side Stories, Wellington Access Radio"
+  >
+    <span class="rp-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="9" y="2.5" width="6" height="11.5" rx="3" />
+        <path d="M5.5 11a6.5 6.5 0 0 0 13 0" />
+        <path d="M12 17.5V21.5" />
+      </svg>
+    </span>
+
+    <span class="rp-text">
+      <span class="rp-eyebrow">As heard on Access Radio</span>
+      <span class="rp-title">Take 10 on <em>B-Side Stories</em></span>
+    </span>
+
+    <span class="rp-play" aria-hidden="true">&#9654;</span>
+  </a>
+
+  <button type="button" class="rp-close" aria-label="Close" data-rp-close>
+    &times;
+  </button>
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&display=swap');
+
+  .rp {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    max-width: calc(100vw - 32px);
+    border-radius: 999px;
+    background: #141a3c;
+    color: #fff;
+    box-shadow: 0 14px 40px rgba(10, 14, 35, 0.35);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .rp[hidden] {
+    display: none;
+  }
+
+  .rp.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .rp-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 10px 10px 12px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .rp-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: 1px solid rgba(201, 168, 106, 0.6);
+    color: #c9a86a;
+  }
+
+  .rp-icon::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: 999px;
+    border: 1px solid #c9a86a;
+    animation: rp-pulse 2.2s ease-out infinite;
+  }
+
+  @keyframes rp-pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+
+  .rp-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .rp-eyebrow {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #c9a86a;
+  }
+
+  .rp-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-variant-numeric: lining-nums;
+    font-weight: 600;
+    font-size: 1.15rem;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .rp-title em {
+    font-weight: 500;
+  }
+
+  .rp-play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    margin-left: 6px;
+    padding-left: 3px;
+    border-radius: 999px;
+    background: #f97316;
+    font-size: 0.85rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .rp-link:hover .rp-play {
+    background: #ea580c;
+    transform: scale(1.06);
+  }
+
+  .rp-close {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .rp-close:hover {
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+  }
+
+  @media (max-width: 560px) {
+    .rp {
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      max-width: none;
+      border-radius: 20px;
+    }
+
+    .rp-link {
+      flex: 1;
+      min-width: 0;
+      gap: 10px;
+      padding: 8px;
+    }
+
+    .rp-icon {
+      width: 38px;
+      height: 38px;
+    }
+
+    .rp-title {
+      font-size: 1.02rem;
+      white-space: normal;
+    }
+
+    .rp-play {
+      width: 38px;
+      height: 38px;
+      margin-left: auto;
+    }
+
+    .rp-close {
+      margin-right: 8px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rp {
+      transition: none;
+    }
+
+    .rp-icon::after {
+      animation: none;
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const DISMISS_KEY = "vsct-radio-pill-dismissed";
+  const DISMISS_DAYS = 7;
+
+  function isDismissed() {
+    try {
+      const t = Number(localStorage.getItem(DISMISS_KEY) || 0);
+      return t > 0 && Date.now() - t < DISMISS_DAYS * 24 * 60 * 60 * 1000;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function initRadioPill() {
+    const pill = document.getElementById("radio-pill");
+    if (!pill || isDismissed()) return;
+
+    let shown = false;
+
+    const popupIsOpen = () => {
+      const popup = document.getElementById("local-hero-popup");
+      return !!popup && !popup.hidden;
+    };
+
+    const show = () => {
+      if (shown || popupIsOpen()) return;
+      shown = true;
+      pill.hidden = false;
+      requestAnimationFrame(() => pill.classList.add("is-visible"));
+      window.removeEventListener("scroll", onScroll);
+    };
+
+    const onScroll = () => {
+      if (window.scrollY > 300) show();
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    // Also appear after a few seconds, even without scrolling
+    setTimeout(show, 6000);
+
+    pill.querySelector("[data-rp-close]")?.addEventListener("click", () => {
+      pill.classList.remove("is-visible");
+      setTimeout(() => {
+        pill.hidden = true;
+      }, 400);
+      try {
+        localStorage.setItem(DISMISS_KEY, String(Date.now()));
+      } catch (e) {}
+    });
+  }
+
+  document.addEventListener("astro:page-load", initRadioPill);
+</script>
