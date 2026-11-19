@@ -217,12 +217,12 @@ const episodeUrl = "https://accessradio.org.nz/shows-podcasts/b-side-stories/";
 
 <script>
   const DISMISS_KEY = "vsct-radio-pill-dismissed";
-  const DISMISS_DAYS = 7;
 
+  // Closed = hidden for the rest of this visit only.
+  // It comes back the next time someone visits the site.
   function isDismissed() {
     try {
-      const t = Number(localStorage.getItem(DISMISS_KEY) || 0);
-      return t > 0 && Date.now() - t < DISMISS_DAYS * 24 * 60 * 60 * 1000;
+      return sessionStorage.getItem(DISMISS_KEY) === "1";
     } catch (e) {
       return false;
     }
@@ -261,7 +261,7 @@ const episodeUrl = "https://accessradio.org.nz/shows-podcasts/b-side-stories/";
         pill.hidden = true;
       }, 400);
       try {
-        localStorage.setItem(DISMISS_KEY, String(Date.now()));
+        sessionStorage.setItem(DISMISS_KEY, "1");
       } catch (e) {}
     });
   }
