@@ -5,6 +5,7 @@ import { ClientRouter } from "astro:transitions";
 
 import Header from "@/components/header/Header.astro";
 import Footer from "@/components/footer/Footer.astro";
+import RadioPill from "@/components/RadioPill.astro";
 
 interface Props {
   title: string;
@@ -40,13 +41,6 @@ const isVolunteerPage = title === "Volunteer";
       crossorigin="anonymous"
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap"
-      rel="stylesheet"
-    />
-
     <ClientRouter fallback="swap" />
 
     <slot name="head" />
@@ -65,5 +59,7 @@ const isVolunteerPage = title === "Volunteer";
     </main>
 
     <Footer />
+
+    <RadioPill />
   </body>
 </html>
