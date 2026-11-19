@@ -8,6 +8,7 @@ import { Quotes } from "@/components/pages/home/Quotes";
 import NewsCard from "@/components/pages/news/NewsCard.astro";
 import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
 import LocalHeroPopup from "@/components/pages/home/LocalHeroPopup.astro";
+import RadioFeature from "@/components/pages/home/RadioFeature.astro";
 import { Image } from "astro:assets";
 import doSomeGoodLogo from "@/assets/img/logo/dosomegood-new.png";
 import doSomeGoodPhoto from "@/assets/img/programmes/dosomegood.jpg";
@@ -148,6 +149,10 @@ const { Content } = await render(entry);
       }
     }
   </style>
+
+
+  <!-- RADIO FEATURE -->
+  <RadioFeature />
 
 
   <!-- OUR PROGRAMMES -->
