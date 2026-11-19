@@ -39,22 +39,22 @@ const { Content } = await render(entry);
       <!-- SUBTLE DARK OVERLAY FOR TEXT CONTRAST -->
       <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent"></div>
 
-      <!-- TOP RIGHT SCRIPT TEXT -->
-      <div class="hero-script absolute right-8 top-8 text-right leading-snug text-white sm:right-12 sm:top-10">
-        <p class="text-lg sm:text-xl">Safer nights</p>
-        <p class="text-lg sm:text-xl">Stronger communities</p>
-        <p class="relative inline-block text-lg sm:text-xl">
+      <!-- TOP RIGHT TAGLINE -->
+      <div class="hero-tagline absolute right-8 top-8 flex flex-col items-end gap-2 text-right text-white sm:right-12 sm:top-10">
+        <p>Safer nights</p>
+        <p>Stronger communities</p>
+        <p class="relative inline-block pb-2">
           Brighter tomorrows
-          <span class="absolute -bottom-1 left-0 h-px w-full bg-white/80"></span>
+          <span class="absolute bottom-0 right-0 h-px w-full bg-white/70"></span>
         </p>
       </div>
 
       <!-- BOTTOM RIGHT QUOTE -->
-      <div class="hero-script absolute bottom-8 right-8 text-right leading-snug text-white sm:bottom-10 sm:right-12">
-        <p class="text-lg sm:text-xl">&ldquo;Small actions,</p>
-        <p class="relative inline-block text-lg sm:text-xl">
+      <div class="hero-quote absolute bottom-8 right-8 text-right text-white sm:bottom-10 sm:right-12">
+        <p>&ldquo;Small actions,</p>
+        <p class="relative inline-block pb-2">
           big change.&rdquo;
-          <span class="absolute -bottom-1 left-0 h-px w-full bg-white/80"></span>
+          <span class="absolute bottom-0 right-0 h-px w-full bg-white/70"></span>
         </p>
       </div>
 
@@ -108,15 +108,41 @@ const { Content } = await render(entry);
   </section>
 
   <style>
-    /* Assumption fonts — replace with your brand fonts if different */
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Dancing+Script:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap');
 
     .hero-heading {
       font-family: 'Playfair Display', Georgia, serif;
     }
 
-    .hero-script {
-      font-family: 'Dancing Script', cursive;
+    /* Safer nights / Stronger communities / Brighter tomorrows */
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.9rem;
+      line-height: 1.2;
+      text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
+    }
+
+    /* "Small actions, big change." */
+    .hero-quote {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 1.1;
+      text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (min-width: 640px) {
+      .hero-tagline {
+        font-size: 1.05rem;
+      }
+
+      .hero-quote {
+        font-size: 2.1rem;
+      }
     }
   </style>
 
