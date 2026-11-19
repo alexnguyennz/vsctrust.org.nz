@@ -1,0 +1,444 @@
+---
+// Pop-up "Tower Local Hero Medallist" shown when visitors arrive on the homepage.
+// Step 1: the award announcement. Step 2: the open letter from the Take 10 team.
+// Upload both photos in CloudCannon to /public/img/local-hero/
+const medalSrc = "/img/local-hero/medal.jpg";
+const letterSrc = "/img/local-hero/letter.jpg";
+---
+
+<div
+  id="local-hero-popup"
+  class="lh-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="lh-title"
+  hidden
+>
+  <div class="lh-card" data-step="1">
+    <button type="button" class="lh-close" aria-label="Close" data-lh-close>
+      &times;
+    </button>
+
+    <!-- STEP 1: ANNOUNCEMENT -->
+    <div class="lh-step lh-step-1">
+      <div class="lh-image">
+        <img
+          src={medalSrc}
+          alt="Tower Local Hero medal and certificate awarded to Clint Schoultz"
+        />
+      </div>
+
+      <div class="lh-content">
+        <p class="lh-eyebrow">Kiwibank New Zealander of the Year Awards</p>
+
+        <h2 id="lh-title" class="lh-title">
+          Tower Local Hero
+          <span>Medallist 2027</span>
+        </h2>
+
+        <p class="lh-place">Wellington <span>Te Whanganui-a-Tara</span></p>
+
+        <div class="lh-rule"></div>
+
+        <p class="lh-text">
+          We're proud to share that our co-founder, <strong>Clint Schoultz</strong>,
+          has been named a Tower Local Hero Medallist, recognising the work of
+          Take 10 and Do Some Good in our community.
+        </p>
+
+        <div class="lh-actions">
+          <button type="button" class="lh-button" data-lh-next>
+            Read our letter
+            <span aria-hidden="true" class="lh-arrow">&rarr;</span>
+          </button>
+          <button type="button" class="lh-link" data-lh-close>
+            Continue to site
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2: THE LETTER -->
+    <div class="lh-step lh-step-2">
+      <div class="lh-letter">
+        <img
+          src={letterSrc}
+          alt="Dear Wellington, We're so proud to share that Clint Schoultz has been named a Tower Local Hero Medallist for Wellington Te Whanganui-a-Tara. Take 10 started with a simple idea: everyone deserves a safe place on a night out. A place to take a breath, get support and get home safely. This recognition belongs to every volunteer who shows up late at night, and to everyone who has trusted us along the way. Thank you for being part of it. With love, The Take 10 team"
+        />
+      </div>
+
+      <div class="lh-letter-actions">
+        <button type="button" class="lh-link lh-link-dark" data-lh-back>
+          <span aria-hidden="true">&larr;</span> Back
+        </button>
+        <button type="button" class="lh-button" data-lh-close>
+          Continue to site
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+
+  .lh-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(10, 14, 35, 0.6);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .lh-overlay[hidden] {
+    display: none;
+  }
+
+  .lh-overlay.is-visible {
+    opacity: 1;
+  }
+
+  .lh-card {
+    position: relative;
+    width: 100%;
+    max-width: 880px;
+    max-height: calc(100vh - 32px);
+    overflow: auto;
+    border-radius: 24px;
+    background: #141a3c;
+    color: #fff;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    transform: translateY(16px) scale(0.98);
+    transition:
+      transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+      max-width 0.4s ease,
+      background 0.4s ease;
+  }
+
+  .lh-overlay.is-visible .lh-card {
+    transform: none;
+  }
+
+  /* Steps */
+  .lh-step {
+    animation: lh-fade 0.45s ease both;
+  }
+
+  .lh-card[data-step="1"] .lh-step-2,
+  .lh-card[data-step="2"] .lh-step-1 {
+    display: none;
+  }
+
+  .lh-step-1 {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+  }
+
+  .lh-card[data-step="2"] {
+    max-width: 620px;
+    background: #f1ece6;
+  }
+
+  @keyframes lh-fade {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Step 1 */
+  .lh-image {
+    background: #e9e5df;
+  }
+
+  .lh-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .lh-content {
+    padding: 48px 44px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .lh-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c9a86a;
+    margin: 0 0 18px;
+  }
+
+  .lh-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 1.05;
+    margin: 0;
+  }
+
+  .lh-title span {
+    display: block;
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .lh-place {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 14px 0 0;
+  }
+
+  .lh-place span {
+    white-space: nowrap;
+  }
+
+  .lh-rule {
+    width: 48px;
+    height: 1px;
+    background: #c9a86a;
+    margin: 24px 0;
+  }
+
+  .lh-text {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0;
+  }
+
+  .lh-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    margin-top: 30px;
+  }
+
+  /* Buttons */
+  .lh-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 28px;
+    border: 0;
+    border-radius: 999px;
+    background: #f97316;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .lh-button:hover {
+    background: #ea580c;
+  }
+
+  .lh-arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .lh-button:hover .lh-arrow {
+    transform: translateX(4px);
+  }
+
+  .lh-link {
+    border: 0;
+    background: none;
+    padding: 4px 0;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9rem;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+  }
+
+  .lh-link:hover {
+    color: #fff;
+  }
+
+  .lh-link-dark {
+    color: #141a3c;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .lh-link-dark:hover {
+    color: #f97316;
+  }
+
+  .lh-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .lh-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .lh-card[data-step="2"] .lh-close {
+    background: rgba(20, 26, 60, 0.08);
+    color: #141a3c;
+  }
+
+  /* Step 2 */
+  .lh-letter img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 140px);
+    object-fit: contain;
+  }
+
+  .lh-letter-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 24px 22px;
+  }
+
+  /* Mobile */
+  @media (max-width: 720px) {
+    .lh-card {
+      border-radius: 20px;
+    }
+
+    .lh-step-1 {
+      grid-template-columns: 1fr;
+    }
+
+    .lh-image {
+      height: 230px;
+    }
+
+    .lh-content {
+      padding: 28px 24px;
+    }
+
+    .lh-title {
+      font-size: 1.9rem;
+    }
+
+    .lh-actions {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+    }
+
+    .lh-button {
+      justify-content: center;
+    }
+
+    .lh-letter-actions {
+      padding: 14px 18px 18px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lh-overlay,
+    .lh-card,
+    .lh-step {
+      transition: none;
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  const STORAGE_KEY = "vsct-local-hero-popup-seen";
+
+  function initLocalHeroPopup() {
+    const popup = document.getElementById("local-hero-popup");
+    if (!popup) return;
+    const card = popup.querySelector(".lh-card") as HTMLElement | null;
+    if (!card) return;
+
+    // Show once per visit (browser session)
+    let alreadySeen = false;
+    try {
+      alreadySeen = sessionStorage.getItem(STORAGE_KEY) === "1";
+    } catch (e) {}
+    if (alreadySeen) return;
+
+    const goTo = (step: string) => {
+      card.dataset.step = step;
+      card.scrollTop = 0;
+    };
+
+    const open = () => {
+      goTo("1");
+      popup.hidden = false;
+      requestAnimationFrame(() => popup.classList.add("is-visible"));
+      document.body.style.overflow = "hidden";
+      try {
+        sessionStorage.setItem(STORAGE_KEY, "1");
+      } catch (e) {}
+    };
+
+    const close = () => {
+      popup.classList.remove("is-visible");
+      document.body.style.overflow = "";
+      setTimeout(() => {
+        popup.hidden = true;
+      }, 400);
+      document.removeEventListener("keydown", onKey);
+    };
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+    };
+
+    popup.querySelectorAll("[data-lh-close]").forEach((btn) =>
+      btn.addEventListener("click", close),
+    );
+    popup.querySelectorAll("[data-lh-next]").forEach((btn) =>
+      btn.addEventListener("click", () => goTo("2")),
+    );
+    popup.querySelectorAll("[data-lh-back]").forEach((btn) =>
+      btn.addEventListener("click", () => goTo("1")),
+    );
+
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) close();
+    });
+
+    document.addEventListener("keydown", onKey);
+
+    setTimeout(open, 1200);
+  }
+
+  document.addEventListener("astro:page-load", initLocalHeroPopup);
+</script>
