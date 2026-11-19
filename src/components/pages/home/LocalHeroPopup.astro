@@ -41,7 +41,7 @@ const letterSrc = "/img/local-hero/letter.jpg";
         <div class="lh-rule"></div>
 
         <p class="lh-text">
-                    We're proud to share that our Chairperson, <strong>Clint Schoultz</strong>,
+          We're proud to share that our Chairperson, <strong>Clint Schoultz</strong>,
           has been named a Tower Local Hero Medallist, recognising his work with
           Take 10 and Do Some Good in our community.
         </p>
@@ -185,6 +185,7 @@ const letterSrc = "/img/local-hero/letter.jpg";
   }
 
   .lh-title {
+    font-variant-numeric: lining-nums;
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 600;
     font-size: 2.4rem;
@@ -437,7 +438,7 @@ const letterSrc = "/img/local-hero/letter.jpg";
 
     document.addEventListener("keydown", onKey);
 
-    setTimeout(open, 600);
+    setTimeout(open, 1200);
   }
 
   document.addEventListener("astro:page-load", initLocalHeroPopup);
