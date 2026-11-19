@@ -7,6 +7,7 @@ import H2 from "@/components/headings/h2.astro";
 import { Quotes } from "@/components/pages/home/Quotes";
 import NewsCard from "@/components/pages/news/NewsCard.astro";
 import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
+import LocalHeroPopup from "@/components/pages/home/LocalHeroPopup.astro";
 import { Image } from "astro:assets";
 import doSomeGoodLogo from "@/assets/img/logo/dosomegood-new.png";
 import doSomeGoodPhoto from "@/assets/img/programmes/dosomegood.jpg";
@@ -23,6 +24,8 @@ const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title}>
+
+  <LocalHeroPopup />
 
   <!-- HERO -->
   <section class="relative w-full bg-white px-3 pb-3 pt-28 sm:px-5 sm:pb-5 sm:pt-32 lg:px-8 lg:pb-8 lg:pt-36">
