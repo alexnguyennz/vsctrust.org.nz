@@ -44,7 +44,7 @@ const { Content } = await render(entry);
       <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent"></div>
 
       <!-- TOP RIGHT TAGLINE -->
-      <div class="hero-tagline absolute right-8 top-8 flex flex-col items-end gap-2 text-right text-white sm:right-12 sm:top-10">
+      <div class="hero-tagline absolute right-8 top-8 flex flex-col items-end gap-1 text-right text-white sm:right-12 sm:top-10">
         <p>Safer nights</p>
         <p>Stronger communities</p>
         <p class="relative inline-block pb-2">
@@ -116,6 +116,12 @@ const { Content } = await render(entry);
 
     .hero-heading {
       font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* Remove the default paragraph spacing between the lines */
+    .hero-tagline p,
+    .hero-quote p {
+      margin: 0;
     }
 
     /* Safer nights / Stronger communities / Brighter tomorrows */
