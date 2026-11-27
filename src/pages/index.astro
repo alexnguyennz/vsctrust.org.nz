@@ -9,6 +9,7 @@ import NewsCard from "@/components/pages/news/NewsCard.astro";
 import HowYouCanHelp from "@/components/pages/home/HowYouCanHelp.astro";
 import LocalHeroPopup from "@/components/pages/home/LocalHeroPopup.astro";
 import RadioFeature from "@/components/pages/home/RadioFeature.astro";
+import TakeTenHighlight from "@/components/pages/home/TakeTenHighlight.astro";
 import { Image } from "astro:assets";
 import doSomeGoodLogo from "@/assets/img/logo/dosomegood-new.png";
 import doSomeGoodPhoto from "@/assets/img/programmes/dosomegood.jpg";
@@ -159,6 +160,9 @@ const { Content } = await render(entry);
 
   <!-- RADIO FEATURE -->
   <RadioFeature />
+
+  <!-- A NIGHT AT TAKE 10 -->
+  <TakeTenHighlight />
 
 
   <!-- OUR PROGRAMMES -->
